@@ -484,7 +484,14 @@ man -k user | grep 8
 
 - **Question:** How does this pipeline command make it easier to obtain information regarding man command?
 
-12. If you wish to change your password you can by issuing the command:
+12. Issue the following Linux command:
+```bash
+tldr ls
+```
+
+What is similar between **man** and **tldr**. What is different?
+
+13. If you wish to change your password you can by issuing the command:
 
 ```bash
 passwd
