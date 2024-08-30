@@ -103,7 +103,7 @@ Although it is important to know how to use the **sftp** command for _quizzes, m
 
 ![Graphical SFTP App](/img/Graphical-sftp-application.png)
 
-If you installed the graphical **Secure Shell Client** application in your Windows computer from performing [TUTORIAL 1a INVESTIGATION 1](./tutorial1a.md#investigation-1-accessing-your-matrix-linux-account), you can use this application to transfer files between your computer and your Matrix account by graphically **navigating, selecting** and **dragging** files between computers.
+If you installed the graphical **Secure Shell Client** application in your Windows computer from performing [LAB 1A INVESTIGATION 1](./lab1a.md#investigation-1-accessing-your-matrix-linux-account), you can use this application to transfer files between your computer and your Matrix account by graphically **navigating, selecting** and **dragging** files between computers.
 
 ### Sending Emails with File Attachment (mail)
 

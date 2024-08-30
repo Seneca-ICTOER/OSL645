@@ -1,13 +1,13 @@
 ---
-id: tutorial1
-title: Tutorial 1B - Unix and Linux File Management
+id: lab1
+title: Lab 1B - Unix and Linux File Management
 sidebar_position: 2
-description: Tutorial 1B for Students to learn Unix/Linux File Management
+description: Lab 1B for Students to learn Unix/Linux File Management
 ---
 
 # Tutorial 1B: Unix and Linux File Management
 
-## Main Objectives of this Practice Tutorial
+## Main Objectives of this Lab
 
 - Understand the purpose of **directories** and **directory pathnames.**
 - Use common **Unix / Linux commands** to perform **directory management** tasks.
@@ -180,8 +180,8 @@ You will be creating the following **directory structure** within your home dire
 
 For example, if your Seneca user ID was **mkhan** then you would display the pathname _/home/your-seneca-id_ as: **/home/mkhan**
 
-1. Login to your matrix account (you should know how to do this from performing [Tutorial 1 INVESTIGATION 1.](./tutorial1a.md#investigation-1-accessing-your-matrix-linux-account)
-2. Issue a command to confirm that you are located in your home directory (you should know how to do this from performing [Tutorial 1 INVESTIGATION 2](./tutorial1a.md#investigation-2-using-the-linux-shell)
+1. Login to your matrix account (you should know how to do this from performing [Tutorial 1 INVESTIGATION 1.](./lab1a.md#investigation-1-accessing-your-matrix-linux-account)
+2. Issue a command to confirm that you are located in your home directory (you should know how to do this from performing [Tutorial 1 INVESTIGATION 2](./lab1a.md#investigation-2-using-the-linux-shell)
 3. Issue the following Linux command:
 
 ```bash
