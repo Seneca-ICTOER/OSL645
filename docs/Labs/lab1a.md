@@ -597,37 +597,39 @@ If the checking shell script detects an **error**, then it will provide feedback
 ![Script Check 2](/img/Script-check-2.png)
 
 **Perform the Following Steps:**
+1. Install Git by issuing the following Linux command:
+```bash
+sudo apt -y install git
+```
 
-1. Create the **bin** directory in your home directory by enterint the following Linux command:
+2. Create the **bin** directory in your home directory by enterint the following Linux command:
 ```bash
 mkdir ~/bin
 ```
 
-2. Clone the lab check script repository from GitHub into your ~/bin directory:
+3. Clone the lab check script repository from GitHub into your ~/bin directory:
 ```bash
 git clone https://github.com/OSL645/labs ~/bin
 ```
-***Left off here - add instructions to clone the lab check repository locally to ~/bin. Steal from Chris's course.
 
-2. Make certain that your current directory is **your home directory** by entering the following Linux command:
+4. Make certain that your current directory is **your home directory** by entering the following Linux command:
 
 ```bash
 cd
 ```
 
-3. Issue the following command to run a checking script:
+5. Issue the following command to run a checking script:
 
 ```bash
-~ops145/t1-check-1
+~bin/lab1-check
 ```
 
 - **Note:** The beginning character "**~**" is called **tilde.** You get this character by pressing **SHIFT** + \` (which is the key to the left of the number 1 on your keyboard).
 
-3. Your screen should clear and indicate that you have proved that you have successfully logged in.
 
-4. Call your professor over to record your grade.
+6. Call your professor over to record your grade.
 
-5. To shut your system down, issue the following Linux command:
+7. To shut your system down, issue the following Linux command:
 ```bash
 poweroff
 ```
