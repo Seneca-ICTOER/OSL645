@@ -125,7 +125,7 @@ description: Weekly Schedule for OSL640
 
 | **Learning Objectives and Tasks** | **References** | **Evaluation** |
 | :--- | :--- | :--- |
-| Text Manipulation: | **Week 11 Lecture Slides:** [Web](https://docs.google.com/presentation/d/e/2PACX-1vT1rWx6t6rPEPpr-Zgj7-WCFwbX41RHbo_1jPDO7ouNQ_62Jxkog8U8c0Ltmc7jnNWjCj6-dx4gE35n/pub?start=false&loop=false&delayms=5000) | [Tutorial 10: Creating Users](/A-Tutorials/tutorial10.md) |
+| Text Manipulation: | **Week 11 Lecture Slides:** [Web](https://docs.google.com/presentation/d/e/2PACX-1vT1rWx6t6rPEPpr-Zgj7-WCFwbX41RHbo_1jPDO7ouNQ_62Jxkog8U8c0Ltmc7jnNWjCj6-dx4gE35n/pub?start=false&loop=false&delayms=5000) | [Tutorial 10: Creating Users](/Tutorials/tutorial10.md) |
 | - Using the sed Utility |  | Tutorial 11 (Due Friday, August 16 @ 11:59 PM) (2.5%) |
 | - Using the awk Utility |  |  |
 

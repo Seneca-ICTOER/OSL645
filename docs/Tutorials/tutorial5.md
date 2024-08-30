@@ -721,8 +721,6 @@ it will automatically go to the next line" |tr '[a-z]' '[A-Z]'
 
 The purpose of this section is to obtain **extra practice** to help with **quizzes**, your **midterm**, and your **final exam**.
 
-Here is a link to the MS Word Document of ALL of the questions displayed below but with extra room to answer on the document to simulate a quiz: [Week 5 Practice](/files/uli101_week5_practice.docx)
-
 Your instructor may take-up these questions during class. It is up to the student to attend classes in order to obtain the answers to the following questions. Your instructor will NOT provide these answers in any other form (eg. e-mail, etc).
 
 When answering Linux command questions, refer to the following Inverted Tree Diagram. The linux directory is contained in your home directory. Assume that you just logged into your Matrix account. Directories are underlined.
