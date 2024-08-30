@@ -142,6 +142,14 @@ Follow the installer and select the following settings:
 - When it is done, click **Restart now**.
 - When prompted to remove the installation media, press **Enter**.
 
+Login with your user.
+- On the welcome screen, click **Next**
+- Enable Ubuntu Pro: select **Skip for now** and click **Next**
+- Help improve Ubuntu: select an option and click **Next**
+- Click **Finish**
+
+Click **Show Apps** (Logo in the bottom left corner, similar to the Windows start menu) and launch the **Terminal** application. Proceed to Investigation 2.
+
 ## Investigation 2: Using The Linux Shell
 
 In this investigation, you will learn how to use the Linux Shell. Topics in the section include:
@@ -176,7 +184,7 @@ An **argument** must be separated from a command (and from other arguments) by w
 
 **Perform the Following Steps:**
 
-1. Confirm that you are logged into your Matrix account.
+1. Confirm that you are logged into your Ubuntu virtual machine and have the **Terminal** open.
 2. Issue the following Linux command:
 
 ```bash
@@ -282,6 +290,11 @@ whoami
 - **Question:** What does this command display?
 - **Question:** What do you think is the purpose of this command?
 
+Install the cal command by issuing the following command (you will learn more about what this command does later)
+```bash
+sudo apt install ncal
+```
+
 15. Issue the following Linux command:
 
 ```bash
@@ -384,15 +397,13 @@ man -k user | grep 8
 
 - **Question:** How does this pipeline command make it easier to obtain information regarding man command?
 
-12. If you wish to change your password on typical Linux systems, you can by issuing the command:
+12. If you wish to change your password you can by issuing the command:
 
 ```bash
 passwd
 ```
 
-**WARNING: Do NOT run the `passwd` command on Matrix!**
-
-Your Linux password is changed automatically when you change your myseneca password.
+**WARNING: Do NOT run the `passwd` command if you do not wish to change your password!**
 
 1. - **Question:** What option for the passwd command can be used to change user info (such as name)?
    - **Hint:** use the **man** command for **passwd.**
