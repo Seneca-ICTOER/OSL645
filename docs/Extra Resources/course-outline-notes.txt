@@ -1,0 +1,127 @@
+Mark's notes for Winter 2024
+-----------------------------
+
+- Week 2:
+    + Download, unzip, and run VirtualBox Ubuntu LTS (Minimal Desktop)
+    + Basic sysadmin commands to install software and update:
+        - sudo apt update/upgrade
+        - sudo apt install/remove
+
+    + File Management: CRUD
+    + Getting help with man and tldr
+
+- Week 1:
+    + Student VPN and connectivity to matrix
+    + Preparing for a career in Linux sysadmin
+
+
+Subject Description (Overview)
+==============================
+    - Use and manage (admin) Linux
+    - CLI and GUI
+    - Settings: transient and reboot-persistent (files)
+    - Local Linux (VM) and Remote Linux (matrix)
+    - Automate tasks for users and administrators
+
+Skills: Weekly Tutorials
+========================
+    Implemented:
+        - Basic file management
+        - Pipes and redirection
+        - Editors: cli
+        - Search for files within directories
+        - Search for matches within files
+        - Basics of scripts
+        - man page section: [1]
+
+    TODO:
+        - root and non-root accounts
+        - Editors: gui, web
+        - Proof of Work Done: paper and digital logbook
+        - backup and restore
+        - broken: configurations and networks
+        - Scripts for sysadmin
+        - Studying scripts that come with distros
+        - read and understand man pages sections: [578]
+
+Weekly Concepts (Review Tutorials)
+==================================
+01 - Introduction
+02 - File Management
+03 - Tree Navigation and Shell Expansion
+04 - Permissions
+05 - Filters, Pipes, and Redirection
+06 - File Transfer and Sending Email
+07 - Midterm
+08 - Management of Processes and Disks
+09 - Regular Expressions with grep
+10 - Regular Expressions with sed and awk
+11 - Scripting for System Administration
+12 - Scripts bundled  with Linux distros
+13 - Faculty Led Interest Topic
+
+
+Week 11 - Scripting for sysadmin
+=======
+  Tutorial 11 - Condense Bash scripting to 1 week (11/12)
+    - Creating users, groups from a csv
+    - Package management
+    - Backing up files - tar, gz, rsync
+
+Week 10 - sed; cut; awk
+=======
+  Tutorial 10 - sed, awk on logs - output of: last , who, shell history
+
+Week 9 - Regular Expressions with grep
+======
+  Tutorial 9 - Change character classes to [:upper:], [:lower:], etc, grep logs - output of: last , who, shell history
+
+Week 8 - Process and Disk Management
+======
+  Tutorial 8 - Leave as is (aliases & history move?)
+
+Week 6 - File transfer; grep; mail
+======
+  Tutorial 6 - scp, sftp (drop email?)
+
+  Advanced?
+    + using rsync for backups
+    + Shell: start up (bashrc), command history, aliases
+
+Week 5 - Filters; Pipes; and IO Redirection
+======
+  Tutorial 5 - Redirection stdin, stdout, stderr, file handles
+
+  Advanced?
+    + Shell: start up (bashrc), command history, aliases
+
+Week 4 - Understand permissions using Octal; Simple scripts
+======
+  Tutorial 4 - Remove conversions, - keep binary <-> octal, file permissions, users and groups
+
+  Advanced?
+    + stat
+    + permissions needed to run scripts
+
+Week 3 - Paths, Wildcards, Quoting Environment Variables
+======
+  Tutorial 3 - Leave as is
+
+
+Week 2 - File Management
+======
+  Tutorial 2 - Leave as is
+
+  Advanced?
+    + find
+    + which, whereis, locate
+    + tldr
+
+Week 1 - Introduction
+======
+  Tutorial 1 - Add VM install - OPS245 lab 1?
+
+  Advanced?
+    + git basics for pull and update
+
+[//]: # vim: ft=markdown:nonu:spell
