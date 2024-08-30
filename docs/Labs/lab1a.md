@@ -647,15 +647,20 @@ Your instructor may take-up these questions during class. It is up to the studen
 
 **Review Questions:**
 
-1. What is a “**Linux Cluster**”? What is an advantage of using a Linux cluster?
-2. List **two unique server names** at Seneca Polytechnic and briefly explain the purpose of that server.
-3. List the steps to connect and login to your Matrix Seneca Polytechnic account on your **laptop** or your **home computer.**
-4. List alternative methods to connect to your Matrix account, including if you have an **Apple Mac** computer or are running the **Linux** operating system.
-5. List 3 unique ways to **log-out** of your Matrix account (not including closing the SSH window or application).
-6. What is the difference between a Linux **command** and an **argument**?
-7. What is the purpose of a Linux command **option**?
-8. What character(s) are used to **separate** commands and arguments?
-9. Create a **table** listing each Linux command, useful options that were mentioned in this lab for the following Linux commands: `pwd` , `cd` , `ls` , `cal` , `date` , `who` , `w` , `whoami` , `who am I` , `clear`
+1. Define the term **Linux Distribution**.
+2. List and explain **two advantages** of installing a Linux distribution on your home computer or laptop as either the host operating system or as a virtual machine.
+3. List and explain two things to consider prior to installing a Linux distribution on your home computer.
+4. Explain why installing **Multi-boot** for Linux is useful for **computer troubleshooting**.
+5. Define the term **Virtualization**.
+6. List the **steps** to install software or update your Ubuntu system.
+7. Define the term '_repo_. What are repos (repositories) used for? What one did you add to your VM?
+8. What is **sudo**?
+9. List 3 unique ways to **log-out** of your Ubuntu system (not including closing the Terminal window or application).
+10. How do you shutdown your Ubuntu system?
+11. What is the difference between a Linux **command** and an **argument**?
+12. What is the purpose of a Linux command **option**?
+13. What character(s) are used to **separate** commands and arguments?
+14. Create a **table** listing each Linux command, useful options that were mentioned in this lab for the following Linux commands: `pwd` , `cd` , `ls` , `cal` , `date` , `who` , `w` , `whoami` , `who am I` , `clear`
 
 ---
 
