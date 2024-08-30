@@ -522,6 +522,16 @@ cd
 
 4. Call your professor over to record your grade.
 
+5. To shut your system down, issue the following Linux command:
+```bash
+poweroff
+```
+
+Note: if you ever wish to reboot your system, you can do so with the following Linux command:
+```bash
+reboot
+```
+
 ## Linux Practice Questions
 
 The purpose of this section is to obtain **extra practice** to help with **quizzes**, your **midterm**, and your **final exam**.
