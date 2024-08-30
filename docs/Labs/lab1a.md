@@ -136,11 +136,11 @@ Follow the installer and select the following settings:
   - Your username: **Your Seneca username**
   - Create a secure password that you will remember
   - Confirm your configuration using the following screenshot before clicking **Next**
-  ![User account information](create-your-account.png)
+  ![User account information](/img/create-your-account.png)
 - Select your timezone: **Toronto**
 - Click **Install** and be prepared to wait patiently for a while.
-
-
+- When it is done, click **Restart now**.
+- When prompted to remove the installation media, press **Enter**.
 
 ## Investigation 2: Using The Linux Shell
 
