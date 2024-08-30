@@ -661,6 +661,7 @@ Your instructor may take-up these questions during class. It is up to the studen
 12. What is the purpose of a Linux command **option**?
 13. What character(s) are used to **separate** commands and arguments?
 14. Create a **table** listing each Linux command, useful options that were mentioned in this lab for the following Linux commands: `pwd` , `cd` , `ls` , `cal` , `date` , `who` , `w` , `whoami` , `who am I` , `clear`
+15. What two commands can you use to access help from the Linux command line?
 
 ---
 
