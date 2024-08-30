@@ -520,6 +520,8 @@ cd
 
 3. Your screen should clear and indicate that you have proved that you have successfully logged in.
 
+4. Call your professor over to record your grade.
+
 ## Linux Practice Questions
 
 The purpose of this section is to obtain **extra practice** to help with **quizzes**, your **midterm**, and your **final exam**.
