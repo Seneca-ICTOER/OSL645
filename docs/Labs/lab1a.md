@@ -584,7 +584,7 @@ The Bash shortcut keys that you just learned are sufficient to perform Bash Shel
 
 **Running a Shell Script to Check Lab Completion**
 
-Professors will require students successfully perform these labs for marks (within a deadline). In order to confirm that you successfully performed a lab, you will be required to run a program (or in later labs, several programs) to prove that you successfully completed tasks in a lab and get marks.
+You are required successfully perform these labs for marks (within a deadline). In order to confirm that you successfully performed a lab, you will be required to run a program (or in later labs, several programs) to prove that you successfully completed tasks in a lab and get marks.
 
 These programs (known as Shell Scripts) will check your work and offer feedback if you made mistakes, so you can make corrections. Making corrections (i.e. troubleshooting) and re-running these checking programs until you are successful will help students gain "hands-on" experience as well as "trouble-shooting experience.
 
@@ -598,13 +598,24 @@ If the checking shell script detects an **error**, then it will provide feedback
 
 **Perform the Following Steps:**
 
-1. Make certain that your current directory is **your home directory** by entering the following Linux command:
+1. Create the **bin** directory in your home directory by enterint the following Linux command:
+```bash
+mkdir ~/bin
+```
+
+2. Clone the lab check script repository from GitHub into your ~/bin directory:
+```bash
+git clone https://github.com/OSL645/labs ~/bin
+```
+***Left off here - add instructions to clone the lab check repository locally to ~/bin. Steal from Chris's course.
+
+2. Make certain that your current directory is **your home directory** by entering the following Linux command:
 
 ```bash
 cd
 ```
 
-2. Issue the following command to run a checking script:
+3. Issue the following command to run a checking script:
 
 ```bash
 ~ops145/t1-check-1
