@@ -17,7 +17,7 @@ module.exports = {
   projectName: 'OSL645',
   themeConfig: {
     navbar: {
-      title: 'OSL640 - Development',
+      title: 'OSL645 - Introduction to Open Source Systems',
       logo: {
         alt: 'Seneca College',
         src: 'img/logo.svg',
@@ -31,7 +31,7 @@ module.exports = {
       style: 'dark',
       links: [
         {
-          title: 'Introduction to Open Source Systems - Development',
+          title: 'OSL645 - Introduction to Open Source Systems',
           items: [
             {
               label: 'Contents',
