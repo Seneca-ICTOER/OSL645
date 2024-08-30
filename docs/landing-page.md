@@ -1,12 +1,12 @@
 ---
 id: landing-page
-title: Welcome to OSL640
+title: Welcome to OSL645
 sidebar_position: 1
 slug: /
-description: Landing Home Page for OSL640
+description: Landing Home Page for OSL645
 ---
 
-# Welcome to OSL640 - Introduction to Open Source Systems
+# Welcome to OSL645 - Introduction to Open Source Systems
 
 ## Quick Links
 
