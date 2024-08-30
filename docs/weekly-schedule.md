@@ -71,14 +71,11 @@ description: Weekly Schedule for OSL640
 | Sending email from command line |  | Tutorial 5 (Due Friday, July 5 @ 11:59 PM) (2.5%) |
 
 ### Week 7
-
 | **Learning Objectives and Tasks** | **References** | **Evaluation** |
 | :--- | :--- | :--- |
-| Regular Expression basics: | **Week 7 Lecture Slides:** [Web](https://docs.google.com/presentation/d/e/2PACX-1vRvAjG1mqrO7osJh4C0FsaPH0sMulmPu06mEgeEzflMU1Q6Dud0Nk92FVSHjEAEUgyqvU23Nb-2dKrR/pub?start=false&loop=false&delayms=5000) | [Tutorial 6: Process Management, Aliases and Shell Scripting](/Tutorials/tutorial6.md) |
-| - Literal matching |  | Tutorial 6 (Due Friday, August 16 @ 11:59 PM) (2.5%) |
-| - . wildcard |  |  |
-| - \* repetition symbol |  | [Project](/Project/project.md) |
-| - Anchoring | | |
+|  |  | Practical Test (20%) |
+|  |  | [Project](/Project/project.md) |
+
 
 ### Study Week
 
@@ -90,30 +87,41 @@ description: Weekly Schedule for OSL640
 
 | **Learning Objectives and Tasks** | **References** | **Evaluation** |
 | :--- | :--- | :--- |
-| Filesystem links | **Week 8 Lecture Slides:** [Web](https://docs.google.com/presentation/d/e/2PACX-1vSSPxaTaUF7ZCV_cwhwMYjNNOKhAST4O6lcM7POzX0W0FsuLebeJQ1jw1SSeB6yPSPmiVPgDsG4p1bm/pub?start=false&loop=false&delayms=5000) | [Tutorial 7: Regular Expressions](/Tutorials/tutorial7.md) |
-| Hard and symbolic links |  | Tutorial 8 (Due Friday, August 16 @ 11:59 PM) (2.5%) |
-| Process management |  | Test 1 (15%) |
+| Regular Expression basics: | **Week 8 Lecture Slides:** [Web](https://docs.google.com/presentation/d/e/2PACX-1vRvAjG1mqrO7osJh4C0FsaPH0sMulmPu06mEgeEzflMU1Q6Dud0Nk92FVSHjEAEUgyqvU23Nb-2dKrR/pub?start=false&loop=false&delayms=5000) | [Tutorial 6: Process Management, Aliases and Shell Scripting](/Tutorials/tutorial6.md) |
+| Hard and symbolic links |  | Tutorial 6 (Due Friday, August 16 @ 11:59 PM) (2.5%) |
+| Process management |  |  |
 | Aliases |  |  |
-| Command History |  | |
+|  |  | |
+
 
 ### Week 9
 
 | **Learning Objectives and Tasks** | **References** | **Evaluation** |
 | :--- | :--- | :--- |
+| Filesystem links | **Week 9 Lecture Slides:** [Web](https://docs.google.com/presentation/d/e/2PACX-1vSSPxaTaUF7ZCV_cwhwMYjNNOKhAST4O6lcM7POzX0W0FsuLebeJQ1jw1SSeB6yPSPmiVPgDsG4p1bm/pub?start=false&loop=false&delayms=5000) | [Tutorial 7: Regular Expressions](/Tutorials/tutorial7.md) |
+| - Literal matching |  | Tutorial 7 (Due Friday, August 16 @ 11:59 PM) (2.5%) |
+| - . wildcard |  |  |
+| - \* repetition symbol |  |  |
+| - Anchoring | | |
+
+### Week 10
+
+| **Learning Objectives and Tasks** | **References** | **Evaluation** |
+| :--- | :--- | :--- |
 | Regular expressions basics: | **Week 9 Lecture Slides:** [Web](https://docs.google.com/presentation/d/e/2PACX-1vSM9_a_lSCuff9TnL8fHWgw3JKQgn0HxHdctu7D07AAiuU_h6q1iwMDFgO2SOqmNNRSMBk2GoLJOYmb/pub?start=false&loop=false&delayms=5000) | [Tutorial 8: Sed and Awk Utilities](/Tutorials/tutorial8.md) |
-| - Literal matching |  | Tutorial 9 (Due Friday, August 16 @ 11:59 PM) (2.5%) |
+| - Literal matching |  | Tutorial 8 (Due Friday, August 16 @ 11:59 PM) (2.5%) |
 | - Character classes |  |  |
 | - . wildcard |  | |
 | - \* repetition symbol |  | |
 | - Anchoring |  |  |
 
 
-### Week 10
+### Week 11
 
 | **Learning Objectives and Tasks** | **References** | **Evaluation** |
 | :--- | :--- | :--- |
 | Introduction to Shell Scripting: | **Week 10 Lecture Slides:** [Web](https://docs.google.com/presentation/d/e/2PACX-1vQrCEgWUojoZ9jii3WKdk3Ntjqn3xUVogXKmk7MJQtvLz0K7z5-PXjkOzFSwV8_P3k4tR2ODqp-rFA7/pub?start=false&loop=false&delayms=5000) | [Tutorial 9: Advanced Shell Scripting](/Tutorials/tutorial9.md) |
-| - Shell Variables |  | Tutorial 10 (Due Friday, August 16 @ 11:59 PM) (2.5%) |
+| - Shell Variables |  | Tutorial 9 (Due Friday, August 16 @ 11:59 PM) (2.5%) |
 | - echo and read commands |  |  |
 | - Positional Parameters |  |  |
 | - Command Substitution / Math Operations |  | |
@@ -121,38 +129,26 @@ description: Weekly Schedule for OSL640
 | - if / elif-else statements |  | |
 | - for loop statements |  | |
 
-### Week 11
-
-| **Learning Objectives and Tasks** | **References** | **Evaluation** |
-| :--- | :--- | :--- |
-| Text Manipulation: | **Week 11 Lecture Slides:** [Web](https://docs.google.com/presentation/d/e/2PACX-1vT1rWx6t6rPEPpr-Zgj7-WCFwbX41RHbo_1jPDO7ouNQ_62Jxkog8U8c0Ltmc7jnNWjCj6-dx4gE35n/pub?start=false&loop=false&delayms=5000) | [Tutorial 10: Creating Users](/Tutorials/tutorial10.md) |
-| - Using the sed Utility |  | Tutorial 11 (Due Friday, August 16 @ 11:59 PM) (2.5%) |
-| - Using the awk Utility |  |  |
-
 ### Week 12
 
 | **Learning Objectives and Tasks** | **References** | **Evaluation** |
 | :--- | :--- | :--- |
-| Additional Shell Scripting: | **Week 12 Lecture Slides:** [Web](https://docs.google.com/presentation/d/e/2PACX-1vQc1fSeMoteJ80mDyjt3HBpIU-gXTi3xsuTQdsEzvYux4POe8amlEgUxHB96lQt6t8_4takdOlONxIw/pub?start=false&loop=false&delayms=5000) | |
-| - if - elif - else statement |  | Tutorial 12 (Due Friday, August 16 @ 11:59 PM) (2.5%) |
-| - for loop revisited |  |  |
-| - while loop statement | |  |
-| - Error-Checking with Loops |  |  |
-| - exit and break Statements |  |   |
-| - export Command |  | |
-| - Start-up Files | | |
-| - Further Study | | |
+| Text Manipulation: | **Week 11 Lecture Slides:** [Web](https://docs.google.com/presentation/d/e/2PACX-1vT1rWx6t6rPEPpr-Zgj7-WCFwbX41RHbo_1jPDO7ouNQ_62Jxkog8U8c0Ltmc7jnNWjCj6-dx4gE35n/pub?start=false&loop=false&delayms=5000) | [Tutorial 10: Creating Users](/Tutorials/tutorial10.md) |
+| - Using the sed Utility |  | Tutorial 10 (Due Friday, August 16 @ 11:59 PM) (2.5%) |
+| - Using the awk Utility |  |  |
+
 
 ### Week 13
 
 | **Learning Objectives and Tasks** | **References** | **Evaluation** |
 | :--- | :--- | :--- |
-| Presentations |  | Quiz 3 (6.6%) |
+| Presentations |  |  |
 |  |  | Presentation (20%) |
 
 ### Week 14
 
 | **Learning Objectives and Tasks** | **References** | **Evaluation** |
 | :--- | :--- | :--- |
+| | | Theory Test (25%)|
 | Presentations | | Presentation (20%) |
 |  | | Report Due (15%) |
