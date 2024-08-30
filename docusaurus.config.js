@@ -5,10 +5,10 @@ const katex = require('rehype-katex');
 
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
-  title: 'Introduction to Open Source Systems - Development',
-  tagline: 'OSL640',
+  title: 'Introduction to Open Source Systems',
+  tagline: 'OSL645',
   url: 'https://Seneca-ICTOER.github.io/',
-  baseUrl: '/OSL640dev/',
+  baseUrl: '/OSL640/',
   trailingSlash: false,
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
