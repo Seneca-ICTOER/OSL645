@@ -14,7 +14,7 @@ module.exports = {
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
   organizationName: 'Seneca-ICTOER',
-  projectName: 'OSL640dev',
+  projectName: 'OSL645',
   themeConfig: {
     navbar: {
       title: 'OSL640 - Development',
