@@ -87,6 +87,8 @@ The virtualized OS is installed and run in a window under another OS. Special so
 
    - VMware (Paid - though free to you through Seneca)
    - Oracle Virtual Box (Free and Open Source)
+   - Hyper-V (Microsoft native virtualization. Closed Source.)
+   - KVM (Linux native virtualization. Open Source.)
 
 You will be using Oracle Virtual Box.
 
