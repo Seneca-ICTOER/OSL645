@@ -25,6 +25,11 @@ description: Lab 1A for Students to setup and use a Linux environment
 - [Virtual Box](https://www.virtualbox.org/wiki/Downloads)
 - [Ubuntu 24.04 Download](https://ubuntu.com/download/desktop/thank-you?version=24.04.1&architecture=amd64&lts=true)
 
+**Ubuntu Resources:**
+
+- [Ubuntu Website](https://ubuntu.com/)
+- [Ubuntu 24.04 Documentation](https://help.ubuntu.com/lts/ubuntu-help/index.html)
+
 **Account Access:**
 
 - [logout, exit](https://ss64.com/bash/logout.html)
@@ -35,30 +40,55 @@ description: Lab 1A for Students to setup and use a Linux environment
 
 - [Bash Shell Shortcut Keys](https://www.ostechnix.com/list-useful-bash-keyboard-shortcuts/)
 
+
 **General Linux Commands:**
 
-| [pwd](http://man7.org/linux/man-pages/man1/pwd.1.html) | [cd](http://man7.org/linux/man-pages/man1/cd.1p.html) | [ls](http://man7.org/linux/man-pages/man1/ls.1p.html) | [cal](http://man7.org/linux/man-pages/man1/cal.1.html) | [date](http://man7.org/linux/man-pages/man1/date.1.html) | [who](http://man7.org/linux/man-pages/man1/who.1.html) , [w](http://man7.org/linux/man-pages/man1/w.1.html) | [whoami, who am i](http://man7.org/linux/man-pages/man1/whoami.1.html) | [clear, <ctrl\><l\>](http://man7.org/linux/man-pages/man1/clear.1.html) |
-| :----------------------------------------------------- | :---------------------------------------------------- | :---------------------------------------------------- | :----------------------------------------------------- | :------------------------------------------------------- | :---------------------------------------------------------------------------------------------------------- | :--------------------------------------------------------------------- | :---------------------------------------------------------------------- |
+| [pwd](http://man7.org/linux/man-pages/man1/pwd.1.html) | [cd](http://man7.org/linux/man-pages/man1/cd.1p.html) | [ls](http://man7.org/linux/man-pages/man1/ls.1p.html) | [cal](http://man7.org/linux/man-pages/man1/cal.1.html) | [date](http://man7.org/linux/man-pages/man1/date.1.html) | [who](http://man7.org/linux/man-pages/man1/who.1.html) , [w](http://man7.org/linux/man-pages/man1/w.1.html) | [whoami, who am i](http://man7.org/linux/man-pages/man1/whoami.1.html) | [clear, <ctrl\><l\>](http://man7.org/linux/man-pages/man1/clear.1.html) | [sudo](https://man7.org/linux/man-pages/man8/sudo.8.html) | [ping](https://man7.org/linux/man-pages/man8/ping.8.html) | [apt](https://ss64.com/bash/apt.html)
+| :----------------------------------------------------- | :---------------------------------------------------- | :---------------------------------------------------- | :----------------------------------------------------- | :------------------------------------------------------- | :---------------------------------------------------------------------------------------------------------- | :--------------------------------------------------------------------- | :---------------------------------------------------------------------- | :-------- | :------------ | :-----------|
 
 
 ## Key Concepts
 
+### Installing Linux
+
+Having a Linux system on your home computer provides **access** to a large selection of **open source software**.
+
+Installing your own version of Linux on your notebook or desktop computer also can make it easier to practice working in the Linux environment and **learn** how to perform routine **Linux OS administration tasks**.
+
+_A **Linux distribution** (often abbreviated as distro) is an operating system made from a software collection that is based upon the Linux kernel and, often, a package management system. Linux users usually obtain their operating system by downloading one of the Linux distributions, which are available for a wide variety of systems..._
+
+Reference: https://en.wikipedia.org/wiki/Linux_distribution
+
+![Common Linux Distributions](/img/Distro-1.png)
+
+_Steps in the Linux Installation Process:_
+
+- **Select** a _Linux Distribution_ to **download** (ISO image file or VM file).
+- **Create** VM and **install** Linux Distribution or **run** VM file.
+
 ### Virtualization
-Virtual machines (VMs) are software emulations of physical computers that run on a host machine. They allow users to run multiple operating systems and applications simultaneously on a single physical machine. Each VM operates as an independent entity with its own virtual hardware, including CPU, memory, storage, and network interfaces.
 
-Virtualization software enables the creation and management of virtual machines. Some popular examples of virtualization software include:
+_Virtualization is the process of running a virtual instance of a computer system in a layer abstracted from the actual hardware_. Reference: https://opensource.com/resources/virtualization
 
-1. Oracle VirtualBox: It is a free and open-source virtualization platform that supports running multiple operating systems on a single host machine. It provides a user-friendly interface and supports a wide range of guest operating systems.
+The virtualized OS is installed and run in a window under another OS. Special software is used to manage the entire process, referred to as the **hypervisor**. There are many reasons to use a virtual machine, such as testing & modifying a system's configuration without effecting a production system.
 
-2. VMware Workstation: It is a commercial virtualization software that allows users to run multiple operating systems on a single host machine. It offers advanced features like snapshots, virtual networking, and integration with cloud services.
+**Advantages** of Virtualization:
 
-3. Microsoft Hyper-V: It is a native hypervisor included in Windows operating systems. It enables users to create and manage virtual machines on Windows-based systems. Hyper-V is commonly used in enterprise environments.
+1. You can run VM from an **ISO image file** or a **VM file**.
+2. One or more virtual machines can be run at the same time.
+3. The **guest** OS **shares hardware** with the **host** OS and possibly other virtualized systems.
+4. The **guest** systems have **network access** through the host.
 
-4. KVM (Kernel-based Virtual Machine): It is a virtualization infrastructure for the Linux kernel. KVM allows users to run multiple virtual machines on Linux-based systems. It provides high performance and scalability.
+**Installation Tips:**
 
-5. Docker: It is a containerization platform that allows applications to run in isolated environments called containers. While not a traditional virtualization software, Docker provides lightweight and efficient virtualization-like capabilities.
+1. Virtualization requires a **compatible processor**: not all processors support that feature.
+2. Your **BIOS** should be set to **enable Virtualization**.
+3. Popular VM software for **Windows**, **Apple** and **Linux** OS include:
 
-These virtualization software solutions offer various features and capabilities to meet different needs, whether it's for development, testing, or production environments. They provide flexibility, resource optimization, and ease of management for running multiple operating systems and applications on a single physical machine.
+   - VMware (Paid - though free to you through Seneca)
+   - Oracle Virtual Box (Free and Open Source)
+
+You will be using Oracle Virtual Box.
 
 ### Command History
 
@@ -152,7 +182,67 @@ Login with your user.
 
 Click **Show Apps** (Logo in the bottom left corner, similar to the Windows start menu) and launch the **Terminal** application. Proceed to Investigation 2.
 
-## Investigation 2: Using The Linux Shell
+## Investigation 2: Post Installation Tasks
+
+One of the first things you do on a new system is install software and update the system. Your first step to installing software should always be to test your Internet connectivity, as without a working connection you cannot resolve anything. To do this we can use the tool **ping**, which is commonly used to troubleshoot network connectivity issues.
+
+Useful addresses to ping to verify network connectivity are the following:
+
+- www.google.com
+
+If that fails, you could try pinging:
+
+- 8.8.8.8, or 8.8.4.4
+- Your default gateway
+
+  8.8.8.8 and 8.8.4.4 are two publicly available DNS servers Google provides for free use. You can use these to test external network connectivity. For example, if pinging **www.google.com** fails, but pinging **8.8.8.8** succeeds it is likely you have an issue with DNS resolution.
+
+If pinging **8.8.8.8** also fails, the problem is likely on your local network. You could try pinging your default gateway to confirm whether it is reachable or not. Common issues are:
+
+- Wrong default gateway configured
+- Default gateway is down
+- Unplugged or broken network cable
+
+Since you are dealing with a virtual machine, unplugged or broken cables aren't an issue. The other two are still possible.
+
+Ping www.google.ca. Proceed to the next step only if it is successful.
+
+```bash
+ping www.google.ca
+```
+
+Next, verify your IP address configuration.
+```bash
+ip a
+```
+
+Notice you have two NICs (Network Interface Cards). 
+- **lo** which is your **loopback**, and is assigned the IP address **127.0.0.1/8** by default
+- **ens??** where ?? represents two digits: ie ens33. This is the NIC connected to the virtual network, which allows communication between your VM and the Internet through your Host PC.
+
+Now, lets look at your routing table. Your routing table tells you what networks your VM knows about, as well as the default route. The default route is where packets are sent when they don't match any other entry in your routing table.
+```bash
+ip route
+```
+
+Viewing your IP address configuration and routing table can be useful tools for troubleshooting network connectivity issues. Ping and traceroute are useful tools for verifying a particular destination is reachable. Traceroute has the added benefit of showing you where the packets are failing.
+
+Now that you have confirmed your Internet connection it's time to access elevated privileges to install software. In Linux you use the **sudo** command to execute any command with elevated (root) privileges), provided your user sudo access. Your user was given this access when you created it in the installation. It's time to use this new power wisely. Update the system using **apt**:
+
+```bash
+sudo apt -y update
+```
+
+Once that has completed, install the following packages with the command **sudo apt install** followed by the package names (separated by a space):
+
+- ncal
+- tldr
+
+```bash
+sudo apt install ncal tldr
+```
+
+## Investigation 3: Using The Linux Shell
 
 In this investigation, you will learn how to use the Linux Shell. Topics in the section include:
 
@@ -291,11 +381,6 @@ whoami
 
 - **Question:** What does this command display?
 - **Question:** What do you think is the purpose of this command?
-
-Install the cal command by issuing the following command (you will learn more about what this command does later)
-```bash
-sudo apt install ncal
-```
 
 15. Issue the following Linux command:
 
