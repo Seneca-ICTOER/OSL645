@@ -641,7 +641,7 @@ reboot
 
 ## Linux Practice Questions
 
-The purpose of this section is to obtain **extra practice** to help with your **midterm**, and your **final exam**.
+The purpose of this section is to obtain **extra practice** to help with your **practical test**, and your **theory test**.
 
 Your instructor may take-up these questions during class. It is up to the student to attend classes in order to obtain the answers to the following questions. Your instructor will NOT provide these answers in any other form (eg. e-mail, etc).
 
