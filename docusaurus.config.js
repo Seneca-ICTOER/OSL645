@@ -8,7 +8,7 @@ module.exports = {
   title: 'Introduction to Open Source Systems',
   tagline: 'OSL645',
   url: 'https://Seneca-ICTOER.github.io/',
-  baseUrl: '/OSL640/',
+  baseUrl: '/OSL645/',
   trailingSlash: false,
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
