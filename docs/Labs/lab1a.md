@@ -91,6 +91,7 @@ If you are working on your home PC, you will need to download and install Oracle
 If you are working on a college PC, launch **MyApps** and search for **VirtualBox**. Launch the program.
 
 1. Open VirtualBox. Your screen should look as follows:
+
 ![Launching Oracle VirtualBox](/img/launch-vb.png)
 
 2. Click on the New icon and Create a virtual machine, insert the following information and click **Next**.
@@ -98,6 +99,7 @@ If you are working on a college PC, launch **MyApps** and search for **VirtualBo
 - Machine Folder: **Browse to your SSD**
 - Type: **Linux**
 - Version: **Ubuntu (64-bit)**
+
 ![Virtual Machine name and operationg system](/img/vm-name-os.png)
 
 3. Assign it 8GB of ram (8192 MB) and click **Next**.
