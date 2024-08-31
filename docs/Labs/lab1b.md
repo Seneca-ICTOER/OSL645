@@ -5,7 +5,7 @@ sidebar_position: 2
 description: Lab 1B for Students to learn Unix/Linux File Management
 ---
 
-# Tutorial 1B: Unix and Linux File Management
+# Lab 1B: Unix and Linux File Management
 
 ## Main Objectives of this Lab
 
@@ -14,7 +14,7 @@ description: Lab 1B for Students to learn Unix/Linux File Management
 - Use **Text Editors** to create and modify text files
 - Use Common Unix / Linux commands to **manage** and **manipulate** text files.
 
-## Tutorial Reference Material
+## Lab Reference Material
 
 **Lecture Slides:**
 
@@ -194,7 +194,7 @@ ls -ld /home/your-seneca-id/osm620xx /home/your-seneca-id/nwk680xx
 cd osl640xx
 ```
 
-  11. Issue a Linux command to confirm that your current location is in the _osl640xx_ directory. You should know how to issue this command from a previous tutorial.
+  11. Issue a Linux command to confirm that your current location is in the _osl640xx_ directory. You should know how to issue this command from a previous lab.
   12. Issue the following Linux command to create the directories called **notes**, **tutorials** and **samples**:
  
 ```bash
@@ -1068,7 +1068,7 @@ For each of the following questions, use a pathname starting from the **root** d
   13. Write a Linux command to display the last line of a file called **practice/customers.txt**
   14. Write a Linux command to match a line containing the pattern **Linux** in a file called **practice/customers.txt**
   15. Write a Linux command to display unique occurrences of consecutive lines in a file called **practice/customers.txt**
-  16. Create a **table** listing each Linux command, useful options that are displayed near the top of this tutorial labelled: **Tutorial Reference Material**
+  16. Create a **table** listing each Linux command, useful options that are displayed near the top of this lab labelled: **Lab Reference Material**
   
   **Hard Links:**
 
@@ -1078,7 +1078,7 @@ For each of the following questions, use a pathname starting from the **root** d
   20. Write a single Linux command to display the **i-node** number for both files. Are the **i-node** numbers identical?
   
   **Symbolic (Soft) Links:**
-  
+
   21. What is the purpose of creating a symbolic (soft) link?
   22. What is a limitation of a symbolic (soft) link?
   23. Write a single Linux command to create a symbolic link called **~/shortcuts/murray.saul.lnk** to the existing directory called **~murray.saul**
