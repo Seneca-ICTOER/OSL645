@@ -38,7 +38,7 @@ description: Lab 1B for Students to learn Unix/Linux File Management
 
 **Links:**
 | [ln](http://man7.org/linux/man-pages/man1/ln.1.html) |
-| :---------- |
+| :----------------------------------------------------------------------------------------------- |
 
 - [Hard Links](http://www.linfo.org/hard_link.html#:~:text=A%20hard%20link%20is%20merely,created%20to%20other%20hard%20links.)
 - [Symbolic Links](https://www.computerhope.com/jargon/s/symblink.htm#:~:text=Alternatively%20referred%20to%20as%20a,or%20directory%20using%20its%20path.&text=In%20Linux%20and%20Unix%20symbolic,created%20using%20the%20mklink%20command.)
