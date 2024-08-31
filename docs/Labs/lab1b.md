@@ -766,7 +766,264 @@ rm aa.txt b.txt a.txt.bk c.txt
 ```
 
   29. Issue the **ls** command to verify that these files have been removed.
-  30. Complete the **LINUX PRACTICE QUESTIONS** below to get additional practice.
+
+## Investigation 3: Linking Files
+
+In this investigation, you will learn how to create **hard links** and **symbolic links** on your Matrix account, and observe the advantages and limitations of using both types of links.
+
+**Perform the Following Steps:**
+
+1. **Login** to your matrix account.
+2. Issue a Linux command to **confirm** you are located in your **home** directory.
+
+   - **NOTE:** You will remain in your **home** directory to get practice using pathnames.
+
+3. Issue the following Linux command to create a directory called **~/links**:
+
+```bash
+mkdir ~/links
+```
+
+4. Issue the **ls -ld** command to confirm that the directory **~/links** exists.
+5. Use a text editor to create a file called **~/links/data-file.txt** (i.e. without changing to the links directory).
+6. Enter the following text displayed below:
+
+```text
+This is line 1
+This is line 2
+This is line 3
+```
+
+7. Save your editing session and exit your text editor.
+8. Issue the following Linux command:
+
+```bash
+ls -li ~/links/data-file.txt
+```
+
+- View the **i-node** number for this file. What does this i-node number represent?
+- We will now create a **hard link** file to demonstrate how creating hard links are useful for **back-ups**.
+
+![Hard link inode 1](/img/Hard-link-inode1.png)
+
+**Hard links** share the same **i-node** with regular files on a Unix / Linux filesystem.
+
+8. Issue the following Linux command:
+
+```bash
+ls -li ~/links/data-file.txt
+```
+
+- View the **i-node** number for this file. What does this _i-node_ number represent?
+- We will now create a **hard link** file to demonstrate how creating hard links are useful for **back-ups**.
+
+9. Issue the following Linux command to create the following **hard link** in the same directory:
+
+```bash
+ln ~/links/data-file.txt ~/links/data-file.hard.lnk
+```
+
+10. Issue the following Linux command to display _i-node_ ID numbers for both files:
+
+```bash
+ls -li ~/links/data-file.txt ~/links/data-file.hard.lnk
+```
+
+- What do you notice about both of those file's _i-node_ numbers?
+
+11. Use a text editor to edit **~/links/data-file.txt** and **add some lines of text** to the bottom of that file.
+12. Save your editing session and exit your text editor.
+13. Issue the following Linux command:
+
+```bash
+cat ~/links/data-file.hard.lnk
+```
+
+- You should notice that the hard linked file also contains the additional line(s) that you added to the original file.
+- This is very useful for backing up your files without using the **cp** command!
+
+14. Use a text editor to edit the hard-linked file **~/links/data-file.hard.lnk** and add some lines to the bottom of this file.
+15. Save your editing session and exit your text editor.
+16. Issue the following Linux command:
+
+```bash
+cat ~/links/data-file.txt
+```
+
+- What happened to this **original** file?
+- What does this mean in terms of creating hard-linked files for back-ups?
+
+17. Issue the following Linux command to create a hard-linked file in your **home** directory:
+
+```bash
+ln ~/links/data-file.txt ~/data-file.hard.lnk
+```
+
+18. Issue the following Linux command to compare all file's _i-node_ numbers:
+
+```bash
+ls -li ~/links/data-file.txt ~/links/data-file.hard.lnk ~/data-file.hard.lnk
+```
+
+- What do you notice about all of those file's _i-node_ numbers?
+
+19. Issue the following Linux command to check that you created those hard links:
+
+```bash
+~ops145/t1-check-5
+```
+
+- If you encounter errors, then view the feedback to make corrections, and then re-run the checking script.
+- If you receive a congratulation message that there are no errors, then proceed with this tutorial.
+
+20. Issue the following Linux command to remove the **~/links** directory and its contents:
+
+```bash
+rm -rf ~/links
+```
+
+21. Issue a Linux command to confirm that the **~/links** directory has been removed.
+22. Issue the following Linux command to view the contents of your linked file in your **home** directory:
+
+```bash
+cat ~/data-file.hard.lnk
+```
+
+- What do you notice? What does this tell you about hard links?
+- We will now learn how to create **symbolic links**.
+
+23. Issue the following Linux command to create a directory called **~/links2**:
+
+```bash
+mkdir ~/links2
+```
+
+- **NOTE:** You will remain in your **home** directory to get practice using pathnames.
+
+24. Issue the **ls -ld** command to confirm that the directory called **~/links2** exists.
+25. Use a text editor to create a file called **~/links2/text-file.txt** (i.e. without changing to the links2 directory).
+26. Enter the following text displayed below:
+
+```text
+This is line one
+This is line two
+This is line three
+```
+
+27. Save your editing session and exit your text editor.
+28. Issue the following Linux command to create the following **symbolic** link in the same directory:
+
+```bash
+ln -s ~/links2/text-file.txt ~/links2/text-file.sym.lnk
+```
+
+29. Issue the following Linux command to display i-node numbers for both files:
+
+```bash
+ls -li ~/links2/text-file.txt ~/links2/text-file.sym.lnk
+```
+
+- What do you notice about both of these file's _i-node_ numbers?
+- What do you notice about the size of the file **~/links2/text-file.sym.lnk**?
+- What **_pathname_** _do you think this symbolic-linked file represents_?
+
+![Symbolic link inode 1](/img/Symbolic-link-inode1.png)
+
+**Symbolic links** are **pointers** (i.e. pathnames) to **regular files** and **directories**. They do **NOT** share the same **i-node**.
+
+30. Issue the following Linux command to create the following **symbolic link** in your **home** directory:
+
+```bash
+ln -s ~/links2/text-file.txt ~/text-file.sym.lnk
+```
+
+31. Issue the following Linux command to display i-node numbers for all of those files:
+
+```bash
+ls -li ~/links2/text-file.txt ~/links2/text-file.sym.lnk ~/text-file.sym.lnk
+```
+
+- What do you notice about all of those file's i-node numbers?
+- What is the file size of **~/text-file.sym.lnk**?
+- What **pathname** do you think this _symbolic-linked_ file contains?
+
+32. Use a text editor to edit the **symbolic link** file called **~/links2/text-file.sym.lnk** and add some lines to the bottom of that file.
+33. Save your editing session and exit your text editor.
+34. Issue the following Linux command to view the contents of the **original** file:
+
+```bash
+cat ~/links2/text-file.txt
+```
+
+- What did you notice? This happened because when you edited the symbolic-linked file, you were redirected (via _pathname_) to the original file.
+
+35. Use a text editor to edit the **original** file called **~/links2/text-file.txt** and add some lines to the bottom of that file.
+36. Save your editing session and exit your text editor.
+37. Issue the following Linux command to view the contents of the **symbolic** linked file:
+
+```bash
+cat ~/links2/text-file.sym.lnk
+```
+
+- What did you notice? Again, when you view the contents of the symbolic-linked file, you are redirected (via _pathname_) to the original file.
+
+38. Issue the following Linux command to check that you created those symbolic links:
+
+```bash
+~ops145/t1-check-6
+```
+
+- If you encounter errors, then view the feedback to make corrections, and then re-run the checking script.
+- If you receive a congratulation message that there are no errors, then proceed with this tutorial.
+
+39. Issue the following Linux command to remove the **~/links2** directory:
+
+```bash
+rm -rf ~/links2
+```
+
+40. Issue a Linux command to confirm that the **~/links2** directory has been removed.
+41. Issue the following Linux command to view the contents of the **original** file called **~/links2/text-file.txt**:
+
+```bash
+cat ~/text-file.sym.lnk
+```
+
+- What happened? Why did does this happen?
+
+42. Issue the following Linux command:
+
+```bash
+ls -l ~/text-file.sym.lnk
+```
+
+- This output indicates a "**broken link**" and indicates this is not an effective method of backing up files.
+
+![Symbolic link inode 3](/img/Symbolic-link-inode3.png)
+
+Example of a **broken link** when a symbolic link points to a **non-existent file**.
+
+43. Issue a command to delete the **~/text-file.sym.lnk** file which is a _broken link_.
+44. Issue the following Linux command:
+
+```bash
+ln -s ~jason.carman/example t1example
+```
+
+45. Issue the following Linux command:
+
+```bash
+ls -ld t1example
+```
+
+- What do you notice? Symbolic links are good for creating "short-cuts" to both **regular files** and **directories**.
+
+![Symbolic link inode 2](/img/Symbolic-link-inode2.png)
+
+**Symbolic links** can be used to point to **directories** as well as regular files. Symbolic links can also point to files on **other** Unix/Linux filesystems.
+
+46. Complete the **LINUX PRACTICE QUESTIONS** below to get additional practice.
+
 
 ## Linux Practice Questions
 
@@ -810,7 +1067,18 @@ For each of the following questions, use a pathname starting from the **root** d
   14. Write a Linux command to match a line containing the pattern **Linux** in a file called **practice/customers.txt**
   15. Write a Linux command to display unique occurrences of consecutive lines in a file called **practice/customers.txt**
   16. Create a **table** listing each Linux command, useful options that are displayed near the top of this tutorial labelled: **Tutorial Reference Material**
+  17. Hard Links:
 
+    1. What is the purpose of creating a hard-link?
+    2. What is a limitation of a hard link?
+    3. Write a single Linux command to create a hard link called **~/backup/myfile.txt.lnk** for the existing file called **~/myfile.txt**
+    4. Write a single Linux command to display the **i-node** number for both files. Are the **i-node** numbers identical?
+  18. Symbolic (Soft) Links:
+    1. What is the purpose of creating a symbolic (soft) link?
+    2. What is a limitation of a symbolic (soft) link?
+    3. Write a single Linux command to create a symbolic link called **~/shortcuts/murray.saul.lnk** to the existing directory called **~murray.saul**
+    4. Are the i-node numbers identical for both of those files?
+    5. What data is contained in the file called **~/shortcuts/murray.saul.lnk**?
 ---
 
 Author: Murray Saul
