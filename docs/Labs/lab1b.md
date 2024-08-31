@@ -1069,18 +1069,21 @@ For each of the following questions, use a pathname starting from the **root** d
   14. Write a Linux command to match a line containing the pattern **Linux** in a file called **practice/customers.txt**
   15. Write a Linux command to display unique occurrences of consecutive lines in a file called **practice/customers.txt**
   16. Create a **table** listing each Linux command, useful options that are displayed near the top of this tutorial labelled: **Tutorial Reference Material**
-  17. Hard Links:
+  
+  **Hard Links:**
 
-    1. What is the purpose of creating a hard-link?
-    2. What is a limitation of a hard link?
-    3. Write a single Linux command to create a hard link called **~/backup/myfile.txt.lnk** for the existing file called **~/myfile.txt**
-    4. Write a single Linux command to display the **i-node** number for both files. Are the **i-node** numbers identical?
-  18. Symbolic (Soft) Links:
-    1. What is the purpose of creating a symbolic (soft) link?
-    2. What is a limitation of a symbolic (soft) link?
-    3. Write a single Linux command to create a symbolic link called **~/shortcuts/murray.saul.lnk** to the existing directory called **~murray.saul**
-    4. Are the i-node numbers identical for both of those files?
-    5. What data is contained in the file called **~/shortcuts/murray.saul.lnk**?
+  17. What is the purpose of creating a hard-link?
+  18. What is a limitation of a hard link?
+  19. Write a single Linux command to create a hard link called **~/backup/myfile.txt.lnk** for the existing file called **~/myfile.txt**
+  20. Write a single Linux command to display the **i-node** number for both files. Are the **i-node** numbers identical?
+  
+  **Symbolic (Soft) Links:**
+  
+  21. What is the purpose of creating a symbolic (soft) link?
+  22. What is a limitation of a symbolic (soft) link?
+  23. Write a single Linux command to create a symbolic link called **~/shortcuts/murray.saul.lnk** to the existing directory called **~murray.saul**
+  24. Are the i-node numbers identical for both of those files?
+  25. What data is contained in the file called **~/shortcuts/murray.saul.lnk**?
 ---
 
 Author: Murray Saul
