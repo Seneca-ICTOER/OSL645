@@ -2,7 +2,7 @@
 id: weekly-schedule
 title: Weekly Schedule
 sidebar_position: 2
-description: Weekly Schedule for OSL640
+description: Weekly Schedule for OSL645
 ---
 
 # Weekly Schedule
@@ -30,6 +30,7 @@ description: Weekly Schedule for OSL640
 | Basic file system commands: (pwd,cd,tree,ls,mkdir,rmdir,mv,cp,rm, man) | **Reference Sheet:** [Vi Reference Sheet (PDF)](https://www.smashingmagazine.com/2010/05/vi-editor-linux-terminal-cheat-sheet-pdf/) |  |
 | Text editing |  |  |
 | Common file utilities: (cat,more,less,touch,file,find) |  |  |
+| Hard and symbolic links | | |
 
 ### Week 3
 
@@ -88,10 +89,9 @@ description: Weekly Schedule for OSL640
 | **Learning Objectives and Tasks** | **References** | **Evaluation** |
 | :--- | :--- | :--- |
 | Regular Expression basics: | **Week 8 Lecture Slides:** [Web](https://docs.google.com/presentation/d/e/2PACX-1vRvAjG1mqrO7osJh4C0FsaPH0sMulmPu06mEgeEzflMU1Q6Dud0Nk92FVSHjEAEUgyqvU23Nb-2dKrR/pub?start=false&loop=false&delayms=5000) | [Lab 6: Process Management, Aliases and Shell Scripting](/Labs/lab6.md) |
-| Hard and symbolic links |  | Lab 6 (Due Friday, August 16 @ 11:59 PM) (2%) |
-| Process management |  |  |
+| Process management |  | Lab 6 (Due Friday, August 16 @ 11:59 PM) (2%) |
 | Aliases |  |  |
-|  |  | |
+| | |  |
 
 
 ### Week 9
