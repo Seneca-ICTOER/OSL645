@@ -17,10 +17,12 @@ description: Lab 1A for Students to setup and use a Linux environment
 
 ## Lab Reference Material
 
-**Course Slides and Software**
+**Lecture Slides:**
 
 - Week 1 Lecture 1 Notes: [Web](https://docs.google.com/presentation/d/e/2PACX-1vRuKJgXTDMxRWDTAHzwbFxGJx9o94mrQ_DuPBGzFK0zEGSp1hKajP3cnnawK1E2LpnOCvCbqw15MVNI/pub?start=false&loop=false&delayms=3000)
 - Week 1 Lecture 2 Notes: [Web](https://docs.google.com/presentation/d/e/2PACX-1vQkwFYD9ONPTsTTm1_e19TPyrxFppiU884Hiskc4hngV_6fxUhZKHN02sD1O4x3HzAIHPRq3dyNmQNb/pub?start=false&loop=false&delayms=3000)
+
+**Software:**
 
 - [Virtual Box](https://www.virtualbox.org/wiki/Downloads)
 - [Ubuntu 24.04 Download](https://ubuntu.com/download/desktop/thank-you?version=24.04.1&architecture=amd64&lts=true)
