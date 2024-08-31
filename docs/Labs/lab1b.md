@@ -338,7 +338,7 @@ tree
   9. Issue the following Linux command run checking script:
 
 ```bash
-~osl640/week2-check-2
+~/bin/lab1-check-3
 ```
 
   10. If you encounter errors. make corrections and re-run the checking script until you receive a congratulations message, and proceed to the next investigation.
@@ -870,7 +870,7 @@ ls -li ~/links/data-file.txt ~/links/data-file.hard.lnk ~/data-file.hard.lnk
 19. Issue the following Linux command to check that you created those hard links:
 
 ```bash
-~ops145/t1-check-5
+~/bin/lab1-check-5
 ```
 
 - If you encounter errors, then view the feedback to make corrections, and then re-run the checking script.
@@ -970,7 +970,7 @@ cat ~/links2/text-file.sym.lnk
 38. Issue the following Linux command to check that you created those symbolic links:
 
 ```bash
-~ops145/t1-check-6
+~/bin/t1-check-6
 ```
 
 - If you encounter errors, then view the feedback to make corrections, and then re-run the checking script.
@@ -1007,13 +1007,13 @@ Example of a **broken link** when a symbolic link points to a **non-existent fil
 44. Issue the following Linux command:
 
 ```bash
-ln -s ~jason.carman/example t1example
+ln -s /etc ~/etc
 ```
 
 45. Issue the following Linux command:
 
 ```bash
-ls -ld t1example
+ls -ld ~/etc
 ```
 
 - What do you notice? Symbolic links are good for creating "short-cuts" to both **regular files** and **directories**.
@@ -1022,14 +1022,17 @@ ls -ld t1example
 
 **Symbolic links** can be used to point to **directories** as well as regular files. Symbolic links can also point to files on **other** Unix/Linux filesystems.
 
+46. Remove the ~/etc directory.
+```bash
+rm -rf ~/etc
+```
+
 46. Complete the **LINUX PRACTICE QUESTIONS** below to get additional practice.
 
 
 ## Linux Practice Questions
 
-The purpose of this section is to obtain **extra practice** to help with **quizzes**, your **midterm**, and your **final exam**.
-
-Here is a link to the [MS Word Document of ALL of the questions](/files/osl640_week2_practice.docx) displayed below but with extra room to answer on the document to simulate a quiz
+The purpose of this section is to obtain **extra practice** to help with your **lab test**, and your **theory test**.
 
 Your instructor may take-up these questions during class. It is up to the student to attend classes in order to obtain the answers to the following questions. Your instructor will NOT provide these answers in any other form (eg. e-mail, etc).
 
