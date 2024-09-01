@@ -11,8 +11,8 @@ description: Weekly Schedule for OSL645
 
 | **Learning Objectives and Tasks** | **References** | **Evaluation** |
 | :--- | :--- | :--- |
-| Course introduction | **Week 1 Lecture Slides:** [Web](https://docs.google.com/presentation/d/e/2PACX-1vRBI-uHRn9VzTFfZe79fQinnQXZfZsI-6nxc9w_Ywj38SPlj_Ct8MkXt2lc4LlHABd83ahrH3B8vrlI/pub?start=false&loop=false&delayms=5000)  | [Lab 1A: Installing and Using Linux](/Labs/lab1a.md) |
-| Course Resources/Evaluation/Policies | | Lab 1A (Due Friday, July 5 @ 11:59 PM) (1%) |
+| Course introduction | **Week 1 Lecture 1 Slides:** [Web](https://docs.google.com/presentation/d/1Kez2StkD06q9UG9UkH8wyAu5dLQM06BKEyrEqKtsjDI/pub?start=false&loop=false&delayms=3000)  | [Lab 1A: Installing and Using Linux](/Labs/lab1a.md) |
+| Course Resources/Evaluation/Policies | **Week 1 Lecture 2 Slides:**  [Web](https://docs.google.com/presentation/d/15x0rfwce7-BYFe4JQF3XqDNdiArdau3FX7orBo-fVpw/pub?start=false&loop=false&delayms=3000) | Lab 1A (Due Friday, July 5 @ 11:59 PM) (1%) |
 | Unix/Linux Background |  | |
 | Open source philosophy |  |  |
 | Linux GUI and the terminal |  |  |

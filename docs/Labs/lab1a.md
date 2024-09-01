@@ -19,8 +19,8 @@ description: Lab 1A for Students to setup and use a Linux environment
 
 **Lecture Slides:**
 
-- Week 1 Lecture 1 Notes: [Web](https://docs.google.com/presentation/d/e/2PACX-1vRuKJgXTDMxRWDTAHzwbFxGJx9o94mrQ_DuPBGzFK0zEGSp1hKajP3cnnawK1E2LpnOCvCbqw15MVNI/pub?start=false&loop=false&delayms=3000)
-- Week 1 Lecture 2 Notes: [Web](https://docs.google.com/presentation/d/e/2PACX-1vQkwFYD9ONPTsTTm1_e19TPyrxFppiU884Hiskc4hngV_6fxUhZKHN02sD1O4x3HzAIHPRq3dyNmQNb/pub?start=false&loop=false&delayms=3000)
+- Week 1 Lecture 1 Notes: [Web](https://docs.google.com/presentation/d/1Kez2StkD06q9UG9UkH8wyAu5dLQM06BKEyrEqKtsjDI/pub?start=false&loop=false&delayms=3000)
+- Week 1 Lecture 2 Notes: [Web](https://docs.google.com/presentation/d/15x0rfwce7-BYFe4JQF3XqDNdiArdau3FX7orBo-fVpw/pub?start=false&loop=false&delayms=3000)
 
 **Software:**
 
