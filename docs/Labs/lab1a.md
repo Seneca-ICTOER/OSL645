@@ -631,7 +631,7 @@ cd
 - **Note:** The beginning character "**~**" is called **tilde.** You get this character by pressing **SHIFT** + \` (which is the key to the left of the number 1 on your keyboard).
 
 
-6. Call your professor over to record your grade.
+6. Open your lab check log files and call your professor over to record your grade.
 
 7. To shut your system down, issue the following Linux command:
 ```bash

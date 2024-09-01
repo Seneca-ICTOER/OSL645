@@ -972,7 +972,7 @@ cat ~/links2/text-file.sym.lnk
 38. Issue the following Linux command to check that you created those symbolic links:
 
 ```bash
-~/bin/t1-check-6
+~/bin/lab1-check-6
 ```
 
 - If you encounter errors, then view the feedback to make corrections, and then re-run the checking script.
@@ -1031,6 +1031,8 @@ rm -rf ~/etc
 ```
 
 46. Complete the **LINUX PRACTICE QUESTIONS** below to get additional practice.
+
+47. Open your lab check log files and call your professor over to record your grade.
 
 ## Linux Practice Questions
 
