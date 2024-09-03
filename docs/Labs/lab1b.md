@@ -18,8 +18,8 @@ description: Lab 1B for Students to learn Unix/Linux File Management
 
 **Lecture Slides:**
 
-- Week 2 Lecture 1 Notes: [Web](https://docs.google.com/presentation/d/e/2PACX-1vRJpUz-3ikfrB9sUMdR_Zr2oLjjwcMaabrIzXqej7o8XMrB5AyZErNeCZBEbooqcuArRy8_dNJB5sSS/pub?start=false&loop=false&delayms=3000)
-- Week 2 Lecture 2 Notes: [Web](https://docs.google.com/presentation/d/e/2PACX-1vRX_weqJU6HBT8--NUAmlLNdschF91RV-HYxPiDpQKIyQzSvJj-L6VBZXyrmkZKUAdcbzPULNIjRqPw/pub?start=false&loop=false&delayms=3000)
+- Week 2 Lecture 1 Notes: [Web](https://docs.google.com/presentation/d/14En7fxwrQ75WmV_h4tfMBzHc8pgnUfi-kqmgn9WTIaA/pub?start=false&loop=false&delayms=3000)
+- Week 2 Lecture 2 Notes: [Web](https://docs.google.com/presentation/d/1Bed6HMup3OIU9gGAABQ5_txAZPq9LMhZbFIdSKMvfcs/pub?start=false&loop=false&delayms=3000)
 
 **File Management Reference:**
 
@@ -39,7 +39,7 @@ description: Lab 1B for Students to learn Unix/Linux File Management
 **Links:**
 
 | [ln](http://man7.org/linux/man-pages/man1/ln.1.html) |
-| :----------------------------------------------------------------------------------------------- |
+| :--------------------------------------------------- |
 
 - [Hard Links](http://www.linfo.org/hard_link.html#:~:text=A%20hard%20link%20is%20merely,created%20to%20other%20hard%20links.)
 - [Symbolic Links](https://www.computerhope.com/jargon/s/symblink.htm#:~:text=Alternatively%20referred%20to%20as%20a,or%20directory%20using%20its%20path.&text=In%20Linux%20and%20Unix%20symbolic,created%20using%20the%20mklink%20command.)
