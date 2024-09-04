@@ -42,12 +42,10 @@ description: Lab 1A for Students to setup and use a Linux environment
 
 - [Bash Shell Shortcut Keys](https://www.ostechnix.com/list-useful-bash-keyboard-shortcuts/)
 
-
 **General Linux Commands:**
 
-| [pwd](http://man7.org/linux/man-pages/man1/pwd.1.html) | [cd](http://man7.org/linux/man-pages/man1/cd.1p.html) | [ls](http://man7.org/linux/man-pages/man1/ls.1p.html) | [cal](http://man7.org/linux/man-pages/man1/cal.1.html) | [date](http://man7.org/linux/man-pages/man1/date.1.html) | [who](http://man7.org/linux/man-pages/man1/who.1.html) , [w](http://man7.org/linux/man-pages/man1/w.1.html) | [whoami, who am i](http://man7.org/linux/man-pages/man1/whoami.1.html) | [clear, <ctrl\><l\>](http://man7.org/linux/man-pages/man1/clear.1.html) | [sudo](https://man7.org/linux/man-pages/man8/sudo.8.html) | [ping](https://man7.org/linux/man-pages/man8/ping.8.html) | [apt](https://ss64.com/bash/apt.html)
-| :----------------------------------------------------- | :---------------------------------------------------- | :---------------------------------------------------- | :----------------------------------------------------- | :------------------------------------------------------- | :---------------------------------------------------------------------------------------------------------- | :--------------------------------------------------------------------- | :---------------------------------------------------------------------- | :-------- | :------------ | :-----------|
-
+| [pwd](http://man7.org/linux/man-pages/man1/pwd.1.html) | [cd](http://man7.org/linux/man-pages/man1/cd.1p.html) | [ls](http://man7.org/linux/man-pages/man1/ls.1p.html) | [cal](http://man7.org/linux/man-pages/man1/cal.1.html) | [date](http://man7.org/linux/man-pages/man1/date.1.html) | [who](http://man7.org/linux/man-pages/man1/who.1.html) , [w](http://man7.org/linux/man-pages/man1/w.1.html) | [whoami, who am i](http://man7.org/linux/man-pages/man1/whoami.1.html) | [clear, <ctrl\><l\>](http://man7.org/linux/man-pages/man1/clear.1.html) | [sudo](https://man7.org/linux/man-pages/man8/sudo.8.html) | [ping](https://man7.org/linux/man-pages/man8/ping.8.html) | [apt](https://ss64.com/bash/apt.html) |
+| :----------------------------------------------------- | :---------------------------------------------------- | :---------------------------------------------------- | :----------------------------------------------------- | :------------------------------------------------------- | :---------------------------------------------------------------------------------------------------------- | :--------------------------------------------------------------------- | :---------------------------------------------------------------------- | :-------------------------------------------------------- | :-------------------------------------------------------- | :------------------------------------ |
 
 ## Key Concepts
 
@@ -107,7 +105,6 @@ _Examples of commands that use command history:_
 | **!num**                       | **re-execute** an issued command number by command number (determined from history command) |
 | **!xxx**                       | **re-run** a most recent previously-issued command beginning with string "xxx"              |
 
-
 ## Investigation 1: Downloading and Installing Linux
 
 In this section, you will learn how to access your Matrix Linux account by two different methods:
@@ -115,7 +112,7 @@ In this section, you will learn how to access your Matrix Linux account by two d
 - From your **home computer**
 - From a **workstation in a Seneca Polytechnic** lab via **MyApps**
 
-**ATTENTION: This  lab must be completed by Friday at 11:59pm in Week 3 to obtain a grade of 2% towards this course.**
+**ATTENTION: This lab must be completed by Friday at 11:59pm in Week 3 to obtain a grade of 2% towards this course.**
 
 It is essential that you complete these labs fully and on time. These are your major learning tool in the course. There are no late marks.
 
@@ -129,6 +126,7 @@ If you are working on a college PC, launch **MyApps** and search for **VirtualBo
 ![Launching Oracle VirtualBox](/img/launch-vb.png)
 
 2. Click on the New icon and Create a virtual machine, insert the following information and click **Next**.
+
 - Name: Ubuntu-yoursenecaid IE: **Ubuntu-jmcarman**
 - Machine Folder: **Browse to your SSD**
 - Type: **Linux**
@@ -147,14 +145,15 @@ If you are working on a college PC, launch **MyApps** and search for **VirtualBo
 7. Set the **Disk Size** to **50.00 GB** and click **Create**.
 
 8. Click on **Settings** > **Storage** > **Controller:IDE** >> **Choose a disk file** (see the following screenshot). Browse to the ISO you downloaded and click **Open**.
-![Adding the optical disk](/img/choose-disk.png)
+   ![Adding the optical disk](/img/choose-disk.png)
 
 9. Click **ok** and power on the virtual machine.
 
 10. Select **Try or Install Ubuntu** and press **Enter**.
-![Try or Install Ubuntu](/img/grub.png)
+    ![Try or Install Ubuntu](/img/grub.png)
 
 Follow the installer and select the following settings:
+
 - Language: English
 - Accessibility: Customize if you wish or accept the defaults
 - Keyboard Layout: English (US)
@@ -172,13 +171,14 @@ Follow the installer and select the following settings:
   - Your username: **Your Seneca username**
   - Create a secure password that you will remember
   - Confirm your configuration using the following screenshot before clicking **Next**
-  ![User account information](/img/create-your-account.png)
+    ![User account information](/img/create-your-account.png)
 - Select your timezone: **Toronto**
 - Click **Install** and be prepared to wait patiently for a while.
 - When it is done, click **Restart now**.
 - When prompted to remove the installation media, press **Enter**.
 
 Login with your user.
+
 - On the welcome screen, click **Next**
 - Enable Ubuntu Pro: select **Skip for now** and click **Next**
 - Help improve Ubuntu: select an option and click **Next**
@@ -216,15 +216,18 @@ ping www.google.ca
 ```
 
 Next, verify your IP address configuration.
+
 ```bash
 ip a
 ```
 
-Notice you have two NICs (Network Interface Cards). 
+Notice you have two NICs (Network Interface Cards).
+
 - **lo** which is your **loopback**, and is assigned the IP address **127.0.0.1/8** by default
 - **ens??** where ?? represents two digits: ie ens33. This is the NIC connected to the virtual network, which allows communication between your VM and the Internet through your Host PC.
 
 Now, lets look at your routing table. Your routing table tells you what networks your VM knows about, as well as the default route. The default route is where packets are sent when they don't match any other entry in your routing table.
+
 ```bash
 ip route
 ```
@@ -489,6 +492,7 @@ man -k user | grep 8
 - **Question:** How does this pipeline command make it easier to obtain information regarding man command?
 
 12. Issue the following Linux command:
+
 ```bash
 tldr ls
 ```
@@ -601,17 +605,21 @@ If the checking shell script detects an **error**, then it will provide feedback
 ![Script Check 2](/img/Script-check-2.png)
 
 **Perform the Following Steps:**
+
 1. Install Git by issuing the following Linux command:
+
 ```bash
 sudo apt -y install git
 ```
 
 2. Create the **bin** directory in your home directory by enterint the following Linux command:
+
 ```bash
 mkdir ~/bin
 ```
 
 3. Clone the lab check script repository from GitHub into your ~/bin directory:
+
 ```bash
 git clone https://github.com/OSL645/labs ~/bin
 ```
@@ -625,20 +633,21 @@ cd
 5. Issue the following command to run a checking script:
 
 ```bash
-~bin/lab1-check
+sudo ~bin/lab1-check-1
 ```
 
 - **Note:** The beginning character "**~**" is called **tilde.** You get this character by pressing **SHIFT** + \` (which is the key to the left of the number 1 on your keyboard).
 
-
 6. Open your lab check log files and call your professor over to record your grade.
 
 7. To shut your system down, issue the following Linux command:
+
 ```bash
 poweroff
 ```
 
 Note: if you ever wish to reboot your system, you can do so with the following Linux command:
+
 ```bash
 reboot
 ```
