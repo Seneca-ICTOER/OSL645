@@ -9,8 +9,8 @@ description: Weekly Schedule for OSL645
 
 ## Important Quick Links
 
-| [Course Outline](https://www.senecapolytechnic.ca/ssos/findOutline.do?isLoggedIn=&subjectOrAndTitle=%5BOPS145%5D+Introduction+to+Linux+and+Unix&schoolCode=0s867160) | [Lab Log Book](/files/OSL645-Logbook-Online.docx) | [Virtual Box](https://www.virtualbox.org/wiki/Downloads) | [Ubuntu 24.04 Download](https://ubuntu.com/download/desktop/thank-you?version=24.04.1&architecture=amd64&lts=true) |
-| :------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------------------------------------------------ | :------------------------------------------------------- | :----------------------------------------------------------------------------------------------------------------- |
+| [Course Outline](https://www.senecapolytechnic.ca/ssos/findOutline.do?isLoggedIn=&subjectOrAndTitle=%5BOPS145%5D+Introduction+to+Linux+and+Unix&schoolCode=0s867160) | [Lab Log Book](/files/OSL645-Logbook-Online.docx) | [Virtual Box](https://www.virtualbox.org/wiki/Downloads) | [Ubuntu 24.04 Download](https://ubuntu.com/download/desktop/thank-you?version=24.04.1&architecture=amd64&lts=true) | [Seneca MyApps](https://myapps.senecapolytechnic.ca/login) |
+| :------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------------------------------------------------ | :------------------------------------------------------- | :----------------------------------------------------------------------------------------------------------------- | :--------------------------------------------------------- |
 
 ### Week 1
 
