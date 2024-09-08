@@ -267,7 +267,7 @@ When performing the next series of steps, refer to the **tree diagram** below. L
 2. Since we will be running Linux commands depending on the directory structure that you have created, issue the following Linux command to verify you created it correctly:
 
 ```bash
-~ops145/t2-check-1
+~/bin/lab2-check-1
 ```
 
 3. If you encounter errors, make corrections and then re-run the checking script until you receive a congratulations message.
@@ -342,7 +342,7 @@ cp /bin/ls ./ls.bk
 14. Issue the following:
 
 ```bash
-~ops145/t2-check-2
+~/bin/lab2-check-2
 ```
 
 15. If you encounter errors, make corrections and then re-run the checking script until you receive a congratulations message, and proceed to the next INVESTIGATION.
@@ -379,7 +379,7 @@ abcde.txt
 4. To verify that you properly created those files, issue the following:
 
 ```bash
-~ops145/t2-check-3
+~/bin/lab2-check-3
 ```
 
 - If you encounter errors, then make corrections (eg. viewing directory contents, check for correct filename syntax, case sensitivity, missing files, files in the wrong location, etc.) and then re-run the checking script until you receive a congratulations message, and then continue with this investigation.
