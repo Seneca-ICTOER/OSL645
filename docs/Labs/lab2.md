@@ -1,8 +1,8 @@
 ---
-id: tutorial2
-title: Tutorial 2 - Advanced File Management and Quoting Special Characters
+id: lab2
+title: Lab 2 - Advanced File Management and Quoting Special Characters
 sidebar_position: 3
-description: Tutorial 2 for Students to Learn Pathnames, Filename Expansion, and Quoting Special Characters
+description: Lab 2 for Students to Learn Pathnames, Filename Expansion, and Quoting Special Characters
 ---
 
 # Tutorial 2: Advanced File Management and Quoting Special Characters
