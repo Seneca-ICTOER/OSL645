@@ -5,9 +5,9 @@ sidebar_position: 3
 description: Lab 2 for Students to Learn Pathnames, Filename Expansion, and Quoting Special Characters
 ---
 
-# Tutorial 2: Advanced File Management and Quoting Special Characters
+# Lab 2: Advanced File Management and Quoting Special Characters
 
-## Main Objectives of this Tutorial
+## Main Objectives of this Lab
 
 - Understand the difference between **absolute** , **relative** and **relative-to-home** pathnames
 - Become productive at issuing Linux commands with the most appropriate pathname
@@ -15,7 +15,7 @@ description: Lab 2 for Students to Learn Pathnames, Filename Expansion, and Quot
 - Use **quotation** treat special characters as just **text** when issuing Linux commands.
 - Understand the quotation symbols: **Backslash \\** , **single quotes ' '** and **double quotes " "**
 
-## Tutorial Reference Material
+## Lab Reference Material
 
 **Lecture Slides:**
 

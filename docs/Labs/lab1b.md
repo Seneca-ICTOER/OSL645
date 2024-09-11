@@ -395,7 +395,7 @@ rm -ri nwk680xx
 9. Issue the following Linux command to run a checking script to confirm removal of those directories:
 
 ```bash
-~osl640/week2-check-3
+~/bin/lab1-check-4
 ```
 
 10. If you encounter errors, make corrections and re-run the checking script until you receive a congratulations message, and proceed to the next INVESTIGATION.
