@@ -634,7 +634,7 @@ cd
 5. Issue the following command to run a checking script:
 
 ```bash
-sudo ~bin/lab1-check-1
+sudo ~/bin/lab1-check-1
 ```
 
 - **Note:** The beginning character "**~**" is called **tilde.** You get this character by pressing **SHIFT** + \` (which is the key to the left of the number 1 on your keyboard).
