@@ -19,8 +19,8 @@ description: Lab 2 for Students to Learn Pathnames, Filename Expansion, and Quot
 
 **Lecture Slides:**
 
-- Week 3 Lecture 1 Notes: [Web](https://docs.google.com/presentation/d/e/2PACX-1vQs4X6Z9PkFW023Fw-oyb_vB1M_AltaJO5DTjxffKxQW42vlM1xMxjQCByPJM9qyuHA9-9JWkT51q8a/pub?start=false&loop=false&delayms=3000)
-- Week 3 Lecture 2 Notes: [Web](https://docs.google.com/presentation/d/e/2PACX-1vQA9PNLXGvjMBZpDCXAaUAhCJ11WZK5IBkMEWCYQzST7QpFECnnIRP9AYVJZdAhVpbmqnIB4TsZ3SOa/pub?start=false&loop=false&delayms=3000)
+- Week 3 Lecture 1 Notes: [Web](https://docs.google.com/presentation/d/1MaT0Y2dwRvG9NkqpiCzqN3DEWjtj2iV7R_ENf_8Q5fQ/pub?start=false&loop=false&delayms=3000)
+- Week 3 Lecture 2 Notes: [Web](https://docs.google.com/presentation/d/1DKDAch0KUjQ_cjfwEiBv9SXkemhJCPm-yXuWb5JF3G0/pub?start=false&loop=false&delayms=3000)
 
 **Pathname and Filename Expansion:**
 

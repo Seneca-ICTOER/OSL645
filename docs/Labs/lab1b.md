@@ -476,25 +476,31 @@ The major different between nano and vi is that **vi starts in COMMAND LINE mode
 
 **Perform the Following Steps:**
 
-1. Make certain that you are located in your home directory.
-
-2. Issue the following Linux command to edit a text file called **othertext.txt** in the **linux/practice** directory:
+1. Install vim.
 
 ```bash
-vi textedit/practice/othertext.txt
+sudo apt -y install vim
 ```
 
-- **NOTE:** When using the **vi** text editor, you are placed in **COMMAND** mode, so you need to issue a command to switch to _INPUT_ mode.
+2. Make certain that you are located in your home directory.
 
-3. Type the following key to enter _INPUT_ mode: `i`
+3. Issue the following Linux command to edit a text file called **othertext.txt** in the **linux/practice** directory:
+
+```bash
+vim textedit/practice/othertext.txt
+```
+
+- **NOTE:** When using the **vim** text editor, you are placed in **COMMAND** mode, so you need to issue a command to switch to _INPUT_ mode.
+
+4. Type the following key to enter _INPUT_ mode: `i`
 
    - You should notice you are in _INSERT_ mode by seeing the notification **-- INSERT --** at the bottom left-hand side of the application screen.
 
-4. Enter the line shown in the diagram of the vi text editor below:
+5. Enter the line shown in the diagram of the vim text editor below:
 
 ![Vi text editor a](/img/Vi-text-editor-a.png)
 
-5. While on the first line, press the following key to enter _COMMAND_ mode: `ESC`
+6. While on the first line, press the following key to enter _COMMAND_ mode: `ESC`
 
    - You should see the -- _INSERT_ -- notification disappear indicating that you are in _COMMAND_ mode.
    - **NOTE:** Refer to the table below for a list of the most common **vi (vim)** navigation & editing commands:
@@ -515,58 +521,58 @@ vi textedit/practice/othertext.txt
 | **:w name** |     Save editing changes to "name" in COMMAND mode     |
 | **:q!**     |    Abort editing session and exit (in COMMAND mode)    |
 
-- Once you can get used to working in INPUT and COMMAND mode, it is easier to perform text editing operations in **vi** via _COMMAND_ mode as opposed to nano!
+- Once you can get used to working in INPUT and COMMAND mode, it is easier to perform text editing operations in **vim** via _COMMAND_ mode as opposed to nano!
 
-6. Type the following keys to copy the current line: `yy`
-7. Type the following key to paste the copied line: `p`
-
-   - What did you notice?
-
-8. Type the following keys: `u`
+7. Type the following keys to copy the current line: `yy`
+8. Type the following key to paste the copied line: `p`
 
    - What did you notice?
 
-9. Type the following keys: `3p`
+9. Type the following keys: `u`
 
    - What did you notice?
 
-10. Use the up or down **arrow** keys to move to the second line.
-11. Type either the **w** and/or **b** keys to move the cursor to the beginning of the word: **first**
-12. Type the **x** keys to remove the word called **first**
-13. Type the **i** key to enter INSERT mode.
-14. Type the word: **second**
-15. Press the **ESC** key to enter COMMAND mode.
-16. Repeat steps **11** to **16** to change the words for line number for lines 3 and 4.
+10. Type the following keys: `3p`
+
+- What did you notice?
+
+11. Use the up or down **arrow** keys to move to the second line.
+12. Type either the **w** and/or **b** keys to move the cursor to the beginning of the word: **first**
+13. Type the **x** keys to remove the word called **first**
+14. Type the **i** key to enter INSERT mode.
+15. Type the word: **second**
+16. Press the **ESC** key to enter COMMAND mode.
+17. Repeat steps **11** to **16** to change the words for line number for lines 3 and 4.
 
 ![Vi text editor b](/img/Vi-text-editor-b.png)
 
 - Use a combination of **arrow** keys and the **w** and **b** keys while in COMMAND mode to change the correct words for the **third** and **fourth** lines.
 
-17. Move to the 4th line (i.e. last line).
-18. Type the following keys: `dd`
+18. Move to the 4th line (i.e. last line).
+19. Type the following keys: `dd`
 
     - What did you notice?
     - Let's save editing changes and exit the vi text editor.
 
-19. Type the following keys: `:x` and press **ENTER**
+20. Type the following keys: `:x` and press **ENTER**
 
     - What did you notice?
 
-20. Issue the same command that you performed in **Step #2** to confirm that you had properly edited that file.
-21. **Save** and **exit** your vi editing session.
+21. Issue the same command that you performed in **Step #2** to confirm that you had properly edited that file.
+22. **Save** and **exit** your vi editing session.
 
 ![Vi text editor 2](/img/Vi-text-editor-2.png)
 
-- An **online tutorial** has been created to give you "hands-on" experience on how to use vi text editor. It is recommended that you run this online tutorial in your Matrix account to learn how to create and edit text files with the vi text editor.
+- An **online tutorial** has been created to give you "hands-on" experience on how to use vim text editor. It is recommended that you run this online tutorial in your Matrix account to learn how to create and edit text files with the vim text editor.
 
-22. Issue the following to run the vi online tutorial:
+22. Issue the following to run the vim online tutorial:
 
 ```bash
 /home/jason.carman/vi-tutorial
 ```
 
 23. In the tutorial menu, select the first menu item labelled **"USING THE VI TEXT EDITOR"**
-24. Read and follow the instructions in the tutorial. Eventually, it will display a **simulated** vi environment and will provide you with **"hands-on"** practice using the vi text editor. As far as this author is aware, there is NO "hands-on" tutorial for the nano text editor in this particular format.
+24. Read and follow the instructions in the tutorial. Eventually, it will display a **simulated** vim environment and will provide you with **"hands-on"** practice using the vim text editor. As far as this author is aware, there is NO "hands-on" tutorial for the nano text editor in this particular format.
 25. When you have completed that section, you will be returned to the main menu. If you want to get extra practice, you can select the menu item labelled "**REVIEW EXERCISE**".
 26. When you want to exit the tutorial, select the menu option to exit the tutorial.
 
