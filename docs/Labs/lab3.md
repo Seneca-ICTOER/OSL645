@@ -696,24 +696,23 @@ You may have noticed in the link above you can click **Open in GitHub Codespaces
 
 ![Accessing GitHub Codespaces](/img/github-codespaces.png)
 
-It may take a couple seconds to create your Codespace, but once it launches it is exactly like the interface in Visual Studio Code. That is because it is Visual Studio Code, running in an Ubuntu container in the cloud through GitHub. You get access to this completely free through GitHub Classroom. If you are working from a Shared Computer (ie a College PC) proceed to **Creating Your Bash Shell Script**.
+It may take a couple seconds to create your Codespace, but once it launches it is exactly like the interface in Visual Studio Code. That is because it is Visual Studio Code, running in an Ubuntu container in the cloud through GitHub. You get access to this completely free through GitHub Classroom. You will notice you have been provided a template called **hello.bash**. In codespaces, double click on it in the filebrowser to the left and proceed to **Creating Your Bash Shell Script**.
 
-**left off here**
+### Creating Your Bash Shell Script
 
-## Investigation 5: She-Bang Line, Variables, and Parameters
-
-In this investigation, you will add a **she-bang line** at the top of your shell script to force the shell script to run in a specified shell when executed. You will also learn how to use **variables**, **positional** and **special parameters** to make your shell scripts more adaptable.
+You will add a **she-bang line** at the top of your shell script to force the shell script to run in a specified shell when executed. You will learn how to use Environment Variables in Linux.
 
 **Perform the Following Steps:**
 
-1. Confirm that you are located in your **home** directory in your Matrix account.
+1. Notice you have a terminal in the bottom of pane of the screen. This is a Bash shell, since Codespaces runs using an Ubuntu Linux container in Microsoft Azure. Issue the **PWD** command to confirm your default directory.
 
    - Let's run shell scripts with and without a **she-bang** line at the top of your shell script to demonstrate why using a she-bang line should be included in a shell script to force the shell script to be run in a specific shell.
 
-2. Use a text editor to **edit** the **hello** shell script that you created in the previous investigation.
-3. Add the following line to the bottom of the file (**copy** and **paste** to prevent _errors_):
+2. Use Codespaces to **edit** the **hello** shell script that was provided to you in the template. This is identical to the shell script you created in the previous investigation.
+3. Add the following line under the appropriate comment (**copy** and **paste** to prevent _errors_):
 
 ```bash
+# Use the echo command to print the current shell
 echo "The current shell you are using is: $(ps -o cmd= -p $$|cut -d' ' -f1)"
 ```
 
@@ -730,7 +729,7 @@ sh
 5. Issue the following Linux command to run your shell script in the _Bourne Shell_:
 
 ```bash
-./hello
+./hello.bash
 ```
 
 - You should see that you are currently running the shell script "**sh**" which represents the **Bourne shell**.
@@ -739,7 +738,7 @@ sh
 > sh
 sh-4.2$ ./hello
 
-Hello murray.saul
+Hello codespace
 
 The current shell you are using is: sh
 ```
@@ -749,7 +748,7 @@ The current shell you are using is: sh
 
 ![Shebang 1](/img/She-bang-1.png)
 
-6. Edit your **hello** shell script using a text editor.
+6. Edit your **hello.bash** shell script in Codespaces.
 7. **Insert** the following line at the **beginning** of the **first** line of your hello file:
 
 ```bash
@@ -763,7 +762,7 @@ The current shell you are using is: sh
 9. While in the Bourne shell, issue the following Linux command:
 
 ```bash
-./hello
+./hello.bash
 ```
 
 - You should notice that the shell name is running in the **Bash shell** (i.e. _/bin/bash_).
@@ -772,26 +771,12 @@ The current shell you are using is: sh
 > sh
 sh-4.2$ ./hello
 
-Hello murray.saul
+Hello codespace
 
 The current shell you are using is: /bin/bash
 ```
 
-- It is a good idea to rename your shell script to include an **extension** to indicate that it is a **Bash Shell** script.
-
-10. Issue the following Linux command to rename your shell script file:
-
-```bash
-mv hello hello.bash
-```
-
-11. Confirm that the renamed Bash shell script works by issuing:
-
-```bash
-./hello.bash
-```
-
-12. Enter the following Linux command to **exit** the Bourne shell and return to your _Bash shell_:
+10. Enter the following Linux command to **exit** the Bourne shell and return to your _Bash shell_:
 
 ```bash
 exit
@@ -799,18 +784,24 @@ exit
 
 - **Environment variables** are used to set the environment of the shell or shell scripts Let's include some **ENVIRONMENT variables** in our Bash Shell script.
 
-13. Use a text editor to edit the shell script called **hello.bash**
-14. Add the following lines to the bottom of the _hello.bash_ file:
+13. Use Codespaces to edit the shell script called **hello.bash**
+14. Add the following lines under the appropriate headings in your _hello.bash_ file:
 
 ```bash
+# Use the echo command to print a blank line
 echo
+
+# Use the echo command to print the current directory location
 echo "The current directory location is: $PWD"
+
+# Use the echo command to print the current user home directory
 echo "The current user home directory is: $HOME"
+
+# Use the echo command to print a blank line
 echo
 ```
 
-15. Save your editing changes and exit your text editor.
-16. Run your modified Bash shell script by issuing:
+15. In your terminal (in Codespaces), run your modified Bash shell script by issuing:
 
 ```bash
 ./hello.bash
@@ -821,15 +812,118 @@ echo
 ```bash
 > ./hello.bash
 
-Hello murray.saul
+Hello codespace
 
 The current shell you are using is: /bin/bash
 
-The current directory location is: /home/murray.saul
-The current user home directory is: /home/murray.saul
+The current directory location is: /workspaces/lab-3-username
+The current user home directory is: /home/codespace
 ```
 
-- You can modify the PATH variable to include the current directory (i.e. ".") so you can run the command by just script filename (eg. **hello.bash** as opposed to **./hello.bash**)
+### Running a check script in Codespaces to check your script
+
+The ability to autograde your work has been built into GitHub (via GitHub classroom) using Python scripts. You can run these to check your work before committing your changes to GitHub and testing them in your virtual machine. To run the check script for **hello.bash** issue the following command:
+
+```bash
+./hello_test.py
+```
+
+If it is successful you will notice there is no output on the screen. That is because in Linux, a zero status or exit code represents success. To check to see if the check ran correctly issue the following command. You should see a 0 if your script was successful (IE did not contain errors). If you see any other value, double check your script against the lab instructions and fix the errors.
+
+```bash
+echo $?
+```
+
+Note: it is important that no other commands are issued between running **./hello_test.py** and **echo $?**
+
+## Making your first commit
+
+Congratulations! You have created your Bash script using Codespaces. You can now commit it to your GitHub repository. To do this:
+
+1. Click on **Source Control** (on the left side of the screen).
+2. Click the three dots at the top of the pane.
+3. Click **Changes** and select **Stage All Changes**.
+4. Then click **Commit**.
+5. Enter a commit message (a short message describing what you have changed) and click on the check mark in the upper right corner.
+6. Click **Save** when prompted.
+7. Click **Sync Changes** at the top of your Source Control pane, and agree to any prompts.
+
+You've made your first commit! You will be doing this many times over the course of the semester. It will get easier with repetition.
+
+## Investigation 5: Generating RSA keys, Cloning your GitHub repository and modifying your PATH variable
+
+**Left off here for testing**
+
+### Configuring SSH keys in AWS & GitHub
+
+You're going to want to configure secure remote access between your GitHub repository and your Ubuntu Virtual Machine. Fortunately, you have the perfect tool available at your fingertips: SSH key pairs.
+
+Start your **ubuntu** virtual machine if it is not already running. Login, launch a terminal and issue the following command to generate a 4096 bit RSA keypair for your GitHub account's email address (replace username@email.com with your email address).
+
+```bash
+ssh-keygen -t rsa -b 4096 -C username@email.com
+```
+
+Accept the defaults and provide a secure passphrase (twice). Your keypair will be generated, with the public key saved as `id_rsa.pub` in `.ssh` (a hidden directory) in your home directory.
+
+Before copying this into your GitHub account settings, you'll want to test it. Issue the following command to test it:
+
+```bash
+ssh -T git@github.com
+```
+
+This should fail, because you haven't added your ssh key to GitHub.
+
+You should see the following output:
+
+** replace this screenshot **
+![Testing the RSA keypair for github.com](images/github-test-rsa.png)
+
+Issue the following command to view your public key.
+
+```bash
+cat .ssh/id_rsa.pub
+```
+
+- With your mouse, select the contents of the `cat` command (beginning with `ssh-rsa` and ending with `username@email.com`) and copy it.
+- Access the [SSH and GPG keys](https://github.com/settings/keys) settings in github.com (you will be prompted to login if you haven't already).
+- Click **New SSH key**, give it an appropriate title and paste in your public key (see following screenshot).
+
+![Adding your public key to github.com](/img/github-new-ssh-key.png)
+
+Try issuing the following command again. It should work now.
+
+```bash
+ssh -T git@github.com
+```
+
+### Cloning your repository in your Apache server
+
+Issue the following command to clone your GitHub repository into your ~/bin directory.
+
+> **Important:** Be sure to replace `username` in the following command with YOUR GitHub username.
+
+```bash
+git clone git@github.com:CNET204/labs-4-5-username
+```
+
+Issue a command to confirm the repository has been cloned on your Ubuntu server.
+
+Notice the content from our GitHub repository is all there, but it's not in the right place. It is in your user's home directory. It needs to be in document root (`/var/www/html`), and only root can put it there.
+
+Issue the following command to recursively copy the contents of your `labs-4-5-username` directory into `/var/www/html`:
+
+```bash
+sudo cp -R labs-4-5-username/* /var/www/html
+```
+
+Confirm the contents have been written to document root. You should see the following files:
+
+- LICENSE
+- README.md
+- index.html
+
+You can modify the PATH variable to include the current directory (i.e. ".") so you can run the command by just script filename (eg. **hello.bash** as opposed to **./hello.bash**)
 
 17. Issue the following Linux command to add your current directory to the **PATH** environment variable:
 
