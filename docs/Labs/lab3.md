@@ -692,7 +692,7 @@ Next, follow the sections for setup on a Shared Computer by Accessing GitHub Cod
 
 Once you have set up your Lab 3 repository by following the link above (go back and do that if you missed it), you can access GitHub Codespaces from any browser on any device (PC, tablet, smart phone). Codespaces gives you access to Visual Studio Code, with direct access to your repository (without having to clone) from anywhere. It's perfect for a portable development environment. Login to GitHub (if you haven't already) and proceed.
 
-You may have noticed in the link above you can click **Open in GitHub Codespaces**. Feel free to do so now. If you have already clicked past that window the next few steps will show you how to access it again (which is useful for future access attempts anyway). Click on **<> Code** and create a new codespace. Once you have created it, you can access it by clicking on the named link.
+You may have noticed in the link above you can click **Open in GitHub Codespaces**. Feel free to do so now. If you have already clicked past that window the next few steps will show you how to access it again (which is useful for future access attempts anyway). Click on **Code** and create a new codespace. Once you have created it, you can access it by clicking on the named link.
 
 ![Accessing GitHub Codespaces](/img/github-codespaces.png)
 
