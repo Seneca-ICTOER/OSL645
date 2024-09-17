@@ -877,7 +877,7 @@ This should fail, because you haven't added your ssh key to GitHub.
 You should see the following output:
 
 ** replace this screenshot **
-![Testing the RSA keypair for github.com](images/github-test-rsa.png)
+![Testing the RSA keypair for github.com](/img/github-test-rsa.png)
 
 Issue the following command to view your public key.
 
