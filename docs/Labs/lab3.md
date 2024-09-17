@@ -670,25 +670,25 @@ In this investigation, you will learn how to use modern tools commonly used in i
 
 **Perform the Following Steps**
 
-## Creating a GitHub account
+### Creating a GitHub account
 
 Navigate to [github.com](https://github.com/) and create an account (if you don't already have one) using your college email address. You may also wish to add your personal email address as a secondary one. You can change this to your primary email address at any time; which might be useful post graduation.
 
 In the next steps you will be accessing GitHub classroom. You will also be using git with Visual Studio Code to push your code (web pages) to github.com, where you will then pull them into your Apache web server. These tools are all free, open source, and commonly used in web development.
 
-## Introduction to Git & GitHub
+### Introduction to Git & GitHub
 
 Use the following [link](https://classroom.github.com/a/oxzZDrV8) to set up your access to the Introduction to Git & GitHub materials (provided by GitHub Classroom). Read through everything before you continue. The purpose of this exercise is to familiarize yourself with Git & GitHub. To submit this, edit the instructions (README.md) by clicking on the pencil in the top right corner. You may wish to complete any of the additional items under **Optional next steps**. If you want to access the [Student Developer Pack](https://education.github.com/pack), you are **required** to add your **name** and a short **bio**. The Student Developer Pack comes with free access to a ton of useful industry tools and services. While you will not be using it in this course, you may want to take advantage of some of the offers.
 
 Additionally, you may want to install the GitHub mobile app. It allows you access to your GitHub profile and repos from the comfort of your smart phone. It also allows you to secure your GitHub.com account with two-factor authentication if you wish to. You can install it for [Android or iOS](https://github.com/mobile).
 
-## Creating your Github Repo for your Labs
+### Creating your Github Repo for your Labs
 
 Use the following [link](https://classroom.github.com/a/e93Oe4wN) to set up your lab 3 repository. You will be using this for lab3.
 
 Next, follow the sections for setup on a Shared Computer by Accessing GitHub Codespaces or on your Personal Computer. While you can install Visual Studio Code (VSCode) locally, I recommend using Codespaces for this course.
 
-## Shared Computer (ie College PC): Accessing GitHub Codespaces
+### Shared Computer (ie College PC): Accessing GitHub Codespaces
 
 Once you have set up your Lab 3 repository by following the link above (go back and do that if you missed it), you can access GitHub Codespaces from any browser on any device (PC, tablet, smart phone). Codespaces gives you access to Visual Studio Code, with direct access to your repository (without having to clone) from anywhere. It's perfect for a portable development environment. Login to GitHub (if you haven't already) and proceed.
 
