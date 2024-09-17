@@ -836,7 +836,7 @@ echo $?
 
 Note: it is important that no other commands are issued between running **./hello_test.py** and **echo $?**
 
-## Making your first commit
+### Making your first commit
 
 Congratulations! You have created your Bash script using Codespaces. You can now commit it to your GitHub repository. To do this:
 
@@ -852,9 +852,7 @@ You've made your first commit! You will be doing this many times over the course
 
 ## Investigation 5: Generating RSA keys, Cloning your GitHub repository and modifying your PATH variable
 
-**Left off here for testing**
-
-### Configuring SSH keys in AWS & GitHub
+### Configuring SSH keys in your Ubuntu Virtual Machine & GitHub
 
 You're going to want to configure secure remote access between your GitHub repository and your Ubuntu Virtual Machine. Fortunately, you have the perfect tool available at your fingertips: SSH key pairs.
 
@@ -876,7 +874,6 @@ This should fail, because you haven't added your ssh key to GitHub.
 
 You should see the following output:
 
-** replace this screenshot **
 ![Testing the RSA keypair for github.com](/img/github-test-rsa.png)
 
 Issue the following command to view your public key.
@@ -897,47 +894,49 @@ Try issuing the following command again. It should work now.
 ssh -T git@github.com
 ```
 
-### Cloning your repository in your Apache server
+### Cloning your GitHub repository in your Ubuntu VM
 
-Issue the following command to clone your GitHub repository into your ~/bin directory.
+Issue the following command to clone your GitHub repository into your home directory.
 
 > **Important:** Be sure to replace `username` in the following command with YOUR GitHub username.
 
 ```bash
-git clone git@github.com:CNET204/labs-4-5-username
+git clone git@github.com:OSL645/lab-3-username
 ```
 
-Issue a command to confirm the repository has been cloned on your Ubuntu server.
+- Issue a command to confirm the repository has been cloned on your Ubuntu VM.
+- Issue a command to change into your **lab-3-username** directory.
 
-Notice the content from our GitHub repository is all there, but it's not in the right place. It is in your user's home directory. It needs to be in document root (`/var/www/html`), and only root can put it there.
-
-Issue the following command to recursively copy the contents of your `labs-4-5-username` directory into `/var/www/html`:
-
-```bash
-sudo cp -R labs-4-5-username/* /var/www/html
-```
-
-Confirm the contents have been written to document root. You should see the following files:
+Confirm the contents have been written to your **lab-3-username** directory. You should see the following files:
 
 - LICENSE
 - README.md
-- index.html
+- hello.bash
+- hello_test.py
 
-You can modify the PATH variable to include the current directory (i.e. ".") so you can run the command by just script filename (eg. **hello.bash** as opposed to **./hello.bash**)
+### Viewing and Modifying your PATH
 
-17. Issue the following Linux command to add your current directory to the **PATH** environment variable:
+The PATH variable defines where Linux looks for commands when you issue them. You can modify the PATH variable to include the current directory (i.e. ".") so you can run the command by just script filename (eg. **hello.bash** as opposed to **./hello.bash**)
 
-```bash
-PATH=$PATH:.
-```
-
-18. Issue the following Linux command to confirm that the current directory "." has been **added** to the end of the **PATH** environment variable:
+1. Issue the following Linux command to view your **PATH** environment variable. Note the output.
 
 ```bash
 echo $PATH
 ```
 
-19. Issue the following to run your Bash shell script just by name:
+2. Issue the following Linux command to temporarily add your current directory to the **PATH** environment variable:
+
+```bash
+PATH=$PATH:.
+```
+
+3. Issue the following Linux command to confirm that the current directory "." has been **added** to the end of the **PATH** environment variable:
+
+```bash
+echo $PATH
+```
+
+4. Issue the following to run your Bash shell script just by name:
 
 ```bash
 hello.bash
@@ -957,15 +956,15 @@ The current directory location is: /home/murray.saul
 The current user home directory is: /home/murray.saul
 ```
 
-20. Exit your Matrix session, and log back into your Matrix session.
-21. Re-run the **hello.bash** shell script by just using the name.
+5. Close your terminal and launch a new one.
+6. Re-run the **hello.bash** shell script by just using the name.
 
 - What did you notice?
 - The setting of the **PATH** environment variable only worked in the current session only.
 - If you exit the current Matrix session, then the recently changed settings for environment variables will be lost.
 - You will in a future tutorial how to set environment variables in **start-up** files.
 
-22. Issue the following Linux command to run a checking script:
+7. Issue the following Linux command to run a checking script:
 
 ```bash
 ~ops145/t3-check-6 | more
