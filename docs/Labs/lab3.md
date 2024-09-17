@@ -820,6 +820,8 @@ The current directory location is: /workspaces/lab-3-username
 The current user home directory is: /home/codespace
 ```
 
+**NOTE:** If you give a script execute permissions (ie chmod u+x scriptname) in Codespaces before you push your changes to GitHub, the script will inherit those permissions on whatever system you clone/pull it into!
+
 ### Running a check script in Codespaces to check your script
 
 The ability to autograde your work has been built into GitHub (via GitHub classroom) using Python scripts. You can run these to check your work before committing your changes to GitHub and testing them in your virtual machine. To run the check script for **hello.bash** issue the following command:
@@ -834,7 +836,7 @@ If it is successful you will notice there is no output on the screen. That is be
 echo $?
 ```
 
-Note: it is important that no other commands are issued between running **./hello_test.py** and **echo $?**
+**Note:** it is important that no other commands are issued between running **./hello_test.py** and **echo $?**
 
 ### Making your first commit
 
