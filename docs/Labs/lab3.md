@@ -688,7 +688,7 @@ Use the following [link](https://classroom.github.com/a/e93Oe4wN) to set up your
 
 Next, follow the sections for setup on a Shared Computer by Accessing GitHub Codespaces or on your Personal Computer. While you can install Visual Studio Code (VSCode) locally, I recommend using Codespaces for this course.
 
-### Shared Computer (ie College PC): Accessing GitHub Codespaces
+### Shared Computer (ie College PC) or Personal Computer: Accessing GitHub Codespaces
 
 Once you have set up your Lab 3 repository by following the link above (go back and do that if you missed it), you can access GitHub Codespaces from any browser on any device (PC, tablet, smart phone). Codespaces gives you access to Visual Studio Code, with direct access to your repository (without having to clone) from anywhere. It's perfect for a portable development environment. Login to GitHub (if you haven't already) and proceed.
 
