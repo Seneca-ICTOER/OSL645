@@ -5,6 +5,8 @@ sidebar_position: 4
 description: Tutorial 3 for Students to Learn Numbering Conversion, File Permissions and Introduction to Shell Scripting
 ---
 
+# Under Development
+
 # Tutorial 3: Numbering Conversion, File Permissions and Introduction to Shell Scripting
 
 ## Main Objectives of this Tutorial
@@ -645,7 +647,60 @@ chmod u+x hello
 
 Proceed to the next investigation.
 
-## Investigation 4: She-Bang Line, Variables, and Parameters
+## Investigation 4: Git, GitHub, GitHub Classroom and GitHub Codespaces
+
+In this investigation, you will learn how to use modern tools commonly used in industry to write, maintain and deploy a Bash shell script. You will be using the following tools:
+
+- **Git**: Git is a distributed version control system designed to handle everything from small to very large projects with speed and efficiency. It allows multiple developers to work on a project simultaneously without interfering with each other's changes, providing features like branching, merging, and version tracking. Git was created by Linus Torvalds and released in 2005.
+
+- **GitHub**: GitHub is a web-based platform used for version control and collaborative software development. It leverages Git, a distributed version control system, to track changes in source code during software development. Here are some key features and concepts:
+
+  1. **Repositories**: Centralized storage locations for projects, where all files and their revision histories are stored.
+  2. **Branches**: Parallel versions of a repository, allowing multiple development lines. The `main` branch is typically the default.
+  3. **Commits**: Snapshots of changes made to the repository, with messages describing the changes.
+  4. **Pull Requests**: Proposals to merge changes from one branch to another, often used for code review and collaboration.
+  5. **Issues**: Tracking system for bugs, enhancements, and other project tasks.
+  6. **Actions**: Automation workflows for continuous integration and deployment (CI/CD).
+
+  GitHub integrates with various tools and services, enhancing project management, code quality, and team collaboration.
+
+- **GitHub Classroom**: GitHub Classroom is a tool provided by GitHub that helps educators manage and streamline the process of assigning, collecting, and grading coding assignments. It integrates with GitHub repositories to create a seamless workflow for both teachers and students. This tool is particularly useful in programming courses where version control and collaborative coding are essential skills.
+
+- **GitHub Codespaces**: GitHub Codespaces is a cloud-based development environment that allows you to code directly in the cloud using Visual Studio Code or a web-based editor. It provides a fully configured development environment with all the necessary tools and dependencies pre-installed, which can be customized to suit your project's needs. This enables you to start coding immediately without worrying about setting up your local development environment. Codespaces can be particularly useful for collaborative projects, as it ensures that all team members are working in a consistent environment. Codespaces allows you to access your development environment via a web browser, from anywhere in the world. The only thing you need is an Internet connection.
+
+**Perform the Following Steps**
+
+## Creating a GitHub account
+
+Navigate to [github.com](https://github.com/) and create an account (if you don't already have one) using your college email address. You may also wish to add your personal email address as a secondary one. You can change this to your primary email address at any time; which might be useful post graduation.
+
+In the next steps you will be accessing GitHub classroom. You will also be using git with Visual Studio Code to push your code (web pages) to github.com, where you will then pull them into your Apache web server. These tools are all free, open source, and commonly used in web development.
+
+## Introduction to Git & GitHub
+
+Use the following [link](https://classroom.github.com/a/oxzZDrV8) to set up your access to the Introduction to Git & GitHub materials (provided by GitHub Classroom). Read through everything before you continue. The purpose of this exercise is to familiarize yourself with Git & GitHub. To submit this, edit the instructions (README.md) by clicking on the pencil in the top right corner. You may wish to complete any of the additional items under **Optional next steps**. If you want to access the [Student Developer Pack](https://education.github.com/pack), you are **required** to add your **name** and a short **bio**. The Student Developer Pack comes with free access to a ton of useful industry tools and services. While you will not be using it in this course, you may want to take advantage of some of the offers.
+
+Additionally, you may want to install the GitHub mobile app. It allows you access to your GitHub profile and repos from the comfort of your smart phone. It also allows you to secure your GitHub.com account with two-factor authentication if you wish to. You can install it for [Android or iOS](https://github.com/mobile).
+
+## Creating your Github Repo for your Labs
+
+Use the following [link](https://classroom.github.com/a/e93Oe4wN) to set up your lab 3 repository. You will be using this for lab3.
+
+Next, follow the sections for setup on a Shared Computer by Accessing GitHub Codespaces or on your Personal Computer. While you can install Visual Studio Code (VSCode) locally, I recommend using Codespaces for this course.
+
+## Shared Computer (ie College PC): Accessing GitHub Codespaces
+
+Once you have set up your Lab 3 repository by following the link above (go back and do that if you missed it), you can access GitHub Codespaces from any browser on any device (PC, tablet, smart phone). Codespaces gives you access to Visual Studio Code, with direct access to your repository (without having to clone) from anywhere. It's perfect for a portable development environment. Login to GitHub (if you haven't already) and proceed.
+
+You may have noticed in the link above you can click **Open in GitHub Codespaces**. Feel free to do so now. If you have already clicked past that window the next few steps will show you how to access it again (which is useful for future access attempts anyway). Click on **<> Code** and create a new codespace. Once you have created it, you can access it by clicking on the named link.
+
+![Accessing GitHub Codespaces](/img/github-codespaces.png)
+
+It may take a couple seconds to create your Codespace, but once it launches it is exactly like the interface in Visual Studio Code. That is because it is Visual Studio Code, running in an Ubuntu container in the cloud through GitHub. You get access to this completely free through GitHub Classroom. If you are working from a Shared Computer (ie a College PC) proceed to **Creating Your Bash Shell Script**.
+
+**left off here**
+
+## Investigation 5: She-Bang Line, Variables, and Parameters
 
 In this investigation, you will add a **she-bang line** at the top of your shell script to force the shell script to run in a specified shell when executed. You will also learn how to use **variables**, **positional** and **special parameters** to make your shell scripts more adaptable.
 
