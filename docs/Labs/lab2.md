@@ -507,7 +507,7 @@ file *.[tT][xX][tT]
 cp /bin/l*   .
 ```
 
-- View the contents of the contents directory. What did this command do?
+- View the contents of the commands directory. What did this command do?
 
 21. Issue the following Linux command:
 
@@ -515,7 +515,7 @@ cp /bin/l*   .
 rm *
 ```
 
-- View the contents of the contents directory. What did this command do?
+- View the contents of the commands directory. What did this command do?
 
 22. Issue the following Linux command (lowercase "l" NOT the number "1"):
 

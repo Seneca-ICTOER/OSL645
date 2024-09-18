@@ -5,8 +5,6 @@ sidebar_position: 4
 description: Lab 3 for Students to Learn Numbering Conversion, File Permissions and Introduction to Shell Scripting
 ---
 
-# Under Development
-
 # Lab 3: Numbering Conversion, File Permissions and Introduction to Shell Scripting
 
 ## Main Objectives of this Lab
