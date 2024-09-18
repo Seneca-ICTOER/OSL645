@@ -1,15 +1,15 @@
 ---
-id: tutorial3
-title: Tutorial 3 - Numbering Conversion, File Permissions & Introduction to Shell Scripting
+id: lab3
+title: Lab 3 - Numbering Conversion, File Permissions & Introduction to Shell Scripting
 sidebar_position: 4
-description: Tutorial 3 for Students to Learn Numbering Conversion, File Permissions and Introduction to Shell Scripting
+description: Lab 3 for Students to Learn Numbering Conversion, File Permissions and Introduction to Shell Scripting
 ---
 
 # Under Development
 
-# Tutorial 3: Numbering Conversion, File Permissions and Introduction to Shell Scripting
+# Lab 3: Numbering Conversion, File Permissions and Introduction to Shell Scripting
 
-## Main Objectives of this Tutorial
+## Main Objectives of this Lab
 
 - Understand how digital computers store data (i.e. data representation)
 - Define **binary** and **octal** numbers
@@ -23,7 +23,7 @@ description: Tutorial 3 for Students to Learn Numbering Conversion, File Permiss
 - Set **permissions** and **execute** shell scripts.
 - Use **environment** variables
 
-## Tutorial Reference Material
+## Lab Reference Material
 
 **Course Slides:**
 
@@ -285,7 +285,7 @@ The **read** command can be used to prompt the user to enter data into a variabl
 
 ## Investigation 1: Numbering Conversions
 
-**ATTENTION: This online tutorial will be required to be completed by Friday in week 5 by midnight to obtain a grade of 2% towards this course**
+**ATTENTION: This online lab will be required to be completed by Friday in week 5 by midnight to obtain a grade of 2% towards this course**
 
 For this investigation, we will NOT be logged into our Matrix account, but it is recommended to have an **MS Word document** open to manually perform numbering conversions.
 
@@ -343,7 +343,7 @@ In this investigation, you will get experience using the **chmod** command to **
 3. Issue the following Linux command to run a checking script:
 
 ```bash
-~ops145/t3-check-1
+~/bin/lab3-check-1
 ```
 
 4. If you encounter errors, make corrections and **re-run** the checking script until you receive a congratulations message, then you can proceed.
@@ -356,7 +356,7 @@ In this investigation, you will get experience using the **chmod** command to **
 6. Issue the following Linux command to run a checking script:
 
 ```bash
-~ops145/t3-check-2
+~/bin/lab3-check-2
 ```
 
 7. If you encounter errors, make corrections and **re-run** the checking script until you receive a congratulations message, then continue the remaining steps.
@@ -425,10 +425,10 @@ chmod 640 ~/documents/contracts/contract*.txt
 3. Issue the following:
 
 ```bash
-~ops145/t3-check-3
+~/bin/lab3-check-3
 ```
 
-4. If you encounter errors, make corrections and then re-run the checking script until you receive a congratulations message and then continue with this tutorial.
+4. If you encounter errors, make corrections and then re-run the checking script until you receive a congratulations message and then continue with this lab.
 
    - Let's get some practice setting permissions to allow users to make editing changes to regular files.
 
@@ -540,10 +540,10 @@ touch ~/shared2/myfile.txt
 14. Issue the following:
 
 ```bash
-~ops145/t3-check-4
+~/bin/lab3-check-4
 ```
 
-- If you encounter errors, make corrections and then re-run the checking script until you receive a congratulations message and then continue with this tutorial.
+- If you encounter errors, make corrections and then re-run the checking script until you receive a congratulations message and then continue with this lab.
 
 15. Logout of your Matrix account, and then log-back into your Matrix account.
 16. Issue the following Linux command (without arguments):
@@ -638,12 +638,12 @@ chmod u+x hello
 10. Issue the following Linux command to run a checking script:
 
 ```bash
-~ops145/t3-check-5
+~/bin/lab3-check-5
 ```
 
 11. If you encounter errors, make corrections and **re-run** the checking script until you receive a congratulations message, then you can proceed.
 
-    - In the next investigation, you will learn to create and run shell scripts that use **variables**, **positional** and **special parameters**. You will also learn how to add a **she-bang line** at the top of a shell script to force it to run in a specified shell.
+    - In the next investigation, you will learn to create and run shell scripts that use **environment variables**. You will also learn how to add a **she-bang line** at the top of a shell script to force it to run in a specified shell.
 
 Proceed to the next investigation.
 
@@ -964,12 +964,12 @@ The current user home directory is: /home/murray.saul
 - What did you notice?
 - The setting of the **PATH** environment variable only worked in the current session only.
 - If you exit the current Matrix session, then the recently changed settings for environment variables will be lost.
-- You will in a future tutorial how to set environment variables in **start-up** files.
+- You will in a future lab how to set environment variables in **start-up** files.
 
 7. Issue the following Linux command to run a checking script:
 
 ```bash
-~ops145/t3-check-6 | more
+~/bin/lab3-check-6 | more
 ```
 
 - If you encounter errors, make corrections and **re-run** the checking script until you receive a congratulations message, then you can proceed.
