@@ -568,7 +568,7 @@ vim textedit/practice/othertext.txt
 22. Issue the following to run the vim online tutorial:
 
 ```bash
-/home/jason.carman/vi-tutorial
+~/bin/vi-tutorial
 ```
 
 23. In the tutorial menu, select the first menu item labelled **"USING THE VI TEXT EDITOR"**
