@@ -1,721 +1,582 @@
 ---
-id: tutorial5
-title: Tutorial 5 - Redirection
+id: tutorial4
+title: Tutorial 4 - File Transfer and Sending Email Messages
 sidebar_position: 6
-description: Tutorial 5 for Students to Learn Redirection
+description: Tutorial 4 for Students to Learn File Transfer and Sending Email Messages
 ---
 
-# Tutorial 5: Redirection - Standard Input, Standard Output, and Standard Error
+# Tutorial 4: File Transfer and Sending Email Messages
 
-## Main Objectives of this Tutorial
+## Main Objectives of this Practice Tutorial
 
-- Understand and use the **cut, tr**, and **wc** Linux commands
-- Define the terms **Standard Input** (_stdin_), **Standard Output** (_stdout_), and **Standard Error** (_stderr_)
-- Understand and use the **\>**, **\>\>**, **2\>**, **2\>\>** symbols with Linux commands
-- Understand the purpose of the the **/dev/null** file and the **Here Document**
-- Define the term **pipeline command** and explain how a pipeline command functions
-- Define the term **filter** and how it relates to pipeline commands
-- Use the **semicolon** ";" and **grouping** "( )" symbols to issue multiple Unix / Linux commands on a single line
-- Use the **backslash** "\" symbol to spread-out long Unix/Linux commands over multiple lines
+- List **common utilities** contained in the **ssh** application framework
+- Securely **copy** files between Unix/Linux servers using the **scp** command
+- Securely **transfer** copies of files between Unix/Linux servers using the **sftp** command
+- Use the **ssh** command to run and view commands on a **remote computer** from a **local computer**.
+- Use the **mail** command to send email with **file attachments** to your Seneca email account
 
 ## Tutorial Reference Material
 
 **Course Slides:**
 
-- Week 6 Lecture 1 Notes: [Web](https://docs.google.com/presentation/d/e/2PACX-1vSqbZvAF_ukG8YvsphJCOm9qLUDd83-zNf4g93705iBVsNi_lw_Xsvrc_G3NmLXddlCkQwPj0kzPHX0/pub?start=false&loop=false&delayms=3000)
-- Week 6 Lecture 2 Notes: [Web](https://docs.google.com/presentation/d/e/2PACX-1vSZPIkIztouAOWry8lXISFYPxhOPFimjuj2LQ3Xyd5X68ikYAjTKQWAYEFckqRPvheR2UanL6vi1Xc0/pub?start=false&loop=false&delayms=3000)
+- Week 6 Lecture 1 Notes: [Web](https://docs.google.com/presentation/d/e/2PACX-1vR_gNcl84UbvMgQ8hsyXcIcQbDz95rc3C1boPnIUUdP5Mivgp-SSN6HDR7Dqs3EyucJFALg6FdCrcif/pub?start=false&loop=false&delayms=3000)
 
-**Redirection:**
+**Definitions:**
 
-| [Standard Input (stdin)](http://www.linfo.org/standard_input.html) | [Standard Output (stdout)](http://www.linfo.org/standard_output.html) | [Standard Error (stderr)](http://www.linfo.org/standard_error.html) | [Pipeline Commands](http://www.linfo.org/pipe.html) |
-| :----------------------------------------------------------------- | :-------------------------------------------------------------------- | :------------------------------------------------------------------ | :-------------------------------------------------- |
+- [Secure Copy](https://en.wikipedia.org/wiki/Secure_copy)
+- [Secure File Transfer Protocol](https://en.wikipedia.org/wiki/SSH_File_Transfer_Protocol)
+- [Email](<https://en.wikipedia.org/wiki/Mail_(Unix)>)
 
-**Multiple Commands:**
+**File Transfer Commands:**
 
-- [Semicolon](https://www.javatpoint.com/linux-semicolon)
-- [Grouping ( )](https://www.gnu.org/software/bash/manual/html_node/Command-Grouping.html)
-
-**Redirection Filters:**
-
-| [more](http://man7.org/linux/man-pages/man1/more.1.html), [less](http://man7.org/linux/man-pages/man1/less.1.html) | [head](http://man7.org/linux/man-pages/man1/head.1.html), [tail](http://man7.org/linux/man-pages/man1/tail.1.html) | [sort](http://man7.org/linux/man-pages/man1/sort.1.html) | [uniq](http://man7.org/linux/man-pages/man1/uniq.1.html) | [grep](http://linuxcommand.org/lc3_man_pages/grep1.html) | [cut](http://man7.org/linux/man-pages/man1/cut.1.html) | [tr](http://linuxcommand.org/lc3_man_pages/tr1.html) | [wc](http://man7.org/linux/man-pages/man1/wc.1.html) | [tee](http://man7.org/linux/man-pages/man1/tee.1.html) |
-| :----------------------------------------------------------------------------------------------------------------- | :----------------------------------------------------------------------------------------------------------------- | :------------------------------------------------------- | :------------------------------------------------------- | :------------------------------------------------------- | :----------------------------------------------------- | :--------------------------------------------------- | :--------------------------------------------------- | :----------------------------------------------------- |
+- [scp](http://man7.org/linux/man-pages/man1/scp.1.html)
+- [sftp](http://man7.org/linux/man-pages/man1/sftp.1.html)
+- [mail](https://man.openbsd.org/mail)
 
 ## Key Concepts
 
-### Additional File Manipulation Commands
+The ssh Linux command is a suite of tools to allow the user to issue Linux commands securely between Unix / Linux servers, as well as securely copy and transfer files among Unix/Linux servers.
 
-Before proceeding, let's look at some additional commands used to manipulate content of text files.
+In this tutorial, you will learn several different methods to securely transfer files from your Matrix Linux account to other computers using Linux commands including scp, sftp and mail.
 
-Refer to the table below regarding these text file manipulation commands:
+### Issuing Commands on Remote Unix/Linux Servers
 
-| **Command** | **Description**                                                                                                                                                                                                                                                                                                                                                             |
-| :---------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **tr**      | Used to **translate** characters to different characters. eg. `tr 'a-z' 'A-Z' < filename`                                                                                                                                                                                                                                                                                   |
-| **cut**     | Used to **extract** fields and characters from records. The option **-c** is used to cut by a character or a range of characters. The **-f** option indicates the field number or field range to display (this may require using the **-d** option to indicate the field seperator (delimeter) which is tab by default). eg. `cut -c1-5 filename`, `cut -d":" -f2 filename` |
-| **wc**      | Displays various **counts** of the contents of a file. The **-l** option displays the number of lines, the **-w** option displays the number of words, and the **-c** option displays the number of characters. eg. `wc filename`, `wc -l filename`, `wc -w filename`                                                                                                       |
+You can use the **ssh** command to issue Unix/Linux commands on a **remote** server from your local computer without logging into a remote server (such as Matrix).
 
-### Redirection (Standard Input, Standard Output, Standard Error)
+![SSH Remote](/img/Ssh-remote.png)
 
-_**Redirection** can be defined as changing the way from where commands read input to where commands sends output. You can redirect input and output of a command._ Reference: https://www.javatpoint.com/linux-input-output-redirection
+The **ssh** command can be used to run and view commands on **remote computer** from a **local computer**.
 
-**Standard input** (**stdin**) is a term which describes from where a command receives **input**. This would apply only to Unix/Linux commands that accept stdin input (like _cat, more, less, sort, grep, head, tail, tr, cut, wc_, etc.).
-
-![stdin Symbol](/img/Stdin-symbol.png)
-
-The **standard input (stdin)** symbol that describes where a Unix/Linux command receives **input** ^
-
-_Examples:_
+_Command Usage:_
 
 ```bash
-tr 'a-z' 'A-Z' < words.txt
+ssh username@matrix.senecapolytechnic.ca ls -l
+```
+
+You will be prompted for your Matrix account password, then the contents of your home directory in your remote Matrix account will be displayed on your local computer's terminal.
+
+### Secure Copy (scp)
+
+The **scp** command is used to securely copy files between your **local** computer and **remote** Unix/Linux server. The usage for the _scp_ command is similar to the **cp** command with the addition of **user name** and **host name**.
+
+![SCP Diagram](/img/Scp-diagram.png)
+
+The **scp** Unix/Linux command is used to securely copy files between Unix/Linux servers.
+
+_Command Usage:_
+
+```bash
+scp local.file username@host:destination-pathname
 ```
 
 ```bash
-cat < abc.txt
+scp local.file username@host:
 ```
 
 ```bash
-sort < xyz.txt
+scp user@host:file-pathname local-pathname
 ```
 
-**Standard output (stdout)** describes where a command sends its **output**. In the examples below, output from a command is sent to the **monitor**, unless it is sent to a **text file**.
+The most common **mistake** that students make is forgetting to add the **colon** character ":" after the remote hostname.
 
-![stdout symbol 1](/img/Stdout-symbol-1.png)
+The user name in the command can be **omitted** if it's the same as on the local host. Multiple file and recursive directory copy (i.e. option **-r**) is supported.
 
-The **standard out (stdout)** symbol with one greater than sign **overwrites** existing file content with command output ^
+### Secure File Transmission Control Protocol (sftp)
 
-![stdout symbol 2](/img/Stdout-symbol-2.png)
+**FTP** stands for **File Transfer Protocol** which provides a set of **rules** on how to convert data that is transferred between computers (both identical and different operating systems). The **sftp** command performs file transfers securely using encryption.
 
-The **standard output (stdout)** symbol with two greater than signs **add** command's output to **bottom** of existing file's contents. ^
+![SFTP Diagram](/img/Sftp-diagram.png)
 
-_Examples:_
+The sftp Unix/Linux command is used to securely transfer (copy) files between Unix/Linux servers.
+
+_Command Usage:_
 
 ```bash
-ls -l
+sftp username@hostname
 ```
 
-```bash
-ls -l > detailed-listing.txt
-```
+When you login via the _sftp_ command, the **sftp prompt** appears. The sftp prompt is like a Bash shell prompt, but with a limited number of commands. When issuing sftp commands, the local server relates to the server where you first issued the sftp command. Refer to the diagram on the right for local and remote sftp commands.
 
-```bash
-ls /bin >> output.txt
-```
+**Graphical SFTP Applications**
 
-**Standard Error (stderr)** describes where a command sends it's error messages. In the examples below we issue the pwd in capitals on purpose to generate an error message, which can be redirected to a **text file**.
+Although it is important to know how to use the **sftp** command for _quizzes, midterm_ and _final exam_, there are **graphical sftp applications** that provide an alternative to issuing commands.
 
-![stderr symbol 1](/img/Stderr-symbol-1.png)
+![Graphical SFTP App](/img/Graphical-sftp-application.png)
 
-The **standard error (sterr)** symbol with one greater than sign **overwrites** existing file content with command's **error message**. ^
+If you installed the graphical **Secure Shell Client** application in your Windows computer from performing [LAB 1A INVESTIGATION 1](./lab1a.md#investigation-1-accessing-your-matrix-linux-account), you can use this application to transfer files between your computer and your Matrix account by graphically **navigating, selecting** and **dragging** files between computers.
 
-![stderr symbol 2](/img/Stderr-symbol-2.png)
+### Sending Emails with File Attachment (mail)
 
-The **standard error (stderr)** symbol with two greater than signs **add** command's error message to **bottom** of existing file's contents. ^
+You can use the **mail** command in Matrix to send email messages to other email accounts via the Internet.
 
-_Examples:_
+**Sending a Simple Email Message:**
 
-```bash
-PWD
-```
+1. Type: **mail username@hostname** and press **ENTER**
+2. Enter **subject line** and press **ENTER**
+3. Type the **body of the message** and then when finished, press **ctrl+d** to send message
 
-```bash
-PWD 2> error-message.txt
-```
+**Sending an Email Message with a File Attachment:**
 
-```bash
-PWD 2 >> error-messages.txt
-```
+1. Type: **mail username@hostname -a filepathname** and press **ENTER**
+2. Enter **subject line** and press **ENTER**
+3. Type the **body of the message** and then when finished, press **ctrl+d** to send message
 
-```bash
-PWD 2> /dev/null
-```
+**Alternative Method of Sending an Email Message with a File Attachment:**
 
-**The /dev/null File**
+1. Type: **mail -s "subject line" username@hostname < filepathname**
+2. Press **ENTER** to send
 
-The **/dev/null** file (sometimes called the **bit bucket** or **black hole**) is a special system file that **discard** all data written into it. This is useful to discard unwanted command output.
+![Mail Diagram](/img/Mail-diagram.png)
 
-_Examples:_
+**NOTE:** You would have to use this method since you have used **stdin** redirection to attach the file’s so you can’t input the subject line from the terminal!
 
-```bash
-LS 2> /dev/null
-```
+![Mail Diagram 2](/img/Mail-diagram-2.png)
 
-```bash
-ls > /dev/null
-```
+Viewing email with file attachment in **Seneca email account**.
 
-```bash
-find / -name "tempfile" 2> /dev/null
-```
+## Investigation 1: File Transfer (Secure Copy)
 
-**The Here Document**
+**ATTENTION: This online tutorial will be required to be completed by Friday in week 8 by midnight to obtain a grade of 2% towards this course**
 
-In Linux, the **Here Document** allows a user to redirect stdin from within the command itself.
+The **SSH** package on your _home computer_ and on the _Matrix Linux server_ contain a **suite** (i.e. collection) of secure utilities including **ssh** and **scp**.
 
-![Here Document](/img/Here_Document.png)
+In this investigation, you will learn how to use the **scp** command to **securely copy files** between your computer and your Matrix Linux server. This methods is useful because it can be performed in the _MS-Windows, MacOSx_, and _Unix/Linux_ operating systems.
 
-The **Here Document** allows a user to redirect stdin from within the command itself.
-
-_Example:_
-
-```bash
-cat <<+
-Line 1
-Line 2
-Line 3
-+
-```
-
-### Pipeline Commands
-
-**Pipeline Command:** Having commands send their **standard output** directly to **standard input** of other commands WITHOUT having to use **temporary** files.
-
-![Pipe Diagram 1](/img/Pipe-diagram-1.png)
-
-Pipes that are used in a **pipeline command** are represented by the **pipe** "\|" symbol. A few simple commands can be **combined** to form a more powerful command line.
-
-Commands to the **right** of the pipe symbol are referred to as **filters**. They are referred to as _filters_ since those commands are used to **modify** the stdout of the previous command. Many commands can be "piped" together, but these commands (filters) must be chained in a specific order, depending on what you wish to accomplish
-
-_Examples:_
-
-```bash
-ls -al | more
-```
-
-```bash
-ls | sort -r
-```
-
-```bash
-ls | sort | more
-```
-
-```bash
-ls -l | cut -d" " -f2 | tr 'a-z' 'A-z"
-```
-
-```bash
-ls | grep Linux | head -5
-```
-
-```bash
-head -7 filename | tail -2
-```
-
-**The tee Command**
-
-The **tee** utility can be used to split the flow of **standard output** between a **text file** and the **terminal screen.**
-
-![Tee Diagram 1](/img/Tee-diagram-1.png)
-
-The **tee** utility can be used to **split** the flow of information. For example to save in a file as well as display on a screen. (Image licensed under [cc](https://creativecommons.org/licenses/by-sa/3.0/))
-
-The **tee** option **-a** can be used to add content to the **bottom** of an existing file as opposed to _overwriting_ the file's previous contents.
-
-The reason for the name "**tee**" is that the splitting of the flow of information resembles a capital T.
-
-_Examples:_
-
-```bash
-ls | tee unsorted.txt | sort
-```
-
-```bash
-ls | grep Linux | tee matched.txt | more
-```
-
-```bash
-ls | head -5 | tee -a listing.txt
-```
-
-### Multiple Commands Using Semicolon, Grouping, and Backquotes
-
-Besides piping, there are other ways that multiple commands may be placed in one line: commands may be separated by **semi-colons.**
-
-_Example:_
-
-```bash
-sleep 5; ls
-```
-
-Multiple commands can also be **grouped** by using parentheses.
-
-_Example:_
-
-```bash
-(echo "Who is on:"; w) > whoson
-```
-
-(_**Note:** \_all command output is sent to a file_)
-
-Commands may also be **spread-out over multiple lines**, making it easier (for humans) to interpret a long command.
-
-The \ symbol “quotes-out” the meaning of the **ENTER** key as text (i.e. _new-line_ as instead of _running_ the command).
-
-_Example:_
-
-```bash
-echo "This will be split over multiple \
-lines. Note that the shell will realize \
-that a pipe requires another command, so \
-it will automatically go to the next line" |tr '[a-z]' '[A-Z]'
-```
-
-## Investigation 1: Basics Of Redirection
-
-**ATTENTION: This online tutorial will be required to be completed by Friday in week 6 by midnight to obtain a grade of 2% towards this course**
-
-In this investigation, you will learn how to redirect **standard input, standard output** and **standard error** when issuing Unix / Linux commands.
+You will also learn how to issue the **ssh** command to run commands on your **remote** Matrix server while remaining on your **local** computer.
 
 **Perform the Following Steps:**
 
-1. **Login** to your matrix account and issue a command to **confirm** you are located in your **home** directory.
-2. Issue the following Linux command to create the following directory:
+1. Determine which operating system that your computer is using.
+2. Connect to your Matrix account using the instructions in the table below based on your **current operating system**.
+
+**Using Windows 10 (or above):**
+
+- From the start menu, type **cmd** and launch program
+- In the command terminal, enter the following command:
 
 ```bash
-mkdir ~/redirect
+ssh senecausername@matrix.senecapolytechnic.ca
 ```
 
-3. Change to the **~/redirect** directory and confirm that you changed to that directory.
-4. Use a text editor to create a file in your current directory called **data.txt** and enter the following text displayed below:
+**Using macOS:**
+
+- Click _Launchpad_ icon, type **terminal** and press **ENTER**
+- In the terminal, enter the following command:
+
+```bash
+ssh senecausername@matrix.senecapolytechnic.ca
+```
+
+**Using Linux:**
+
+- From the menu, choose: **Applications > System Tools > Terminal**
+- In the terminal, enter the following command:
+
+```bash
+ssh senecausername@matrix.senecapolytechnic.ca
+```
+
+3. **NOTE:** Make certain to open a **command-line terminal** and NOT a graphical SSH application for this tutorial.
+
+![CMD](/img/Cmd.png)
+
+4. After logging into your Matrix account, issue to the **pwd** command to confirm you are in your home directory.
+5. Issue the following Linux command to create the following directory:
+
+```bash
+mkdir ~/remote
+```
+
+6. Change to the **~/remote** directory and confirm that you have changed to that directory.
+7. Use a text editor to create a text file called **myfile.txt**
+8. Enter the following two lines displayed below in your editing session:
 
 ```text
-This is line 1
-This is line 2
-This is line 3
+This is my file
+It is a small file
 ```
 
-5. **Save** editing changes and **exit** the text editor.
-6. Issue the following Linux command:
+9. **Save** editing changes to your _myfile.txt_ file and exit your text editor.
+10. Let's run a **shell script** to check that you created the **remote** directory and that you created the **myfile.txt** file (with correct file contents) in that directory.
+
+    - Enter the following command:
 
 ```bash
-tr 'a-z' 'A-Z' < data.txt
+~ops145/t5-check-1
 ```
 
-- What does this command do?
+11. If you encounter errors, make corrections and then re-run the checking script until you receive a congratulations message, and proceed to the next step.
 
-7. Issue the following Linux command:
+    - **NOTE:** We will now learn to transfer files between your **local home computer** and your **remote Matrix Linux server**.
+
+12. **Exit your Matrix ssh session** but **remain** in the command terminal on your **local** computer..
+
+    - **ATTENTION:** You are required to **remain** in your **local** computer's command terminal for the remainder of this INVESTIGATION and INVESTIGATION 2.
+
+![CMD](/img/Cmd.png)
+
+13. The **mkdir** command works with _MS Windows/UNIX/Linux/MacOSx_ computers. Issue the following command on your local computer to create a directory called **local**:
 
 ```bash
-tr 'a-z' 'A-Z' < data.txt > output.txt
+mkdir local
 ```
 
-- What does this command do? What are the contents of the file output.txt?
-
-8. Issue the following Linux command:
+14. The **cd** command works with _MS Windows/UNIX/Linux/MacOSx_ computers. Issue the following command on your local computer to change to the **local** directory:
 
 ```bash
-tr 'a-z' 'A-Z' > output.txt < data.txt
+cd local
 ```
 
-- What does this command do? Is there any difference in terms of this command and the previous command issued?
+15. If you are using MS Windows on your local computer, issue the `dir` command to confirm you are in the local directory; otherwise, use the `pwd` command.
+16. If you are in MS Windows, open the **GRAPHICAL** `NotePad` application to create a text file (Otherwise, use the **nano** or **vi** text editor).
+17. Enter a few lines of text, and if using **Notepad**, then click on the **File** menu and select **save as** (save as the filename `other.txt` in your `local` directory) and then **exit** the Notepad text editor.
 
-9. Issue the following Linux command:
+    - **NOTE:** if using another text editor, save your editing session and exit the text editor.
+
+18. If your OS is MS Windows issue the `dir` Windows command to view the contents of your current directory (otherwise, issue the `ls` command for other operating systems).
+
+    - We will use the **scp** command to copy the local file called **other.txt** to your home directory on your remote Matrix Linux server.
+
+19. Issue the following Linux command to copy the **other.txt** file from your local machine to your remote Matrix server (replace yoursenecaid is YOUR Seneca ID and **ADD A COLON : TO THE END OF THE COMMAND**):
 
 ```bash
-tr 'a-z' 'A-Z' >> output.txt < data.txt
+scp other.txt yoursenecaid@matrix.senecapolytechnic.ca:
 ```
 
-- What happens to the content of the **output.txt** file? Why?
+20. When prompted, enter your **Matrix password.**
 
-10. Issue the following Linux command:
+    - **TIP:** You can issue the ssh command, followed by a command that will be run on your remote computer, but display on your local computer **without** having to establish a continuous connection to your remote Matrix server.
+
+21. Issue the following command (using your matrix username):
 
 ```bash
-tail -2 < data.txt > output.txt
+ssh yoursenecaid@matrix.senecapolytechnic.ca ls -l other.txt
 ```
 
-- What does this command do? Check the contents of the **output.txt** file to confirm.
+22. When prompted, **enter your password** and press **ENTER**.
 
-11. Issue the following Linux command:
+    - Do you see detailed information **other.txt** file? (look at bottom)
+    - That command was run remotely on your Matrix server as confirmation that you securely copied that file to the home directory of the Matrix server.
+
+![SCP Diagram 2](/img/Scp-diagram-2.png)
+
+- Let's copy the file called **myfile.txt** in the **~/remote** directory that you created earlier in your Matrix account to your **local** directory on your home computer.
+
+23. Issue the following Linux command (replace yoursenecaid is YOUR Seneca ID). The period "." as **second argument** represents your current directory on your local computer):
 
 ```bash
-tail -2 > output2.txt < data.txt
+scp yoursenecaid@matrix.senecapolytechnic.ca:remote/myfile.txt .
 ```
 
-- Why does this command render the same results as the previous command?
-- Try explaining how the command works in terms of **stdin** and then **stdout**.
+24. Issue the `dir` or `ls` command (depending on the OS of your local computer) to confirmed your properly copied that file from Matrix.
+25. Use the **Notepad** application (or vi for other OS types) to create a text file called `mytextfile.txt`, type some text and then save in the `local` directory of your computer.
+26. Issue the **dir** or **ls** command (depending on your OS) to confirm that your newly-created file exists in your **local** directory.
+27. We are going to intentionally make a **mistake** with the **scp** command.
 
-12. Issue the following Linux command to create a file:
+    - Issue the following Linux command to copy the **mytextfile.txt** file from your local machine to your remote Matrix server (replace yoursenecaid is YOUR Seneca ID and DO NOT INCLUDE THE : at the end of the command so see what happens):
 
 ```bash
-cat > output3.txt
+scp mytextfile.txt yoursenecaid@matrix.senecapolytechnic.ca
 ```
 
-13. Enter the follow text displayed below:
+- Did you notice anything different (i.e. no password)?
+
+28. Issue the following command (using your matrix username):
+
+```bash
+ssh yoursenecaid@matrix.senecapolytechnic.ca ls -l mytextfile.txt
+```
+
+29. When prompted, enter your password and press ENTER.
+
+    - **The file mytextfile.txt does NOT appear in your home directory on your Matrix server! Note that the COLON was NOT added to the end of the command! Therefore, you MUST remember to include the COLON : at the end of the hostname, or it will NOT remotely copy the file!**
+
+30. Issue the following command to properly copy that same file to your Matrix server:
+
+```bash
+scp mytextfile.txt yoursenecaid@matrix.senecapolytechnic.ca:
+```
+
+31. Issue the following command to confirm that it was remotely copied to your **home** directory in Matrix:
+
+```bash
+ssh yoursenecaid@matrix.senecapolytechnic.ca ls -l /home/yoursenecaid/mytextfile.txt
+```
+
+- Do you see the output for the detailed file listing of **mytextfile.txt**?
+- What does this indicate?
+
+32. Issue the following command to copy the **other.txt** file on your local computer to the **~/remote** directory in Matrix renaming it as **different.txt**:
+
+```bash
+scp other.txt yoursenecaid@matrix.senecapolytechnic.ca:remote/different.txt
+```
+
+33. Issue the following command to confirm that the file was remotely copied to your **~/remote** directory in Matrix with a different filename:
+
+```bash
+ssh yoursenecaid@matrix.senecapolytechnic.ca ls -l /home/yoursenecaid/remote/different.txt
+```
+
+- Were you able to properly copy this file?
+- Let's issue a checking script remotely to see that you properly copied that file from your local computer to your remote Linux server to both your **home** directory and **~/remote** directory.
+
+34. Issue the following:
+
+```bash
+ssh yoursenecaid@matrix.senecapolytechnic.ca ~ops145/t5-check-2
+```
+
+- If you encounter errors, re-run the scp commands to correct and re-run the above command until you receive a congratulations message.
+
+35. Remain in the terminal on your local computer and proceed to INVESTIGATION 2.
+
+In the next investigation, you will use the **sftp** Linux command to transfer (i.e. copy) files between your local computer and the Matrix server.
+
+## Investigation 2: File Transfer (Secure FTP)
+
+The **SSH** package on your _home computer_ and on the _Matrix Linux server_ contain a **suite** (i.e. collection)of secure utilities including **ssh** and **sftp**.
+
+In this investigation, you will learn how to use the **sftp** command to **transfer** files between Unix/Linux servers. This methods is useful because it can be performed in the _MS-Windows, MacOSx,_ and _Unix/Linux_ operating systems.
+
+You will also learn how to issue the **ssh** command to run commands on your **remote** Matrix server while remaining on your **local**computer.
+
+### Command Line Terminal (CLI)
+
+Let's look at using the **sftp** command on your **local** machine.
+
+**Perform the Following Steps:**
+
+1. Make certain that you are in a command terminal on your local computer (i.e. do **NOT** log into your Matrix account).
+2. Issue a command (depending on your OS) to confirm that you are located in the **local** directory in your home computer.
+
+![CMD](/img/Cmd.png)
+
+3. If you are in MS Windows, open the `NotePad` application to create a text file (otherwise: use another text editor like **vi** or **nano**)
+4. Enter a few lines of text, and then click on the **File** menu and select **save as** (save as the filename `thefile.txt` in your `local` directory) and then **exit** the Notepad text editor.
+
+   - If you using another OS, then save-as using the same filename and directory location for the text editor you are using.
+
+5. If your OS is MS Windows issue the `dir` Windows command to view the contents of your current directory (otherwise, issue the **ls** command for other operating systems).
+
+   - **Note:** the relative pathname symbols "." and ".." work for the _Windows/MacOSx/Unix/Linux_ operating systems.
+
+6. Issue the following command to move to the **parent** directory:
+
+```bash
+cd ..
+```
+
+7. If your OS is MS Windows issue the `dir` Windows command to view the contents of that parent directory that you changed to (otherwise, issue the **ls** command for other operating systems).
+8. Issue the following command to start an **sftp** session (note: yoursenecaid is YOUR Seneca ID):
+
+```bash
+sftp yoursenecaid@matrix.senecapolytechnic.ca
+```
+
+- **NOTE:** You may be required to enter **yes** to have the public key shared.
+
+9. You should be in the **sftp command prompt** where you are expected to issue **sftp commands**. Please take a moment to view common local and remote _sftp_ commands on the table below.
+
+| **Operation**                     | **sftp Command** (Local Server) | **sftp Command** (Remote Server) |
+| :-------------------------------- | :-----------------------------: | :------------------------------: |
+| Display current working directory |            **lpwd**             |             **pwd**              |
+| Display directory contents        |             **lls**             |              **ls**              |
+| Create directory                  |           **lmkdir**            |            **mkdir**             |
+| Change directory location         |             **lcd**             |              **cd**              |
+| Upload file to remote server      |             **put**             |                                  |
+| Download file to local server     |             **get**             |                                  |
+
+10. Issue the following sftp command:
+
+```bash
+pwd
+```
+
+- What is the pathname? Which server does this represent: local or remote?
+
+11. Issue the following sftp command:
+
+```bash
+lpwd
+```
+
+- What is the pathname? Which server does this represent: local or remote?
+
+12. Issue the following sftp command to create a directory on your remote server:
+
+```bash
+mkdir remote2
+```
+
+13. Issue the following sftp command to confirm that the **remote2** directory has been created in your _remote_ server's home directory:
+
+```bash
+ls
+```
+
+14. Issue the following sftp command to change to the **remote2** directory on your remote server:
+
+```bash
+cd remote2
+```
+
+15. Issue the **pwd** _sftp command_ to confirm that you have changed to the _remote2_ directory on your remote server.
+16. Issue the following sftp command to change to the **local** directory on your local computer:
+
+```bash
+lcd local
+```
+
+17. Issue the **lpwd** _sftp command_ to confirm that you have changed to the _local_ directory on your local computer.
+18. Issue the following _sftp command_ to transfer the file called **thefile.txt** to the **~/remote2** directory on your remote server:
+
+```bash
+put thefile.txt
+```
+
+19. Issue the **ls** sftp command to confirmed that you transferred the file called: **thefile.txt**
+
+    - Let's create another directory on your local computer called **local2** so we can learn to download a file from your remote directory.
+
+20. Issue the following sftp command to change to the **parent** directory on your local computer:
+
+```bash
+lcd ..
+```
+
+21. Issue the **lpwd** _sftp command_ to confirm that your current working directory on your local computer is your home directory.
+
+22. Issue the following _sftp command_ to create the following directory on your local computer:
+
+```bash
+lmkdir local2
+```
+
+23. Issue the following _sftp command_ to change to the **local2** directory on your local computer:
+
+```bash
+lcd local2
+```
+
+24. Issue the **lpwd** _sftp command_ to confirm you have changed to the **local2** directory on your local computer.
+
+    - Let's learn to download a file from your remote server to your local computer.
+
+25. Issue the following **sftp command** to transfer your **thefile.txt** file from the **remote2** directory on your remote server to your local computer:
+
+```bash
+get thefile.txt
+```
+
+26. Issue the **lls** _sftp command_ to confirm that you transferred the file **thefile.txt** to your local computer.
+27. Issue the following _sftp command_ to exit the sftp utlilty: `exit`
+28. Issue the following Linux command to remotely run a checking script to ensure you created the correct directories and properly transferred those created files:
+
+```bash
+ssh yoursenecaid@matrix.senecapolytechnic.ca ~ops145/t5-check-3
+```
+
+29. If you encounter errors, make corrections and then re-run the checking script until you receive a congratulations message.
+
+    - **FYI:** To run a checking program to check if you created the **local** and **local2** directories in MS Windows would require running a local-based script (like **PowerShell**). Since this is a Unix/Linux based course, we don't have a PowerShell script, so we will ignore checking for files transferred to your local computer.
+    - In the next investigation, you will learn an alternative way to transfer a file to another computer server by sending an **e-mail message with an attached file**.
+
+## Investigation 3: File Transfer (Email)
+
+The **Matrix** server is also an **email server** that can allow you to **send** emails messages to other email accounts.
+
+In this investigation, you will learn how to **transfer** a file from your Matrix server to another computer by sending an **email message** with a **file attachment**.
+
+**Perform the Following Steps:**
+
+1. Make certain that you connect and login to your **Matrix** server and confirm that you are located in your **home** directory.
+2. Issue the following Linux command (using your Seneca-ID):
+
+```bash
+mail yoursenecaid@myseneca.ca
+```
+
+3. When prompted, enter the **subject line**: `Test Message` and press `ENTER`
+4. In the email message **BODY** section, type the following text displayed below (and press **ENTER**):
 
 ```text
-This is the file output3.txt
+This is a test email message
 ```
 
-14. Press `ctrl-d` to exit the command.
-15. Issue the **cat** command to view the contents of the file: **output3.txt**
-16. Issue the following Linux command:
+5. Press `ctrl-d` to send your email message.
+
+   - Did any output display? What you do think **EOT** stands for?
+
+6. Launch a **web-browser**, login into your **Seneca email** account and check for new email messages. Did you receive the email message that you sent from your Matrix server?
+
+   - If you did NOT receive an e-mail message, check the **JUNK** or **CLUTTER** folders.
+   - If you still did not receive an email message, return to your terminal and re-issue the **mail** command making certain that you pressed `ctrl-d` instead of pressing **ctrl-c**
+
+7. Return to your terminal (i.e. Linux Bash shell) and issue the following Linux command:
 
 ```bash
-cp ~jason.carman/ops145/cars .
+mail -a ~/remote/myfile.txt yoursenecaid@myseneca.ca
 ```
 
-17. Issue the **cat** command to view the contents of the **cars** file.
-18. Issue the following Linux command:
+8. When prompted, enter the subject line: `Test Message with Attachment` and press `ENTER`
+9. In the email message **BODY** section, type the following text displayed below (and press **ENTER**):
+
+```text
+This is a test email message with a file attachment
+```
+
+10. Press `ctrl-d` to send your message.
+11. Switch to your Seneca email and check for new email messages.
+
+    - Did you receive that email message? Does the email contain a file attachment?
+
+12. Return to your Linux Bash shell and issue the following Linux command:
 
 ```bash
-cut -c1-10 cars
+mail yoursenecaid@myseneca.ca < ~/remote/myfile.txt
 ```
 
-- What did this command do?
+- What happened? Were you prompted for subject and could you enter text in email body?
+- Did you see a file attachment as a separate file, or just text?
 
-19. Issue the following Linux command:
+13. Check your email to see if you received your email message.
+
+    - **You won't receive this e-mail.** The mail command won't send messages without a subject line. Because you redirected that text file into mail, you weren't prompted for a subject line and the process silently failed.
+    - You can use the **-s** option, followed by text (in quotes) to specify a **subject line**.
+
+14. Return to your Linux Bash shell and issue the following Linux command:
 
 ```bash
-cut -f5 cars > field5.txt
+mail -s "email with attachment" yoursenecaid@myseneca.ca < ~/remote/myfile.txt
 ```
 
-- What did this command do?
-- Check the contents in the file **field5.txt** to see what happened.
+15. Check your email to see if you received your email message. If you did, what do you notice this time?
 
-20. Issue the following Linux command:
+    - As you've seen, redirecting a text file into mail causes the contents of that file to become the body of your message.
+
+16. Let's combine all this together. First, create a new text file, `~/remote/body.txt`, with the following content:
+
+```text
+This is the body text of my e-mail message saved in a text file.
+```
+
+17. We're now going to combine the following options:
+
+    - -s: Subject line
+    - -a: Attach a file (~/remote/myfile.txt)
+    - Redirect the contents of a file to provide the body of the e-mail message. (~/remote/body.txt)
+    - Supply the destination e-mail address.
 
 ```bash
-cut -f1-3 cars > field123.txt
+mail -s "Fully non-interactive e-mail with attachment." -a ~/remote/myfile.txt yoursenecaid@myseneca.ca < ~/remote/body.txt
 ```
 
-- What did this command do? (check file contents)
+18. Notice the order of options in the command's syntax. The destination e-mail address **must be the last option _before_ the redirect**.
 
-21. Issue the following Linux command:
+19. Check your inbox and confirm you've received this last message.
 
-```bash
-cut -f1,5 cars > field15.txt
-```
-
-- What did this command do? (check file contents)
-
-22. Issue the following Linux command:
-
-```bash
-wc cars > count.txt
-```
-
-- What information does the **count.txt** file contain?
-
-23. Issue the following Linux command:
-
-```bash
-wc -l cars > count1.txt
-```
-
-- What information does the **count1.txt** file contain?
-
-24. Issue the following Linux command:
-
-```bash
-wc -w cars > count2.txt
-```
-
-- What information does the **count2.txt** file contain?
-
-25. Issue the following Linux command:
-
-```bash
-ls -l > listing.txt
-```
-
-- What information does the **listing.txt** file contain?
-
-26. Issue the following Linux command:
-
-```bash
-pwd > listing.txt
-```
-
-- What happenned to the original contents of the file called **listing.txt**? Why?
-
-27. Issue the following Linux command (use 2 greater-than signs):
-
-```bash
-date >> listing.txt
-```
-
-- What information does the **listing.txt** file contain? Why?
-
-28. Issue the following Linux command:
-
-```bash
-cat listing.txt cars > combined.txt
-```
-
-- What information does the **combined.txt** file contain? Why?
-- **NOTE:** The **cat** command stands for "**concatenate**" which means to **combine** contents of multiple files into a single file.
-- This is why the command is called "_cat_".
-
-29. Issue the following Linux command:
-
-```bash
-cat listing.txt cars murray 2> result.txt
-```
-
-- What is displayed on the monitor? What information does the **result.txt** file contain? Why?
-
-30. Issue the following Linux command:
-
-```bash
-cat listing.txt cars murray > myoutput.txt 2> /dev/null
-```
-
-- What is displayed on the monitor? What happened to the error message?
-
-31. Issue the following Linux command:
-
-```bash
-cat listing.txt cars murray > myoutput.txt 2> result.txt
-```
-
-- What is displayed on the monitor? what do those files contain? Why?
-- The **Here Document** allows you to redirect stdin from with the Linux command itself. Let's get some practice using the Here Document.
-
-32. Issue the following Linux command:
-
-```bash
-cat <<+
-line 1
-line 2
-line 3
-+
-```
-
-- What do you notice?
-
-33. Issue the following Linux command:
-
-```bash
-grep 2 <<+
-line 1
-line 2
-line 3
-+
-```
-
-- What do you notice? How does this differ from the previous command? Why?
-
-34. Issue the following Linux command:
-
-```bash
-grep 2 > line2.txt <<+
-line 1
-line 2
-line 3
-+
-```
-
-- What do you notice? What is contained in the file **line2.txt**? Why?
-- **NOTE:** You will now run a shell script to confirm that you properly issued Linux commands using redirection.
-
-35. Issue the following Linux command to run a checking script:
-
-```bash
-~ops145/t4-check-1
-```
-
-36. If you encounter errors, make corrections and **re-run** the checking script until you receive a congratulations message, then you can proceed.
-37. Issue the **ls** command to see all of the **temporary files** that were created as a result of redirection.
-
-    - The problem with using these redirection symbols is that you create **temporary text files** that take up **space** on your file system.
-
-38. Issue a Linux command (using **Filename Expansion**) to **remove** those temporary text files in the current directory.
-39. Issue the following Linux command to check that you removed ALL of those temporary text files:
-
-```bash
-~ops145/t4-check-2
-```
-
-40. If you encounter errors, make corrections and **re-run** the checking script until you receive a congratulations message, then you can proceed.
-
-In the next investigation, you will be learning how to issue **pipeline Linux commands** which can accomplish tasks without creating temporary files.
-
-## Investigation 2: Redirection Using Pipeline Commands
-
-In this investigation, you will learn to issue **pipeline commands** to to accomplish tasks without having to generate temporary files.
-
-**Perform the Following Steps:**
-
-1. Confirm that you are still located in the **~/redirect** directory.
-
-   - The **problem** with creating temporary files, is that they take up space on your server, and should be removed. You actually did that in the previous investigation.
-   - You will be issuing a **pipeline command** which will use the pipe symbol "\|" that will send the stdout from a command as stdin into another command without having to create temporary files.
-
-2. Issue the follow Linux **pipeline command**:
-
-```bash
-ls /bin | more
-```
-
-- What happened? Press **q** to exit display.
-
-3. Issue the following Linux **pipeline command**:
-
-```bash
-ls /bin | who
-```
-
-- What happened? Although this pipeline command provides output, it **does not work** properly as a pipeline command since the **who** command is **NOT** designed to accept standard input.
-
-![Pipe diagram 1](/img/Pipe-diagram-1.png)
-
-- **NOTE:** When issuing pipeline commands, commands to the right of the pipe symbol must be designed to accept **standard input**. Since the _who_ command does not, you did NOT see the contents of the **/bin** directory but only information relating to the _who_ command. Therefore, the **order** of which you build your pipeline command and the **type of command** that is used as a _filter_ is extremely important!
-
-4. Issue the following Linux command:
-
-```bash
-ls /bin/?? > listing.txt
-```
-
-5. Issue the following Linux command:
-
-```bash
-sort listing.txt
-```
-
-6. Issue the following Linux command to remove the listing file:
-
-```bash
-rm listing.txt
-```
-
-7. Issue the following Linux **pipeline command**:
-
-```bash
-ls /bin/?? | sort
-```
-
-- You should notice that the output from this pipeline command is the same output from the command you issued in **step \#5**.
-
-8. Issue the following Linux **pipeline command**:
-
-```bash
-ls /bin/?? | sort | more
-```
-
-- What is difference with this pipeline command as opposed to the previous pipeline command? Press **q** to exit display.
-
-9. Issue the **ls** command.
-
-   - You should notice that **no files have been created**.
-   - Let's get practice issuing more pipeline commands using commands (previously learned or new) to be used as **filters**.
-
-10. Issue the following Linux **pipeline command**:
-
-```bash
-ls /bin/?? | sort | head -5
-```
-
-- What did you notice?
-
-11. Issue the following Linux **pipeline command**:
-
-```bash
-ls /bin/???? | sort | grep r | tail -2
-```
-
-- What did you notice? Could you predict the output prior to issuing this pipeline command?
-
-12. Issue the following Linux **pipeline command**:
-
-```bash
-ls /bin/???? | sort | grep r | cut -c1-6
-```
-
-- Try to explain step-by-step each process in the pipeline command (including filters) to explain the final output from this pipeine command.
-
-13. Confirm that you are still located in the **~/redirect** directory.
-14. Issue the following Linux **pipeline command**:
-
-```bash
-ls /bin/???? | tee unsort.txt | sort | tee sort.txt | grep r | tee match.txt | head
-```
-
-15. Issue the **ls** command to view the contents of this redirectory.
-
-    - What did you notice?
-
-16. View the contents of the **text files** that were created to see how the **tee** command was used in the previous pipeline command.
-
-    - What was the purpose of using the **tee** command for this pipeline command?
-    - You will now run a shell script to confirm that you properly issued that Linux pipeline command using the **tee** command and redirection.
-
-17. Issue the following Linux command to run a checking script:
-
-```bash
-~ops145/t4-check-3
-```
-
-- If you encounter errors, make corrections and **re-run** the checking script until you receive a congratulations message, then you can proceed.
-
-18. Change to your **home** directory.
-19. Remove the **~/redirect** directory and its contents.
-
-    - In the next investigation, you will learn various techniques to issue **multiple Linux commands** on the same line, or issue a **single Linux command over multiple lines.**
-
-## Investigation 3: Issuing Multiple Unix/Linux Commands
-
-In this investigation, you will learn how to issue multiple Unix / Linux commands in a single line or over multiple lines.
-
-**Perform the Following Steps:**
-
-1. Confirm you are located in your **home** directory in your Matrix account.
-2. Issue the following Linux commands (using the _semicolon_ character ";" to separate each Linux command):
-
-```bash
-cal;pwd;date
-```
-
-- Note the output as well as the order of what each Linux command results.
-
-3. Issue the following Linux commands:
-
-```bash
-(cal;pwd;date)
-```
-
-- Was there any difference in the output of this command as opposed to the previous command?
-- Let's see how grouping affects working with redirection.
-
-4. Issue the following Linux commands:
-
-```bash
-cal;pwd;date > output.txt
-```
-
-- What happened? Where is the output for the **date** command?
-- Why isn't the output for the **cal** and **pwd** commands are NOT contained in that file?
-
-5. Issue a Linux command to view the contents of the file called **output.txt**
-
-   - What do you notice?
-   - Let's use **grouping** to make modification to the previous command
-
-6. Issue the following Linux commands:
-
-```bash
-(cal;pwd;date) > output.txt
-```
-
-- What did you notice?
-
-7. Issue a Linux command to view the contents of the file called **output.txt**
-
-   - What does _grouping_ do when issuing multiple Linux commands (separated by a semi-colon ";") that uses redirection?
-
-8. Issue the following Linux pipeline command (using \ at the end of most lines):
-
-```bash
-echo "This will be split over multiple \
-lines. Note that the shell will realize \
-that a pipe requires another command, so \
-it will automatically go to the next line" |tr '[a-z]' '[A-Z]'
-```
-
-- Did the command work? What is the purpose of issuing a Linux command in this way?
-
-9. Complete the _Linux Practice Questions_ sections below to get additional practice.
+20. After completing this INVESTIGATION, perform the _Linux Practice Questions_ section below.
 
 ## Linux Practice Questions
 
@@ -723,24 +584,20 @@ The purpose of this section is to obtain **extra practice** to help with **quizz
 
 Your instructor may take-up these questions during class. It is up to the student to attend classes in order to obtain the answers to the following questions. Your instructor will NOT provide these answers in any other form (eg. e-mail, etc).
 
-When answering Linux command questions, refer to the following Inverted Tree Diagram. The linux directory is contained in your home directory. Assume that you just logged into your Matrix account. Directories are underlined.
-
-![Week 5 dir](/img/Week5-dir.png)
-
 **Review Questions:**
 
-1. Write a single Linux command to provide a detailed listing of all files in the **/etc** directory, sending the output to a file called listing.txt in the “**projects**” directory (append output to existing file and use a relative pathname)
-2. Write a single Linux command to redirect the stderr from the command: **cat a.txt b.txt c.txt** to a file called **error.txt** contained in the “**assignments**” directory. (overwrite previous file’s contents and use only relative pathnames)
-3. Write a single Linux command: **cat ~/a.txt ~/b.txt ~/c.txt** and redirect stdout to a file called “**good.txt**” to the “**tests**” directory and stderr to a file called “**bad.txt**” to the “**tests**” directory. (overwrite previous contents for both files and use only relative-to-home pathnames).
-4. Write a single Linux command to redirect the stdout from the command: **cat a.txt b.txt c.txt** to a file called **wrong.txt** contained in the “**projects**” directory and throw-out any standard error messages so they don’t appear on the screen (append output to existing file and use only relative pathnames).
-5. Write a single Linux **pipeline command** to display a detailed listing of the **projects** directory but pause one screen at a time to view and navigate through all of the directory contents. Use a relative-to-home pathname.
-6. Write a single Linux **pipeline command** to display the sorted contents (in reverse alphabetical order) of the “**linux**” directory. Use a relative pathname.
-7. Assume that the text file called “**.answers.txt**” contains 10 lines. Write a single Linux pipeline command to only displays lines 5 through 8 for this file. Use only relative pathnames.
-8. Write a single Linux **pipeline command** to only display the contents of the “**assignments**” directory whose filenames match the pattern “**murray**” (both upper or lowercase). Use an absolute pathname.
-9. Write a single Linux **pipeline command** to display the number of characters contained in the file called “**.answers.txt**”. Use a relative-to-home pathname.
-10. Write a single Linux **pipeline command** to display the number of lines contained in the file called “**questions.txt**”. Use a relative pathname.
-11. Write a single Linux **pipeline command** to display only the first 10 characters of each filename contained in your current directory. Also, there is will be a lot of output, so also pause at each screenful so you can navigate throughout the display contents. Use a relative pathname.
-12. Create a **table** listing each Linux command, useful options that were mentioned in this tutorial for the following Linux commands: **cut , tr , wc** , and **tee**.
+1. Write a Linux command to copy a file in the current directory called **mytext.txt** from your Matrix account to your account called **user1** on the Linux server domain name called **tech.myserver.com** to that user’s home directory.
+2. Write a Linux command similar to the previous question, but rename the file on the remote Linux server to **yourtext.txt**
+3. Write a Linux command to copy a file called **~/project/linux.txt** to the remote server called **linux.techie.org** (your username for this remote server is the same username for your local server).
+4. Write a Linux command to connect to the username **saulm** for the server domain name **tux.senecac.on.ca** to transfer files between Linux servers.
+5. Assuming that you are connected to that server in _question #4_. What is the sftp command to display your current working directory on your local server?
+6. Assuming that you are connected to that server in _question #4_. What is the sftp command to view files in your local server? What is the sftp command to view files in your remote server?
+7. Assuming that you are connected to that server in _question #4_. What is the sftp command to download the file answers.txt from the current directory of your remote server?
+8. Assuming that you are connected to that server in _question #4_. What is the sftp command to upload the file questions.txt from your local server to the **~/documents/tests** directory on your remote server?
+9. Assuming that you are connected to that server in _question #4_. What is the sftp command to quit your current session?
+10. Write a Linux command to send the attached file **message.txt** to the email address **murray.saul@senecapolytechnic.ca** with the subject line: **Important Message**
+11. Create a **table** listing each Linux command, useful options and command purpose for the following Linux commands: **scp , sftp , mail**.
+12. Create a **table** listing each **sftp command** and it's purpose.
 
 ---
 
