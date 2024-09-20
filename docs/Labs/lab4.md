@@ -25,8 +25,8 @@ description: Lab 4 for Students to Learn Numbering Conversion, File Permissions 
 
 **Course Slides:**
 
-- Week 4 Lecture 1 Notes: [Web](https://docs.google.com/presentation/d/e/2PACX-1vQGRpKFK1QFt2qDlCJaC0bdWyro1Qh29xq6aROuJMyzwDiZE3-9_nwrSedanvGIZ7w-VwGi2AbcmDYa/pub?start=false&loop=false&delayms=3000)
-- Week 4 Lecture 2 Notes: [Web](https://docs.google.com/presentation/d/e/2PACX-1vQFTkiLPDWMIWWBiV0KH83V2MRjLOvkXjsWtlgD9vZxOrHTFFz2cVpoKRdCYtcBMkYyWAZUVXQaC2zU/pub?start=false&loop=false&delayms=3000)
+- Week 4 Lecture 1 Notes: [Web](https://docs.google.com/presentation/d/1_IkefhgNShbOGb42D28phP-Gzv9nxwb73b0Q7mQvEQg/pub?start=false&loop=false&delayms=3000)
+- Week 4 Lecture 2 Notes: [Web](https://docs.google.com/presentation/d/1XUL4VoghXbYWdWxkNW9edY26oIpFQ4YhFXBkxZFWe1o/pub?start=false&loop=false&delayms=3000s)
 
 **Numbering Conversion and Data Representation Definitions:**
 
