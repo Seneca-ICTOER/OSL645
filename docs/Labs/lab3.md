@@ -263,7 +263,7 @@ it will automatically go to the next line" |tr '[a-z]' '[A-Z]'
 
 ## Investigation 1: Basics Of Redirection
 
-**ATTENTION: This online tutorial will be required to be completed by Friday in week 6 by midnight to obtain a grade of 2% towards this course**
+**ATTENTION: This lab must be graded by the end of your classes in Week 8 to obtain a grade of 2% towards this course.**
 
 In this investigation, you will learn how to redirect **standard input, standard output** and **standard error** when issuing Unix / Linux commands.
 
@@ -352,7 +352,7 @@ This is the file output3.txt
 16. Issue the following Linux command:
 
 ```bash
-cp ~jason.carman/ops145/cars .
+cp ~/bin/cars .
 ```
 
 17. Issue the **cat** command to view the contents of the **cars** file.

@@ -113,7 +113,7 @@ In this section, you will learn how to access your Matrix Linux account by two d
 - From your **home computer**
 - From a **workstation in a Seneca Polytechnic** lab via **MyApps**
 
-**ATTENTION: This lab must be completed by Friday at 11:59pm in Week 3 to obtain a grade of 2% towards this course.**
+**ATTENTION: This lab must be graded by the end of your classes in Week 8 to obtain a grade of 2% towards this course.**
 
 It is essential that you complete these labs fully and on time. These are your major learning tool in the course. There are no late marks.
 
@@ -613,7 +613,7 @@ If the checking shell script detects an **error**, then it will provide feedback
 sudo apt -y install git
 ```
 
-2. Create the **bin** directory in your home directory by enterint the following Linux command:
+2. Create the **bin** directory in your home directory by entering the following Linux command:
 
 ```bash
 mkdir ~/bin

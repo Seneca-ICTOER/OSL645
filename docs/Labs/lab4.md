@@ -283,7 +283,7 @@ The **read** command can be used to prompt the user to enter data into a variabl
 
 ## Investigation 1: Numbering Conversions
 
-**ATTENTION: This online lab will be required to be completed by Friday in week 5 by midnight to obtain a grade of 2% towards this course**
+**ATTENTION: This lab must be graded by the end of your classes in Week 8 to obtain a grade of 2% towards this course.**
 
 For this investigation, we will NOT be logged into our Matrix account, but it is recommended to have an **MS Word document** open to manually perform numbering conversions.
 

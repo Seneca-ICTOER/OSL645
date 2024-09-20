@@ -92,7 +92,7 @@ When you log into your Matrix account, you are automatically directed to your **
 
 ## Investigation 1: Creating and Managing Directories
 
-**ATTENTION: This lab must be completed by Friday at 11:59pm in Week 3 to obtain a grade of 2% towards this course.**
+**ATTENTION: This lab must be graded by the end of your classes in Week 8 to obtain a grade of 2% towards this course.**
 
 In this investigation, you will learn how to **create**, **navigate**, **list directory contents** and **remove directories** in your Matrix account.
 
@@ -107,6 +107,20 @@ Listed below are some common **file-naming rules:**
 - Make your directory names **meaningful**
 - **Avoid non-alphanumeric characters**, as they may have a special meaning to the system that will make your work more difficult when changing to directories, etc.
 - **Avoid using spaces** for directory names (consider periods, hyphens, and underscores instead)
+
+### Importing Check Script Changes
+
+Issue the following command to change to your ~/bin directory:
+
+```bash
+cd ~/bin
+```
+
+Issue the **git pull** command to ensure your lab check scripts are up to date:
+
+```bash
+git pull
+```
 
 ### Part 1: Creating Directories
 
