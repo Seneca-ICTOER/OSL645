@@ -682,13 +682,13 @@ Additionally, you may want to install the GitHub mobile app. It allows you acces
 
 ### Creating your Github Repo for your Labs
 
-Use the following [link](https://classroom.github.com/a/e93Oe4wN) to set up your lab 3 repository. You will be using this for lab3.
+Use the following [link](https://classroom.github.com/a/CXNeI3Tr) to set up your lab 4 repository. You will be using this for lab3.
 
 Next, follow the sections for setup on a Shared Computer by Accessing GitHub Codespaces or on your Personal Computer. While you can install Visual Studio Code (VSCode) locally, I recommend using Codespaces for this course.
 
 ### Shared Computer (ie College PC) or Personal Computer: Accessing GitHub Codespaces
 
-Once you have set up your Lab 3 repository by following the link above (go back and do that if you missed it), you can access GitHub Codespaces from any browser on any device (PC, tablet, smart phone). Codespaces gives you access to Visual Studio Code, with direct access to your repository (without having to clone) from anywhere. It's perfect for a portable development environment. Login to GitHub (if you haven't already) and proceed.
+Once you have set up your Lab 4 repository by following the link above (go back and do that if you missed it), you can access GitHub Codespaces from any browser on any device (PC, tablet, smart phone). Codespaces gives you access to Visual Studio Code, with direct access to your repository (without having to clone) from anywhere. It's perfect for a portable development environment. Login to GitHub (if you haven't already) and proceed.
 
 You may have noticed in the link above you can click **Open in GitHub Codespaces**. Feel free to do so now. If you have already clicked past that window the next few steps will show you how to access it again (which is useful for future access attempts anyway). Click on **Code** and create a new codespace. Once you have created it, you can access it by clicking on the named link.
 
@@ -901,13 +901,13 @@ Issue the following command to clone your GitHub repository into your home direc
 > **Important:** Be sure to replace `username` in the following command with YOUR GitHub username.
 
 ```bash
-git clone git@github.com:OSL645/lab-3-username
+git clone git@github.com:OSL645/lab-4-username
 ```
 
 - Issue a command to confirm the repository has been cloned on your Ubuntu VM.
-- Issue a command to change into your **lab-3-username** directory.
+- Issue a command to change into your **lab-4-username** directory.
 
-Confirm the contents have been written to your **lab-3-username** directory. You should see the following files:
+Confirm the contents have been written to your **lab-4-username** directory. You should see the following files:
 
 - LICENSE
 - README.md
