@@ -50,12 +50,12 @@ description: Weekly Schedule for OSL645
 
 ### Week 4
 
-| **Learning Objectives and Tasks**                  | **References**                                                                                                                                                                                            | **Evaluation**                      |
-| :------------------------------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :---------------------------------- |
-| stdin, stdout, stderr                              | **Week 4 Lecture Slides:** [Web](https://docs.google.com/presentation/d/e/2PACX-1vTyKcrBGki65F4Md8ZXK9nhLblzp4DXT_KtbveOfLqINBA_u2AeofSOeZiM3PKE0Dzwi__DsnZ46yrl/pub?start=false&loop=false&delayms=5000) | [Lab 3: Redirection](/Labs/lab3.md) |
-| Simple filter commands: (head,tail,cut,sort,tr,wc) |                                                                                                                                                                                                           | Lab 3 (Due Week 8 in class) (2%)    |
-| grep utility Redirection and piping                |                                                                                                                                                                                                           |                                     |
-| /dev/null file                                     |                                                                                                                                                                                                           |                                     |
+| **Learning Objectives and Tasks**                  | **References**                                                                                                                                                  | **Evaluation**                      |
+| :------------------------------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------- | :---------------------------------- |
+| stdin, stdout, stderr                              | **Week 4 Lecture 1 Slides:** [Web](https://docs.google.com/presentation/d/1AqGUvE5Mj90GtU4ixRoepjhvz6yDARASiwr5seKmtxs/pub?start=false&loop=false&delayms=3000) | [Lab 3: Redirection](/Labs/lab3.md) |
+| Simple filter commands: (head,tail,cut,sort,tr,wc) | **Week 4 Lecture 2 Slides:** [Web](https://docs.google.com/presentation/d/1g4g03wG1LSZq0aDSz1aWNjCU6OlhzW2IJtgRkBasOYo/pub?start=false&loop=false&delayms=3000) | Lab 3 (Due Week 8 in class) (2%)    |
+| grep utility Redirection and piping                |                                                                                                                                                                 |                                     |
+| /dev/null file                                     |                                                                                                                                                                 |                                     |
 
 ### Week 5
 

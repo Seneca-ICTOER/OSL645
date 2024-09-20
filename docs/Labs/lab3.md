@@ -22,8 +22,8 @@ description: Lab 3 for Students to Learn Redirection
 
 **Course Slides:**
 
-- Week 6 Lecture 1 Notes: [Web](https://docs.google.com/presentation/d/e/2PACX-1vSqbZvAF_ukG8YvsphJCOm9qLUDd83-zNf4g93705iBVsNi_lw_Xsvrc_G3NmLXddlCkQwPj0kzPHX0/pub?start=false&loop=false&delayms=3000)
-- Week 6 Lecture 2 Notes: [Web](https://docs.google.com/presentation/d/e/2PACX-1vSZPIkIztouAOWry8lXISFYPxhOPFimjuj2LQ3Xyd5X68ikYAjTKQWAYEFckqRPvheR2UanL6vi1Xc0/pub?start=false&loop=false&delayms=3000)
+- Week 4 Lecture 1 Notes: [Web](https://docs.google.com/presentation/d/1AqGUvE5Mj90GtU4ixRoepjhvz6yDARASiwr5seKmtxs/pub?start=false&loop=false&delayms=3000)
+- Week 4 Lecture 2 Notes: [Web](https://docs.google.com/presentation/d/1g4g03wG1LSZq0aDSz1aWNjCU6OlhzW2IJtgRkBasOYo/pub?start=false&loop=false&delayms=3000)
 
 **Redirection:**
 
