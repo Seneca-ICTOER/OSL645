@@ -645,8 +645,6 @@ It just changed or switched the current target.
 
 ## Investigation 4: User Management with a bash scripting
 
-**Before proceeding with Investigation 4, please review the [Bash Shell Scripting Tips here](/C-ExtraResources/bash-shell-scripting-tips.md)**
-
 ### Using getopts Function & case statement
 
 We will now use shell scripting to help automate the task for a Linux administrator to create regular user accounts.
