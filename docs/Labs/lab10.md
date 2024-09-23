@@ -234,7 +234,6 @@ We should confirm that our accounts work. By testing a login to the Desktop Envi
 
 The next step is to remove a user account. Using the **userdel** command.
 
-> ![caution](/img/caution.png)
 > Considerations when removing accounts:
 >
 > - Should the account be removed or just disabled?
@@ -460,7 +459,6 @@ You can see that all **sudo** activity is recorded in the system log. Including:
 
 Requiring the use of **sudo** to access elevated permissions means that there is accountability built in to the system.
 
-> ![caution](/img/caution.png)
 > Not all Linux distributions use the same group name to configure **sudo** access.
 > RedHat based distributions for example typically use a group called **wheel**
 
@@ -527,12 +525,10 @@ In the output above we see that the **PID 1** process is called **init** not **s
 
 But if we examine the listing for **/sbin/init** we can see that it is a symbolic link to **systemd**.
 
-> ![caution](/img/caution.png)
 > Note: this yet another example of how there are differences between different Linux Distributions. When researching about Linux on the Internet, make sure your searches are Distribution specific.
 
 In order to control **systemd** we will use the **systemctl** command.
 
-> ![caution](/img/caution.png)
 > Although there is a command called: **service** that may appear to manage services on your Linux system, it is considered **deprecated** (i.e. "obsolete"). It has been replaced by with the **systemctl** command.
 
 **Perform the following steps:**
@@ -620,7 +616,6 @@ systemctl get-default
 3. Change the current target in **deb1** to **multi-user.target**
 4. What did you notice?
 
-> ![caution](/img/caution.png)
 > Debian runs the Graphical Desktop on TTY7.
 >
 > When we switch to multi-user TTY7 doesn't display anything.
@@ -782,7 +777,7 @@ wget https://raw.githubusercontent.com/jmcarman/osl740-debian-labs/main/lab4-che
 
 5. Give the **lab4-check.bash** file execute permissions (for the file owner).
 6. Run the shell script using **sudo** and if any warnings, make fixes and re-run shell script until you receive "congratulations" message.
-7. Follow your Professors instrtuctions for submitting the lab
+7. Follow your Professors instructions for submitting the lab
 
 ## Linux Practice Questions
 
