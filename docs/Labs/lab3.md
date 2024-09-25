@@ -269,7 +269,7 @@ In this investigation, you will learn how to redirect **standard input, standard
 
 **Perform the Following Steps:**
 
-1. **Login** to your matrix account and issue a command to **confirm** you are located in your **home** directory.
+1. **Start** your Ubuntu VM, **login**. Launch a **terminal** and issue a command to **confirm** you are located in your **home** directory.
 2. Issue the following Linux command to create the following directory:
 
 ```bash

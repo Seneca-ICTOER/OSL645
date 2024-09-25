@@ -285,7 +285,7 @@ The **read** command can be used to prompt the user to enter data into a variabl
 
 **ATTENTION: This lab must be graded by the end of your classes in Week 8 to obtain a grade of 2% towards this course.**
 
-For this investigation, we will NOT be logged into our Matrix account, but it is recommended to have an **MS Word document** open to manually perform numbering conversions.
+For this investigation, we will NOT be logged into our Ubuntu VM, but it is recommended to have an **MS Word document** or **Document** or **Text File** open to manually perform numbering conversions.
 
 **NOTE: It is essential that you learn how to manually perform numbering conversions since you will NOT be permitted to perform quizzes, midterm, or your final exam with a computer or a calculator. Learning to quickly perform manual numbering conversions will make IT professional more productive such as setting permissions, designing computer networks, or selecting complex colors when developing webpages.**
 
@@ -331,7 +331,7 @@ In this investigation, you will get experience using the **chmod** command to **
 
 **Perform the Following Steps:**
 
-1. **Login** to your matrix account and issue a command to **confirm** you are located in your **home** directory.
+1. **Start** your Ubuntu VM, **login**. Launch a **terminal** and issue a command to **confirm** you are located in your **home** directory.
 2. Issue a single Linux command to create the following directory structure displayed in the diagram below.
 
 ![File Permission Practice 1](/img/File-permission-practice-1.png)

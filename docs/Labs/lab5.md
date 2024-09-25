@@ -1,11 +1,13 @@
 ---
-id: tutorial4
-title: Tutorial 4 - File Transfer and Sending Email Messages
+id: lab5
+title: Lab 5 - File Transfer and Sending Email Messages
 sidebar_position: 6
-description: Tutorial 4 for Students to Learn File Transfer and Sending Email Messages
+description: Lab 5 for Students to Learn File Transfer and Sending Email Messages
 ---
 
-# Tutorial 4: File Transfer and Sending Email Messages
+# Lab 5: File Transfer and Sending Email Messages
+
+## Under Development
 
 ## Main Objectives of this Practice Tutorial
 
@@ -146,129 +148,106 @@ You will also learn how to issue the **ssh** command to run commands on your **r
 
 **Perform the Following Steps:**
 
-1. Determine which operating system that your computer is using.
-2. Connect to your Matrix account using the instructions in the table below based on your **current operating system**.
+1. **Start** your Ubuntu VM, **login**. Launch a **terminal** and issue a command to **confirm** you are located in your **home** directory.
 
-**Using Windows 10 (or above):**
-
-- From the start menu, type **cmd** and launch program
-- In the command terminal, enter the following command:
+2. Issue to the **pwd** command to confirm you are in your home directory.
+3. Issue the following Linux command to create the following directory:
 
 ```bash
-ssh senecausername@matrix.senecapolytechnic.ca
+mkdir ~/local
 ```
 
-**Using macOS:**
-
-- Click _Launchpad_ icon, type **terminal** and press **ENTER**
-- In the terminal, enter the following command:
-
-```bash
-ssh senecausername@matrix.senecapolytechnic.ca
-```
-
-**Using Linux:**
-
-- From the menu, choose: **Applications > System Tools > Terminal**
-- In the terminal, enter the following command:
-
-```bash
-ssh senecausername@matrix.senecapolytechnic.ca
-```
-
-3. **NOTE:** Make certain to open a **command-line terminal** and NOT a graphical SSH application for this tutorial.
-
-![CMD](/img/Cmd.png)
-
-4. After logging into your Matrix account, issue to the **pwd** command to confirm you are in your home directory.
-5. Issue the following Linux command to create the following directory:
-
-```bash
-mkdir ~/remote
-```
-
-6. Change to the **~/remote** directory and confirm that you have changed to that directory.
-7. Use a text editor to create a text file called **myfile.txt**
-8. Enter the following two lines displayed below in your editing session:
+4. Change to the **~/local** directory and confirm that you have changed to that directory.
+5. Use a text editor to create a text file called **myfile.txt**
+6. Enter the following two lines displayed below in your editing session:
 
 ```text
 This is my file
 It is a small file
 ```
 
-9. **Save** editing changes to your _myfile.txt_ file and exit your text editor.
-10. Let's run a **shell script** to check that you created the **remote** directory and that you created the **myfile.txt** file (with correct file contents) in that directory.
+7. **Save** editing changes to your _myfile.txt_ file and exit your text editor.
+8. Let's run a **shell script** to check that you created the **local** directory and that you created the **myfile.txt** file (with correct file contents) in that directory.
 
-    - Enter the following command:
+   - Enter the following command:
 
 ```bash
-~ops145/t5-check-1
+~/bin/lab5-check-1
 ```
 
-11. If you encounter errors, make corrections and then re-run the checking script until you receive a congratulations message, and proceed to the next step.
+9. If you encounter errors, make corrections and then re-run the checking script until you receive a congratulations message, and proceed to the next step.
 
-    - **NOTE:** We will now learn to transfer files between your **local home computer** and your **remote Matrix Linux server**.
+- **NOTE:** We will now learn to transfer files between your **local home computer** and your **remote Matrix Linux server**.
 
-12. **Exit your Matrix ssh session** but **remain** in the command terminal on your **local** computer..
+- **NOTE:** You can access matrix on the Seneca lab PCs without any additional steps. To remote access from home you are **required** to install and configure the **Global Protect VPN** on your host system. For steps, please access:
+
+### Connecting to the Seneca Student VPN
+
+All Seneca Polytechnic students are required to connect to the **Seneca Student VPN** in order to be able to connect to their **Matrix** Linux account when outside of campus as a **network security** measure. The Seneca Student VPN uses multi-factor authentication (MFA) when logging in to verify you are who you say you are.
+
+**Multi-factor authentication** is an electronic authentication method in which a computer user is granted access to a website or application only after successfully presenting two or more pieces of evidence (or factors) to an authentication mechanism: knowledge (something the user and only the user knows). _Reference: https://en.wikipedia.org/wiki/Multi-factor_authentication_
+
+You should have received an e-mail message with instructions on how to set up your smartphone for multi-factor authentication. If you haven't installed it yet, please do so by following the ITS instructions here: https://students.senecapolytechnic.ca/spaces/186/it-services/wiki/view/1024/vpn
+
+In the next investigation, you will learn how to **connect** to and **login** to your Matrix server account from a remote computer such as your **home desktop computer, laptop** or **tablet** computer.
+
+![Seneca Student VPN](/img/Gp1.png 'Seneca Student VPN')
+
+10. Issue the following command to login to the **Matrix cluster** but **remain** in the command terminal on your **local** computer.
+
+```bash
+ssh username@matrix.senecapolytechnic.ca
+```
 
     - **ATTENTION:** You are required to **remain** in your **local** computer's command terminal for the remainder of this INVESTIGATION and INVESTIGATION 2.
 
-![CMD](/img/Cmd.png)
-
-13. The **mkdir** command works with _MS Windows/UNIX/Linux/MacOSx_ computers. Issue the following command on your local computer to create a directory called **local**:
+11. The **mkdir** command works with _MS Windows/UNIX/Linux/MacOSx_ computers. Issue the following command on Matrix to create a directory called **remote**:
 
 ```bash
-mkdir local
+mkdir remote
 ```
 
-14. The **cd** command works with _MS Windows/UNIX/Linux/MacOSx_ computers. Issue the following command on your local computer to change to the **local** directory:
+12. The **cd** command works with _MS Windows/UNIX/Linux/MacOSx_ computers. Issue the following command on your local computer to change to the **remote** directory:
 
 ```bash
-cd local
+cd remote
 ```
 
-15. If you are using MS Windows on your local computer, issue the `dir` command to confirm you are in the local directory; otherwise, use the `pwd` command.
-16. If you are in MS Windows, open the **GRAPHICAL** `NotePad` application to create a text file (Otherwise, use the **nano** or **vi** text editor).
-17. Enter a few lines of text, and if using **Notepad**, then click on the **File** menu and select **save as** (save as the filename `other.txt` in your `local` directory) and then **exit** the Notepad text editor.
+13. Issue the `pwd` command to confirm you are in the remote directory.
 
-    - **NOTE:** if using another text editor, save your editing session and exit the text editor.
-
-18. If your OS is MS Windows issue the `dir` Windows command to view the contents of your current directory (otherwise, issue the `ls` command for other operating systems).
+14. Use **nano** or **vim** to create a file called **other.txt** in your **remote** directory.
 
     - We will use the **scp** command to copy the local file called **other.txt** to your home directory on your remote Matrix Linux server.
 
-19. Issue the following Linux command to copy the **other.txt** file from your local machine to your remote Matrix server (replace yoursenecaid is YOUR Seneca ID and **ADD A COLON : TO THE END OF THE COMMAND**):
+15. Logout from Matrix by issuing the **logout**, **exit** or **CTRL + D** combination.
+16. Issue the following Linux command to copy the **other.txt** file from your local machine to your remote Matrix server (replace yoursenecaid is YOUR Seneca ID and **ADD A COLON : TO THE END OF THE COMMAND**):
 
 ```bash
-scp other.txt yoursenecaid@matrix.senecapolytechnic.ca:
+scp yoursenecaid@matrix.senecapolytechnic.ca:/home/yoursenecaid/remote/other.txt ~/local/other.txt
 ```
 
-20. When prompted, enter your **Matrix password.**
+17. When prompted, enter your **Matrix password.**
 
     - **TIP:** You can issue the ssh command, followed by a command that will be run on your remote computer, but display on your local computer **without** having to establish a continuous connection to your remote Matrix server.
 
-21. Issue the following command (using your matrix username):
+18. Issue the following command to confirm the file was copied.
 
 ```bash
-ssh yoursenecaid@matrix.senecapolytechnic.ca ls -l other.txt
+ls -l ~/local
 ```
-
-22. When prompted, **enter your password** and press **ENTER**.
-
-    - Do you see detailed information **other.txt** file? (look at bottom)
-    - That command was run remotely on your Matrix server as confirmation that you securely copied that file to the home directory of the Matrix server.
 
 ![SCP Diagram 2](/img/Scp-diagram-2.png)
 
-- Let's copy the file called **myfile.txt** in the **~/remote** directory that you created earlier in your Matrix account to your **local** directory on your home computer.
+- Let's copy the file called **myfile.txt** in the **~/remote** directory that you created earlier on your **Ubuntu** VM to your Matrix account in the **remote** directory on your home computer.
 
-23. Issue the following Linux command (replace yoursenecaid is YOUR Seneca ID). The period "." as **second argument** represents your current directory on your local computer):
+19. Issue the following Linux command (replace yoursenecaid is YOUR Seneca ID) to confirm you properly copied that file to Matrix. The period "." as **second argument** represents your current directory on your local computer):
 
 ```bash
-scp yoursenecaid@matrix.senecapolytechnic.ca:remote/myfile.txt .
+scp ~/local/myfile.txt yoursenecaid@matrix.senecapolytechnic.ca:/home/yoursenecaid/remote/myfile.txt
 ```
 
-24. Issue the `dir` or `ls` command (depending on the OS of your local computer) to confirmed your properly copied that file from Matrix.
+### LEFT OFF HERE
+
 25. Use the **Notepad** application (or vi for other OS types) to create a text file called `mytextfile.txt`, type some text and then save in the `local` directory of your computer.
 26. Issue the **dir** or **ls** command (depending on your OS) to confirm that your newly-created file exists in your **local** directory.
 27. We are going to intentionally make a **mistake** with the **scp** command.
