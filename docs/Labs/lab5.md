@@ -7,8 +7,6 @@ description: Lab 5 for Students to Learn File Transfer and Sending Email Message
 
 # Lab 5: File Transfer and Sending Email Messages
 
-## Under Development
-
 ## Main Objectives of this Practice Tutorial
 
 - List **common utilities** contained in the **ssh** application framework
