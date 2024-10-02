@@ -246,11 +246,9 @@ ls -l ~/local
 scp ~/local/myfile.txt yoursenecaid@matrix.senecapolytechnic.ca:/home/yoursenecaid/remote/myfile.txt
 ```
 
-### LEFT OFF HERE
-
-25. Use the **Notepad** application (or vi for other OS types) to create a text file called `mytextfile.txt`, type some text and then save in the `local` directory of your computer.
-26. Issue the **dir** or **ls** command (depending on your OS) to confirm that your newly-created file exists in your **local** directory.
-27. We are going to intentionally make a **mistake** with the **scp** command.
+20. Use a text editor (vim or nano) to create a text file called `mytextfile.txt` in the `local` directory, type some text and then save it.
+21. Issue the **ls** command to confirm that your newly-created file exists in your **local** directory.
+22. We are going to intentionally make a **mistake** with the **scp** command.
 
     - Issue the following Linux command to copy the **mytextfile.txt** file from your local machine to your remote Matrix server (replace yoursenecaid is YOUR Seneca ID and DO NOT INCLUDE THE : at the end of the command so see what happens):
 
@@ -260,23 +258,23 @@ scp mytextfile.txt yoursenecaid@matrix.senecapolytechnic.ca
 
 - Did you notice anything different (i.e. no password)?
 
-28. Issue the following command (using your matrix username):
+23. Issue the following command (using your matrix username):
 
 ```bash
 ssh yoursenecaid@matrix.senecapolytechnic.ca ls -l mytextfile.txt
 ```
 
-29. When prompted, enter your password and press ENTER.
+24. When prompted, enter your password and press ENTER.
 
     - **The file mytextfile.txt does NOT appear in your home directory on your Matrix server! Note that the COLON was NOT added to the end of the command! Therefore, you MUST remember to include the COLON : at the end of the hostname, or it will NOT remotely copy the file!**
 
-30. Issue the following command to properly copy that same file to your Matrix server:
+25. Issue the following command to properly copy that same file to your Matrix server:
 
 ```bash
 scp mytextfile.txt yoursenecaid@matrix.senecapolytechnic.ca:
 ```
 
-31. Issue the following command to confirm that it was remotely copied to your **home** directory in Matrix:
+26. Issue the following command to confirm that it was remotely copied to your **home** directory in Matrix:
 
 ```bash
 ssh yoursenecaid@matrix.senecapolytechnic.ca ls -l /home/yoursenecaid/mytextfile.txt
@@ -285,13 +283,19 @@ ssh yoursenecaid@matrix.senecapolytechnic.ca ls -l /home/yoursenecaid/mytextfile
 - Do you see the output for the detailed file listing of **mytextfile.txt**?
 - What does this indicate?
 
-32. Issue the following command to copy the **other.txt** file on your local computer to the **~/remote** directory in Matrix renaming it as **different.txt**:
+27. Issue the following command to create the **~/remote** directory on Matrix
+
+```bash
+ssh yoursenecaid@matrix.senecapolytechnic.ca mkdir /home/yoursenecaid/remote
+```
+
+28. Issue the following command to copy the **other.txt** file on your local computer to the **~/remote** directory in Matrix renaming it as **different.txt**:
 
 ```bash
 scp other.txt yoursenecaid@matrix.senecapolytechnic.ca:remote/different.txt
 ```
 
-33. Issue the following command to confirm that the file was remotely copied to your **~/remote** directory in Matrix with a different filename:
+29. Issue the following command to confirm that the file was remotely copied to your **~/remote** directory in Matrix with a different filename:
 
 ```bash
 ssh yoursenecaid@matrix.senecapolytechnic.ca ls -l /home/yoursenecaid/remote/different.txt
@@ -300,11 +304,13 @@ ssh yoursenecaid@matrix.senecapolytechnic.ca ls -l /home/yoursenecaid/remote/dif
 - Were you able to properly copy this file?
 - Let's issue a checking script remotely to see that you properly copied that file from your local computer to your remote Linux server to both your **home** directory and **~/remote** directory.
 
-34. Issue the following:
+30. Issue the following:
 
 ```bash
-ssh yoursenecaid@matrix.senecapolytechnic.ca ~ops145/t5-check-2
+ssh ~/bin/lab5-check-2
 ```
+
+\*\* left off here - editing lab5-check-2 script.
 
 - If you encounter errors, re-run the scp commands to correct and re-run the above command until you receive a congratulations message.
 
