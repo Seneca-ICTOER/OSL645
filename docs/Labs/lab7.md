@@ -716,7 +716,7 @@ Write a single Linux command to perform the specified tasks for each of the foll
 
 ---
 
-Author: Murray Saul
+Authors: Murray Saul & Jason Carman
 
 License: LGPL version 3 Link: https://www.gnu.org/licenses/lgpl.html
 

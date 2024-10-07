@@ -744,7 +744,7 @@ When answering Linux command questions, refer to the following Inverted Tree Dia
 
 ---
 
-Author: Murray Saul
+Authors: Murray Saul & Jason Carman
 
 License: LGPL version 3 Link: https://www.gnu.org/licenses/lgpl.html
 

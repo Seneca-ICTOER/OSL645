@@ -1585,7 +1585,7 @@ ROUGH WORK:
 
 ## OUTPUT:
 
-Author: Murray Saul
+Authors: Murray Saul & Jason Carman
 
 License: LGPL version 3 Link: https://www.gnu.org/licenses/lgpl.html
 

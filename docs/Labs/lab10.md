@@ -801,3 +801,11 @@ Your instructor may take-up these questions during class. It is up to the studen
 12. What is the command to stop a service (like httpd, or sshd)?
 13. What is the difference between **starting** a service and **enabling** a service?
 14. Can a service be stopped and started by issuing just one command?
+
+---
+
+Authors: Murray Saul, Brian Gray & Jason Carman
+
+License: LGPL version 3 Link: https://www.gnu.org/licenses/lgpl.html
+
+---
