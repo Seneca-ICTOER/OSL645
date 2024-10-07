@@ -72,7 +72,7 @@ description: Weekly Schedule for OSL645
 
 | **Learning Objectives and Tasks** | **References**                                                                                                                                                                                            | **Evaluation**                                                   |
 | :-------------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :--------------------------------------------------------------- |
-| scp and sftp utilities            | **Week 6 Lecture Slides:** [Web](https://docs.google.com/presentation/d/e/2PACX-1vT9xH0TQ-IYBBEx10WEqzEVjkGjk5B93_maaFyx2ItZpRrwmqsc-UvJdARqPRPJ8MvfNWvohozzAEAN/pub?start=false&loop=false&delayms=5000) | [Lab 5: File Transfer and Sending Email Messages](/Labs/lab5.md) |
+| scp and sftp utilities            | **Week 6 Lecture Slides:** [Web](https://docs.google.com/presentation/d/e/2PACX-1vRSl6boabHb-XxCQpqwtrH1w5MiNdvH9EzNqGnk-6XTl_HAd5QD7yBv9x8oJkQJON9_10915zONeht0/pub?start=false&loop=false&delayms=5000) | [Lab 5: File Transfer and Sending Email Messages](/Labs/lab5.md) |
 | Sending email from command line   |                                                                                                                                                                                                           | Lab 5 (Due Week 8 in class) (2%)                                 |
 
 ### Week 7

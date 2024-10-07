@@ -19,7 +19,7 @@ description: Lab 5 for Students to Learn File Transfer and Sending Email Message
 
 **Course Slides:**
 
-- Week 6 Lecture 1 Notes: [Web](https://docs.google.com/presentation/d/e/2PACX-1vR_gNcl84UbvMgQ8hsyXcIcQbDz95rc3C1boPnIUUdP5Mivgp-SSN6HDR7Dqs3EyucJFALg6FdCrcif/pub?start=false&loop=false&delayms=3000)
+- Week 6 Lecture 1 Notes: [Web](https://docs.google.com/presentation/d/e/2PACX-1vRSl6boabHb-XxCQpqwtrH1w5MiNdvH9EzNqGnk-6XTl_HAd5QD7yBv9x8oJkQJON9_10915zONeht0/pub?start=false&loop=false&delayms=3000)
 
 **Definitions:**
 
