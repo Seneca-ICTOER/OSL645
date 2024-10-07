@@ -40,7 +40,7 @@ You are going to install one of the following distributions (as a virtual machin
 - [Linux Mint](https://linuxmint.com/) (8)
 - [OpenMediaVault](https://www.openmediavault.org/) (9)
 
-You will be required to create a virtual machine and use it to perform a presentation (with live demonstration) and written report. Your virtual machine name format should be: distribution-studentid(s). For example: RHEL-000000000.
+You will be required to create a virtual machine and use it to perform a presentation (with live demonstration) and written report. Your virtual machine name format should be: distribution-studentid(s). For example: Mint-000000000.
 
 ## Submission
 
