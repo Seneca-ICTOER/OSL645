@@ -29,9 +29,8 @@ This can be done **individually** or optionally in a **group of 2**.
 
 You are going to install one of the following distributions (as a virtual machine) based on your assigned group number. You will research the above criteria (as outlined in the overview) and compare it to Ubuntu, which you installed in Lab 1A and have been using all semester.
 
-- [Kali Linux](https://www.kali.org/) (0)
-- [LibreELEC](https://libreelec.tv/) (1)
-- [Ubuntu Server](https://ubuntu.com/) (2)
+- [Kali Linux](https://www.kali.org/) (1)
+- [LibreELEC](https://libreelec.tv/) (2)
 - [SteamOS](https://store.steampowered.com/steamos/) (3)
 - [OpenSUSE Leap](https://www.opensuse.org/) (4)
 - [Knoppix](https://www.knopper.net/knoppix/index-en.html) (5)
