@@ -46,12 +46,17 @@ You will be required to create a virtual machine and use it to perform a present
 
 Your submission will consist of the following two parts:
 
-- **Presentation** (20%) (including live demonstration) (Due Week 12) of approximately 10 minutes in length. Your demonstration should include:
+- **Presentation Video** (20%) (including live demonstration) (Due Week 12) of approximately 10 minutes in length. Your demonstration should include:
   - Browse the launcher (start menu)
   - Run a program (this could be a web browser)
   - Something interesting you discovered
 
-If you wish to record a video, you can use OBS Studio. [Here is a demo video on how to use OBS Studio from FSOSS 2018](https://youtu.be/Sm7xOu3QX_0).
+There are many options to record a video. You can use OBS Studio, which is free, open source and cross platform. [Here is a demo video on how to use OBS Studio from FSOSS 2018](https://youtu.be/Sm7xOu3QX_0).
+
+- **Project Presentation Review Q&A** (10%) (Due Week 13):
+
+  - You will review another team's presentation and come up with meaningful questions for them to respond to.
+  - Use the following [Template](/static/files/OSL645GroupProjectInsightfulQuestions.docx) to record your questions and answers.
 
 - **Report** (15%) (approximately 15 pages) (Due Week 14) including:
 
@@ -61,11 +66,6 @@ If you wish to record a video, you can use OBS Studio. [Here is a demo video on 
   - Installation screenshots with descriptions
   - Conclusion
   - References
-
-- **Project Presentation Review Q&A** (10%) (Due Week 13):
-
-  - You will review another team's presentation and come up with meaningful questions for them to respond to.
-  - Use the following [Template](/static/files/OSL645GroupProjectInsightfulQuestions.docx) to record your questions and answers.
 
 Your Project Q&A Questions are to be uploaded to the Q&A folder on Blackboard by the due date for full marks. Only one group member needs to upload the document. This submission should include ALL group members information.
 
