@@ -27,7 +27,7 @@ This can be done **individually** or optionally in a **group of 2**.
 
 ## Specification
 
-You are going to install one of the following distributions (as a virtual machine) based on the last digit of your student number. You will research the above criteria (as outlined in the overview) and compare it to Ubuntu, which you installed in Lab 1A and have been using all semester. If you are working in a group of 2 you may choose one of the options from your two student numbers.
+You are going to install one of the following distributions (as a virtual machine) based on your assigned group number. You will research the above criteria (as outlined in the overview) and compare it to Ubuntu, which you installed in Lab 1A and have been using all semester.
 
 - [Kali Linux](https://www.kali.org/) (0)
 - [LibreELEC](https://libreelec.tv/) (1)
