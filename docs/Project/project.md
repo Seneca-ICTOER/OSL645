@@ -55,7 +55,7 @@ There are many options to record a video. You can use OBS Studio, which is free,
 - **Project Presentation Review Q&A** (10%) (Due Week 13):
 
   - You will review another team's presentation and come up with meaningful questions for them to respond to.
-  - Use the following [Template](/static/files/OSL645GroupProjectInsightfulQuestions.docx) to record your questions and answers.
+  - Use the following [Template](/files/OSL645GroupProjectInsightfulQuestions.docx) to record your questions and answers.
 
 - **Report** (15%) (approximately 15 pages) (Due Week 14) including:
 
