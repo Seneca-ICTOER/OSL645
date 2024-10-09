@@ -147,7 +147,6 @@ description: Weekly Schedule for OSL645
 | **Learning Objectives and Tasks**  | **References** | **Evaluation**                |
 | :--------------------------------- | :------------- | :---------------------------- |
 | Presentation Review Q&A (In Class) |                | Presentation Review Q&A (10%) |
-|                                    |                |                               |
 
 ### Week 14
 
