@@ -92,16 +92,19 @@ description: Weekly Schedule for OSL645
 
 | **Learning Objectives and Tasks** | **References**                                                                                                                                                                                            | **Evaluation**                                                          |
 | :-------------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :---------------------------------------------------------------------- |
-| Regular Expression basics:        | **Week 8 Lecture Slides:** [Web](https://docs.google.com/presentation/d/e/2PACX-1vRvAjG1mqrO7osJh4C0FsaPH0sMulmPu06mEgeEzflMU1Q6Dud0Nk92FVSHjEAEUgyqvU23Nb-2dKrR/pub?start=false&loop=false&delayms=5000) | [Lab 6: Process Management, Aliases and Shell Scripting](/Labs/lab6.md) |
-| Process management                |                                                                                                                                                                                                           | Lab 6 (Due Week 13 in class) (2%)                                       |
-| Aliases                           |                                                                                                                                                                                                           |                                                                         |
-|                                   |                                                                                                                                                                                                           |                                                                         |
+| Process management                | **Week 8 Lecture Slides:** [Web](https://docs.google.com/presentation/d/e/2PACX-1vRvAjG1mqrO7osJh4C0FsaPH0sMulmPu06mEgeEzflMU1Q6Dud0Nk92FVSHjEAEUgyqvU23Nb-2dKrR/pub?start=false&loop=false&delayms=5000) | [Lab 6: Process Management, Aliases and Shell Scripting](/Labs/lab6.md) |
+| Aliases                           |                                                                                                                                                                                                           | Lab 6 (Due Week 13 in class) (2%)                                       |
+| Shell Scripting:                  |                                                                                                                                                                                                           |                                                                         |
+| - User Variables                  |                                                                                                                                                                                                           |                                                                         |
+| - Positional Parameters           |                                                                                                                                                                                                           |                                                                         |
+| - Command Substitution            |                                                                                                                                                                                                           |                                                                         |
+| - Bash Math Operators             |                                                                                                                                                                                                           |                                                                         |
 
 ### Week 9
 
 | **Learning Objectives and Tasks** | **References**                                                                                                                                                                                            | **Evaluation**                              |
 | :-------------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------------------------------------------ |
-| Filesystem links                  | **Week 9 Lecture Slides:** [Web](https://docs.google.com/presentation/d/e/2PACX-1vSSPxaTaUF7ZCV_cwhwMYjNNOKhAST4O6lcM7POzX0W0FsuLebeJQ1jw1SSeB6yPSPmiVPgDsG4p1bm/pub?start=false&loop=false&delayms=5000) | [Lab 7: Regular Expressions](/Labs/lab7.md) |
+| Regular expressions basics:       | **Week 9 Lecture Slides:** [Web](https://docs.google.com/presentation/d/e/2PACX-1vSSPxaTaUF7ZCV_cwhwMYjNNOKhAST4O6lcM7POzX0W0FsuLebeJQ1jw1SSeB6yPSPmiVPgDsG4p1bm/pub?start=false&loop=false&delayms=5000) | [Lab 7: Regular Expressions](/Labs/lab7.md) |
 | - Literal matching                |                                                                                                                                                                                                           | Lab 7 (Due Week 13 in class) (2%)           |
 | - . wildcard                      |                                                                                                                                                                                                           |                                             |
 | - \* repetition symbol            |                                                                                                                                                                                                           |                                             |
@@ -120,36 +123,35 @@ description: Weekly Schedule for OSL645
 
 ### Week 11
 
-| **Learning Objectives and Tasks**        | **References**                                                                                                                                                                                             | **Evaluation**                                   |
-| :--------------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :----------------------------------------------- |
-| Introduction to Shell Scripting:         | **Week 10 Lecture Slides:** [Web](https://docs.google.com/presentation/d/e/2PACX-1vQrCEgWUojoZ9jii3WKdk3Ntjqn3xUVogXKmk7MJQtvLz0K7z5-PXjkOzFSwV8_P3k4tR2ODqp-rFA7/pub?start=false&loop=false&delayms=5000) | [Lab 9: Advanced Shell Scripting](/Labs/lab9.md) |
-| - Shell Variables                        |                                                                                                                                                                                                            | Lab 9 (Due Week 13 in class) (2%)                |
-| - echo and read commands                 |                                                                                                                                                                                                            |                                                  |
-| - Positional Parameters                  |                                                                                                                                                                                                            |                                                  |
-| - Command Substitution / Math Operations |                                                                                                                                                                                                            |                                                  |
-| - test statements                        |                                                                                                                                                                                                            |                                                  |
-| - if / elif-else statements              |                                                                                                                                                                                                            |                                                  |
-| - for loop statements                    |                                                                                                                                                                                                            |                                                  |
+| **Learning Objectives and Tasks**             | **References**                                                                                                                                                                                             | **Evaluation**                                   |
+| :-------------------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :----------------------------------------------- |
+| Advanced Shell Scripting:                     | **Week 10 Lecture Slides:** [Web](https://docs.google.com/presentation/d/e/2PACX-1vQrCEgWUojoZ9jii3WKdk3Ntjqn3xUVogXKmk7MJQtvLz0K7z5-PXjkOzFSwV8_P3k4tR2ODqp-rFA7/pub?start=false&loop=false&delayms=5000) | [Lab 9: Advanced Shell Scripting](/Labs/lab9.md) |
+| - Shell Variables                             |                                                                                                                                                                                                            | Lab 9 (Due Week 13 in class) (2%)                |
+| - echo and read commands                      |                                                                                                                                                                                                            |                                                  |
+| - Positional Parameters                       |
+| - Command Substitution / Math Operations      |                                                                                                                                                                                                            |                                                  |
+| - test statements                             |                                                                                                                                                                                                            |                                                  |
+| if / elif-else statements (conditional logic) |                                                                                                                                                                                                            |                                                  |
+| for loop statements (iterative logic)         |                                                                                                                                                                                                            |                                                  |
 
 ### Week 12
 
-| **Learning Objectives and Tasks** | **References**                                                                                                                                                                                             | **Evaluation**                           |
-| :-------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :--------------------------------------- |
-| Text Manipulation:                | **Week 11 Lecture Slides:** [Web](https://docs.google.com/presentation/d/e/2PACX-1vT1rWx6t6rPEPpr-Zgj7-WCFwbX41RHbo_1jPDO7ouNQ_62Jxkog8U8c0Ltmc7jnNWjCj6-dx4gE35n/pub?start=false&loop=false&delayms=5000) | [Lab 10: Creating Users](/Labs/lab10.md) |
-| - Using the sed Utility           |                                                                                                                                                                                                            | Lab 10 (Due Week 13 in class) (2%)       |
-| - Using the awk Utility           |                                                                                                                                                                                                            |                                          |
+| **Learning Objectives and Tasks** | **References**                                                                                                                                                                                             | **Evaluation**                             |
+| :-------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :----------------------------------------- |
+| Text Manipulation:                | **Week 11 Lecture Slides:** [Web](https://docs.google.com/presentation/d/e/2PACX-1vT1rWx6t6rPEPpr-Zgj7-WCFwbX41RHbo_1jPDO7ouNQ_62Jxkog8U8c0Ltmc7jnNWjCj6-dx4gE35n/pub?start=false&loop=false&delayms=5000) | [Lab 10: Creating Users](/Labs/lab10.md)   |
+| - Using the sed Utility           |                                                                                                                                                                                                            | Lab 10 (Due Week 13 in class) (2%)         |
+| - Using the awk Utility           |                                                                                                                                                                                                            | Video Presentation and Demonstration (20%) |
 
 ### Week 13
 
-| **Learning Objectives and Tasks** | **References** | **Evaluation**                       |
-| :-------------------------------- | :------------- | :----------------------------------- |
-| Presentation Review Q&A           |                | Presentation Review Q&A (10%)        |
-|                                   |                | Presentation and Demonstration (20%) |
+| **Learning Objectives and Tasks**  | **References** | **Evaluation**                |
+| :--------------------------------- | :------------- | :---------------------------- |
+| Presentation Review Q&A (In Class) |                | Presentation Review Q&A (10%) |
+|                                    |                |                               |
 
 ### Week 14
 
 | **Learning Objectives and Tasks** | **References** | **Evaluation**    |
 | :-------------------------------- | :------------- | :---------------- |
 |                                   |                | Theory Test (25%) |
-|                                   |                |                   |
 |                                   |                | Report Due (15%)  |

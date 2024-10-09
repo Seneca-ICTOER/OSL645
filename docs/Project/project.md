@@ -46,7 +46,7 @@ You will be required to create a virtual machine and use it to perform a present
 
 Your submission will consist of the following two parts:
 
-- **Presentation** (20%) (including live demonstration) (Due Week 13) of approximately 10 minutes in length. Your demonstration should include:
+- **Presentation** (20%) (including live demonstration) (Due Week 12) of approximately 10 minutes in length. Your demonstration should include:
   - Browse the launcher (start menu)
   - Run a program (this could be a web browser)
   - Something interesting you discovered
@@ -62,8 +62,11 @@ If you wish to record a video, you can use OBS Studio. [Here is a demo video on 
   - Conclusion
   - References
 
-- **Project Presentation Review Q&A** (10%) (Due Week 14):
+- **Project Presentation Review Q&A** (10%) (Due Week 13):
 
   - You will review another team's presentation and come up with meaningful questions for them to respond to.
+  - Use the following [Template](/static/files/OSL645GroupProjectInsightfulQuestions.docx) to record your questions and answers.
 
-Your presentation slides and report are to be uploaded to the project folder on Blackboard by the due date for full marks. This is **worth 35%** of your overall grade and takes the place of a **final exam**. Take your time and do it well. The due date is the final day of the semester, late submissions will receive **zero**.
+Your Project Q&A Questions are to be uploaded to the Q&A folder on Blackboard by the due date for full marks. Only one group member needs to upload the document. This submission should include ALL group members information.
+
+Your presentation slides and report are to be uploaded to the project folder on Blackboard by the due date for full marks. This is **worth 20%** of your overall grade. Take your time and do it well. The due date is the final day of the semester, late submissions will receive **zero**.
