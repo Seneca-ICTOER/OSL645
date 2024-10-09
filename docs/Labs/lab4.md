@@ -109,7 +109,7 @@ When **directories** and **regular files** are created, they are assigned to an 
 
 Users that own those directories and regular files are referred to as **users**, users that belong within the same group are referred to as same group members, and those users that do NOT belong to a particular group are referred to as **other group members**.
 
-**NOTE:** In this course, we CANNOT create groups or assign users to groups in the **Matrix** server. Instead, you may learn how to those tasks when or if you take a Unix/Linux administration course. On the other hand, you can change which **user, same group members** or **other group members** can access or NOT access a directory or regular file.
+**NOTE:** In this course, you will learn how to manage users and groups in **Lab 10**. For now, you can change which **user, same group members** or **other group members** can access or NOT access a directory or regular file.
 
 File Permissions consist of **two-layers**:
 
@@ -336,7 +336,7 @@ In this investigation, you will get experience using the **chmod** command to **
 
 ![File Permission Practice 1](/img/File-permission-practice-1.png)
 
-- **NOTE:** You will now run a shell script to confirm that you properly created that directory structure in your _Matrix_ account.
+- **NOTE:** You will now run a shell script to confirm that you properly created that directory structure.
 
 3. Issue the following Linux command to run a checking script:
 
@@ -543,8 +543,7 @@ touch ~/shared2/myfile.txt
 
 - If you encounter errors, make corrections and then re-run the checking script until you receive a congratulations message and then continue with this lab.
 
-15. Logout of your Matrix account, and then log-back into your Matrix account.
-16. Issue the following Linux command (without arguments):
+15. Issue the following Linux command (without arguments):
 
 ```bash
 umask
@@ -552,7 +551,7 @@ umask
 
 - What happened? Referring to your notes, what do you need to do to make that umask value persistent?
 
-**WARNING:** You should be extremely aware of your permissions since you may perform **marked work** for other courses on your **Matrix** server.
+**WARNING:** You should be extremely aware of your permissions since you on a server this can be a sensitive issue.
 
 You should NOT set permissions to share your work with **same group** or **other** group members (unless **given specific permissions instructions from your course professors**). If students can have access to your directories and project files, they could **copy** your work and thus make yourself and other student(s) that copied your work to be charged with an **Academic Integrity Violation**.
 
@@ -562,7 +561,7 @@ In this investigation, you will learn how to create and run a **Bash Shell scrip
 
 **Perform the Following Steps:**
 
-1. **Login** to your matrix account.
+1. **Start** to your Ubuntu VM and launch a terminal (if you have not already).
 2. Issue a command to **confirm** you are located in your **home** directory.
 
    - We want to create a Bash Shell script to welcome the user by their _username_.
@@ -754,7 +753,7 @@ The current shell you are using is: sh
 ```
 
 - This is referred to as a **she-bang line**. It forces this script to be run in the **Bash Shell**.
-- When your Bash Shell script finishes execution, you are returned to your current shell that you are using (which in our case in Matrix, is still the Bash shell).
+- When your Bash Shell script finishes execution, you are returned to your current shell that you are using (which in our case is still the Bash shell).
 
 8. **Save** your editing changes and **exit** your text editor.
 9. While in the Bourne shell, issue the following Linux command:
@@ -961,7 +960,7 @@ The current user home directory is: /home/murray.saul
 
 - What did you notice?
 - The setting of the **PATH** environment variable only worked in the current session only.
-- If you exit the current Matrix session, then the recently changed settings for environment variables will be lost.
+- If you exit the current session, then the recently changed settings for environment variables will be lost.
 - You will in a future lab how to set environment variables in **start-up** files.
 
 7. Issue the following Linux command to run a checking script:
