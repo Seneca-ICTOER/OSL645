@@ -817,6 +817,8 @@ alias | ~/bin/lab6-check-1
 
 ## Investigation 3: Variables and Positional Parameters
 
+### Left off here
+
 - Unlike **Environment variables** that are used to set the environment of the shell or shell scripts, **User-created** variables are "customized" that the user can set or allow a user to set the variables' values. Let's create a Bash shell script that contain **user-created variables.**
 
 1. Use a text editor to create a Bash shell script called **user-variables.bash**
