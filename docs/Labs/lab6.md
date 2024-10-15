@@ -1,13 +1,15 @@
 ---
-id: tutorial6
-title: Tutorial 6 - Process Management, Aliases & Shell Scripting
+id: lab6
+title: Lab 6 - Process Management, Aliases & Shell Scripting
 sidebar_position: 7
-description: Tutorial 6 for Students to Process Management, Aliases and Shell Scripting
+description: Lab 6 for Students to Process Management, Aliases and Shell Scripting
 ---
 
-# Tutorial 6: Process Management, Aliases and Shell Scripting
+# Under development
 
-## Main Objectives of this Practice Tutorial
+# Lab 6: Process Management, Aliases and Shell Scripting
+
+## Main Objectives of this Practice Lab
 
 - Define term **process** as it relates to the Unix/ Linux operating system
 - **Run** and **terminate** processes in the foreground and background
@@ -19,7 +21,7 @@ description: Tutorial 6 for Students to Process Management, Aliases and Shell Sc
 - Use **if** and **if-else** logic statements in shell scripts.
 - Use a **for** loop statement with a list in shell scripts.
 
-## Tutorial Reference Material
+## Lab Reference Material
 
 **Course Slides:**
 
@@ -710,15 +712,15 @@ kill PID
 kill -9 PID
 ```
 
-In the next investigation, you will learn how to **create aliases** and **view command history** on your Matrix server.
+In the next investigation, you will learn how to **create aliases**.
 
 ## Investigation 2: Aliases
 
-In this investigation, you will learn how to **manage aliases** on your Matrix account.
+In this investigation, you will learn how to **manage aliases** on your Ubuntu VM.
 
 **Perform the Following Steps:**
 
-1. Make certain that you are logged into your Matrix account.
+1. Make certain that you are logged into your Ubuntu VM.
 2. Issue a Linux command to confirm that you are located in your **home** directory.
 
 ![Alias 1](/img/Alias-1.png)
@@ -767,12 +769,16 @@ lh
 
 - What do you think this command does?
 
-9. **Logout** of your Matrix account and then **login** to your Matrix account.
+9. Type **exit** to close your current terminal and open a new terminal.
+
 10. Reissue the **lal** alias. What happened?
 11. Reissue the **lh** alias. What happened?
 12. Issue the **alias | grep lh** command without any arguments to see if it is stored in memory.
+
 13. Reissue the command to create the **lh** alias in **step \#6**.
+
 14. Run the **lh** alias to confirm that it is properly set in memory.
+
 15. Issue the following Linux command to edit your ~/.bashrc startup file:
 
 ```bash
@@ -786,14 +792,14 @@ alias lh='ls --human-readable --size -1 -S --classify'
 ```
 
 17. Save your editing changes and exit your text editor.
-18. **Logout** of your Matrix account, then **login** to your Matrix account.
+18. Type **exit** to close your current terminal and open a new terminal.
 19. Reissue the **lh** alias. What happened?
 20. Issue the following Linux command: **unalias lh**
 21. Run the **lh** alias to see what happens.
 
     - What happenned?
 
-22. **Logout** of your Matrix account, then **login** to your Matrix account.
+22. Type **exit** to close your current terminal and open a new terminal.
 23. Reissue the **lh** alias. What happened? Why?
 24. Reissue the **lal** alias. Why **didn't** this alias work?
 
@@ -803,7 +809,7 @@ alias lh='ls --human-readable --size -1 -S --classify'
 25. Issue the following Linux pipeline command:
 
 ```bash
-alias | ~ops145/t6-check-1
+alias | ~/bin/lab6-check-1
 ```
 
 - If you encounter errors, then view the feedback to make corrections, and then re-run the checking script.
