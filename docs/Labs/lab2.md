@@ -196,7 +196,7 @@ The best way to learn about different types of file pathnames is to use them whi
 
 **Perform the Following Steps:**
 
-1. **Login** to your matrix account.
+1. **Start** your Ubuntu VM and login.
 2. Issue a command to **confirm** you are located in your home directory.
 
    - Let's create the following directory structure under your home directory by issuing the mkdir command using only absolute pathnames.
@@ -700,7 +700,7 @@ Your instructor may take-up these questions during class. It is up to the studen
 
 **Review Questions:**
 
-When answering Linux command questions on this side or the back side of this page, refer to the following Inverted Tree diagram. The week3 directory is contained in your home directory. Assume that you just logged into your Matrix account. Directories are underlined.
+When answering Linux command questions on this side or the back side of this page, refer to the following Inverted Tree diagram. The week3 directory is contained in your home directory. Assume that you just logged into your Ubuntu VM. Directories are underlined.
 
 ![Week 3 Practice Question](/img/Week3-practice-question.png)
 
