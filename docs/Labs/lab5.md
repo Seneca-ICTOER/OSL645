@@ -305,7 +305,7 @@ ssh yoursenecaid@matrix.senecapolytechnic.ca ls -l /home/yoursenecaid/remote/dif
 30. Issue the following:
 
 ```bash
-ssh ~/bin/lab5-check-2
+~/bin/lab5-check-2
 ```
 
 - If you encounter errors, re-run the scp commands to correct and re-run the above command until you receive a congratulations message.
