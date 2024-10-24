@@ -817,23 +817,75 @@ alias | ~/bin/lab6-check-1
 
 ## Investigation 3: Variables and Positional Parameters
 
-### Left off here
+### Creating your Github Repo for your Labs
 
-- Unlike **Environment variables** that are used to set the environment of the shell or shell scripts, **User-created** variables are "customized" that the user can set or allow a user to set the variables' values. Let's create a Bash shell script that contain **user-created variables.**
+Use the following [link](https://classroom.github.com/a/tHKAizE9) to set up your lab 6 repository, and open it in GitHub Codespaces. Refer to [Lab 4](/Labs/lab4.md) for instructions. You will be using this for the BASH scripting in lab 6.
 
-1. Use a text editor to create a Bash shell script called **user-variables.bash**
-2. Add the following lines to the beginning of the _user-variables.bash_ file:
+### Cloning your GitHub repository in your Ubuntu VM
+
+Issue the following command to clone your GitHub repository into your home directory.
+
+> **Important:** Be sure to replace `username` in the following command with YOUR GitHub username.
+
+```bash
+git clone git@github.com:OSL645/lab-6-username
+```
+
+- Issue a command to confirm the repository has been cloned on your Ubuntu VM.
+- Issue a command to change into your **lab-6-username** directory.
+
+Confirm the contents have been written to your **lab-6-username** directory. You should see the following files:
+
+- LICENSE
+- README.md
+- command-substitution.bash
+- command-substitution_test.py
+- dog-years.bash
+- dog-years_test.py
+- for-1.bash
+- for-1_test.py
+- for-2.bash
+- for-2_test.py
+- if-1.bash
+- if-1_test.py
+- if-2.bash
+- if-2_test.py
+- if-3.bash
+- if-3_test.py
+- parameters.bash
+- parameters_test.py
+- user-variables.bash
+- user-variables_test.py
+
+### Writing user-variables.bash
+In Lab 4 you learned about **Enviornment variables**. Unlike **Environment variables** that are used to set the environment of the shell or shell scripts, **User-created** variables are "customized" that the user can set or allow a user to set the variables' values. Let's create a Bash shell script that contain **user-created variables.**
+
+1. In GitHub Codespaces, open the template for the Bash shell script called **user-variables.bash**
+2. Edit _user-variables.bash_ file to contain the following:
 
 ```bash
 #!/bin/bash
+# Author: Your Name; youremail@myseneca.ca
+# Date: Today's date
+# Purpose: To demonstrate user variables.
+# Usage: ./user-variables.bash
+#
+
+# Using the read command, prompt the user to enter their full name. Store the input in a variable called name
 read -p "Enter your Full Name: " name
+
+# Using the read command, prompt the user to enter their age. Store the input in a variable called age
 read -p "Enter your age (in years): " age
+
+# Use the echo command to display the following message: "Hello name - You are age years old."
 echo "Hello $name - You are $age years old"
 ```
 
-3. Save your editing changes and exit your text editor.
-4. Issue the **chmod** command to add **execute permissions** for the **user-variables.bash** file.
-5. Issue the following to run the user-variables.bash Bash shell script (enter **your Full name** and **your age** when prompted):
+3. Issue the **chmod** command to add **execute permission** for the **user** the **user-variables.bash** file.
+
+4. Save your editing changes, stage and commit your changes to GitHub.
+
+5. Using the **terminal in Codespaces** issue the following to run the user-variables.bash Bash shell script (enter **your Full name** and **your age** when prompted):
 
 ```bash
 ./user-variables.bash
@@ -848,16 +900,28 @@ Enter your age (in years): 57
 Hello Murray Saul - You are 57 years old
 ```
 
-6. Use a text editor to **modify** your Bash shell script called **user-variables.bash**
-7. **Insert** the following lines immediately **below** the **she-bang** line:
+6. Use Codespaces to **modify** your Bash shell script called **user-variables.bash**
+
+7. Run the Python check script in GitHub Codespaces to check your work before you commit it.
+```bash
+./user-variables_test.py
+```
+
+8. Check the exit status code. If it shows 0, it is successful.
+```bash
+echo $?
+```
+
+9. **Insert** the following lines immediately **below** the **comment block** at the top of your script:
 
 ```bash
-age=25
+age=43
 readonly age
 ```
 
-8. Save your editing changes and exit your text editor.
-9. Issue the following to run the user-variables.bash Bash shell script:
+10. Save your changes. Stage and commit your changes to GitHub.
+
+11. Issue the following to run the user-variables.bash Bash shell script:
 
 ```bash
 ./user-variables.bash
@@ -870,40 +934,102 @@ readonly age
 Enter your Full Name: Murray Saul
 Enter your age (in years): 57
 ./user-variables.bash: line 5: age: readonly variable
-Hello Murray Saul - You are 25 years old
+Hello Murray Saul - You are 43 years old
+```
+On your **Ubuntu VM**, open a **terminal** and confirm you are in your **home** directory.
+
+12. Issue the following Linux command to change to the local clone of your GitHub repository.
+
+```bash
+cd lab-6-username
+```
+- Issue a command to change into your **lab-4-username** directory.
+
+13. Pull your changes into your **Ubuntu VM**
+```bash
+git pull
 ```
 
-- A **positional parameter** is a special variable within a shell program; its value is set from **arguments** contained in a shell script or using the set command. Let's use **positional parameters** and **special parameters** in a Bash shell script.
+14. Run your script and observe the output.
+```bash
+./user-variables.bash
+```
 
-10. Use a text editor to create a file called **parameters.bash**
-11. Add the following lines to the beginning of this file:
+15. Did it work? Is the output the same as it was from the Codespaces terminal?
+
+### Writing parameters.bash
+A **positional parameter** is a special variable within a shell program; its value is set from **arguments** contained in a shell script or using the set command. Let's use **positional parameters** and **special parameters** in a Bash shell script.
+
+1. Open the provided template called **parameters.bash**
+2. Edit _parameters.bash_ file to contain the following:
 
 ```bash
 #!/bin/bash
+# Author: Your Name; youremail@myseneca.ca
+# Date: Today's date
+# Purpose: To demonstrate positional parameters.
+# Usage: ./parameters.bash
+#
+
+# Use the echo command to display "\$0: $0"
 echo \$0: $0
+
+# Use the echo command to display "\$2: $2"
 echo \$2: $2
+
+# Use the echo command to display "\$3: $3"
 echo \$3: $3
 
+# Use the echo command to display "\$#: $#"
 echo \$#: $#
+
+# Use the echo command to display "\$*: $*"
 echo \$*: $*
 
+# Use the shift command to shift the positional parameters by two
 shift 2
+
+# Use the echo command to display "\$#: $#"
 echo \$#: $#
+
+# Use the echo command to display "\$*: $*"
 echo \$*: $*
 ```
 
-12. Save your editing changes and exit your text editor.
+3. Issue the **chmod** command to add **execute permissions** for the user for the **parameters.bash** file.
+
+4. Save your changes. Stage and commit your changes to GitHub.
 
     - Notice how the quoting character "\" is used to display positional parameters like "**$2**" as opposed to the value stored in the second positional parameter.
 
-13. Issue the **chmod** command to add **execute permissions** for the user for the **parameters.bash** file.
-14. Issue the following to run the **user-variables.bash** Bash shell script:
+
+5. Using the **terminal in Codespaces**, issue the following to run the **parameters.bash** Bash shell script:
 
 ```bash
 ./parameters.bash
 ```
 
-- What happened?
+- What happened? Your output should look like the following:
+```bash
+> ./parameters.bash
+$0: ./parameters.bash
+$2: 
+$3: 
+$#: 0
+$*: 
+$#: 0
+$*: 
+```
+
+- The values for some of the _positional parameters_ and _special parameters_ may NOT be displayed properly since you did NOT provide any **arguments** when running your Bash shell script.
+
+15. Issue the following to run the user-variables.bash Bash shell script with arguments:
+
+```bash
+./parameters.bash 1 2 3 4 5 6 7 8
+```
+
+- What happened? Your output should look like the following:
 
 ```bash
 > ./parameters.bash 1 2 3 4 5 6 7 8
@@ -916,19 +1042,33 @@ $#: 6
 $*: 3 4 5 6 7 8
 ```
 
-- The values for some of the _positional parameters_ and _special parameters_ may NOT be displayed properly since you did NOT provide any **arguments** when running your Bash shell script.
+- Take some time to view the results and how the _parameters_ have changed when using the **shift** command.
 
-15. Issue the following to run the user-variables.bash Bash shell script with arguments:
+16. Run the Python check script in GitHub Codespaces to check your work before you commit it.
+```bash
+./parameters_test.py
+```
 
+17. Check the exit status code. If it shows 0, it is successful.
+```bash
+echo $?
+```
+
+18. Pull your changes into your **Ubuntu VM**
+```bash
+git pull
+```
+
+19. Run your script and observe the output.
 ```bash
 ./parameters.bash 1 2 3 4 5 6 7 8
 ```
 
-- What do you notice?
-
-- Take some time to view the results and how the _parameters_ have changed when using the **shift** command.
+20. Did it work? Is the output the same as it was from the Codespaces terminal?
 
 In the next investigation, you will learn to use **command substitution** and **math operations** in your shell scripts.
+
+## Left off here
 
 ## Investigation 4: Command Substitution and Math Operations
 

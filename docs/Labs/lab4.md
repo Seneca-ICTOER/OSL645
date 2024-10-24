@@ -681,7 +681,7 @@ Additionally, you may want to install the GitHub mobile app. It allows you acces
 
 ### Creating your Github Repo for your Labs
 
-Use the following [link](https://classroom.github.com/a/CXNeI3Tr) to set up your lab 4 repository. You will be using this for lab3.
+Use the following [link](https://classroom.github.com/a/CXNeI3Tr) to set up your lab 4 repository. You will be using this for the Bash scripting in lab 4.
 
 Next, follow the sections for setup on a Shared Computer by Accessing GitHub Codespaces or on your Personal Computer. While you can install Visual Studio Code (VSCode) locally, I recommend using Codespaces for this course.
 
