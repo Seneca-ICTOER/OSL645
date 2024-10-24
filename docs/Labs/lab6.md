@@ -960,7 +960,7 @@ git pull
 ### Writing parameters.bash
 A **positional parameter** is a special variable within a shell program; its value is set from **arguments** contained in a shell script or using the set command. Let's use **positional parameters** and **special parameters** in a Bash shell script.
 
-1. Open the provided template called **parameters.bash**
+1. In GitHub Codespaces, open the provided template called **parameters.bash**
 2. Edit _parameters.bash_ file to contain the following:
 
 ```bash
