@@ -1346,7 +1346,7 @@ In this investigation, you will learn how to use **control-flow statements** to 
 2. Issue the following Linux commands at the Bash shell prompt to assign values to several variables:
 
 ```bash
-course="ULI101"
+course="OSL645"
 ```
 
 ```bash
@@ -1362,7 +1362,7 @@ number2=10
 3. Issue the following Linux command to test a condition:
 
 ```bash
-test $course = "ULI101"
+test $course = "OSL645"
 ```
 
 - The **$?** variable is used to store an **exit status** of the previously-issued command (including the test command).
@@ -1379,7 +1379,7 @@ echo $?
 5. Issue the following Linux command to test another condition:
 
 ```bash
-test $course = "uli101"
+test $course = "osl645"
 ```
 
 6. Issue the following Linux command to view the _exit status_ of the previously-issued **test** command:
@@ -1394,7 +1394,7 @@ echo $?
 7. Issue the following Linux command to test another condition:
 
 ```bash
-test $course != "uli101"
+test $course != "osl645"
 ```
 
 8. Issue a linux command to display the value of **$?**
@@ -1432,11 +1432,35 @@ test $number1 -gt $number2
 
     - You should notice that the exit status value is now _FALSE_ which is the correct result.
 
-14. The **test** command can be substituted by **square brackets \[ \]** which contains the **test** condition within the square brackets. You need to have spaces between the brackets and the test condition; otherwise, you will get a test error.
+14. The **test** command can be substituted by **square brackets \[\[ \]\]** which contains the **test** condition within the square brackets. You need to have spaces between the brackets and the test condition; otherwise, you will get a test error. 
+
+- **Note:** You can use either a single or double set of square brackets to represent the **test** condition. However:
+
+  - [[ ... ]] is a keyword rather than a command, so it is more efficient
+  - conditions can be combined using && (and) and || (or)
+  - will work correctly even if an unquoted variable is null
+  - string comparisons can use > and <, they won't be confused with redirection
+
+  - The following example will fail:
+  ```bash
+  if [ $1 > $2 || $2 > $3 ]; then
+    echo "Arguments are not in correct sort order"
+    exit 1
+  fi
+  ```
+
+  - However, replace the single square brackets with double square brackets and it will work:
+  ```bash
+  if [[ $1 > $2 || $2 > $3 ]]; then
+    echo "Arguments are not in correct sort order"
+    exit 1
+  fi
+  ```
+
 15. To generate a **test error**, copy and paste the following **test** command:
 
 ```bash
-[$number1 -gt $number2]
+[[$number1 -gt $number2]]
 ```
 
 - The reason for the error was that you need **spaces** between the **square brackets** and the **test condition**.
@@ -1444,7 +1468,7 @@ test $number1 -gt $number2
 16. Copy and paste the following (correct) **test** command:
 
 ```bash
-[ $number1 -gt $number2 ]
+[[ $number1 -gt $number2 ]]
 ```
 
 17. Issue a command to view the value of the **exit status** of the previously issued **test** command. You should notice that is works properly.
@@ -1452,6 +1476,8 @@ test $number1 -gt $number2
     - Now that we have learned how to test conditions, let's learn about **control-flow** statements.
     - **LOGIC STATEMENTS** are used to create **different paths** or directions that the shell script will take based on the result of the **test condition**. In this tutorial,we will only focus on the **if** and **if-else** logic statements.
 
+### Left off here
+### Writing if-1.bash
 18. Use a text editor like vi or nano to create the text file called **if-1.bash**
 
 (eg. `vi if-1.bash`)
