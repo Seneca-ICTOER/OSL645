@@ -1068,8 +1068,6 @@ git pull
 
 In the next investigation, you will learn to use **command substitution** and **math operations** in your shell scripts.
 
-## Left off here
-
 ## Investigation 4: Command Substitution and Math Operations
 
 In this investigation, you will learn how to use **command substitution** and **math operations** in your shell scripts.
@@ -1083,45 +1081,88 @@ _For example:_
 ```bash
 echo "The current date and time is: $(date)"
 ```
-
+### Writing command-substitution.bash
 Let's create a Bash shell script that uses command substitution that displays **text** and values of **environment variables** in a series of **echo** statements.
 
 **Perform the Following Steps:**
 
-1. Confirm that you are located in your **home** directory in your Matrix account.
-2. Use a text editor to create a Bash shell script called **command-substitution.bash**
-3. Add the following lines to the beginning of this file:
+
+1. In GitHub Codespaces, open the provided template called **command-substitution.bash**
+2. Edit _command-substitution.bash_ file to contain the following:
 
 ```bash
 #!/bin/bash
+# Author:
+# Date:
+# Purpose: To demonstrate command substitution.
+# Usage: ./command-substitution.bash
+#
+
+# Use the echo command to display a blank line
 echo
+
+# Use the echo command to display "MY ACCOUNT INFORMATION"
 echo "MY ACCOUNT INFORMATION:"
+
+# Use the echo command to display a blank line
 echo
+
+# Use the echo command to display "Username: the output of the whoami command"
 echo "Username: $(whoami)"
+
+# Use the echo command to display a blank line
 echo
+
+# Use the echo command to display "Current Directory: the output of the pwd command"
 echo "Current Directory: $(pwd)"
+
+# Use the echo command to display a blank line
 echo
 ```
 
-4. Save your editing changes and exit your text editor.
-5. Issue the **chmod** command to add execute permissions for the **command-substitution.bash** file.
-6. Issue the following to run the user-variables.bash Bash shell script:
+3. Issue the **chmod** command to add **execute permissions** for the user for the **command-substitution.bash** file.
+
+4. Save your changes. Stage and commit your changes to GitHub.
+
+5. Using the **terminal in Codespaces**, issue the following to run the **parameters.bash** Bash shell script:
 
 ```bash
 ./command-substitution.bash
 ```
 
-- Confirm that your shell script displays the correct information for your Matrix account.
+- Confirm that your shell script displays the following sample output.
 
 ```bash
 > ./command-substitution.bash
 
 MY ACCOUNT INFORMATION:
 
-Username: murray.saul
+Username: codespace
 
-Current Directory: /home/murray.saul
+Current Directory: /workspace/lab-6-username
 ```
+
+6. Run the Python check script in GitHub Codespaces to check your work before you commit it.
+```bash
+./command-substitution_test.py
+```
+
+7. Check the exit status code. If it shows 0, it is successful.
+```bash
+echo $?
+```
+
+8. Pull your changes into your **Ubuntu VM**
+```bash
+git pull
+```
+
+9. Run your script and observe the output.
+```bash
+./command-substitution.bash
+```
+
+10. Did it work? Is the output the same as it was from the Codespaces terminal? If not, how is it different?
 
 ### Math Operations
 
@@ -1131,7 +1172,7 @@ We will now learn how to use this construct in order to perform math operations 
 
 **Perform the Following Steps:**
 
-1. Confirm that you are located in your **home** directory in your Matrix account.
+1. Confirm that you are located in your **home** directory in your Ubuntu VM.
 
    - Let's demonstrate that the Unix/Linux shell stores numbers as ascii text which can cause problems when performing math operations.
 
@@ -1146,7 +1187,7 @@ echo "1 + 2"
 3. To demonstrate the need for the **(( ))** construct, issue the following Linux commands (using the _math_ construct):
 
 ```bash
-echo "$((1 + 2))"
+echo "$(( 1 + 2 ))"
 ```
 
 - What did you notice?
@@ -1156,19 +1197,19 @@ echo "$((1 + 2))"
 4. Issue the following Linux commands demonstrating other types of math calculations:
 
 ```bash
-echo "$((2 - 3))"
+echo "$(( 2 - 3 ))"
 ```
 
 ```bash
-echo "$((2 * 3))"
+echo "$(( 2 * 3 ))"
 ```
 
 ```bash
-echo "$((2 / 3))"
+echo "$(( 2 / 3 ))"
 ```
 
 ```bash
-echo "$((2 ** 3))"
+echo "$(( 2 ** 3 ))"
 ```
 
 - **NOTE:** You may notice that **dividing 2** by **3** shows a **zero** result. To perform decimal calculations would require the use the **awk** or **bc** Linux commands (we will **NOT** cover that method to work with _decimal numbers_ in this course).
@@ -1185,7 +1226,7 @@ num2=12
 ```
 
 ```bash
-echo "$((num1 * num2))"
+echo "$(( num1 * num2 ))"
 ```
 
 - What did you notice?
@@ -1202,35 +1243,57 @@ num2=3
 ```
 
 ```bash
-((result = num1 ** num2))
+(( result = num1 ** num2 ))
 ```
 
 ```bash
 echo "The result is: $result"
 ```
 
-7. Use a text editor to create a Bash shell script called **dog-years.bash**
-8. Add the following lines to the beginning of this file:
+### Writing dog-years.bash
+
+1. In GitHub Codespaces, open the provided template called **dog-years.bash.bash**
+
+2. Edit _dog-years.bash_ file to contain the following:
 
 ```bash
 #!/bin/bash
+# Author:
+# Date:
+# Purpose: To demonstrate math operations by converting your age in human years to dog years.
+# Usage: ./dog-years.bash
+#
+
+# Use the echo command to display a blank line
 echo
+
+# Set the variable dogFactor to 7
 dogFactor=7
+
+# Prompt the user to enter their age in human years. Store the input in a variable called humanYears
 read -p "Please enter your age (in years): " humanYears
-dogYears=$((humanYears * dogFactor))
+
+# Calculate the user's age in dog years using the formula: dogYears = humanYears * dogFactor. Store the result in a variable called dogYears.
+dogYears=$(( humanYears * dogFactor ))
+
+# Use the echo command to display the following message: "Your age in dog-years is: dogYears"
 echo "Your age in dog-years is: $dogYears"
+
+# Use the echo command to display a blank line
 echo
 ```
 
-9. Save your editing changes and exit your text editor.
-10. Issue the **chmod** command to add execute permissions for the user for the **dog-years.bash** file.
-11. Issue the following to run the **dog-years.bash** Bash shell script:
+3. Issue the **chmod** command to add **execute permissions** for the user for the **dog-years.bash** file.
+
+4. Save your changes. Stage and commit your changes to GitHub.
+
+5. Using the **terminal in Codespaces**, issue the following to run the **dog-years.bash** Bash shell script:
 
 ```bash
 ./dog-years.bash
 ```
 
-- Enter your age to see what happens.
+- Confirm that your shell script displays the following sample output.
 
 ```bash
 > ./dog-years.bash
@@ -1239,10 +1302,34 @@ Please enter you age (in years): 57
 Your age in dog-years is: 399
 ```
 
+6. Run the Python check script in GitHub Codespaces to check your work before you commit it.
+```bash
+./dog-years_test.py
+```
+
+7. Check the exit status code. If it shows 0, it is successful.
+```bash
+echo $?
+```
+
+8. Pull your changes into your **Ubuntu VM**
+```bash
+git pull
+```
+
+9. Run your script and observe the output.
+```bash
+./dog-years.bash
+```
+
+10. Did it work? Is the output the same as it was from the Codespaces terminal? If not, how is it different?
+
+11. Issue a Linux command to change to your home directory.
+
 12. Issue the following to run a checking script:
 
 ```bash
-~ops145/t6-check-2 | more
+~/bin/lab6-check-2 | more
 ```
 
 - If you encounter errors, make corrections and **re-run** the checking script until you receive a congratulations message, then you can proceed.
