@@ -1994,7 +1994,7 @@ OUTPUT:
 
 **Walkthru #3:**
 
-**cat walkthru2.bash**
+**cat walkthru3.bash**
 
 ```bash
 #!/usr/bin/bash
@@ -2015,7 +2015,7 @@ done
 WRITE ROUGH WORK AND OUTPUT FROM ISSUING:
 
 ```bash
-./walkthru3.bash apple orange banana
+./walkthru3.bash
 ```
 
 ROUGH WORK:
