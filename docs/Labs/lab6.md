@@ -1252,7 +1252,7 @@ echo "The result is: $result"
 
 ### Writing dog-years.bash
 
-1. In GitHub Codespaces, open the provided template called **dog-years.bash.bash**
+1. In GitHub Codespaces, open the provided template called **dog-years.bash**
 
 2. Edit _dog-years.bash_ file to contain the following:
 
@@ -1476,72 +1476,108 @@ test $number1 -gt $number2
     - Now that we have learned how to test conditions, let's learn about **control-flow** statements.
     - **LOGIC STATEMENTS** are used to create **different paths** or directions that the shell script will take based on the result of the **test condition**. In this tutorial,we will only focus on the **if** and **if-else** logic statements.
 
-### Left off here
 ### Writing if-1.bash
-18. Use a text editor like vi or nano to create the text file called **if-1.bash**
 
-(eg. `vi if-1.bash`)
+1. In GitHub Codespaces, open the provided template called **if-1.bash**
 
-19. Enter the following lines in your shell script:
+2. Edit _if-1.bash_ file to contain the following:
 
 ```bash
 #!/bin/bash
+# Author:
+# Date:
+# Purpose: To demonstrate if statements.
+# Usage: ./if-1.bash
+#
+
+# Set the variable num1 to 5
 num1=5
+
+# Set the variable num2 to 10
 num2=10
-if [ $num1 -lt $num2 ]
-then
+
+# Use the if statement to compare num1 and num2. If num1 is less than num2, display the following message: "num1 is less than num2"
+if [[ $num1 -lt $num2 ]]; then
    echo "num1 is less than num2"
 fi
 ```
 
-20. Save your editing session and exit the text editor (eg. with vi: press **ESC**, then type **:x** followed by **ENTER**).
-21. Issue the following Linux command to add execute permissions for your shell script:
+3. Issue the **chmod** command to add **execute permissions** for the user for the **if-1.bash** file.
 
-```bash
-chmod u+x if-1.bash
-```
+4. Save your changes. Stage and commit your changes to GitHub.
 
-22. Run your shell script by issuing:
+5. Using the **terminal in Codespaces**, issue the following to run the **if-1.bash** Bash shell script:
 
 ```bash
 ./if-1.bash
 ```
 
-- Confirm that the output indicates a correct result.
+- Confirm that your shell script displays the following sample output.
 
 ```bash
 > ./if-1.bash
 num1 is less than num2
 ```
+6. Run the Python check script in GitHub Codespaces to check your work before you commit it.
+```bash
+./if-1_test.py
+```
 
-23. Use a text editor like vi or nano to create the text file called **if-2.bash** (eg. `vi if-2.bash`)
+7. Check the exit status code. If it shows 0, it is successful.
+```bash
+echo $?
+```
 
-24. Enter the following lines in your shell script:
+8. Pull your changes into your **Ubuntu VM**
+```bash
+git pull
+```
+
+9. Run your script and observe the output.
+```bash
+./if-1.bash
+```
+
+10. Did it work? Is the output the same as it was from the Codespaces terminal? If not, how is it different?
+
+### Writing if-2.bash
+
+1. In GitHub Codespaces, open the provided template called **if-2.bash**
+
+2. Edit _if-2.bash_ file to contain the following:
 
 ```bash
 #!/bin/bash
+# Author:
+# Date:
+# Purpose: To demonstrate if statements.
+# Usage: ./if-2.bash
+#
+
+# Prompt the user to enter a number. Store the output in the variable num1.
 read -p "Enter the first number: " num1
+
+# Prompt the user to enter a number. Store the output in the variable num2.
 read -p "Enter the second number: " num2
-if [ $num1 -gt $num2 ]
-then
+
+# Use the if statement to compare num1 and num2. If num1 is greater than than num2, display the following message: "The first number is greater than the second number."
+if [[ $num1 -gt $num2 ]]; then
    echo "The first number is greater than the second number."
 fi
 ```
 
-25. Save your editing session and exit the text editor (eg. with vi: press **ESC**, then type **:x** followed by **ENTER**).
-26. Issue the following Linux command to add execute permissions for your shell script:
+3. Issue the **chmod** command to add **execute permissions** for the user for the **dog-years.bash** file.
 
-```bash
-chmod u+x if-2.bash
-```
+4. Save your changes. Stage and commit your changes to GitHub.
 
-27. Run your shell script by issuing:
+5. Using the **terminal in Codespaces**, issue the following to run the **dog-years.bash** Bash shell script:
 
 ```bash
 ./if-2.bash
 ```
 
 - When prompted, make certain that the **first number** is greater than the **second number**. What happens?
+- Confirm that your shell script displays the following sample output.
 
 ```bash
 > ./if-2.bash
@@ -1554,7 +1590,7 @@ Enter the second number: 2
 The first number is greater than the second number.
 ```
 
-28. Run the **./if-2.bash** Bash shell script again.
+6. Run the **./if-2.bash** Bash shell script again.
 
     - When prompted, make certain that the **first number** is less than or equal to the **second number**. What happens?
     - Let's use an **if-else** statement to provide an **alternative** if the first number is less than or equal to the second number.
@@ -1569,36 +1605,72 @@ Enter the first number: 5
 Enter the second number: 2
 The first number is greater than the second number.
 ```
+7. Run the Python check script in GitHub Codespaces to check your work before you commit it.
+```bash
+./if-2_test.py
+```
 
-29. Use a text editor like vi or nano to create the text file called **if-3.bash** (eg. `vi if-3.bash`)
-30. Enter the following lines in your shell script:
+8. Check the exit status code. If it shows 0, it is successful.
+```bash
+echo $?
+```
+
+9. Pull your changes into your **Ubuntu VM**
+```bash
+git pull
+```
+
+10. Run your script and observe the output.
+```bash
+./if-2.bash
+```
+
+11. Did it work? Is the output the same as it was from the Codespaces terminal? If not, how is it different?
+
+### Writing if-3.bash
+
+1. In GitHub Codespaces, open the provided template called **if-3.bash**
+
+2. Edit _if-3.bash_ file to contain the following:
 
 ```bash
 #!/bin/bash
+# Author:
+# Date:
+# Purpose: To demonstrate if statements.
+# Usage: ./if-3.bash
+#
+
+# Use the read command to prompt the user to enter a first number and store the number in the variable num1
 read -p "Enter the first number: " num1
+
+# Use the read command to prompt the user to enter a second number and store the number in the variable num2
 read -p "Enter the second number: " num2
-if [ $num1 -gt $num2 ]
-then
-   echo "The first number is greater than the second number."
+
+# Use the if statement to compare num1 and num2. If num1 is greater than than num2, display the following message: "The first number is greater than the second number."
+if [[] $num1 -gt $num2 ]]; then
+  echo "The first number is greater than the second number."
+
+# Else, display the following message: "The first number is less than or equal to the second number."
 else
-   echo "The first number is less than or equal to the second number."
+  echo "The first number is less than or equal to the second number."
+
+# End the if statement
 fi
 ```
 
-31. Save your editing session and exit the text editor (eg. with vi: press **ESC**, then type **:x** followed by **ENTER**).
-32. Issue the following Linux command to add execute permissions for your shell script:
+3. Issue the **chmod** command to add **execute permissions** for the user for the **dog-years.bash** file.
 
-```bash
-chmod u+x if-3.bash
-```
+4. Save your changes. Stage and commit your changes to GitHub.
 
-33. Run your shell script by issuing:
+5. Using the **terminal in Codespaces**, issue the following to run the **dog-years.bash** Bash shell script:
 
 ```bash
 ./if-3.bash
 ```
 
 - Try running the script several times with numbers **different** and **equal** to each other to confirm that the shell script works correctly.
+- Confirm that your shell script displays the following sample output.
 
 ```bash
 > ./if-3.bash
@@ -1616,7 +1688,29 @@ Enter the first number: 2
 Enter the second number: 2
 The first number is less than or equal to the second number.
 ```
+6. Run the Python check script in GitHub Codespaces to check your work before you commit it.
+```bash
+./if-3_test.py
+```
 
+7. Check the exit status code. If it shows 0, it is successful.
+```bash
+echo $?
+```
+
+8. Pull your changes into your **Ubuntu VM**
+```bash
+git pull
+```
+
+9. Run your script and observe the output.
+```bash
+./if-3.bash
+```
+
+10. Did it work? Is the output the same as it was from the Codespaces terminal? If not, how is it different?
+
+### Writing for-1.bash
 - **LOOP STATEMENTS** are a series of steps or sequence of statements executed repeatedly zero or more times satisfying the given condition is satisfied. Reference: https://www.chegg.com/homework-help/definitions/loop-statement-3
 - _There are several loops, but we will look at a **for** loop using a **list**._
 
