@@ -5,8 +5,6 @@ sidebar_position: 7
 description: Lab 6 for Students to Process Management, Aliases and Shell Scripting
 ---
 
-# Under development
-
 # Lab 6: Process Management, Aliases and Shell Scripting
 
 ## Main Objectives of this Practice Lab
