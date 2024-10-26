@@ -1646,7 +1646,7 @@ read -p "Enter the first number: " num1
 read -p "Enter the second number: " num2
 
 # Use the if statement to compare num1 and num2. If num1 is greater than than num2, display the following message: "The first number is greater than the second number."
-if [[] $num1 -gt $num2 ]]; then
+if [[ $num1 -gt $num2 ]]; then
   echo "The first number is greater than the second number."
 
 # Else, display the following message: "The first number is less than or equal to the second number."
@@ -1730,8 +1730,8 @@ echo
 # For x in 5 (counting backwards by 1); do
 for x in 5 4 3 2 1; do
 
-    # Echo the value of x
-   echo $x
+  # Echo the value of x
+  echo $x
 
 # Done
 done
@@ -1892,7 +1892,7 @@ git pull
 
 ## Linux Practice Questions
 
-The purpose of this section is to obtain **extra practice** to help with **quizzes**, your **midterm**, and your **final exam**.
+The purpose of this section is to obtain **extra practice** to help your **midterm**, and your **final exam**.
 
 Your instructor may take-up these questions during class. It is up to the student to attend classes in order to obtain the answers to the following questions. Your instructor will NOT provide these answers in any other form (eg. e-mail, etc).
 
