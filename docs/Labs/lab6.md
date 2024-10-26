@@ -1092,8 +1092,8 @@ Let's create a Bash shell script that uses command substitution that displays **
 
 ```bash
 #!/bin/bash
-# Author:
-# Date:
+# Author: Your Name; youremail@myseneca.ca
+# Date: Today's date
 # Purpose: To demonstrate command substitution.
 # Usage: ./command-substitution.bash
 #
@@ -1258,8 +1258,8 @@ echo "The result is: $result"
 
 ```bash
 #!/bin/bash
-# Author:
-# Date:
+# Author: Your Name; youremail@myseneca.ca
+# Date: Today's date
 # Purpose: To demonstrate math operations by converting your age in human years to dog years.
 # Usage: ./dog-years.bash
 #
@@ -1484,8 +1484,8 @@ test $number1 -gt $number2
 
 ```bash
 #!/bin/bash
-# Author:
-# Date:
+# Author: Your Name; youremail@myseneca.ca
+# Date: Today's date
 # Purpose: To demonstrate if statements.
 # Usage: ./if-1.bash
 #
@@ -1548,8 +1548,8 @@ git pull
 
 ```bash
 #!/bin/bash
-# Author:
-# Date:
+# Author: Your Name; youremail@myseneca.ca
+# Date: Today's date
 # Purpose: To demonstrate if statements.
 # Usage: ./if-2.bash
 #
@@ -1635,8 +1635,8 @@ git pull
 
 ```bash
 #!/bin/bash
-# Author:
-# Date:
+# Author: Your Name; youremail@myseneca.ca
+# Date: Today's date
 # Purpose: To demonstrate if statements.
 # Usage: ./if-3.bash
 #
@@ -1714,28 +1714,42 @@ git pull
 - **LOOP STATEMENTS** are a series of steps or sequence of statements executed repeatedly zero or more times satisfying the given condition is satisfied. Reference: https://www.chegg.com/homework-help/definitions/loop-statement-3
 - _There are several loops, but we will look at a **for** loop using a **list**._
 
-34. Use a text editor like vi or nano to create the text file called **for-1.bash** (eg. `vi for-1.bash`)
-35. Enter the following lines in your shell script:
+1. In GitHub Codespaces, open the provided template called **for-1.bash**
+
+2. Edit _for-1.bash_ file to contain the following:
 
 ```bash
 #!/bin/bash
+# Author: Your Name; youremail@myseneca.ca
+# Date: Today's date
+# Purpose: To demonstrate for loops.
+# Usage: ./for-1.bash
+#
+
+# Use the echo command to display a blank line
 echo
-for x in 5 4 3 2 1
-do
+
+# For x in 5 (counting backwards by 1); do
+for x in 5 4 3 2 1; do
+
+    # Echo the value of x
    echo $x
+
+# Done
 done
+
+# Use the echo command to display the message "blast-off!"
 echo "blast-off!"
+
+# Use the echo command to display a blank line
 echo
 ```
 
-36. Save your editing session and exit the text editor (eg. with vi: press **ESC**, then type **:x** followed by **ENTER**).
-37. Issue the following Linux command to add execute permissions for your shell script:
+3. Issue the **chmod** command to add **execute permissions** for the user for the **for-1.bash** file.
 
-```bash
-chmod u+x for-1.bash
-```
+4. Save your changes. Stage and commit your changes to GitHub.
 
-38. Run your shell script by issuing:
+5. Using the **terminal in Codespaces**, issue the following to run the **for-1.bash** Bash shell script:
 
 ```bash
 ./for-1.bash
@@ -1751,32 +1765,81 @@ chmod u+x for-1.bash
 1
 blast-off!
 ```
+6. Run the Python check script in GitHub Codespaces to check your work before you commit it.
+```bash
+./for-1_test.py
+```
 
-39. Use a text editor like vi or nano to create the text file called **for-2.bash** (eg. `vi for-2.bash`)
-40. Enter the following lines in your shell script:
+7. Check the exit status code. If it shows 0, it is successful.
+```bash
+echo $?
+```
+
+8. Pull your changes into your **Ubuntu VM**
+```bash
+git pull
+```
+
+9. Run your script and observe the output.
+```bash
+./for-1.bash
+```
+
+10. Did it work? Is the output the same as it was from the Codespaces terminal? If not, how is it different?
+
+### Writing for-2.bash
+
+1. In GitHub Codespaces, open the provided template called **for-2.bash**
+
+2. Edit _for-2.bash_ file to contain the following:
 
 ```bash
 #!/bin/bash
+# Author: Your Name; youremail@myseneca.ca
+# Date: Today's date
+# Purpose: To demonstrate for loops.
+# Usage: ./for-2.bash
+#
+
+# Use the echo command to display a blank line
 echo
-for x
-do
-   echo $x
+
+# For x; do
+for x; do
+
+  # Echo the value of x
+  echo $x   
+
+# Done
 done
+
+# Use the echo command to display the message "blast-off!"
 echo "blast-off!"
+
+# Use the echo command to display a blank line
 echo
 ```
 
-41. Save your editing session and exit the text editor (eg. with vi: press **ESC**, then type **:x** followed by **ENTER**).
-42. Issue the following Linux command to add execute permissions for your shell script:
+3. Issue the **chmod** command to add **execute permissions** for the user for the **for-2.bash** file.
 
-```bash
-chmod u+x for-2.bash
-```
+4. Save your changes. Stage and commit your changes to GitHub.
 
-43. Run your shell script by issuing:
+5. Using the **terminal in Codespaces**, issue the following to run the **for-2.bash** Bash shell script. Confirm that your shell script displays the following sample output.
 
 ```bash
 ./for-2.bash 10 9 8 7 6 5 4 3 2 1
+
+10
+9
+8
+7
+6
+5
+4
+3
+2
+1
+blast-off!
 ```
 
 ```bash
@@ -1798,12 +1861,33 @@ blast-off!
 
 - How does this differ from the previous shell script?
 - You will learn in a couple of weeks more examples of using loop statements.
-- Let's run a **checking-script** to confirm that both your **for-1.bash** and **for-2.bash**
 
-44. Issue the following Linux command to run a checking script:
+6. Run the Python check script in GitHub Codespaces to check your work before you commit it.
+```bash
+./for-2_test.py
+```
+
+7. Check the exit status code. If it shows 0, it is successful.
+```bash
+echo $?
+```
+
+8. Pull your changes into your **Ubuntu VM**
+```bash
+git pull
+```
+
+9. Run your script and observe the output.
+```bash
+./for-2.bash
+```
+
+10. Did it work? Is the output the same as it was from the Codespaces terminal? If not, how is it different?
+
+11. Issue the following Linux command to run a checking script:
 
 ```bash
-~ops145/t6-check-3 | more
+~/bin/lab6-check-3 | more
 ```
 
 - If you encounter errors, make corrections and **re-run** the checking script until you receive a congratulations message, then you can proceed.
