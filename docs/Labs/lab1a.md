@@ -7,7 +7,7 @@ description: Lab 1A for Students to setup and use a Linux environment
 
 # Lab 1A: Installing and Using Linux
 
-## Main Objectives of this Lab
+## Main Objectives
 
 - Learn how to install Linux (Ubuntu) as a Virtual Machine using Oracle VirtualBox.
 - Understand the Linux command structure and how to get help with Linux command usage.

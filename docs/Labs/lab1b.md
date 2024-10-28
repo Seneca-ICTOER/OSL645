@@ -7,7 +7,7 @@ description: Lab 1B for Students to learn Unix/Linux File Management
 
 # Lab 1B: Unix and Linux File Management
 
-## Main Objectives of this Lab
+## Main Objectives
 
 - Understand the purpose of **directories** and **directory pathnames.**
 - Use common **Unix / Linux commands** to perform **directory management** tasks.

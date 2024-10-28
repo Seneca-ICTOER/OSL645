@@ -7,7 +7,7 @@ description: Lab 5 for Students to Learn File Transfer and Sending Email Message
 
 # Lab 5: File Transfer and Sending Email Messages
 
-## Main Objectives of this Practice Tutorial
+## Main Objectives
 
 - List **common utilities** contained in the **ssh** application framework
 - Securely **copy** files between Unix/Linux servers using the **scp** command

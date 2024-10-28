@@ -7,7 +7,7 @@ description: Lab 6 for Students to Process Management, Aliases and Shell Scripti
 
 # Lab 6: Process Management, Aliases and Shell Scripting
 
-## Main Objectives of this Practice Lab
+## Main Objectives
 
 - Define term **process** as it relates to the Unix/ Linux operating system
 - **Run** and **terminate** processes in the foreground and background

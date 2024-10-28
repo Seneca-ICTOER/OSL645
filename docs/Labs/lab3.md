@@ -7,7 +7,7 @@ description: Lab 3 for Students to Learn Redirection
 
 # Lab 3: Redirection - Standard Input, Standard Output, and Standard Error
 
-## Main Objectives of this Tutorial
+## Main Objectives
 
 - Understand and use the **cut, tr**, and **wc** Linux commands
 - Define the terms **Standard Input** (_stdin_), **Standard Output** (_stdout_), and **Standard Error** (_stderr_)

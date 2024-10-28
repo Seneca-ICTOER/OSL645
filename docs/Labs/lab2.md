@@ -7,7 +7,7 @@ description: Lab 2 for Students to Learn Pathnames, Filename Expansion, and Quot
 
 # Lab 2: Advanced File Management and Quoting Special Characters
 
-## Main Objectives of this Lab
+## Main Objectives
 
 - Understand the difference between **absolute** , **relative** and **relative-to-home** pathnames
 - Become productive at issuing Linux commands with the most appropriate pathname

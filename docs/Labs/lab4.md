@@ -7,7 +7,7 @@ description: Lab 4 for Students to Learn Numbering Conversion, File Permissions 
 
 # Lab 4: Numbering Conversion, File Permissions and Introduction to Shell Scripting
 
-## Main Objectives of this Lab
+## Main Objectives
 
 - Understand how digital computers store data (i.e. data representation)
 - Define **binary** and **octal** numbers

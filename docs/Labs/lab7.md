@@ -1,13 +1,13 @@
 ---
-id: tutorial7
-title: Tutorial 7 - Regular Expressions
+id: lab7
+title: Lab 7 - Regular Expressions
 sidebar_position: 8
-description: Tutorial 7 for Students to Learn Regular Expressions
+description: Lab 7 for Students to Learn Regular Expressions
 ---
 
-# Tutorial 7: Regular Expressions
+# Lab 7: Regular Expressions
 
-## Main Objectives of this Practice Tutorial
+## Main Objectives
 
 - Define the term **Regular Expressions**
 - Explain the difference between **Regular Expressions** and **Filename Expansion**
@@ -129,18 +129,18 @@ Example of using **or** condition with **groups**. ^
 
 ## Investigation 1: Simple & Complex Regular Expressions
 
-**ATTENTION: This online tutorial will be required to be completed by Friday in week 10 by midnight to obtain a grade of 2% towards this course**
+**ATTENTION: This online tutorial will be required to be completed by Week 13 in class to obtain a grade of 2% towards this course**
 
 In this investigation, you will learn how to use the **grep** command with **simple and complex regular expressions** to help search for _patterns_ contained in text files.
 
 **Perform the Following Steps:**
 
-1. **Login** to your matrix account.
+1. **Login** to your Ubuntu VM and open a **terminal**.
 2. Issue a Linux command to **confirm** you are located in your **home** directory.
-3. Issue the following linux Linux command to **copy** a text file to _your_ **home** directory from the OPS145 home directory:
+3. Issue the following linux Linux command to **copy** a text file to _your_ **home** directory from the **~/bin/lab7** directory:
 
 ```bash
-cp ~ops145/tutorialfiles/textfile1.txt ~/
+cp ~/bin/lab7/textfile1.txt ~/
 ```
 
 4. View the contents of the **textfile1.txt** file using the **more** command see what data is contained in this file.
@@ -314,7 +314,7 @@ mkdir ~/regexps
 23. First, issue the following Linux command to copy another data file called **numbers1.dat**:
 
 ```bash
-cp ~ops145/tutorialfiles/numbers1.dat ~/regexps
+cp ~/bin/lab7/numbers1.dat ~/regexps
 ```
 
 24. View the contents of the **numbers.dat** file using the **more** command and quickly view the contents of this file. You should notice **valid** and **invalid** numbers contained in this file. When finished, exit the more command.
@@ -354,10 +354,10 @@ grep "^[+-]*[0-9][0-9]*$" numbers1.dat | tee all.txt
 
 - Simultaneous **anchoring** of regular expressions using **character class** and **zero or more occurrences** to display **signed** and **unsigned** integers.
 
-29. Issue the following command to check that you created those hard links:
+29. Issue the following command to check that your regular expressions worked:
 
 ```bash
-~ops145/t7-check-1
+~/bin/lab7-check-1
 ```
 
 - If you encounter errors, then view the feedback to make corrections, and then re-run the checking script. If you receive a congratulation message that there are no errors, then proceed with this tutorial.
@@ -394,7 +394,7 @@ In this investigation, you will learn how to use **extended regular expressions*
 2. Issue the following Linux command to copy another data file called **numbers2.dat**:
 
 ```bash
-cp ~ops145/tutorialfiles/numbers2.dat ~/regexps
+cp ~/bin/lab7/numbers2.dat ~/regexps
 ```
 
 3. View the contents of the **numbers2.dat** file using the **more** command and quickly view the contents of this file. You should notice _valid_ and _invalid_ numbers contained in this file. When finished, exit the more command.
@@ -455,7 +455,7 @@ egrep "^[+-]{0,1}[0-9]{1,}[.]{0,1}[0-9]*$" numbers2.dat | tee better-number3.txt
 9. Issue the follwoing command to check that you correctly issued those Linux _pipeline commands_:
 
 ```bash
-~ops145/t7-check-2
+~/bin/lab7-check-2
 ```
 
 - If you encounter errors, then view the feedback to make corrections, and then re-run the checking script.
@@ -465,7 +465,7 @@ egrep "^[+-]{0,1}[0-9]{1,}[.]{0,1}[0-9]*$" numbers2.dat | tee better-number3.txt
 10. Issue the following linux pipeline command to copy another data file called **words.dat**:
 
 ```bash
-cp ~ops145/tutorialfiles/words.dat ~/regexps
+cp ~/bin/lab7/words.dat ~/regexps
 ```
 
 11. View the contents of the **words.dat** file using the **more** command and quickly view the contents of this file. Within this file, you should notice some lines that contain repetitions of words. When finished, exit the more command.
@@ -473,7 +473,7 @@ cp ~ops145/tutorialfiles/words.dat ~/regexps
 12. Issue the following linux pipeline command to display **two or more occurrences** of the word "the":
 
 ```bash
-egrep -i "(the){2,}" words.dat | tee word-search1.txt more
+egrep -i "(the){2,}" words.dat | tee word-search1.txt
 ```
 
 - **NOTE: No output is displayed! Why?**
@@ -500,7 +500,7 @@ egrep -i "(the |and ){2,}" words.dat | tee word-search3.txt
 15. Issue the following Linux command to check that you correctly issued those Linux _pipeline commands_ using the **tee** command to create those text files:
 
 ```bash
-~ops145/t7-check-3
+~/bin/lab7-check-3
 ```
 
 - If you encounter errors, then view the feedback to make corrections, and then re-run the checking script.
@@ -527,7 +527,7 @@ In this investigation, you will see commands other than **grep** or **egrep** th
 
 **Perform the Following Steps:**
 
-1. Make certain that you are located in your **~/regexps** directory on your _Matrix_ account.
+1. Make certain that you are located in your **~/regexps** directory in your Ubuntu VM.
 2. Let's look at using regular expressions with the **man** command. Issue the following linux command :
 
 ```bash
@@ -553,7 +553,7 @@ man ls
 6. Issue the following Linux command to copy another data file called **large-file.txt**:
 
 ```bash
-cp ~ops145/tutorialfiles/large-file.txt ~/
+cp ~/bin/lab7/large-file.txt ~/
 ```
 
 7. Issue the following Linux command to view the contents of the **large-file.txt**:
@@ -562,17 +562,17 @@ cp ~ops145/tutorialfiles/large-file.txt ~/
 less large-file.txt
 ```
 
-8. We want to search for a pattern **uli101** within this text file. Type the following regular expression and press **ENTER**:
+8. We want to search for a pattern **osl640** within this text file. Type the following regular expression and press **ENTER**:
 
 ```bash
-/uli101
+/osl645
 ```
 
-- You should see the pattern "uli101" throughout the text file.
+- You should see the pattern "osl645" throughout the text file.
 
 ![Other re 2](/img/Other-re-2.png)
 
-- Entering **/uli101** in the **less** command can display all matches of "**uli101**" throughout the text file.
+- Entering **/osl645** in the **less** command can display all matches of "**osl645**" throughout the text file.
 
 9. Press the letter `q` to exit the **less** command.
 10. Try the same search techniques with the **more** command.
@@ -592,35 +592,35 @@ vi large-file.txt
 13. Type the following and press **ENTER**:
 
 ```bash
-/uli101
+/osl645
 ```
 
-- You should notice the pattern "**uli101**" highlighted for ALL occurrences in this text file.
+- You should notice the pattern "**osl645**" highlighted for ALL occurrences in this text file.
 
 ![Other re 3](/img/Other-re-3.png)
 
-- Entering **/uli101** in the **vi** command can search for the string "**uli101**".
-- Let's **search** for the **uli101** pattern, and **replace** it in capitals (i.e **ULI101**).
+- Entering **/osl645** in the **vi** command can search for the string "**osl645**".
+- Let's **search** for the **osl645** pattern, and **replace** it in capitals (i.e **OSL645**).
 - In vi, to issue a command, you need to enter **LAST LINE** MODE then issue a command.
-- Let's issue a command from **LAST LINE** MODE to search and replace **uli101** to **ULI101**.
+- Let's issue a command from **LAST LINE** MODE to search and replace **osl645** to **OSL645**.
 
 14. Making certain that you are **COMMAND** MODE in vi, type the following and press **ENTER**:
 
 ```bash
-:%s/uli101/ULI101/g
+:%s/osl645/OSL645/g
 ```
 
-- **NOTE:** The letter **g** after the replace regular expression represents "**global**" and will replace ALL occurrences of uli101 in the text document (as opposed to replacing the first occurrence for every line).
+- **NOTE:** The letter **g** after the replace regular expression represents "**global**" and will replace ALL occurrences of osl645 in the text document (as opposed to replacing the first occurrence for every line).
 
-15. Type the following (in uppercase letters) and press **ENTER**: `/ULI101`
+15. Type the following (in uppercase letters) and press **ENTER**: `/OSL645`
 
-- You should notice the pattern "**ULI101**" highlighted for ALL occurrences in this text file.
+- You should notice the pattern "**OSL645**" highlighted for ALL occurrences in this text file.
 
 ![Other re 4](/img/Other-re-4.png)
 
-- In **last line** MODE in the **vi** text editor, issuing a command using regular expressions to convert **uli101** to **ULI101**.
+- In **last line** MODE in the **vi** text editor, issuing a command using regular expressions to convert **osl645** to **OSL645**.
 
-16. Navigate throughout the text file to confirm that ALL occurrences of **uli101** have been replaced with **ULI101**.
+16. Navigate throughout the text file to confirm that ALL occurrences of **osl645** have been replaced with **OSL645**.
 17. Save changes to your vi editing session and exit by typing the following and pressing ENTER:
 
 `:x`
@@ -635,7 +635,7 @@ Your instructor may take-up these questions during class. It is up to the studen
 
 **Part A: Display Results from Linux Commands using Simple & Complex Regular Expressions**
 
-Note the contents from the following tab-delimited file called **~ops145/tutorialfiles/cars.txt**:
+Note the contents from the following tab-delimited file called **~/bin/cars**:
 
 ```text
 Plym    fury    77      73      2500
@@ -654,12 +654,12 @@ ford    bronco  83      25      9505
 
 Write the results of each of the following Linux commands using regular expressions for the above-mentioned file.
 
-1. `grep plym ~ops145/tutorialfiles/cars.txt`
-2. `grep -i fury ~ops145/tutorialfiles/cars.txt`
-3. `grep “^[m-z]” ~ops145/tutorialfiles/cars.txt`
-4. `grep -i “^[m-z]” ~ops145/tutorialfiles/cars.txt`
-5. `grep “3$” ~ops145/tutorialfiles/cars.txt`
-6. `grep -i “c.*5$” ~ops145/tutorialfiles/cars.txt`
+1. `grep plym ~/bin/cars`
+2. `grep -i fury ~/bin/cars`
+3. `grep “^[m-z]” ~/bin/cars`
+4. `grep -i “^[m-z]” ~/bin/cars`
+5. `grep “3$” ~/bin/cars`
+6. `grep -i “c.*5$” ~/bin/cars`
 
 **Part B: Writing Linux Commands Using Regular Expressions**
 
@@ -680,7 +680,7 @@ Your instructor may take-up these questions during class. It is up to the studen
 
 **Part A: Display Results from Linux Commands using Regular Expressions**
 
-Note the contents from the following tab-delimited file called **~ops145/tutorialfiles/numbers.txt**:
+Note the contents from the following tab-delimited file called **~/bin/numbers.txt**:
 
 ```text
 +123
@@ -694,15 +694,15 @@ Note the contents from the following tab-delimited file called **~ops145/tutoria
 
 Write the results of each of the following Linux commands using regular expressions for the above-mentioned file.
 
-1. `grep "^[-+]" ~ops145/tutorialfiles/numbers.txt`
-2. `grep "^[-+]*.[0-9]" ~ops145/tutorialfiles/numbers.txt`
-3. `grep "^[+-]?[0-9]" ~ops145/tutorialfiles/numbers.txt`
+1. `grep "^[-+]" ~/bin/numbers.txt`
+2. `grep "^[-+]*.[0-9]" ~/bin/numbers.txt`
+3. `grep "^[+-]?[0-9]" ~/bin/numbers.txt`
 
    - (Why?)
 
-4. `egrep "^[+-]?[0-9]" ~ops145/tutorialfiles/numbers.txt`
-5. `egrep "^[+-]?[0-9]+$" ~ops145/tutorialfiles/numbers.txt`
-6. `egrep "^[+-]?[0-9]+[.]?[0-9]+$" ~ops145/tutorialfiles/numbers.txt`
+4. `egrep "^[+-]?[0-9]" ~/bin/numbers.txt`
+5. `egrep "^[+-]?[0-9]+$" ~/bin/numbers.txt`
+6. `egrep "^[+-]?[0-9]+[.]?[0-9]+$" ~/bin/numbers.txt`
 
 **Part B: Writing Linux Commands Using Regular Expressions**
 
