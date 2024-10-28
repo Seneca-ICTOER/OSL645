@@ -23,8 +23,8 @@ description: Lab 6 for Students to Process Management, Aliases and Shell Scripti
 
 **Course Slides:**
 
-- Week 8 Lecture 1 Notes: [Web](https://docs.google.com/presentation/d/e/2PACX-1vTnoltDJ38VRcEEmhp4blWj9scxdTZNS5BlcdJyHxfaIdiujDqTHJGbaaQ7VBdE9BoHjqE-OoOwQMjQ/pub?start=false&loop=false&delayms=3000)
-- Week 8 Lecture 2 Notes: [Web](https://docs.google.com/presentation/d/e/2PACX-1vSxu0ITphS9FjsTxuCn2kTsnZStNTyryggGRVT9-bQu5QB23kRnaTKUUdQzPaFeEpG54jzbgckJ_jBG/pub?start=false&loop=false&delayms=3000)
+- Week 8 Lecture 1 Notes: [Web](https://docs.google.com/presentation/d/e/2PACX-1vTrw9YmSG_9Lz0mX6KOtwRvx_NlEJrjz-HMAs_QMEmyYRl6HNssGpZxqOvtYG67uKudsMD84pSZxiCi/pub?start=false&loop=false&delayms=3000)
+- Week 8 Lecture 2 Notes: [Web](https://docs.google.com/presentation/d/e/2PACX-1vRzubIh6CYTivarbdvjKxKHTnlDxqF1Kt3fQMXzJ3DwaJpSdh5YHZyo7pXMek-2JyNMp3EZDnaONGsT/pub?start=false&loop=false&delayms=3000)
 
 **Managing Processes:**
 
@@ -856,6 +856,7 @@ Confirm the contents have been written to your **lab-6-username** directory. You
 - user-variables_test.py
 
 ### Writing user-variables.bash
+
 In Lab 4 you learned about **Enviornment variables**. Unlike **Environment variables** that are used to set the environment of the shell or shell scripts, **User-created** variables are "customized" that the user can set or allow a user to set the variables' values. Let's create a Bash shell script that contain **user-created variables.**
 
 1. In GitHub Codespaces, open the template for the Bash shell script called **user-variables.bash**
@@ -901,11 +902,13 @@ Hello Murray Saul - You are 57 years old
 6. Use Codespaces to **modify** your Bash shell script called **user-variables.bash**
 
 7. Run the Python check script in GitHub Codespaces to check your work before you commit it.
+
 ```bash
 ./user-variables_test.py
 ```
 
 8. Check the exit status code. If it shows 0, it is successful.
+
 ```bash
 echo $?
 ```
@@ -934,6 +937,7 @@ Enter your age (in years): 57
 ./user-variables.bash: line 5: age: readonly variable
 Hello Murray Saul - You are 43 years old
 ```
+
 On your **Ubuntu VM**, open a **terminal** and confirm you are in your **home** directory.
 
 12. Issue the following Linux command to change to the local clone of your GitHub repository.
@@ -941,14 +945,17 @@ On your **Ubuntu VM**, open a **terminal** and confirm you are in your **home** 
 ```bash
 cd lab-6-username
 ```
+
 - Issue a command to change into your **lab-4-username** directory.
 
 13. Pull your changes into your **Ubuntu VM**
+
 ```bash
 git pull
 ```
 
 14. Run your script and observe the output.
+
 ```bash
 ./user-variables.bash
 ```
@@ -956,6 +963,7 @@ git pull
 15. Did it work? Is the output the same as it was from the Codespaces terminal?
 
 ### Writing parameters.bash
+
 A **positional parameter** is a special variable within a shell program; its value is set from **arguments** contained in a shell script or using the set command. Let's use **positional parameters** and **special parameters** in a Bash shell script.
 
 1. In GitHub Codespaces, open the provided template called **parameters.bash**
@@ -998,8 +1006,7 @@ echo \$*: $*
 
 4. Save your changes. Stage and commit your changes to GitHub.
 
-    - Notice how the quoting character "\" is used to display positional parameters like "**$2**" as opposed to the value stored in the second positional parameter.
-
+   - Notice how the quoting character "\" is used to display positional parameters like "**$2**" as opposed to the value stored in the second positional parameter.
 
 5. Using the **terminal in Codespaces**, issue the following to run the **parameters.bash** Bash shell script:
 
@@ -1008,15 +1015,16 @@ echo \$*: $*
 ```
 
 - What happened? Your output should look like the following:
+
 ```bash
 > ./parameters.bash
 $0: ./parameters.bash
-$2: 
-$3: 
+$2:
+$3:
 $#: 0
-$*: 
+$*:
 $#: 0
-$*: 
+$*:
 ```
 
 - The values for some of the _positional parameters_ and _special parameters_ may NOT be displayed properly since you did NOT provide any **arguments** when running your Bash shell script.
@@ -1043,21 +1051,25 @@ $*: 3 4 5 6 7 8
 - Take some time to view the results and how the _parameters_ have changed when using the **shift** command.
 
 16. Run the Python check script in GitHub Codespaces to check your work before you commit it.
+
 ```bash
 ./parameters_test.py
 ```
 
 17. Check the exit status code. If it shows 0, it is successful.
+
 ```bash
 echo $?
 ```
 
 18. Pull your changes into your **Ubuntu VM**
+
 ```bash
 git pull
 ```
 
 19. Run your script and observe the output.
+
 ```bash
 ./parameters.bash 1 2 3 4 5 6 7 8
 ```
@@ -1079,11 +1091,12 @@ _For example:_
 ```bash
 echo "The current date and time is: $(date)"
 ```
+
 ### Writing command-substitution.bash
+
 Let's create a Bash shell script that uses command substitution that displays **text** and values of **environment variables** in a series of **echo** statements.
 
 **Perform the Following Steps:**
-
 
 1. In GitHub Codespaces, open the provided template called **command-substitution.bash**
 2. Edit _command-substitution.bash_ file to contain the following:
@@ -1141,21 +1154,25 @@ Current Directory: /workspace/lab-6-username
 ```
 
 6. Run the Python check script in GitHub Codespaces to check your work before you commit it.
+
 ```bash
 ./command-substitution_test.py
 ```
 
 7. Check the exit status code. If it shows 0, it is successful.
+
 ```bash
 echo $?
 ```
 
 8. Pull your changes into your **Ubuntu VM**
+
 ```bash
 git pull
 ```
 
 9. Run your script and observe the output.
+
 ```bash
 ./command-substitution.bash
 ```
@@ -1301,21 +1318,25 @@ Your age in dog-years is: 399
 ```
 
 6. Run the Python check script in GitHub Codespaces to check your work before you commit it.
+
 ```bash
 ./dog-years_test.py
 ```
 
 7. Check the exit status code. If it shows 0, it is successful.
+
 ```bash
 echo $?
 ```
 
 8. Pull your changes into your **Ubuntu VM**
+
 ```bash
 git pull
 ```
 
 9. Run your script and observe the output.
+
 ```bash
 ./dog-years.bash
 ```
@@ -1430,16 +1451,17 @@ test $number1 -gt $number2
 
     - You should notice that the exit status value is now _FALSE_ which is the correct result.
 
-14. The **test** command can be substituted by **square brackets \[\[ \]\]** which contains the **test** condition within the square brackets. You need to have spaces between the brackets and the test condition; otherwise, you will get a test error. 
+14. The **test** command can be substituted by **square brackets \[\[ \]\]** which contains the **test** condition within the square brackets. You need to have spaces between the brackets and the test condition; otherwise, you will get a test error.
 
 - **Note:** You can use either a single or double set of square brackets to represent the **test** condition. However:
 
-  - [[ ... ]] is a keyword rather than a command, so it is more efficient
+  - [[...]] is a keyword rather than a command, so it is more efficient
   - conditions can be combined using && (and) and || (or)
   - will work correctly even if an unquoted variable is null
   - string comparisons can use > and <, they won't be confused with redirection
 
   - The following example will fail:
+
   ```bash
   if [ $1 > $2 || $2 > $3 ]; then
     echo "Arguments are not in correct sort order"
@@ -1448,6 +1470,7 @@ test $number1 -gt $number2
   ```
 
   - However, replace the single square brackets with double square brackets and it will work:
+
   ```bash
   if [[ $1 > $2 || $2 > $3 ]]; then
     echo "Arguments are not in correct sort order"
@@ -1516,22 +1539,27 @@ fi
 > ./if-1.bash
 num1 is less than num2
 ```
+
 6. Run the Python check script in GitHub Codespaces to check your work before you commit it.
+
 ```bash
 ./if-1_test.py
 ```
 
 7. Check the exit status code. If it shows 0, it is successful.
+
 ```bash
 echo $?
 ```
 
 8. Pull your changes into your **Ubuntu VM**
+
 ```bash
 git pull
 ```
 
 9. Run your script and observe the output.
+
 ```bash
 ./if-1.bash
 ```
@@ -1590,8 +1618,8 @@ The first number is greater than the second number.
 
 6. Run the **./if-2.bash** Bash shell script again.
 
-    - When prompted, make certain that the **first number** is less than or equal to the **second number**. What happens?
-    - Let's use an **if-else** statement to provide an **alternative** if the first number is less than or equal to the second number.
+   - When prompted, make certain that the **first number** is less than or equal to the **second number**. What happens?
+   - Let's use an **if-else** statement to provide an **alternative** if the first number is less than or equal to the second number.
 
 ```bash
 > ./if-2.bash
@@ -1603,22 +1631,27 @@ Enter the first number: 5
 Enter the second number: 2
 The first number is greater than the second number.
 ```
+
 7. Run the Python check script in GitHub Codespaces to check your work before you commit it.
+
 ```bash
 ./if-2_test.py
 ```
 
 8. Check the exit status code. If it shows 0, it is successful.
+
 ```bash
 echo $?
 ```
 
 9. Pull your changes into your **Ubuntu VM**
+
 ```bash
 git pull
 ```
 
 10. Run your script and observe the output.
+
 ```bash
 ./if-2.bash
 ```
@@ -1686,22 +1719,27 @@ Enter the first number: 2
 Enter the second number: 2
 The first number is less than or equal to the second number.
 ```
+
 6. Run the Python check script in GitHub Codespaces to check your work before you commit it.
+
 ```bash
 ./if-3_test.py
 ```
 
 7. Check the exit status code. If it shows 0, it is successful.
+
 ```bash
 echo $?
 ```
 
 8. Pull your changes into your **Ubuntu VM**
+
 ```bash
 git pull
 ```
 
 9. Run your script and observe the output.
+
 ```bash
 ./if-3.bash
 ```
@@ -1709,6 +1747,7 @@ git pull
 10. Did it work? Is the output the same as it was from the Codespaces terminal? If not, how is it different?
 
 ### Writing for-1.bash
+
 - **LOOP STATEMENTS** are a series of steps or sequence of statements executed repeatedly zero or more times satisfying the given condition is satisfied. Reference: https://www.chegg.com/homework-help/definitions/loop-statement-3
 - _There are several loops, but we will look at a **for** loop using a **list**._
 
@@ -1763,22 +1802,27 @@ echo
 1
 blast-off!
 ```
+
 6. Run the Python check script in GitHub Codespaces to check your work before you commit it.
+
 ```bash
 ./for-1_test.py
 ```
 
 7. Check the exit status code. If it shows 0, it is successful.
+
 ```bash
 echo $?
 ```
 
 8. Pull your changes into your **Ubuntu VM**
+
 ```bash
 git pull
 ```
 
 9. Run your script and observe the output.
+
 ```bash
 ./for-1.bash
 ```
@@ -1806,7 +1850,7 @@ echo
 for x; do
 
   # Echo the value of x
-  echo $x   
+  echo $x
 
 # Done
 done
@@ -1861,21 +1905,25 @@ blast-off!
 - You will learn in a couple of weeks more examples of using loop statements.
 
 6. Run the Python check script in GitHub Codespaces to check your work before you commit it.
+
 ```bash
 ./for-2_test.py
 ```
 
 7. Check the exit status code. If it shows 0, it is successful.
+
 ```bash
 echo $?
 ```
 
 8. Pull your changes into your **Ubuntu VM**
+
 ```bash
 git pull
 ```
 
 9. Run your script and observe the output.
+
 ```bash
 ./for-2.bash
 ```
