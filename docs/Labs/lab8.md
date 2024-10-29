@@ -1,13 +1,15 @@
 ---
-id: tutorial8
-title: Tutorial 8 - Sed and Awk Utilities
+id: lab8
+title: Lab 8 - Sed and Awk Utilities
 sidebar_position: 9
-description: Tutorial 8 for Students to Learn the Sed and Awk Commands
+description: Lab  8 for Students to Learn the Sed and Awk Commands
 ---
 
-# Tutorial 8: Sed and Awk Utilities
+# Lab 8: Sed and Awk Utilities
 
-## Main Objectives of this Practice Tutorial
+## Under Development
+
+## Main Objectives
 
 - Use the **sed** command to **manipulate text** contained in a file.
 - List and explain several **addresses** and **instructions** associated with the **sed** command.
@@ -16,7 +18,7 @@ description: Tutorial 8 for Students to Learn the Sed and Awk Commands
 - List and explain **comparison operators**, **variables** and **actions** associated with the **awk** command.
 - Use the **awk** command as a **filter** with Linux pipeline commands.
 
-## Tutorial Reference Material
+## Lab Reference Material
 
 **Course Slides:**
 
