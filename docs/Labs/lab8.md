@@ -114,19 +114,19 @@ awk [-F] 'selection-criteria {action}’ file-name
 
 ## Investigation 1: Using the sed Utility
 
-**ATTENTION: This online tutorial will be required to be completed by Friday in week 11 by midnight to obtain a grade of 2% towards this course**
+**ATTENTION: This online tutorial will be required to be completed by Week 13 in class to obtain a grade of 2% towards this course**
 
 In this investigation, you will learn how to manipulate text using the **sed** utility.
 
 **Perform the Following Steps:**
 
-1. **Login** to your matrix account and confirm you are located in your **home** directory.
+1. **Login** to your Ubuntu VM and open a **terminal**, and issue a Linux command to **confirm** you are located in your **home** directory.
 2. Issue a Linux command to create a directory called **sed**
 3. Issue a Linux command to change to the **sed** directory and confirm that you are located in the **sed** directory.
 4. Issue the following Linux command to copy the data.txt file (**copy and paste** to save time):
 
 ```bash
-cp ~ops145/tutorialfiles/data.txt ~/sed
+cp ~/bin/lab8/data.txt ~/sed
 ```
 
 5. Issue the **more** command to quickly view the contents of the **data.txt** file. When finished, exit the more command by pressing the letter `q`
@@ -227,15 +227,7 @@ sed -n '/d$/ p' data.txt | tee sed-7.txt
 14. Issue the following Linux pipeline command:
 
 ```bash
-who | sed -n '/^[a-m]/ p' | tee sed-8.txt | more
-```
-
-- What did you notice?
-
-15. Issue the following Linux pipeline command:
-
-```bash
-ls | sed -n '/txt$/ p' | tee sed-9.txt
+ls | sed -n '/txt$/ p' | tee sed-8.txt
 ```
 
 - What did you notice?
@@ -245,7 +237,7 @@ ls | sed -n '/txt$/ p' | tee sed-9.txt
 16. Issue the following to run a checking script:
 
 ```bash
-~ops145/t8-check-1
+~/bin/lab8-check-1
 ```
 
 - If you encounter errors, make corrections and **re-run** the checking script until you receive a congratulations message, then you can proceed.
