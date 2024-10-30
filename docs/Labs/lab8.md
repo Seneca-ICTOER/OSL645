@@ -395,7 +395,7 @@ Your instructor may take-up these questions during class. It is up to the studen
 
 **Part A: Display Results from Using the sed Utility**
 
-Note the contents from the following tab-delimited file called **~ops145/tutorialfiles/stuff.txt**: (this file pathname exists for checking your work)
+Note the contents from the following tab-delimited file called **~/bin/lab8/stuff.txt**: (this file pathname exists for checking your work)
 
 ```text
 Line one.
@@ -412,23 +412,23 @@ Finally, line 10
 
 Write the results of each of the following Linux commands for the above-mentioned file:
 
-1. `sed -n '3,6 p' ~ops145/tutorialfiles/stuff.txt`
-2. `sed '4 q' ~ops145/tutorialfiles/stuff.txt`
-3. `sed '/the/ d' ~ops145/tutorialfiles/stuff.txt`
-4. `sed 's/line/NUMBER/g' ~ops145/tutorialfiles/stuff.txt`
+1. `sed -n '3,6 p' ~/bin/lab8/stuff.txt`
+2. `sed '4 q' ~/bin/lab8/stuff.txt`
+3. `sed '/the/ d' ~/bin/lab8/stuff.txt`
+4. `sed 's/line/NUMBER/g' ~/bin/lab8/stuff.txt`
 
 **Part B: Writing Linux Commands Using the sed Utility**
 
 Write a single Linux command to perform the specified tasks for each of the following questions.
 
-1. Write a Linux sed command to display only lines 5 to 9 for the file: **~ops145/tutorialfiles/stuff.txt**
-2. Write a Linux sed command to display only lines the begin the pattern “and” for the file: **~ops145/tutorialfiles/stuff.txt**
-3. Write a Linux sed command to display only lines that end with a digit for the file: **~ops145/tutorialfiles/stuff.txt**
-4. Write a Linux sed command to save lines that match the pattern “line” (upper or lowercase) for the file: **~ops145/tutorialfiles/stuff.txt** and save results (overwriting previous contents) to: **~/results.txt**
+1. Write a Linux sed command to display only lines 5 to 9 for the file: **~/bin/lab8/stuff.txt**
+2. Write a Linux sed command to display only lines the begin the pattern “and” for the file: **~/bin/lab8/stuff.txt**
+3. Write a Linux sed command to display only lines that end with a digit for the file: **~/bin/lab8/stuff.txt**
+4. Write a Linux sed command to save lines that match the pattern “line” (upper or lowercase) for the file: **~/bin/lab8/stuff.txt** and save results (overwriting previous contents) to: **~/results.txt**
 
 **Part C: Writing Linux Commands Using the awk Utility**
 
-Note the contents from the following tab-delimited file called **~ops145/tutorialfiles/stuff.txt**: (this file pathname exists for checking your work)
+Note the contents from the following tab-delimited file called **~/bin/lab8/stuff.txt**: (this file pathname exists for checking your work)
 
 ```text
 Line one.
@@ -445,10 +445,10 @@ Finally, line 10
 
 **Write the results of each of the following Linux commands for the above-mentioned file:**
 
-1. `awk ‘NR == 3 {print}’ ~ops145/tutorialfiles/stuff.txt`
-2. `awk ‘NR >= 2 && NR <= 5 {print}’ ~ops145/tutorialfiles/stuff.txt`
-3. `awk ‘$1 ~ /This/ {print $2}’ ~ops145/tutorialfiles/stuff.txt`
-4. `awk ‘$1 ~ /This/ {print $3,$2}’ ~ops145/tutorialfiles/stuff.txt`
+1. `awk ‘NR == 3 {print}’ ~/bin/lab8/stuff.txt`
+2. `awk ‘NR >= 2 && NR <= 5 {print}’ ~/bin/lab8/stuff.txt`
+3. `awk ‘$1 ~ /This/ {print $2}’ ~/bin/lab8/stuff.txt`
+4. `awk ‘$1 ~ /This/ {print $3,$2}’ ~/bin/lab8/stuff.txt`
 
 **Part D: Writing Linux Commands Using the awk Utility**
 
