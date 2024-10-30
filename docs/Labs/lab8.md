@@ -7,8 +7,6 @@ description: Lab  8 for Students to Learn the Sed and Awk Commands
 
 # Lab 8: Sed and Awk Utilities
 
-## Under Development
-
 ## Main Objectives
 
 - Use the **sed** command to **manipulate text** contained in a file.
