@@ -627,7 +627,7 @@ vi large-file.txt
 
 ## Linux Practice Questions
 
-The purpose of this section is to obtain **extra practice** to help with **quizzes**, your **midterm**, and your **final exam**.
+The purpose of this section is to obtain **extra practice** to help with your **practical test**, and your **theory test**.
 
 ### Review Questions: Simple & Complex Regular Expressions
 

@@ -254,33 +254,33 @@ In this investigation, you will learn how to use the awk utility to manipulate t
 2. Issue a Linux command to create a directory called **awk**
 3. Issue a Linux command to change to the **awk** directory and confirm you are located in the **awk** directory.
 
-   - Let's download a database file that contains information regarding classic cars.
+   - Let's copy a database file that contains information regarding classic cars. You have used this file in a previous lab.
 
 4. Issue the following linux command:
 
 ```bash
-cp ~ops145/tutorialfiles/cars.txt ~/awk
+cp ~/bin/cars ~/awk
 ```
 
-5. Issue the **cat** command to quickly view the contents of the **cars.txt** file.
+5. Issue the **cat** command to quickly view the contents of the **cars** file.
 
    - The "**print**" action (command) is the default action of awk to print all selected lines that match a **pattern**.
    - This **action** (contained in braces) can provide more options such as printing **specific fields** of selected lines (or records) from a database.
 
-6. Issue the following linux command all to display all lines (i.e. records) in the **cars.txt** database that matches the pattern (or "make") called **ford**:
+6. Issue the following linux command all to display all lines (i.e. records) in the **cars** database that matches the pattern (or "make") called **ford**:
 
 ```bash
-awk '/ford/ {print}' cars.txt
+awk '/ford/ {print}' cars
 ```
 
 ![Awk 1](/img/Awk-1.png)
 
 - We will use **pipeline commands** to both display stdout to the screen and save to files for confirmation of running these pipeline commands when run a **checking-script** later in this investigation.
 
-7. Issue the following linux pipeline command all to display records in the **cars.txt** database that contain the pattern (i.e. make) **ford**:
+7. Issue the following linux pipeline command all to display records in the **cars** database that contain the pattern (i.e. make) **ford**:
 
 ```bash
-awk '/ford/' cars.txt | tee awk-1.txt
+awk '/ford/' cars | tee awk-1.txt
 ```
 
 - What do you notice? You should notice ALL lines displayed without using **search criteria**.
@@ -293,10 +293,10 @@ awk '/ford/' cars.txt | tee awk-1.txt
   - **NF** - Number of fields in current record
 - For a listing of more variables, please consult your course notes.
 
-8. Issue the following linux pipeline command to display the **model, year, quantity** and price in the **cars.txt** database for makes of **chevy**:
+8. Issue the following linux pipeline command to display the **model, year, quantity** and price in the **cars** database for makes of **chevy**:
 
 ```bash
-awk '/chevy/ {print $2,$3,$4,$5}' cars.txt | tee awk-2.txt
+awk '/chevy/ {print $2,$3,$4,$5}' cars | tee awk-2.txt
 ```
 
 - Notice that a **space** is the delimiter for the fields that appear as standard output.
@@ -307,7 +307,7 @@ awk '/chevy/ {print $2,$3,$4,$5}' cars.txt | tee awk-2.txt
 9. Issue the following linux pipeline command to display all **plymouths** (**plym**) by **model name, price** and **quantity**:
 
 ```bash
-awk '$1 ~ /plym/ {print $2,$3,$4,$5}' cars.txt | tee awk-3.txt
+awk '$1 ~ /Plym/ {print $2,$3,$4,$5}' cars | tee awk-3.txt
 ```
 
 - You can also use **comparison operators** to specify conditions for processing with matched patterns when using the awk command. Since they are used WITHIN the awk expression, they are not confused with redirection symbols
@@ -321,7 +321,7 @@ awk '$1 ~ /plym/ {print $2,$3,$4,$5}' cars.txt | tee awk-3.txt
 10. Issue the following linux pipeline command to display display the **car make, model, quantity** and **price** of all vehicles whose **prices are less than \$5,000**:
 
 ```bash
-awk '$5 < 5000 {print $1,$2,$4,$5}' cars.txt | tee awk-4.txt
+awk '$5 < 5000 {print $1,$2,$4,$5}' cars | tee awk-4.txt
 ```
 
 - What do you notice?
@@ -331,13 +331,13 @@ awk '$5 < 5000 {print $1,$2,$4,$5}' cars.txt | tee awk-4.txt
 11. Issue the following linux pipeline command to display display **price, quantity, model** and **car make** of vehicles whose **prices are less than $5,000**:
 
 ```bash
-awk '$5 < 5000 {print $5,$4,$2,$1}' cars.txt | tee awk-5.txt
+awk '$5 < 5000 {print $5,$4,$2,$1}' cars | tee awk-5.txt
 ```
 
 12. Issue the following linux pipeline command to display the **car make, year** and **quantity** of cars that **begin** with the **letter 'f'**:
 
 ```bash
-awk '$1 ~ /^f/ {print $1,$2,$4}' cars.txt | tee awk-6.txt
+awk '$1 ~ /^f/ {print $1,$2,$4}' cars | tee awk-6.txt
 ```
 
 - Combined pattern searches can be made by using **compound operator** symbols:
@@ -347,7 +347,7 @@ awk '$1 ~ /^f/ {print $1,$2,$4}' cars.txt | tee awk-6.txt
 13. Issue the following linux pipeline command to list all **fords** whose **price is greater than $10,000**:
 
 ```bash
-awk '$1 ~ /ford/ && $5 > 10000 {print $0}' cars.txt | tee awk-7.txt
+awk '$1 ~ /ford/ && $5 > 10000 {print $0}' cars | tee awk-7.txt
 ```
 
 ![Awk 4](/img/Awk-4.png)
@@ -355,7 +355,7 @@ awk '$1 ~ /ford/ && $5 > 10000 {print $0}' cars.txt | tee awk-7.txt
 14. Issue the following linux command:
 
 ```bash
-cp ~ops145/tutorialfiles/cars2.txt ~/awk
+cp ~/bin/lab8/cars2.txt ~/awk
 ```
 
 15. Issue the **cat** command to quickly view the contents of the **cars2.txt** file.
@@ -382,14 +382,14 @@ awk -F";" '$1 ~ /^f/ {print $2,$4}' cars2.txt | tee awk-9.txt
 18. Issue the following to run a checking script:
 
 ```bash
-~ops145/t8-check-2
+~/bin/lab8-check-2
 ```
 
 - If you encounter errors, make corrections and **re-run** the checking script until you receive a congratulations message, then you can proceed.
 
 ## Linux Practice Questions
 
-The purpose of this section is to obtain **extra practice** to help with **quizzes**, your **midterm**, and your **final exam**.
+The purpose of this section is to obtain **extra practice** to help with your **practical test**, and your **theory test**.
 
 Your instructor may take-up these questions during class. It is up to the student to attend classes in order to obtain the answers to the following questions. Your instructor will NOT provide these answers in any other form (eg. e-mail, etc).
 
