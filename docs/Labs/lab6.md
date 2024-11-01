@@ -24,7 +24,7 @@ description: Lab 6 for Students to Process Management, Aliases and Shell Scripti
 **Course Slides:**
 
 - Week 8 Lecture 1 Notes: [Web](https://docs.google.com/presentation/d/e/2PACX-1vTrw9YmSG_9Lz0mX6KOtwRvx_NlEJrjz-HMAs_QMEmyYRl6HNssGpZxqOvtYG67uKudsMD84pSZxiCi/pub?start=false&loop=false&delayms=3000)
-- Week 8 Lecture 2 Notes: [Web](https://docs.google.com/presentation/d/e/2PACX-1vRzubIh6CYTivarbdvjKxKHTnlDxqF1Kt3fQMXzJ3DwaJpSdh5YHZyo7pXMek-2JyNMp3EZDnaONGsT/pub?start=false&loop=false&delayms=3000)
+- Week 8 Lecture 2 Notes: [Web](https://docs.google.com/presentation/d/e/2PACX-1vQglbKBzF8p1JYcOyrOoAvw8IaFfH7rpUsJU1l560Gl8N8VhOlrjdObQyyDCEKozFEoTR1mCx-zOrC_/pub?start=false&loop=false&delayms=3000)
 
 **Managing Processes:**
 
