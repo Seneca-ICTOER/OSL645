@@ -17,7 +17,7 @@ description: Create and manage users, groups and services
 - **Start, Restart and Stop services** on a Linux system.
 - **Enable and Disable services** on a Linux system.
 - Display the **status of running services** on a Linux system.
-- Create a bash shell script to **generate multiple user accounts** from a text user database file
+- Create a bash shell script to **generate multiple user accounts** from a comma separated value (.csv) file.
 
 ## Lab Reference Material
 
@@ -45,7 +45,7 @@ description: Create and manage users, groups and services
 
 ## Investigation 1: User/Group Management
 
-In your ULI101 course, you learned to change permissions for directories and files relating to user/owner, same group members, and other users. In this course, since you are the sysadmin with root privileges, you can create or remove users and groups as well as change the ownership of directories and files! We will now learn to perform key user account management operations in this section.
+In lab 4, you learned how to change permissions for directories and files relating to user/owner, same group members, and other users. In this lab you will learn how to create or remove users and groups as well as change the ownership of directories and files! We will now learn to perform key user account management operations in this section.
 
 ### Part 1: Studying the /etc/passwd file
 
@@ -53,22 +53,21 @@ The /etc/passwd file is a datafile that stores user account information, for bot
 
 **Perform the following steps:**
 
-1. Launch your **debhost** and **deb1** VMs.
-2. Switch to your **deb1** VM.
-3. Open a shell terminal.
-4. Look at the `/etc/passwd` file.
-5. Make note of the contents of that file.
-6. Read about the file: [/etc/passwd](http://man7.org/linux/man-pages/man5/passwd.5.html)
-7. Make sure you know what information each field contains.
-8. Why do you think there are so many users?
-9. Look at the names of the users. What do you think these user names represent? Are they all people?
-10. What is the numeric user ID (UID) of the **root** user?
-11. What is the numeric user ID (UID) and default shell of the users **sshd** & **mail**?
+1. Launch your Ubuntu **VM**.
+2. Open the terminaln application.
+3. Use the `cat` command to view the `/etc/passwd` file.
+4. Make note of the contents of that file.
+5. Read about the file: [/etc/passwd](http://man7.org/linux/man-pages/man5/passwd.5.html)
+    - Note what information each field contains.
+7. Why do you think there are so many users?
+8. Look at the names of the users. What do you think these user names represent? Are they all people?
+9. What is the numeric user ID (UID) of the **root** user?
+10. What is the numeric user ID (UID) and default shell of the user **mail**?
 12. What is the UID, Comment, and default shell of your regular user account?
 
 - UID 0 is reserved for the **root** user. In fact it is the UID that gives root its power. Not the account name.
-- The user IDs of **system** accounts are typically below 1000. System accounts are used internally and are usually associated with services. The default shell of **/usr/sbin/nologin** means they can't be used to login interactively.
-- Regular user accounts are usually assigned UID's above 1000 and are allowed to login interactively.
+- The user IDs of **system** accounts are below 1000. System accounts are used internally and are usually associated with services. The default shell of **/usr/sbin/nologin** means they can't be used to login interactively.
+- Regular user accounts are assigned UID's above 1000 and are allowed to login interactively.
 - When new regular user accounts they are by default assigned the next available UID above 1000.
 - The **Comment** field typically holds the Full name of a regular user.
 
@@ -82,19 +81,19 @@ In this section, we will now learn how to properly add user accounts, remove use
 
 **Perform the following steps:**
 
-1. Remain in your **deb1** VM for this section.
+1. Remain in your **Ubuntu** VM for this section.
 2. Read the man page for the `useradd` command.
-3. Create a new user called **ops245_1** by:
+3. Create a new user called **osl645_1** by:
 
 ```bash
 # Launch an interactive shell
 sudo -i
 
 # Create a user account using defaults
-useradd ops245_1
+useradd osl645_1
 
 # Check the contents of /etc/passwd
-grep "ops245_1" /etc/passwd
+grep "osl645_1" /etc/passwd
 
 # Check for a home directory
 ls -l /home
@@ -104,14 +103,14 @@ ls -l /home
 5. What were the values for the **UID**, **GID**, **Comment**, **HOMEDIR**, and **SHELL**?
 6. Was a home directory created?
 7. Check the man page for **useradd**, what are the options to force a home directory to be created, add a full name, and assign **bash** as the default shell?
-8. Create a new user called **ops245_2** using those options:
+8. Create a new user called **osl645_2** using those options:
 
 ```bash
 # Create a user account using options
-useradd -m -c "OPS245 Account 2" -s "/usr/bin/bash" ops245_2
+useradd -m -c "osl645 Account 2" -s "/usr/bin/bash" osl645_2
 
 # Check the contents of /etc/passwd
-grep "ops245" /etc/passwd
+grep "osl645" /etc/passwd
 
 # Check for a home directory
 ls -l /home
@@ -120,24 +119,24 @@ ls -l /home
 9. What were the values for the **UID**, **GID**, **Comment**, **HOMEDIR**, and **SHELL**?
 10. Was a home directory created?
 
-![deb1users1](/img/deb1users1.png)
+![ubuntuusers1](/img/ubuntuusers1.png)
 
 11. Read the man page for **useradd** and scroll down to the **FILES** section
 12. What is the file you can edit to change your default values for account creation?
-13. Edit the file **/etc/default/useradd**, change the value of **SHELL** (You may wish to install **vim** or use **vi**)
+13. Edit the file **/etc/default/useradd**, change the value of **SHELL**
 
 ```bash
 SHELL=/usr/bin/bash
 ```
 
-14. Create a new user called **ops245_3**:
+14. Create a new user called **osl645_3**:
 
 ```bash
 # Create a user account using options
-useradd -m -c "OPS245 Account 3" ops245_3
+useradd -m -c "osl645 Account 3" osl645_3
 
 # Check the contents of /etc/passwd
-grep "ops245" /etc/passwd
+grep "osl645" /etc/passwd
 
 # Check for a home directory
 ls -l /home
@@ -146,7 +145,7 @@ ls -l /home
 14. Was the home directory created?
 15. Was the shell set correctly?
 
-![deb1users2](/img/deb1users2.png)
+![ubuntuusers2](/img/ubuntuusers2.png)
 
 We have not given the accounts passwords. The passwords are not stored in **/etc/passwd**. A long time ago with the Unix operating system, passwords were stored in **/etc/passwd** but they were removed from the file and put into the file **/etc/shadow**. That is because all users require read access to **/etc/passwd** for the purpose of logging in. Passwords even in hashed form should NOT be visible to all users. If look at the image above you can see an **x** in the old password field as a place holder.
 
@@ -156,60 +155,60 @@ We have not given the accounts passwords. The passwords are not stored in **/etc
 
 ![deb1shadow1](/img/deb1shadow1.png)
 
-19. You can see that your regular user account has a hashed password in the file, but your new ops245 accounts have only a **!** . This means the password has not been set, and until it is this account can't be used to login interactively
-20. Set the password for the user **ops245_1** and **ops245_2** using the commands:
+19. You can see that your regular user account has a hashed password in the file, but your new osl645 accounts have only a **!** . This means the password has not been set, and until it is this account can't be used to login interactively
+20. Set the password for the user **osl645_1** and **osl645_2** using the commands:
 
 ```bash
 # Set a users password
-passwd ops245_1
-passwd ops245_2
+passwd osl645_1
+passwd osl645_2
 ```
 
 21. View the contents of **/etc/shadow** to see the changes.
 
-We can also modify a user after the fact using the **usermod** command. Remember that the account **ops245_1** was created with out a **Full Name** and the incorrect **Shell**
+We can also modify a user after the fact using the **usermod** command. Remember that the account **osl645_1** was created with out a **Full Name** and the incorrect **Shell**
 
 22. View the man page for the **usermod** command
 23. You can see that the command options are pretty similar to the **useradd** command
-24. Modify the **ops245_1** account using the following:
+24. Modify the **osl645_1** account using the following:
 
 ```bash
 # Modify the user account
-usermod -c "OPS245 Account 1" -s "/usr/bin/bash" ops245_1
+usermod -c "osl645 Account 1" -s "/usr/bin/bash" osl645_1
 ```
 
 25. Confirm the changes are made in **/etc/passwd**
 
-When we created the **ops245_1** account we didn't create a home directory. We should do that manually.
+When we created the **osl645_1** account we didn't create a home directory. We should do that manually.
 
 26. List the contents of **/home** `ls -l /home`
-    ![deb1home1](/img/deb1home1.png)
+    ![deb1home1](/img/ubuntuhome1.png)
 27. You can see that each users home directory is owned by the user and the group assigned is the primary group of that user.
-28. You can also see that permissions have been given to that user. (our ops245 users home directory are visible to other users)
-29. Issue the following commands to create a home directory for **ops245_1** and give ownership to the user
+28. You can also see that permissions have been given to that user. (our osl645 users home directory are visible to other users)
+29. Issue the following commands to create a home directory for **osl645_1** and give ownership to the user
 
 ```bash
 # Create a home directory
-mkdir /home/ops245_1
+mkdir /home/osl645_1
 
 # Change the owner and group
 # Example chown user:group /home/dir
-chown ops245_1:ops245_1 /home/ops245_1
+chown osl645_1:osl645_1 /home/osl645_1
 ```
 
 30. Confirm the creation of the home directory
 31. Set the permissions of the home directory so that only the owner has access
 
 ```bash
-# Set permissions for ops245 users home directories
-chmod 700 /home/ops245*
+# Set permissions for osl645 users home directories
+chmod 700 /home/osl645*
 ```
 
-32. List the entire contents of the home directories for **ops245_1** and **ops245_2**, including hidden files
-    ![deb1home2](/img/deb1home2.png)
-33. You can see the **ops245_2** home directory contains some files that **ops245_1** does not have. Where did they come from?
+32. List the entire contents of the home directories for **osl645_1** and **osl645_2**, including hidden files
+    ![ubuntuhome2](/img/ubuntuhome2.png)
+33. You can see the **osl645_2** home directory contains some files that **osl645_1** does not have. Where do you think they come from?
 34. List the entire contents, including hidden files, of **/etc/skel**
-    ![deb1skel1](/img/deb1skel1.png)
+    ![ubuntuskel1](/img/ubuntuskel1.png)
 
 **/etc/skel/** is a "template" for new home directories. Any files and directories in that directory will be copied into any new users home directory when they are created.
 
@@ -220,17 +219,18 @@ chmod 700 /home/ops245*
 echo "this is a test file" > /etc/skel/foobar.txt
 ```
 
-36. Create a new user called **ops245_4** using the correct option to create a home directory and setting the shell to **bash**
-37. Check the contents of **ops245_4**'s home directory. Did they receive the file **foobar.txt**
+36. Create a new user called **osl645_4** using the correct option to create a home directory and setting the shell to **bash**
+37. Check the contents of **osl645_4**'s home directory. Did they receive the file **foobar.txt**
 
 We should confirm that our accounts work. By testing a login to the Desktop Environment.
 
 38. Exit from the interactive **sudo** shell: `exit`
 39. Exit the terminal and logout of the desktop
-40. Login to the desktop as the user ops245_2
-41. Logout and login back in as your regular user account
+40. Login to the desktop as the user osl645_2
 
-![deb1login](/img/deb1login.png)
+![ubuntulogin](/img/ubuntulogin.png)
+
+41. Logout and login back in as your regular user account
 
 The next step is to remove a user account. Using the **userdel** command.
 
@@ -245,24 +245,24 @@ The next step is to remove a user account. Using the **userdel** command.
 
 42. Read the man page for the **userdel** command
 43. What is the option to remove a users home directory?
-44. Use the following commands to remove the **ops245_1** and **ops245_4** accounts. Do not remove the **ops245_4** home directory
+44. Use the following commands to remove the **osl645_1** and **osl645_4** accounts. Do not remove the **osl645_4** home directory
 
 ```bash
 # Start interactive sudo shell
 sudo -i
 
-# Remove ops245_1 account and home directory
-userdel -r ops245_1
+# Remove osl645_1 account and home directory
+userdel -r osl645_1
 
-# Remove ops245_4 account
-userdel ops245_4
+# Remove osl645_4 account
+userdel osl645_4
 ```
 
 45. List the contents of **/home** including file ownership
 
-![deb1home3](/img/deb1home3.png)
+![ubuntuhome3](/img/ubuntuhome3.png)
 
-Notice the User and Group field for **ops245_4** is shown numerically. That is because the filesystem records ownership using UID and GID numbers. When we are shown a listing it resolves those numeric values to names. As the user has been removed it can't be resolved.
+Notice the User and Group field for **osl645_4** is shown numerically. That is because the filesystem records ownership using UID and GID numbers. When we are shown a listing it resolves those numeric values to names. As the user has been removed it can't be resolved.
 
 Notice the **-n** option for **ls** shows ownership numerically.
 
@@ -275,20 +275,20 @@ There are 2 ways to disable an account, **lock** the accounts password, and **ex
 3. Try the following commands, check the changes made to **/etc/shadow** after each command (account expiry is the 2nd last field)
 
 ```bash
-# Lock the password for ops245_2
-usermod -L ops245_2
+# Lock the password for osl645_2
+usermod -L osl645_2
 
-# Unlock the password for ops245_2
-usermod -U ops245_2
+# Unlock the password for osl645_2
+usermod -U osl645_2
 
-# Expire the ops245_2 account immediately
-usermod -e 1 ops245_2
+# Expire the osl645_2 account immediately
+usermod -e 1 osl645_2
 
-# Unexpire the ops245_2 account
-usermod -e -1 ops245_2
+# Unexpire the osl645_2 account
+usermod -e -1 osl645_2
 
-# Expire the account of ops245_1 at the end of 2028
-usermod -e 2028-12-31 ops245_2
+# Expire the account of osl645_1 at the end of 2128
+usermod -e 2128-12-31 osl645_2
 ```
 
 4. Exit the interactive **sudo** shell
@@ -297,16 +297,16 @@ Be sure to record your observations in your lab notes.
 
 ### Part 3: Managing Groups
 
-In this section, we will learn how to create, remove and modify groups in our Linux VM. You learned in ULI101 how to change permissions with the **chmod** command, but you didn't have admin privileges to **create groups** to allow directory and regular file sharing. Since you now have admin privileges with your VM, you can now create groups, and add users to this group to allow file-sharing among users.
+In this section, we will learn how to create, remove and modify groups in our Linux VM. In lab 4 you how to change permissions with the **chmod** command, but you didn't have admin privileges to **create groups** to allow directory and regular file sharing. Since you now have admin privileges with your VM, you can now create groups, and add users to this group to allow file-sharing among users.
 
 **Perform the following steps:**
 
-1. Make certain that you are still in a terminal as your regular user account on the **deb1** VM.
+1. Make certain that you are still in a terminal as your regular user account on the **ubuntu** VM.
 2. Type the command `groups`
 3. The output of this command is the list of your group memberships.
-   ![deb1groups1](/img/deb1groups1.png)
+   ![ubuntugroups1](/img/ubuntugroups1.png)
    Every user account is assigned a **primary** group. On most Linux distributions when a new user account is created a new group is also created with the same name, that group is then assigned as the primary group for that user. However, not all Linux systems are configured that way. On the host matrix.senecacollege.ca your user account is assigned to a primary group called **users**.
-4. Close all application windows, and switch user accounts (within your deb1 VM) by clicking on the **logout** icon and clicking on the **Switch User button, and then login as the user **ops245_2\*\*.
+4. Close all application windows, and switch user accounts by clicking on the **logout** icon and clicking on the **Switch User button, and then login as the user **osl645_2\*\*.
 5. Open a terminal.
 6. Create a file called **information.txt** in the home directory of that user.
 7. Issue the following commands:
@@ -324,7 +324,7 @@ ls -ln
 
 8. Who owns that file? What primary group does that file belong to?
 
-![deb1groups2](/img/deb1groups2.png)
+![ubuntugroups2](/img/ubuntugroups2.png)
 
 When a user creates a file or directory they are assigned as the owner of the file and the primary group of that user account is assigned as the group to the file
 
@@ -348,9 +348,9 @@ tail -5 /etc/group
 tail -5 /etc/passwd
 ```
 
-![deb1groups3](/img/deb1groups3.png)
+![ubuntugroups3](/img/ubuntugroups3.png)
 
-You can see that your account and the 2 **ops245** accounts have been assigned a **GID** (4th field in /etc/passwd) that refers to the group in the /etc/group file. You can also see that the group **welcome** was created and given the next available GID number. Because future user accounts will have the UID and GID that are out of sync, we could change the GID of **Welcome**
+You can see that your account and the 2 **osl645** accounts have been assigned a **GID** (4th field in /etc/passwd) that refers to the group in the /etc/group file. You can also see that the group **welcome** was created and given the next available GID number. Because future user accounts will have the UID and GID that are out of sync, we could change the GID of **Welcome**
 
 14. Read the man page for the **groupmod** command.
 15. Change the **GID** of the **Welcome** group:
@@ -362,15 +362,15 @@ sudo groupmod -g 1500 welcome
 
 16. Read the man page for **usermod** and look for the **-a, --append**, **-g, --gid**, and **-G, --group** options.
 17. What is the difference between the **-g** and **-G** options?
-18. Issue two separate **usermod** commands to add both **ops245_2** and **ops245_3** to the newly-created **welcome** group, as a supplemental group:
+18. Issue two separate **usermod** commands to add both **osl645_2** and **osl645_3** to the newly-created **welcome** group, as a supplemental group:
 
 ```bash
 # Add users to the welcome group
-sudo usermod -aG welcome ops245_2
-sudo usermod -aG welcome ops245_3
+sudo usermod -aG welcome osl645_2
+sudo usermod -aG welcome osl645_3
 ```
 
-19. Verify that both **ops245_2** and **ops245_3** now belong to the **welcome** group.
+19. Verify that both **osl645_2** and **osl645_3** now belong to the **welcome** group.
 
 When a file is created it is assigned an owner and a default (primary) group. The Linux system administrator can not only change a file's ownership, but also change the default group that a file belongs to. In addition, the sysadmin can also add other users to a supplementary group that they have created via the **usermod** command. This is useful in setting group permissions via the **chmod** command.
 
@@ -378,10 +378,10 @@ When a file is created it is assigned an owner and a default (primary) group. Th
 
 ```bash
 # Change group assigned to a file
-sudo chgrp welcome ~ops245_2/information.txt
+sudo chgrp welcome ~osl645_2/information.txt
 
 # List the file details
-sudo ls -l ~ops245_2/information.txt
+sudo ls -l ~osl645_2/information.txt
 ```
 
 21. Open a terminal and list the details for the **information.txt** file
@@ -392,20 +392,20 @@ Groups provide a method for us to assign permissions to multiple user accounts e
 
 Management has sent you (the Linux sysadmin) that a "new" employee has been hired and will be on on probation for 3 months. As the Linux system administrator, they want you to perform the following steps:
 
-1. Remain in your **deb1** VM for this section.
-2. Use the **useradd** command to create a user account called: **noobie** to expire in 3 months from this date as part of the security policy of this organization (issue man useradd to determine correct option to set expiry date).
-3. Set an appropriate password for this user account.
-4. Add this newly-created user to the newly-created **welcome** group.
-5. Examine `/etc/group` to verify that you made the correct operations.
-6. Use the **usermod** command to set the full name of the user account **noobie** to "**Really Green**". Examine the result of running that command in the `/etc/passwd` file. What has changed?
+1. Use the **useradd** command to create a user account called: **noobie** to expire in 3 months from this date as part of the security policy of this organization (issue man useradd to determine correct option to set expiry date).
+2. Set an appropriate password for this user account.
+3. Add this newly-created user to the newly-created **welcome** group.
+4. Examine `/etc/group` to verify that you made the correct operations.
+5. Use the **usermod** command to set the full name of the user account **noobie** to "**Really Green**". Examine the result of running that command in the `/etc/passwd` file. What has changed?
 
 Unfortunately, you were later informed that this "**noobie**" employee was caught stealing from the company. They want you to perform the following operations:
 
-7. Remove this account, but keep "noobie's" home directory for police investigation purposes.
-8. Verify that you correctly issued the correct commands.
+6. Remove this account, but keep "noobie's" home directory for police investigation purposes.
+7. Verify that you correctly issued the correct commands.
 
 **Answer INVESTIGATION 1 observations / questions in your lab log book.**
 
+## Left off here
 ## Investigation 2: Controlling Sudo Elevated Privileges
 
 When you installed Debian on deb1 and deb2, you didn't set a **root** password. This caused the installer to give your first regular user account the ability to use the **sudo** command to run commands with root privileges instead of enabling the **root** account. Which raises some questions.
@@ -471,7 +471,7 @@ Requiring the use of **sudo** to access elevated permissions means that there is
 
 The **sudo** group is very useful for senior admins who should be able to run any command, but what about admins who haven't demonstrated the responsibility necessary to wield that power yet? We can use the **sudo** config files to give them privileges to run some commands, but not all. Note: While this could be done in the main **/etc/sudoers** file, the better practice is to create supplemental config files. Supplemental config files are stored in the **/etc/sudoers.d** directory.
 
-1. Login as to **deb1** as your **ops245_2** account. Try to run the command
+1. Login as to **deb1** as your **osl645_2** account. Try to run the command
 
 ```bash
 sudo systemctl restart ssh
@@ -481,34 +481,34 @@ If successful, that command would restart the ssh service on that machine, but t
 
 2. Try running that command again, this time with **sudo**.
 3. It still won't work, because this user does not have permission to use **sudo** for anything.
-4. Log out from **ops245_2** and log back in as your normal user.
-5. Create a file called **10-ops245_users** in **/etc/sudoers.d**. Add the following line to it:
+4. Log out from **osl645_2** and log back in as your normal user.
+5. Create a file called **10-osl645_users** in **/etc/sudoers.d**. Add the following line to it:
 
 ```bash
-ops245_2 ALL=(ALL) /usr/bin/systemctl
+osl645_2 ALL=(ALL) /usr/bin/systemctl
 ```
 
 - This indicates this user can use sudo to run systemctl commands as if they were any account (root is the important one).
 - It is important to notice that commands need to be added with an absolute path to the executable
 
-6. Log out from your normal user and log back in as **ops245_2**.
+6. Log out from your normal user and log back in as **osl645_2**.
 7. Try restarting sshd again. This time it should work.
-8. Change to your **ops245_3** account, and try restarting sshd (with and without sudo).
+8. Change to your **osl645_3** account, and try restarting sshd (with and without sudo).
 
    - That account still can't. Sudo entries only affect the users and groups listed.
 
-9. We don't want **ops245_3** to manage services, that's a job for **ops245_2**, but we do want them to manage user accounts. So log back in as your regular user and create a sudoers file for **ops245_3** called **11-acct_mgmt** and add entries to it so **ops245_3** can run the useradd, usermod, userdel, groupadd, groupmod, and groupdel commands with **sudo**.
+9. We don't want **osl645_3** to manage services, that's a job for **osl645_2**, but we do want them to manage user accounts. So log back in as your regular user and create a sudoers file for **osl645_3** called **11-acct_mgmt** and add entries to it so **osl645_3** can run the useradd, usermod, userdel, groupadd, groupmod, and groupdel commands with **sudo**.
 
 ```bash
-ops245_3 ALL=(ALL) /usr/sbin/useradd
-ops245_3 ALL=(ALL) /usr/sbin/usermod
-ops245_3 ALL=(ALL) /usr/sbin/userdel
-ops245_3 ALL=(ALL) /usr/sbin/groupadd
-ops245_3 ALL=(ALL) /usr/sbin/groupmod
-ops245_3 ALL=(ALL) /usr/sbin/groupdel
+osl645_3 ALL=(ALL) /usr/sbin/useradd
+osl645_3 ALL=(ALL) /usr/sbin/usermod
+osl645_3 ALL=(ALL) /usr/sbin/userdel
+osl645_3 ALL=(ALL) /usr/sbin/groupadd
+osl645_3 ALL=(ALL) /usr/sbin/groupmod
+osl645_3 ALL=(ALL) /usr/sbin/groupdel
 ```
 
-10. Test the commands as **ops245_3** to make sure it works.
+10. Test the commands as **osl645_3** to make sure it works.
 
 ## Investigation 3: Managing System Services and Targets (Run-levels)
 
@@ -652,7 +652,7 @@ We will now use shell scripting to help automate the task for a Linux administra
 4. Download, study, and run the following shell script. Issue the command:
 
 ```bash
-wget https://raw.githubusercontent.com/OPS245/debian-labs/main/user-create.bash
+wget https://raw.githubusercontent.com/osl645/debian-labs/main/user-create.bash
 ```
 
 5. Try to understand what this bash script does, and then run the script using **sudo** to create just one user called **test**. After running the shell script, view the contents of the **/home** directory to confirm.
@@ -663,7 +663,7 @@ Although the **zenity** command is a "user-friendly" way to run shell scripts, L
 7. Use the wget command to download the input file called user-data.txt by issuing the command:
 
 ```bash
-wget https://raw.githubusercontent.com/OPS245/debian-labs/main/user-data.txt
+wget https://raw.githubusercontent.com/osl645/debian-labs/main/user-data.txt
 ```
 
 9. View the contents on the user-data.txt file to confirm there are 3 fields (username, fullname, and e-mail address)which are separated by the colon **:** symbol.
