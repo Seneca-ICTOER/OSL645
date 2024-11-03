@@ -766,6 +766,126 @@ mv ~/.bash_profile.bk ~/.bash_profile
 
     - What did you notice this time?
 
+## Investigation 5: User Management with a bash scripting
+
+### Using getopts Function & case statement
+
+We will now use shell scripting to help automate the task for a Linux administrator to create regular user accounts.
+
+**Perform the following steps:**
+
+1. You will be using your **debhost** machine for this section.
+2. Open a shell terminal, as your regular user.
+3. Change to the **~/bin** directory.
+4. Download, study, and run the following shell script. Issue the command:
+
+```bash
+wget https://raw.githubusercontent.com/osl645/debian-labs/main/user-create.bash
+```
+
+5. Try to understand what this bash script does, and then run the script using **sudo** to create just one user called **test**. After running the shell script, view the contents of the **/home** directory to confirm.
+
+Although the **zenity** command is a "user-friendly" way to run shell scripts, Linux administrators usually create shell scripts that resemble common Linux commands. In this lab, you will learn to create a shell script using the getopts function to make your shell script behave more like actual Linux commands (including the use of options). Refer to the notes section on the right-hand-side for reference about the **case** statement and the **getopts** function.
+
+6. Change to the **~/bin** directory.
+7. Use the wget command to download the input file called user-data.txt by issuing the command:
+
+```bash
+wget https://raw.githubusercontent.com/osl645/debian-labs/main/user-data.txt
+```
+
+9. View the contents on the user-data.txt file to confirm there are 3 fields (username, fullname, and e-mail address)which are separated by the colon **:** symbol.
+10. Use a text editor to create a bash script called: **createUsers.bash**` in the ~/bin directory.
+11. Enter the following text content into your text-editing session:
+
+```bash
+#!/bin/bash
+
+# createUsers.bash
+# Purpose: Generates a batch of user accounts from a text file
+#
+# USAGE: sudo ./createUsers.bash [-i {input-path}]
+#
+# Author: *** INSERT YOUR NAME ***
+# Date: *** CURRENT DATE ***
+
+# Test for sudo
+user=$(whoami)
+if [ $user != "root" ]
+then
+    echo "You must run this script with root privileges. Please use sudo" >&2
+    exit 1
+fi
+
+# Test for argument
+if [ "$#" -eq 0 ] # if no arguments after command
+then
+ echo "You must enter an argument" >&2
+ echo "USAGE: $0 [-i {input-path}]" >&2
+ exit 2
+fi
+```
+
+12. Save your editing session, but remain in the text editor.
+13. The code displayed below uses the getopt function to set the input file pathname or check for invalid options or missing option text. Add the following code
+
+```bash
+outputFlag="n"
+while getopts i: name
+do
+ case $name in
+   i) inputFile=$OPTARG ;;
+   :) echo "Error: You need text after options requiring text"
+       exit 3 ;;
+   \?) echo "Error: Incorrect option"
+        exit 3 ;;
+ esac
+done
+```
+
+14. Save your editing session, but remain in the text editor.
+15. The code displayed below uses logic to exit the script if the input file does not exist. Command substitution is used to store each line of the input file as a positional parameter. There is one subtle problem here: The full names of the users contain spaces which can create havoc when trying to set each line as a separate positional parameter. In this case the sed command is used to convert spaces to plus signs (+), which will be converted back later. Finally, a **for** loop is used to create each account (**useradd**) and display their account information. Add the following code:
+
+```bash
+# Test for inputFile
+if [ ! -f $inputFile ]
+then
+  echo "The file pathname \"$inputFile\" is empty or does not exist" >&2
+  exit 4
+fi
+
+# Temporarily convert spaces to + for storing lines as positional parameters
+set $(sed 's/ /+/g' $inputFile)
+
+for x
+do
+    userPassWd=$(date | md5sum | cut -d" " -f1)
+    useradd -m \
+        -c "$(echo $x | cut -d":" -f2 | sed 's/+/ /g')" \
+        -s "/bin/bash" \
+        -p $userPassWd \
+        $(echo $x | cut -d":" -f1)
+
+    cat <<+
+    Server Account Information
+    Here is your server account information:
+    servername: myserver.senecacollege.ca
+    username: $(echo $x | cut -d":" -f1)
+    password: $userPassWd
+    email: $(echo $x | cut -d":" -f3)
+
++
+done
+
+echo -e "\n\nAccounts have been created\n\n"
+exit 0
+```
+
+16. Save, set permissions, and then run that shell script for the input text file **user-data.txt**. Did it work? Try running the script without an argument - What did it do?
+17. You have completed lab4. Proceed to Completing The Lab, and follow the instructions for "lab sign-off".
+
+**Answer INVESTIGATION 5 observations / questions in your lab log book.**
+
 ## Further Study
 
 I hope this series of tutorials have been helpful in teaching you basic Linux OS skills.
