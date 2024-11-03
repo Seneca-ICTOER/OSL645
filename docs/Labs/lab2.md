@@ -2,7 +2,7 @@
 id: lab2
 title: Lab 2 - Advanced File Management and Quoting Special Characters
 sidebar_position: 3
-description: Lab 2 for Students to Learn Pathnames, Filename Expansion, and Quoting Special Characters
+description: Pathnames, Filename Expansion, and Quoting Special Characters
 ---
 
 # Lab 2: Advanced File Management and Quoting Special Characters

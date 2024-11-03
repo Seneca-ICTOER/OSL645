@@ -2,7 +2,7 @@
 id: lab8
 title: Lab 8 - Sed and Awk Utilities
 sidebar_position: 9
-description: Lab  8 for Students to Learn the Sed and Awk Commands
+description: Sed and Awk Commands
 ---
 
 # Lab 8: Sed and Awk Utilities

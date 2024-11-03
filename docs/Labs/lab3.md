@@ -2,7 +2,7 @@
 id: lab3
 title: Lab 3 - Redirection
 sidebar_position: 4
-description: Lab 3 for Students to Learn Redirection
+description: Redirection
 ---
 
 # Lab 3: Redirection - Standard Input, Standard Output, and Standard Error

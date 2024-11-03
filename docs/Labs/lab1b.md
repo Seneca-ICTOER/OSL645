@@ -2,7 +2,7 @@
 id: lab1
 title: Lab 1B - Unix and Linux File Management
 sidebar_position: 2
-description: Lab 1B for Students to learn Unix/Linux File Management
+description: Unix/Linux File Management
 ---
 
 # Lab 1B: Unix and Linux File Management

@@ -2,7 +2,7 @@
 id: lab1a
 title: Lab 1A - Installing and Using Linux
 sidebar_position: 1
-description: Lab 1A for Students to setup and use a Linux environment
+description: Setup and use a Linux environment
 ---
 
 # Lab 1A: Installing and Using Linux

@@ -2,7 +2,7 @@
 id: lab7
 title: Lab 7 - Regular Expressions
 sidebar_position: 8
-description: Lab 7 for Students to Learn Regular Expressions
+description: Regular Expressions
 ---
 
 # Lab 7: Regular Expressions

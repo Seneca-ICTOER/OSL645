@@ -2,7 +2,7 @@
 id: lab4
 title: Lab 4 - Numbering Conversion, File Permissions & Introduction to Shell Scripting
 sidebar_position: 5
-description: Lab 4 for Students to Learn Numbering Conversion, File Permissions and Introduction to Shell Scripting
+description: Numbering Conversion, File Permissions and Introduction to Shell Scripting
 ---
 
 # Lab 4: Numbering Conversion, File Permissions and Introduction to Shell Scripting

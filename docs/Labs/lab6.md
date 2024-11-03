@@ -2,7 +2,7 @@
 id: lab6
 title: Lab 6 - Process Management, Aliases & Shell Scripting
 sidebar_position: 7
-description: Lab 6 for Students to Process Management, Aliases and Shell Scripting
+description: Process Management, Aliases and Shell Scripting
 ---
 
 # Lab 6: Process Management, Aliases and Shell Scripting

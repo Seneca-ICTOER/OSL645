@@ -2,7 +2,7 @@
 id: lab5
 title: Lab 5 - File Transfer and Sending Email Messages
 sidebar_position: 6
-description: Lab 5 for Students to Learn File Transfer and Sending Email Messages
+description: File Transfer and Sending Email Messages
 ---
 
 # Lab 5: File Transfer and Sending Email Messages
