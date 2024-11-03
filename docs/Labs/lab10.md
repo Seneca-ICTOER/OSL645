@@ -5,7 +5,7 @@ sidebar_position: 10
 description: Lab 10 for Students to Learn Shell Scripting
 ---
 
-# Lab 9: Advanced Shell Scripting
+# Lab 10: Advanced Shell Scripting
 
 ## Under Development
 
