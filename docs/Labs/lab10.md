@@ -766,7 +766,7 @@ mv ~/.bash_profile.bk ~/.bash_profile
 
     - What did you notice this time?
 
-## Investigation 5: User Management with a bash scripting
+## Investigation 5: User Management with bash scripting
 
 ### Using getopts Function & case statement
 
