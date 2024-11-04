@@ -102,13 +102,13 @@ description: Weekly Schedule for OSL645
 
 ### Week 9
 
-| **Learning Objectives and Tasks** | **References**                                                                                                                                                                                            | **Evaluation**                              |
-| :-------------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------------------------------------------ |
-| Regular expressions basics:       | **Week 9 Lecture Slides:** [Web](https://docs.google.com/presentation/d/e/2PACX-1vSSPxaTaUF7ZCV_cwhwMYjNNOKhAST4O6lcM7POzX0W0FsuLebeJQ1jw1SSeB6yPSPmiVPgDsG4p1bm/pub?start=false&loop=false&delayms=5000) | [Lab 7: Regular Expressions](/Labs/lab7.md) |
-| - Literal matching                |                                                                                                                                                                                                           | Lab 7 (Due Week 13 in class) (2%)           |
-| - . wildcard                      |                                                                                                                                                                                                           |                                             |
-| - \* repetition symbol            |                                                                                                                                                                                                           |                                             |
-| - Anchoring                       |                                                                                                                                                                                                           |                                             |
+| **Learning Objectives and Tasks** | **References**                                                                                                                                                                                              | **Evaluation**                              |
+| :-------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------------------------------------------ |
+| Regular expressions basics:       | **Week 9 Lecture 1 Slides:** [Web](https://docs.google.com/presentation/d/e/2PACX-1vR9rc7HDCUy9Y9z74aYzkOiJbKgj9KQo2jXad5kY1SsINAioFn5kDmOFaqqDLiti2fuFCnF_gxcVF4h/pub?start=false&loop=false&delayms=3000) | [Lab 7: Regular Expressions](/Labs/lab7.md) |
+| - Literal matching                | **Week 9 Lecture 2 Slides:** [Web](https://docs.google.com/presentation/d/e/2PACX-1vSXB_XjyDIGnEEHza65sBA_WIloPXO-8fIFXSKXs-svX8MArGyfjLPGq5WEOPj-uL60G0IHMgkAqlM-/pub?start=false&loop=false&delayms=3000) | Lab 7 (Due Week 13 in class) (2%)           |
+| - . wildcard                      |                                                                                                                                                                                                             |                                             |
+| - \* repetition symbol            |                                                                                                                                                                                                             |                                             |
+| - Anchoring                       |                                                                                                                                                                                                             |                                             |
 
 ### Week 10
 
@@ -120,13 +120,13 @@ description: Weekly Schedule for OSL645
 
 ### Week 11
 
-| **Learning Objectives and Tasks**  | **References**                                                                                                                                                                                             | **Evaluation**                             |
-| :--------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :----------------------------------------- |
-| Managing Users, Groups & Services: | **Week 11 Lecture Slides:** [Web](https://docs.google.com/presentation/d/e/2PACX-1vT1rWx6t6rPEPpr-Zgj7-WCFwbX41RHbo_1jPDO7ouNQ_62Jxkog8U8c0Ltmc7jnNWjCj6-dx4gE35n/pub?start=false&loop=false&delayms=5000) | [Lab 9: Users, Groups & Services](/Labs/lab9.md)     |
-| - User Management                  |                                                                                                                                                                                                            | Lab 9 (Due Week 13 in class) (2%)          |
-| - Group Management                 |                                                                                                                                                                                                            | Video Presentation and Demonstration (20%) |
-| - Service Status                   |                                                                                                                                                                                                            |                                            |
-| - Starting / Stopping Services     |                                                                                                                                                                                                            |                                            |
+| **Learning Objectives and Tasks**  | **References**                                                                                                                                                                                             | **Evaluation**                                   |
+| :--------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :----------------------------------------------- |
+| Managing Users, Groups & Services: | **Week 11 Lecture Slides:** [Web](https://docs.google.com/presentation/d/e/2PACX-1vT1rWx6t6rPEPpr-Zgj7-WCFwbX41RHbo_1jPDO7ouNQ_62Jxkog8U8c0Ltmc7jnNWjCj6-dx4gE35n/pub?start=false&loop=false&delayms=5000) | [Lab 9: Users, Groups & Services](/Labs/lab9.md) |
+| - User Management                  |                                                                                                                                                                                                            | Lab 9 (Due Week 13 in class) (2%)                |
+| - Group Management                 |                                                                                                                                                                                                            | Video Presentation and Demonstration (20%)       |
+| - Service Status                   |                                                                                                                                                                                                            |                                                  |
+| - Starting / Stopping Services     |                                                                                                                                                                                                            |                                                  |
 
 ### Week 12
 

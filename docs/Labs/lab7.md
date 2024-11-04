@@ -20,8 +20,8 @@ description: Regular Expressions
 
 **Course Slides:**
 
-- Week 9 Lecture 1 Notes: [Web](https://docs.google.com/presentation/d/e/2PACX-1vSLcUD2hYxiE7SMusdYAiUhrhClN4vipEP1f2HbWYy7VDo4is4r4oX4jmBs7ah-FIRS9wRK_sJoNxoC/pub?start=false&loop=false&delayms=3000)
-- Week 9 Lecture 2 Notes: [Web](https://docs.google.com/presentation/d/e/2PACX-1vQSTPvTZBp4OyDeqzdpsupmM79MCYG75tPes2YZoR3xUuAYhr8b8oNOUXsiwiukbiqMv2I7NlXGnHUC/pub?start=false&loop=false&delayms=3000)
+- Week 9 Lecture 1 Notes: [Web](https://docs.google.com/presentation/d/e/2PACX-1vR9rc7HDCUy9Y9z74aYzkOiJbKgj9KQo2jXad5kY1SsINAioFn5kDmOFaqqDLiti2fuFCnF_gxcVF4h/pub?start=false&loop=false&delayms=3000)
+- Week 9 Lecture 2 Notes: [Web](https://docs.google.com/presentation/d/e/2PACX-1vSXB_XjyDIGnEEHza65sBA_WIloPXO-8fIFXSKXs-svX8MArGyfjLPGq5WEOPj-uL60G0IHMgkAqlM-/pub?start=false&loop=false&delayms=3000)
 
 **Regular Expressions:**
 
