@@ -20,8 +20,8 @@ description: Sed and Awk Commands
 
 **Course Slides:**
 
-- Week 10 Lecture 1 Notes: [Web](https://docs.google.com/presentation/d/e/2PACX-1vSyjEL1w22Beq6ZYTuP23tnSeJ3RMpGz5wVUgActaKmhhKcmJiY2RYkHNGxs5LeOyvHEz-h1UWkdZ6j/pub?start=false&loop=false&delayms=3000)
-- Week 10 Lecture 2 Notes: [Web](https://docs.google.com/presentation/d/e/2PACX-1vSapzaNLliq3ulWRtNKvP6jgwcRU4tB0lhV7cXT3K3cfYy4BblW_LyA49s__vdxjxxJkyQcqqtpkSEN/pub?start=false&loop=false&delayms=3000)
+- Week 10 Lecture 1 Notes: [Web](https://docs.google.com/presentation/d/e/2PACX-1vS2xQNxFRQd5wzCRB2RbsHuukCSWf3ZEj3lrsfRclyoPVuV9tpCtUSMG0I7mOTitd2K8KRL3ko-wwSI/pub?start=false&loop=false&delayms=3000)
+- Week 10 Lecture 2 Notes: [Web](https://docs.google.com/presentation/d/e/2PACX-1vR_eP6nHokVGgiasQm8G7f0_DZZ7PvllMBim1m7OlTtseLG6irx7qQMYYjRB4RQ80cqXgW9R5QniMf1/pub?start=false&loop=false&delayms=3000)
 
 **Text Manipulation:**
 

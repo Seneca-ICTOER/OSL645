@@ -112,11 +112,11 @@ description: Weekly Schedule for OSL645
 
 ### Week 10
 
-| **Learning Objectives and Tasks** | **References**                                                                                                                                                                                            | **Evaluation**                                |
-| :-------------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :-------------------------------------------- |
-| Text Manipulation:                | **Week 9 Lecture Slides:** [Web](https://docs.google.com/presentation/d/e/2PACX-1vSM9_a_lSCuff9TnL8fHWgw3JKQgn0HxHdctu7D07AAiuU_h6q1iwMDFgO2SOqmNNRSMBk2GoLJOYmb/pub?start=false&loop=false&delayms=5000) | [Lab 8: Sed and Awk Utilities](/Labs/lab8.md) |
-| - Using the sed utility           |                                                                                                                                                                                                           | Lab 8 (Due Week 13 in class) (2%)             |
-| - Using the awk utility           |                                                                                                                                                                                                           |                                               |
+| **Learning Objectives and Tasks** | **References**                                                                                                                                                                                               | **Evaluation**                                |
+| :-------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :-------------------------------------------- |
+| Text Manipulation:                | **Week 10 Lecture 1 Slides:** [Web](https://docs.google.com/presentation/d/e/2PACX-1vS2xQNxFRQd5wzCRB2RbsHuukCSWf3ZEj3lrsfRclyoPVuV9tpCtUSMG0I7mOTitd2K8KRL3ko-wwSI/pub?start=false&loop=false&delayms=3000) | [Lab 8: Sed and Awk Utilities](/Labs/lab8.md) |
+| - Using the sed utility           | **Week 10 Lecture 2 Slides:** [Web](https://docs.google.com/presentation/d/e/2PACX-1vR_eP6nHokVGgiasQm8G7f0_DZZ7PvllMBim1m7OlTtseLG6irx7qQMYYjRB4RQ80cqXgW9R5QniMf1/pub?start=false&loop=false&delayms=3000) | Lab 8 (Due Week 13 in class) (2%)             |
+| - Using the awk utility           |                                                                                                                                                                                                              |                                               |
 
 ### Week 11
 
