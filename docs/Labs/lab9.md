@@ -7,8 +7,6 @@ description: Create and manage users, groups and services
 
 # Lab 9: Users, Groups and Services
 
-## Under Development
-
 ## Main Objectives
 
 - Administer (**add, remove, modify**) **users** on a Linux system.
@@ -405,10 +403,10 @@ Unfortunately, you were later informed that this "**noobie**" employee was caugh
 
 **Answer INVESTIGATION 1 observations / questions in your lab log book.**
 
-## Left off here
+
 ## Investigation 2: Controlling Sudo Elevated Privileges
 
-When you installed Debian on deb1 and deb2, you didn't set a **root** password. This caused the installer to give your first regular user account the ability to use the **sudo** command to run commands with root privileges instead of enabling the **root** account. Which raises some questions.
+When you installed Ubuntu, you didn't set a **root** password. This caused the installer to give your first regular user account the ability to use the **sudo** command to run commands with root privileges instead of enabling the **root** account. Which raises some questions.
 
 - How would we allow other users to run commands with **sudo**?
 - Can we control access to **sudo** by limiting the commands available?
@@ -429,7 +427,7 @@ You've already observed that your first user can use **sudo** to execute any com
 grep "username" /etc/passwd /etc/group
 ```
 
-![deb1groups5](/img/deb1groups5.png)
+![ubuntugroups5](/img/ubuntugroups5.png)
 
 You can see that your account is a member of the **sudo group**
 
@@ -448,7 +446,7 @@ So why not just give those admins the root password?
 sudo journalctl | grep "sudo"
 ```
 
-![deb1journal](/img/deb1journal.png)
+![ubuntujournal](/img/ubuntujournal.png)
 
 You can see that all **sudo** activity is recorded in the system log. Including:
 
@@ -462,27 +460,27 @@ Requiring the use of **sudo** to access elevated permissions means that there is
 > Not all Linux distributions use the same group name to configure **sudo** access.
 > RedHat based distributions for example typically use a group called **wheel**
 
-8. Start your **deb3** VM
-9. Create a regular user account on **deb3**, using the same username and password as **deb1** and **deb2**
-10. Add your user to the **sudo** group as a secondary group.
-11. Test that **sudo** works for that user
-
 ### Part 2: Adding Limited Sudo Capabilities to Other Users
 
 The **sudo** group is very useful for senior admins who should be able to run any command, but what about admins who haven't demonstrated the responsibility necessary to wield that power yet? We can use the **sudo** config files to give them privileges to run some commands, but not all. Note: While this could be done in the main **/etc/sudoers** file, the better practice is to create supplemental config files. Supplemental config files are stored in the **/etc/sudoers.d** directory.
 
-1. Login as to **deb1** as your **osl645_2** account. Try to run the command
+1. Install the **ssh service daemon**.
+```bash
+sudo apt install ssh
+```
+
+2. Login as your **osl645_2** account. Try to run the command
 
 ```bash
-sudo systemctl restart ssh
+systemctl restart ssh
 ```
 
 If successful, that command would restart the ssh service on that machine, but that user does not have permission to do that.
 
-2. Try running that command again, this time with **sudo**.
-3. It still won't work, because this user does not have permission to use **sudo** for anything.
-4. Log out from **osl645_2** and log back in as your normal user.
-5. Create a file called **10-osl645_users** in **/etc/sudoers.d**. Add the following line to it:
+3. Try running that command again, this time with **sudo**.
+4. It still won't work, because this user does not have permission to use **sudo** for anything.
+5. Log out from **osl645_2** and log back in as your normal user.
+6. Use a text editor to create the file **/etc/sudoers.d/10-osl645_users**. You will require sudo for this to work. Add the following line to it:
 
 ```bash
 osl645_2 ALL=(ALL) /usr/bin/systemctl
@@ -493,11 +491,16 @@ osl645_2 ALL=(ALL) /usr/bin/systemctl
 
 6. Log out from your normal user and log back in as **osl645_2**.
 7. Try restarting sshd again. This time it should work.
+```bash
+sudo systemctl restart ssh
+sudo systemctl status ssh
+```
+
 8. Change to your **osl645_3** account, and try restarting sshd (with and without sudo).
 
    - That account still can't. Sudo entries only affect the users and groups listed.
 
-9. We don't want **osl645_3** to manage services, that's a job for **osl645_2**, but we do want them to manage user accounts. So log back in as your regular user and create a sudoers file for **osl645_3** called **11-acct_mgmt** and add entries to it so **osl645_3** can run the useradd, usermod, userdel, groupadd, groupmod, and groupdel commands with **sudo**.
+9. We don't want **osl645_3** to manage services, that's a job for **osl645_2**, but we do want them to manage user accounts. So log back in as your regular user and create a sudoers file for **osl645_3** called **11-acct_mgmt** (like you did above in step 6) and add entries to it so **osl645_3** can run the useradd, usermod, userdel, groupadd, groupmod, and groupdel commands with **sudo**.
 
 ```bash
 osl645_3 ALL=(ALL) /usr/sbin/useradd
@@ -517,11 +520,11 @@ osl645_3 ALL=(ALL) /usr/sbin/groupdel
 At the beginning of this lab we mentioned that running unneeded **packages can be a security risk** due to the unnecessary increase in the complexity of your system. Similarly, it is also unnecessarily hazardous, and even more so, to leave unneeded services running. In this investigation, we will learn how to **control services, and turn off those services that we think are not necessary, to help reduce security risks.**
 
 On most Linux distributions the first process started (PID #1) is called **systemd**. The **systemd** process is responsible for managing, stopping, and starting system services. (As well as other important tasks). The command `ps -ef | head -4` will show the first few processes currently running.
-![deb1init1](/img/deb1init1.png)
+![ubuntuinit1](/img/ubuntuinit1.png)
 
 In the output above we see that the **PID 1** process is called **init** not **systemd**
 
-![deb1systemd](/img/deb1systemd.png)
+![ubuntusystemd](/img/ubuntusystemd.png)
 
 But if we examine the listing for **/sbin/init** we can see that it is a symbolic link to **systemd**.
 
@@ -533,26 +536,34 @@ In order to control **systemd** we will use the **systemctl** command.
 
 **Perform the following steps:**
 
-1. Remain in your **deb1** VM for this section.
+1. Remain in your **Ubuntu VM** for this section.
 2. To verify the status of your **ssh** service, issue the following command:
 
 ```bash
 # Show status of a service (sudo not required)
 systemctl status ssh
 ```
-
-3. Use the commands you used in Lab2 to **stop** and **disable** the **ssh** service.
-4. Issue a command to verify you **disabled** and **stopped** the **ssh** service.
+  - **Note:** The ssh service should show as **inactive (dead)** and **disabled**. This means it is not running, and is not configured to start on boot.
 
    - **Note**: There is a major difference between stopping a service and disabling a service: If a service is stopped but enabled, the service will start upon reboot. Therefore to prevent it being started upon boot-up, the service will need to be disabled as well!
 
-5. Issue the commands to **start** and **enable** the **ssh** service, and **verify** that it is started and enabled.
+3. Issue the following commands to **start** and **enable** the **ssh** service, and **verify** that it is started and enabled.
+
+```bash
+# Start the ssh service
+sudo systemctl start ssh
+
+# Configure the ssh service to start automatically on boot
+sudo systemctl enable ssh
+```
+
+4. Issue the command to verify the status of your **ssh** service that you used in step 2.
 
    - **Note**: If you performed the commands correctly, the **ssh** service should be running, and will automatically run upon your Linux machine start-up.
 
-![deb1status](/img/deb1status.png)
+![deb1status](/img/ubuntustatus.png)
 
-It is important for a Linux system administrator to be able to start/stop, enable/disable and check the status of services on their Linux server. Students will be commonly performing these operations in their OPS345 course when configuring and troubleshooting network services.
+It is important for a Linux system administrator to be able to start/stop, enable/disable and check the status of services on their Linux server. Students will be commonly performing these operations in their OSL745 course when configuring and troubleshooting network services.
 
 ### Part 2: How do we Manage Targets (formerly known as runlevels)?
 
@@ -596,13 +607,11 @@ sudo systemctl isolate poweroff.target
 sudo systemctl isolate rescue.target
 ```
 
-Note: The last example command has the same effect as the procedure we followed in Lab 3 when we edited the grub boot parameters to boot into **single** user mode.
-
 The purpose of **Linux servers** is to run or provide network-based services (i.e. they "**serve**" the users that operating in that Linux/Unix system). It is common that Linux servers are separated, for security purposes, based on the services they are providing. Generally Linux Servers do not have graphical desktops installed so they are **available in Command-Line mode only** (multi-user.target). Running these Linux/Unix servers with a **Graphical Mode will make them more vulnerable to penetration from hackers, etc**. Therefore, it is common that the Linux servers are CLI only, but the Workstations that connect to them within the network are GUI. Therefore, it is important that a Linux/Unix system administrator understand to switch to these different "targets".
 
 **Perform the following steps:**
 
-1. Remain in your **deb1** VM for this section.
+1. Open a terminal (if you do not already have one)
 2. Issue the following Linux command:
 
 ```bash
@@ -611,57 +620,42 @@ systemctl get-default
 
 - **Note**: The output should read **graphical.target**
 
-1. Try the same command on your **deb3** VM and observe how the output differs. Go back to your **deb1** VM.
-2. You can use the **systemctl isolate** command to change the current target. See a list of targets [here](https://wiki.debian.org/systemd/CheatSheet).
-3. Change the current target in **deb1** to **multi-user.target**
-4. What did you notice?
-
-> Debian runs the Graphical Desktop on TTY7.
->
-> When we switch to multi-user TTY7 doesn't display anything.
-> To see the text based login we need to switch to TTY1.
-> If **deb1** was installed directly on physical hardware we would switch to TTY1 with the key combination **CTRL-ALT-F1**. Because we are running as a VM we will use the VM Viewer.
-> Click on **Send Key** --> **CTRL-ALT-F1**
->
-> ![deb1tty](/img/deb1tty.png)
-
-5. Login as your regular user and reboot your **deb1** VM. It should return to the graphical login screen.
+3. You can use the **systemctl isolate** command to change the current target. See a list of targets [here](https://wiki.debian.org/systemd/CheatSheet).
+4. Change the current target to **multi-user.target**. You will need to login again.
+5. What did you notice?
+6. Login as your regular user and reboot your **deb1** VM. It should return to the graphical login screen.
 
 You should notice at this point that the command **systemctl isolate** did not change the default target the system will boot to.
 It just changed or switched the current target.
 
-6. Issue the command to change the default target to **multi-user.target**, then reboot **deb1**. What do you notice?
-7. Login and change the current run-level to **graphical.target**
+7. Issue the command to change the default target to **multi-user.target**, then reboot. What do you notice?
+```bash
+sudo systemctl set-default multi-user.target
+reboot
+```
 
-8. Try to do the same thing to your **deb3** VM. Did it work? Why or why not?
-9. Set the default target on your **deb1** VM back to graphical.target before continuing.
+7. Login and change the current run-level to **graphical.target**
+```bash
+sudo systemctl isolate graphical.target
+```
+
+8. Set the default target back to graphical.target before continuing.
+```bash
+sudo systemctl get-default
+sudo systemctl set-default graphical.target
+```
+
+9. Issue the following command to run a checking script. **Note** sudo is required:
+
+```bash
+sudo ~/bin/lab9-check-1
+```
 
 **Answer INVESTIGATION 3 observations / questions in your lab log book.**
 
-## Lab 4 Sign-Off (Show Instructor)
-
-Follow your Professors submission instructions for lab 4 on Blackboard.
-
-**Time for a new backup!:** If you have successfully completed this lab, make a new backup of your virtual machines as well as your host machine.
-
-**Perform the Following Steps:**
-
-1. Make certain that your **debhost**, **deb1** VM are running.
-2. Switch to your **debhost** VM.
-3. Open a shell terminal, and change to the **~/bin** directory.
-4. Issue the Linux command:
-
-```bash
-wget https://raw.githubusercontent.com/jmcarman/osl740-debian-labs/main/lab4-check.bash
-```
-
-5. Give the **lab4-check.bash** file execute permissions (for the file owner).
-6. Run the shell script using **sudo** and if any warnings, make fixes and re-run shell script until you receive "congratulations" message.
-7. Follow your Professors instructions for submitting the lab
-
 ## Linux Practice Questions
 
-The purpose of this section is to obtain **extra practice**.
+The purpose of this section is to obtain **extra practice** to help with your **practical test**, and your **theory test**.
 
 Your instructor may take-up these questions during class. It is up to the student to attend classes in order to obtain the answers to the following questions. Your instructor will NOT provide these answers in any other form (eg. e-mail, etc).
 
