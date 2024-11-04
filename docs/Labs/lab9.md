@@ -15,7 +15,6 @@ description: Create and manage users, groups and services
 - **Start, Restart and Stop services** on a Linux system.
 - **Enable and Disable services** on a Linux system.
 - Display the **status of running services** on a Linux system.
-- Create a bash shell script to **generate multiple user accounts** from a comma separated value (.csv) file.
 
 ## Lab Reference Material
 

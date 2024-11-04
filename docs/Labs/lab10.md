@@ -16,6 +16,7 @@ description: Lab 10 for Students to Learn Shell Scripting
 - Use the **while** loop in a shell script.
 - Use the **exit** and **break** statements in a shell script.
 - Explain how to configure and use a **.bashrc** start-up file.
+- Create a bash shell script to **generate multiple user accounts** from a comma separated value (.csv) file.
 
 ## Lab Reference Material
 
