@@ -187,6 +187,8 @@ Login with your user.
 
 Click **Show Apps** (Logo in the bottom left corner, similar to the Windows start menu) and launch the **Terminal** application. Proceed to Investigation 2.
 
+**Answer INVESTIGATION 1 observations / questions in your lab log book.**
+
 ## Investigation 2: Post Installation Tasks
 
 One of the first things you do on a new system is install software and update the system. Your first step to installing software should always be to test your Internet connectivity, as without a working connection you cannot resolve anything. To do this we can use the tool **ping**, which is commonly used to troubleshoot network connectivity issues.
@@ -249,6 +251,8 @@ Once that has completed, install the following packages with the command **sudo 
 ```bash
 sudo apt install ncal tldr
 ```
+
+**Answer INVESTIGATION 2 observations / questions in your lab log book.**
 
 ## Investigation 3: Using The Linux Shell
 
@@ -588,6 +592,8 @@ cd /bin
 13. Press the `ctrl-l key` combination. What happens? What is the advantage of using **ctrl-u** as opposed to **ctrl-l**?
 
 The Bash shortcut keys that you just learned are sufficient to perform Bash Shell editing. Although you are NOT required to learn other short-cut keys, here is a link to a listing in case you are interested: https://ostechnix.com/list-useful-bash-keyboard-shortcuts/
+
+**Answer INVESTIGATION 3 observations / questions in your lab log book.**
 
 ### Lab Submission
 

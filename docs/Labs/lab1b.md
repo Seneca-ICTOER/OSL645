@@ -414,6 +414,8 @@ rm -ri nwk680xx
 
 10. If you encounter errors, make corrections and re-run the checking script until you receive a congratulations message, and proceed to the next INVESTIGATION.
 
+**Answer INVESTIGATION 1 observations / questions in your lab log book.**
+
 ## Investigation 2: Managing Text Files
 
 Since IT students will be working in the Unix / Linux command line environment, it is useful to learn a least two common command-line **text editors.**
@@ -789,6 +791,8 @@ rm aa.txt b.txt a.txt.bk c.txt
 
 29. Issue the **ls** command to verify that these files have been removed.
 
+**Answer INVESTIGATION 2 observations / questions in your lab log book.**
+
 ## Investigation 3: Linking Files
 
 In this investigation, you will learn how to create **hard links** and **symbolic links** on your Matrix account, and observe the advantages and limitations of using both types of links.
@@ -1053,6 +1057,8 @@ rm -rf ~/etc
 46. Complete the **LINUX PRACTICE QUESTIONS** below to get additional practice.
 
 47. Open your lab check log files and call your professor over to record your grade.
+
+**Answer INVESTIGATION 3 observations / questions in your lab log book.**
 
 ## Linux Practice Questions
 
