@@ -42,6 +42,8 @@ description: Create and manage users, groups and services
 
 ## Investigation 1: User/Group Management
 
+**ATTENTION: This lab must be graded by the end of your classes in Week 13 to obtain a grade of 2% towards this course.**
+
 In lab 4, you learned how to change permissions for directories and files relating to user/owner, same group members, and other users. In this lab you will learn how to create or remove users and groups as well as change the ownership of directories and files! We will now learn to perform key user account management operations in this section.
 
 ### Part 1: Studying the /etc/passwd file
@@ -55,12 +57,12 @@ The /etc/passwd file is a datafile that stores user account information, for bot
 3. Use the `cat` command to view the `/etc/passwd` file.
 4. Make note of the contents of that file.
 5. Read about the file: [/etc/passwd](http://man7.org/linux/man-pages/man5/passwd.5.html)
-    - Note what information each field contains.
-7. Why do you think there are so many users?
-8. Look at the names of the users. What do you think these user names represent? Are they all people?
-9. What is the numeric user ID (UID) of the **root** user?
-10. What is the numeric user ID (UID) and default shell of the user **mail**?
-12. What is the UID, Comment, and default shell of your regular user account?
+   - Note what information each field contains.
+6. Why do you think there are so many users?
+7. Look at the names of the users. What do you think these user names represent? Are they all people?
+8. What is the numeric user ID (UID) of the **root** user?
+9. What is the numeric user ID (UID) and default shell of the user **mail**?
+10. What is the UID, Comment, and default shell of your regular user account?
 
 - UID 0 is reserved for the **root** user. In fact it is the UID that gives root its power. Not the account name.
 - The user IDs of **system** accounts are below 1000. System accounts are used internally and are usually associated with services. The default shell of **/usr/sbin/nologin** means they can't be used to login interactively.
@@ -402,7 +404,6 @@ Unfortunately, you were later informed that this "**noobie**" employee was caugh
 
 **Answer INVESTIGATION 1 observations / questions in your lab log book.**
 
-
 ## Investigation 2: Controlling Sudo Elevated Privileges
 
 When you installed Ubuntu, you didn't set a **root** password. This caused the installer to give your first regular user account the ability to use the **sudo** command to run commands with root privileges instead of enabling the **root** account. Which raises some questions.
@@ -464,6 +465,7 @@ Requiring the use of **sudo** to access elevated permissions means that there is
 The **sudo** group is very useful for senior admins who should be able to run any command, but what about admins who haven't demonstrated the responsibility necessary to wield that power yet? We can use the **sudo** config files to give them privileges to run some commands, but not all. Note: While this could be done in the main **/etc/sudoers** file, the better practice is to create supplemental config files. Supplemental config files are stored in the **/etc/sudoers.d** directory.
 
 1. Install the **ssh service daemon**.
+
 ```bash
 sudo apt install ssh
 ```
@@ -490,6 +492,7 @@ osl645_2 ALL=(ALL) /usr/bin/systemctl
 
 6. Log out from your normal user and log back in as **osl645_2**.
 7. Try restarting sshd again. This time it should work.
+
 ```bash
 sudo systemctl restart ssh
 sudo systemctl status ssh
@@ -542,9 +545,10 @@ In order to control **systemd** we will use the **systemctl** command.
 # Show status of a service (sudo not required)
 systemctl status ssh
 ```
-  - **Note:** The ssh service should show as **inactive (dead)** and **disabled**. This means it is not running, and is not configured to start on boot.
 
-   - **Note**: There is a major difference between stopping a service and disabling a service: If a service is stopped but enabled, the service will start upon reboot. Therefore to prevent it being started upon boot-up, the service will need to be disabled as well!
+- **Note:** The ssh service should show as **inactive (dead)** and **disabled**. This means it is not running, and is not configured to start on boot.
+
+- **Note**: There is a major difference between stopping a service and disabling a service: If a service is stopped but enabled, the service will start upon reboot. Therefore to prevent it being started upon boot-up, the service will need to be disabled as well!
 
 3. Issue the following commands to **start** and **enable** the **ssh** service, and **verify** that it is started and enabled.
 
@@ -628,17 +632,20 @@ You should notice at this point that the command **systemctl isolate** did not c
 It just changed or switched the current target.
 
 7. Issue the command to change the default target to **multi-user.target**, then reboot. What do you notice?
+
 ```bash
 sudo systemctl set-default multi-user.target
 reboot
 ```
 
 7. Login and change the current run-level to **graphical.target**
+
 ```bash
 sudo systemctl isolate graphical.target
 ```
 
 8. Set the default target back to graphical.target before continuing.
+
 ```bash
 sudo systemctl get-default
 sudo systemctl set-default graphical.target

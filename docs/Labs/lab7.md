@@ -129,7 +129,7 @@ Example of using **or** condition with **groups**. ^
 
 ## Investigation 1: Simple & Complex Regular Expressions
 
-**ATTENTION: This online tutorial will be required to be completed by Week 13 in class to obtain a grade of 2% towards this course**
+**ATTENTION: This lab must be graded by the end of your classes in Week 13 to obtain a grade of 2% towards this course.**
 
 In this investigation, you will learn how to use the **grep** command with **simple and complex regular expressions** to help search for _patterns_ contained in text files.
 

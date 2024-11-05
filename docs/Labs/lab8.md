@@ -112,7 +112,7 @@ awk [-F] 'selection-criteria {action}’ file-name
 
 ## Investigation 1: Using the sed Utility
 
-**ATTENTION: This online tutorial will be required to be completed by Week 13 in class to obtain a grade of 2% towards this course**
+**ATTENTION: This lab must be graded by the end of your classes in Week 13 to obtain a grade of 2% towards this course.**
 
 In this investigation, you will learn how to manipulate text using the **sed** utility.
 

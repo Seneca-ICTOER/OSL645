@@ -11,10 +11,12 @@ description: Lab 10 for Students to Learn Shell Scripting
 
 ## Main Objectives
 
-- Use the **if-elif-else** control flow statement in a shell script.
-- Use the **for** loop control using a list with **command substitution**.
-- Use the **while** loop in a shell script.
-- Use the **exit** and **break** statements in a shell script.
+- Use **if-elif-else** control flow statements in a shell script.
+- Use a **for** loop control using a list with **command substitution**.
+- Use a **while** loop in a shell script.
+- Use **getopts** to parse command line options.
+- Use the **exit** statement in a shell script.
+- Create users using a shell script
 - Explain how to configure and use a **.bashrc** start-up file.
 - Create a bash shell script to **generate multiple user accounts** from a comma separated value (.csv) file.
 
@@ -33,16 +35,11 @@ description: Lab 10 for Students to Learn Shell Scripting
 **Additional Statements:**
 
 - [exit](https://www.geeksforgeeks.org/exit-command-in-linux-with-examples/#:~:text=exit%20command%20in%20linux%20is,last%20command%20that%20is%20executed.&text=After%20pressing%20enter%2C%20the%20terminal%20will%20simply%20close.)
-- [break](https://www.geeksforgeeks.org/break-command-in-linux-with-examples/#:~:text=break%20command%20is%20used%20to,The%20default%20number%20is%201.)
 
 **Startup Files:**
 
 - [Purpose](https://www.gnu.org/software/bash/manual/html_node/Bash-Startup-Files.html)
 - [Examples](http://www.linuxfromscratch.org/blfs/view/svn/postlfs/profile.html)
-
-**Instructional Videos:**
-
-- [Bash Shell Scripting - Part 2](https://www.youtube.com/watch?v=XVTwbINXnk4&list=PLU1b1f-2Oe90TuYfifnWulINjMv_Wr16N&index=6)
 
 ## Key Concepts
 
@@ -65,13 +62,12 @@ _Example:_
 ```bash
 num1=5
 num2=10
-if test $num1 –lt $num2
-then
-   echo “Less Than”
-elif test $num1 –gt $num2
-then
-   echo “Greater Than”
-else    echo “Equal to”
+if [[ $num1 –lt $num2 ]]; then
+  echo “Less Than”
+elif [[ $num1 –gt $num2 ]]; then
+  echo “Greater Than”
+else
+  echo “Equal to”
 fi
 ```
 
@@ -82,8 +78,7 @@ Let’s issue the **for** loop with a **list** using **command substitution**. I
 _Example:_
 
 ```bash
-for x in $(ls)
-do
+for x in $(ls); do
    echo “The item is: $x”
 done
 ```
@@ -103,23 +98,30 @@ Example of how a while loop works. (Image licensed under [cc](https://creativeco
 _Example 1:_
 
 ```bash
+#!/bin/bash
 answer=10
-read –p “pick a number between 1 and 10: “ guess
-while test $guess –eq 10
-do    read –p “Try again: “ guess
+read -p "pick a number between 1 and 10: " guess
+while [[ $guess != $answer ]]; do
+    read -p "Try again: " guess
 done
-echo “You are correct”
+echo "You are correct"
 ```
 
 _Example 2:_
 
 ```bash
+#!/bin/bash
 value=1
-while [ $value -le 5 ]
-do
+while [[ $value -le 5 ]]; do
   echo "$value"
   ((value=value+1)) # could also use ((value++))
 done
+```
+
+_Output:_
+
+```bash
+$ ./while2.bash
 1
 2
 3
@@ -127,7 +129,7 @@ done
 5
 ```
 
-### Exit & Break Statements
+### Exit Statements
 
 **exit Statement**
 
@@ -136,29 +138,10 @@ The **exit** statement is used to **terminate** a shell script. This statement i
 _Example:_
 
 ```bash
-if [ $# -ne 1 ]
-then
+if [[ $# -ne 1 ]]; then
   echo "USAGE: $0 [arg]"
   exit 1
 fi
-```
-
-**break Statement**
-
-The **break** statement is used to **terminate a loop**. Although the loop terminates, the shell script will continue running.
-
-_Example:_
-
-```bash
-read -p "Enter a number: " number
-while [ $number -ne 5 ]
-do
-   read -p "Try again. Enter a number: " number
-   if [ $number -eq 5 ]
-   then
-     break
-   fi
-done
 ```
 
 ### Start-Up Files
@@ -178,7 +161,7 @@ There is a file that **resets or restores the shell environment** (including shu
 
 ## Investigation 1: Additional Logic Statements
 
-**ATTENTION: This online tutorial will be required to be completed by Friday in week 13 by midnight to obtain a grade of 2% towards this course**
+**ATTENTION: This lab must be graded by the end of your classes in Week 13 to obtain a grade of 2% towards this course.**
 
 In this investigation, you will learn additional control-flow statements to allow your shell scripts to be even **more adaptable**.
 

@@ -518,7 +518,7 @@ In this investigation, you will learn how to **manage processes** on your Matrix
 
 ## Investigation 1: Managing Processes
 
-\*_ATTENTION: This online tutorial will be required to be completed by Week 13 in class to obtain a grade of 2% towards this course_
+**ATTENTION: This lab must be graded by the end of your classes in Week 13 to obtain a grade of 2% towards this course.**
 
 In this investigation, you will learn how to **manage processes** on a Unix / Linux server.
 

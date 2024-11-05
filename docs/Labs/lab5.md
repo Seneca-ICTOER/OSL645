@@ -136,7 +136,7 @@ Viewing email with file attachment in **Seneca email account**.
 
 ## Investigation 1: File Transfer (Secure Copy)
 
-**ATTENTION: This online tutorial will be required to be completed by Friday in week 8 by midnight to obtain a grade of 2% towards this course**
+**ATTENTION: This lab must be graded by the end of your classes in Week 8 to obtain a grade of 2% towards this course.**
 
 The **SSH** package on your _home computer_ and on the _Matrix Linux server_ contain a **suite** (i.e. collection) of secure utilities including **ssh** and **scp**.
 
