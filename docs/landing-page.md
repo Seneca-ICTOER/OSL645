@@ -10,8 +10,8 @@ description: Landing Home Page for OSL645
 
 ## Quick Links
 
-| [Weekly Schedule](./weekly-schedule.md) | [Course Outline](https://ict.senecacollege.ca/course/osl640/) | [Course Policies](/ExtraResources/course-policies.md) | [Lab Log Book](/files/OSL645-Logbook-Online.docx) |
-| --- | --- | --- | -- |
+| [Weekly Schedule](./weekly-schedule.md) | [Course Outline](https://ict.senecacollege.ca/course/osl640/) | [Course Policies](/ExtraResources/course-policies.md) | [Lab Log Book](/files/OSL645-Logbook-Online.docx) | [Seneca MyApps](https://myapps.senecapolytechnic.ca/login) |
+| --------------------------------------- | ------------------------------------------------------------- | ----------------------------------------------------- | ------------------------------------------------- | ---------------------------------------------------------- |
 
 ## What This Course is About
 
@@ -22,5 +22,6 @@ Students will learn the core utilities to work productively in a Linux environme
 **Note**: Important resources on this wiki have been highlighted in Yellow.
 
 ## Software Download Links
+
 - [Virtual Box](https://www.virtualbox.org/wiki/Downloads)
 - [Ubuntu 24.04 Download](https://ubuntu.com/download/desktop/thank-you?version=24.04.1&architecture=amd64&lts=true)
