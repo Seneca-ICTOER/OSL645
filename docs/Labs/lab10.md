@@ -31,6 +31,7 @@ description: Lab 10 for Students to Learn Shell Scripting
 - [if-elif-else](https://www.tutorialspoint.com/unix/if-else-statement.htm)
 - [for Loop](https://www.cyberciti.biz/faq/bash-for-loop/#:~:text=A%20'for%20loop'%20is%20a,files%20using%20a%20for%20loop.)
 - [while Loop](https://bash.cyberciti.biz/guide/While_loop)
+- [Arrays](https://www.tutorialspoint.com/unix/unix-using-arrays.htm)
 
 **Additional Statements:**
 
@@ -60,6 +61,7 @@ Example of how an **if-elif-else** statement works. (Image licensed under [cc](h
 _Example:_
 
 ```bash
+#!/bin/bash
 num1=5
 num2=10
 if [[ $num1 –lt $num2 ]]; then
@@ -129,6 +131,35 @@ $ ./while2.bash
 5
 ```
 
+### Arrays
+
+In Lab 6 you learned about **User-created** variables. Variables are used to store single values. **Arrays** store multiple values into a single variable. Arrays in Bash are 0 indexed, which means the first element of the array is 0. The following will populate the array users with usernames:
+
+```bash
+# Populate the array users with usernames
+users=("tstark" "bbanner" "thor" "srogers" "nromanoff")
+```
+
+To print out the elements of the array individually you can use the array name and index number:
+
+```bash
+# Access the elements
+echo "${users[0]}" # Will print tstark
+echo "${users[1]}" # Will print bbanner
+echo "${users[2]}" # Will print thor
+echo "${users[3]}" # Will print srogers
+echo "${users[4]}" # Will print nromanoff
+```
+
+While you can print out individual elements of an array (as demonstrated above), more commonly you use a **for loop** to loop through an array. The following code will print each of the users on a new line using a for loop.
+
+```bash
+# Print out each element of the array using a for loop
+for user in "${users[@]}"; do
+  echo $user
+done
+```
+
 ### Exit Statements
 
 **exit Statement**
@@ -167,87 +198,131 @@ In this investigation, you will learn additional control-flow statements to allo
 
 **Perform the Following Steps:**
 
-1. **Login** to your matrix account.
+1. **Login** to your Ubuntu VM and open a **terminal**, and issue a Linux command to **confirm** you are located in your **home** directory.
 2. Issue a command to **confirm** you are located in your home directory.
-3. Issue a Linux command to create a directory called **advanced**
-4. Issue a Linux command to change to the **advanced** directory.
-5. Issue a Linux command to confirm you are located in the **advanced** directory.
 
-In **tutorial 6**, you learned how to use the **if** control-flow statement. You will now learn to use the **if-else** statement to take two different actions based on if the condition tests either TRUE or FALSE.
+### Creating your Github Repo for your Labs
 
-6. Use a text editor like vi or nano to create the text file called **if-4.bash** (eg. `vi if-4.bash`)
-7. Enter the following lines in your shell script:
+> **Important:** Update the link for the GitHub Classroom repository.
+
+Use the following [link](https://classroom.github.com/a/tHKAizE9) to set up your lab 10 repository, and open it in GitHub Codespaces. Refer to [Lab 4](/Labs/lab4.md) for instructions. You will be using this for the BASH scripting in lab 10.
+
+### Cloning your GitHub repository in your Ubuntu VM
+
+Issue the following command to clone your GitHub repository into your home directory.
+
+> **Important:** Be sure to replace `username` in the following command with YOUR GitHub username.
+
+```bash
+git clone git@github.com:OSL645/lab-10-username
+```
+
+- Issue a command to confirm the repository has been cloned on your Ubuntu VM.
+- Issue a command to change into your **lab-10-username** directory.
+
+Confirm the contents have been written to your **lab-10-username** directory. You should see the following files:
+
+- LICENSE
+- README.md
+- convert.bash
+- convert_test.py
+- createusers.bash
+- createusers_test.py
+- githublogo.jpg
+- tux.jpg
+- ubuntu.jpg
+- userinfo.csv
+- users1.bash
+- users1_test.py
+- users2.bash
+- users2_test.py
+- users3.bash
+- users3_test.py
+
+### Writing users1.bash
+
+1. In GitHub Codespaces, open the template for the Bash shell script called **users1.bash**
+2. Edit _user-variables.bash_ file to contain the following:
 
 ```bash
 #!/bin/bash
-clear
-read -p "Enter the first number: " num1
-read -p "Enter the second number: " num2
-if [ $num1 -gt $num2 ]
-then
-   echo "The first number is greater than the second number."
-elif [ $num1 -lt $num2 ]
-then
-   echo "The first number is less than the second number."
-else
-   echo "The first number is equal to the second number."
-fi
+# Author:
+# Date:
+# Purpose: To print a list of users (from an array) one user at a time.
+# Usage: ./users1.bash
+#
+
+# Populate the array users with usernames
+users=("tstark" "bbanner" "thor" "srogers" "nromanoff")
+
+# For each username in the array users
+for user in "${users[@]}"; do
+
+    # Use echo to display the username
+    echo $user
+
+# End for
+done
 ```
 
-8. Save your editing session and exit the text editor (eg. with vi: press **ESC**, then type **:x** followed by **ENTER**).
-9. Issue the following linux command to add execute permissions for your shell script:
+3. Issue the **chmod** command to add **execute permission** for the **user** the **users1.bash** file.
+
+4. Save your editing changes, stage and commit your changes to GitHub.
+
+5. Using the **terminal in Codespaces** issue the following to run the users1.bash:
 
 ```bash
-chmod u+x if-4.bash
+./users1.bash
 ```
 
-10. Run your shell script by issuing:
+- What did you notice?
 
 ```bash
-./if-4.bash
+> ./users1.bash
+tstark
+bbanner
+thor
+srogers
+nromanoff
 ```
 
-- Try running the script several times with numbers different and equal to each other to confirm that the shell script works correctly.
-- A classic shell script to demonstrate many different paths or actions to take depending of multiple testing using an **if-elif-else** statement would be a **mark to letter grade converter**.
-
-11. Use a text editor like vi or nano to create the text file called **if-5.bash** (eg. `vi if-5.bash`)
-12. Enter the following lines in your shell script:
+6. Run the Python check script in GitHub Codespaces to check your work before you commit it.
 
 ```bash
-#!/bin/bash
-clear
-read -p "Enter a mark (0-100): " mark
-if [ $mark -ge 80 ]
-then
-   echo "You received an A grade."
-elif [ $mark -ge 70 ]
-then
-   echo "You received a B grade."
-elif [ $mark -ge 60 ]
-then
-   echo "You received a C grade."
-elif [ $mark -ge 50 ]
-then
-   echo "You received a D grade."
-else
-   echo "You received an F grade."
-fi
+./users1_test.py
 ```
 
-13. Save your editing session and exit the text editor (eg. with vi: press **ESC**, then type **:x** followed by **ENTER**).
-14. Issue the following linux command to add execute permissions for your shell script:
+7. Check the exit status code. If it shows 0, it is successful.
 
 ```bash
-chmod u+x if-5.bash
+echo $?
 ```
 
-15. Run your shell script by issuing:
+8. Save your changes. Stage and commit your changes to GitHub.
+
+On your **Ubuntu VM**, open a **terminal** and confirm you are in your **home** directory.
+
+9. Issue the following Linux command to change to the local clone of your GitHub repository.
 
 ```bash
-./if-5.bash
+cd lab-10-username
 ```
 
-- What do you notice? Run several times to confirm that the shell script runs correctly for all mark (grade) categories.
+10. Pull your changes into your **Ubuntu VM**
+
+```bash
+git pull
+```
+
+11. Run your script and observe the output.
+
+```bash
+./users1.bash
+```
+
+12. Did it work? Is the output the same as it was from the Codespaces terminal?
+
+## Not modified
 
 16. Issue the following to run a checking script:
 

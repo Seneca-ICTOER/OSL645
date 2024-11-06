@@ -946,8 +946,6 @@ On your **Ubuntu VM**, open a **terminal** and confirm you are in your **home** 
 cd lab-6-username
 ```
 
-- Issue a command to change into your **lab-4-username** directory.
-
 13. Pull your changes into your **Ubuntu VM**
 
 ```bash
