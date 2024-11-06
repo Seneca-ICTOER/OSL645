@@ -241,6 +241,8 @@ Confirm the contents have been written to your **lab-10-username** directory. Yo
 
 ### Writing users1.bash
 
+You are going write a bash script to define an array of usernames, and print the usernames one at a time.
+
 1. In GitHub Codespaces, open the template for the Bash shell script called **users1.bash**
 2. Edit _users1.bash_ file to contain the following:
 
@@ -323,6 +325,8 @@ git pull
 12. Did it work? Is the output the same as it was from the Codespaces terminal?
 
 ### Writing users2.bash
+
+You are going write a bash script to populate an array of usernames from a csv file using command substitution, and print the usernames one at a time.
 
 1. In GitHub Codespaces, open the template for the Bash shell script called **users2.bash**
 2. Edit _users2.bash_ file to contain the following:
@@ -431,7 +435,9 @@ The _exit_ command can contain return a _value_ to provide the **exit status** o
 
 ### Writing users3.bash
 
-1. In GitHub Codespaces, open the template for the Bash shell script called **users2.bash**
+You are going write a bash script to populate an associative array of usernames from a csv file which has been provided by the user as a command line argument. You will then print the usernames, full name and email one at a time separated into columns with appropriate headings.
+
+1. In GitHub Codespaces, open the template for the Bash shell script called **users3.bash**
 2. Edit _users3.bash_ file to contain the following:
 
 ```bash
@@ -498,11 +504,51 @@ for key in "${!userInfo[@]}"; do
 done
 ```
 
-3. Issue the **chmod** command to add **execute permission** for the **user** the **users1.bash** file.
+3. Issue the **chmod** command to add **execute permission** for the **user** the **users3.bash** file.
 
 4. Save your editing changes, stage and commit your changes to GitHub.
 
-5. Using the **terminal in Codespaces** issue the following to run the users1.bash:
+5. Using the **terminal in Codespaces** issue the following to run the users3.bash (without arguments):
+
+```bash
+./users3.bash
+```
+
+- What did you notice?
+- Since there are no arguments, the test within the running shell script returns FALSE, then an **error message** with feedback of how to properly issue the shell script with an argument and then **terminates** the Bash shell script.
+- Notice that the **$0** positional parameter displays the **name** of the currently running shell script in the USAGE message. This is useful in case you decide to **change** the _name_ of the shell script at a later time.
+- The symbol **\>&2** redirects **standard output** from the USAGE message to **standard error** making like a real error message.
+- This "_neat redirection trick_" will NOT be considered for evaluation for this coverage.
+
+6. Issue the following Linux command:
+
+```bash
+echo $?
+```
+
+- What does this **exit status** from the previously issued command indicate?
+
+7. Issue the following command (with two arguments and redirecting stderr to a file):
+
+```bash
+./users3.bash users.csv 2> error.txt
+```
+
+- What did you notice this time?
+
+8. Issue the following Linux command:
+
+```bash
+echo $?
+```
+
+9. Issue the following Linux command to confirm that stderr was redirected to a file:
+
+```bash
+cat error.txt
+```
+
+10. Using the **terminal in Codespaces** issue the following to run the users3.bash:
 
 ```bash
 ./users3.bash userinfo.csv
@@ -520,109 +566,67 @@ srogers       Steve Rogers        captainamerica@avengers.org
 nromanoff     Natasha Romanoff    blackwidow@avengers.org
 ```
 
-6. Run the Python check script in GitHub Codespaces to check your work before you commit it.
+11. Run the Python check script in GitHub Codespaces to check your work before you commit it.
 
 ```bash
 ./users3_test.py
 ```
 
-7. Check the exit status code. If it shows 0, it is successful.
+12. Check the exit status code. If it shows 0, it is successful.
 
 ```bash
 echo $?
 ```
 
-8. Save your changes. Stage and commit your changes to GitHub.
+13. Save your changes. Stage and commit your changes to GitHub.
 
 On your **Ubuntu VM**, open a **terminal** and confirm you are in your **home** directory.
 
-9. Issue the following Linux command to change to the local clone of your GitHub repository.
+14. Issue the following Linux command to change to the local clone of your GitHub repository.
 
 ```bash
 cd lab-10-username
 ```
 
-10. Pull your changes into your **Ubuntu VM**
+15. Pull your changes into your **Ubuntu VM**
 
 ```bash
 git pull
 ```
 
-11. Run your script and observe the output.
+16. Run your script and observe the output.
 
 ```bash
 ./users3.bash userinfo.csv
 ```
 
-12. Did it work? Is the output the same as it was from the Codespaces terminal?
+17. Did it work? Is the output the same as it was from the Codespaces terminal?
 
 In the next investigation, you will learn to use the **exit** statement to **terminate the execution of a shell script** if not run with the properly number of arguments and use the **break** statement that will **terminate a loop** but NOT terminate the running of the shell script.
 
-### Part 1: The exit Statement - Move this to users3.bash
+### Check script needs to be modified
 
-7. Issue the following command (without arguments):
-
-```bash
-./exit.bash
-```
-
-- What did you notice?
-- Since there are no arguments, the test within the running shell script returns FALSE, then an **error message** with feedback of how to properly issue the shell script with an argument and then **terminates** the Bash shell script.
-- Notice that the **$0** positional parameter displays the **name** of the currently running shell script in the USAGE message. This is useful in case you decide to **change** the _name_ of the shell script at a later time.
-- The symbol **\>&2** redirects **standard output** from the USAGE message to **standard error** making like a real error message.
-- This "_neat redirection trick_" will NOT be considered for evaluation for this coverage.
-
-8. Issue the following Linux command:
-
-```bash
-echo $?
-```
-
-- What does this **exit status** from the previously issued command indicate?
-
-9. Issue the following command (with an argument):
-
-```bash
-./exit.bash uli101
-```
-
-- What did you notice this time?
-
-10. Issue the following Linux command:
-
-```bash
-echo $?
-```
-
-- What does this **exit status** from the previously issued command indicate?
-
-11. Issue the following command (with two arguments and redirecting stderr to a file):
-
-```bash
-./exit.bash uli101 Linux 2> error.txt
-```
-
-- What did you notice this time?
-
-12. Issue the following Linux command:
-
-```bash
-echo $?
-```
-
-13. Issue the following Linux command to confirm that stderr was redirected to a file:
-
-```bash
-cat error.txt
-```
-
-13. Issue the following to run a checking script:
+18. Issue the following to run a checking script:
 
 ```bash
 ~ops145/t9-check-3
 ```
 
-14. If you encounter errors, make corrections and **re-run** the checking script until you receive a congratulations message, then you can proceed.
+19. If you encounter errors, make corrections and **re-run** the checking script until you receive a congratulations message, then you can proceed.
+
+## Investigation 3: Converting images from the command line with a script
+
+### The following introduction needs editing
+
+I thought I’d share a couple commands and short scripts I’ve written which have shown me time and again the true power of the linux command line. Lets start with the first one, just a quick sample. As you may or may not be aware while reading this, there’s all kinds of built-in functionality — like the ability to convert images with a simple command. The syntax is as follows:
+
+```bash
+convert sourcefilename.bmp destinationfilename.jpg
+```
+
+We’ve all experienced the frustration of having a bunch of pictures in one format and wanting to convert them over to another. There’s a built-in Linux command that will allow you to do this from a command line, with the syntax convert example.png example.jpg. With just these few small lines of code you can really harness it’s power.
+
+By storing the contents of the directory in an array (using sed to remove the file extension), and calling convert inside for loop referencing the array we can with a simple execution convert the entire contents of the directory by calling the script in a few seconds (longer depending on the number of files in the directory). As far as I know convert supports all image file types, and I’ve personally used it with .png, .jpg, .bmp. Just change the file extensions in the loop as needed, and don’t forget to change the arguments for grep and sed.
 
 In the next investigation, we will learn to create / modify **startup files** to customize your Linux shell environment.
 
