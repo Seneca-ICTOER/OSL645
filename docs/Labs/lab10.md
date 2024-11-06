@@ -409,6 +409,20 @@ git pull
 
 12. Did it work? Is the output the same as it was from the Codespaces terminal?
 
+### Check script needs to be modified
+
+16. Issue the following to run a checking script:
+
+```bash
+~ops145/t9-check-1
+```
+
+17. If you encounter errors, make corrections and **re-run** the checking script until you receive a congratulations message, then you can proceed.
+
+In the next investigation, you will learn more about the **for** loop and **error-checking.**
+
+## Investigation 2: Logic Within Loops and exit statements
+
 ### Writing users3.bash
 
 1. In GitHub Codespaces, open the template for the Bash shell script called **users2.bash**
@@ -535,22 +549,6 @@ git pull
 ```
 
 12. Did it work? Is the output the same as it was from the Codespaces terminal?
-
-### Left off here
-
-16. Issue the following to run a checking script:
-
-```bash
-~ops145/t9-check-1
-```
-
-17. If you encounter errors, make corrections and **re-run** the checking script until you receive a congratulations message, then you can proceed.
-
-In the next investigation, you will learn more about the **for** loop and **error-checking.**
-
-## Investigation 2: Logic Within Loops and exit statements
-
-### users3.bash
 
 In this investigation, you will learn more about the **for** loop and **error-checking**.
 
