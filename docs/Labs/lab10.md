@@ -12,7 +12,7 @@ description: Lab 10 for Students to Learn Shell Scripting
 ## Main Objectives
 
 - Use **if-elif-else** control flow statements in a shell script.
-- Use a **for** loop control using a list with **command substitution**.
+- Use a **for** loop control using a list with **command substitution** and **arrays**.
 - Use a **while** loop in a shell script.
 - Use **getopts** to parse command line options.
 - Use the **exit** statement in a shell script.
@@ -242,7 +242,7 @@ Confirm the contents have been written to your **lab-10-username** directory. Yo
 ### Writing users1.bash
 
 1. In GitHub Codespaces, open the template for the Bash shell script called **users1.bash**
-2. Edit _user-variables.bash_ file to contain the following:
+2. Edit _users1.bash_ file to contain the following:
 
 ```bash
 #!/bin/bash
@@ -323,6 +323,220 @@ git pull
 12. Did it work? Is the output the same as it was from the Codespaces terminal?
 
 ### Writing users2.bash
+
+1. In GitHub Codespaces, open the template for the Bash shell script called **users2.bash**
+2. Edit _users2.bash_ file to contain the following:
+
+```bash
+#!/bin/bash
+# Author:
+# Date:
+# Purpose: To populate the array users from the file userinfo.csv, and print a list of users, one user at a time.
+# Usage: ./users2.bash
+#
+
+# Populate the array users with usernames from the file userinfo.csv
+users=($(cat userinfo.csv | cut -d"," -f1))
+
+# Print a heading
+echo "Username"
+
+# For each username in the array users
+for user in "${users[@]}"; do
+
+    # Use echo to display the username
+    echo "$user"
+
+# End for
+done
+```
+
+3. Issue the **chmod** command to add **execute permission** for the **user** the **users1.bash** file.
+
+4. Save your editing changes, stage and commit your changes to GitHub.
+
+5. Using the **terminal in Codespaces** issue the following to run the users1.bash:
+
+```bash
+./users2.bash
+```
+
+- What did you notice?
+
+```bash
+> ./users2.bash
+Username
+tstark
+bbanner
+thor
+srogers
+nromanoff
+```
+
+6. Run the Python check script in GitHub Codespaces to check your work before you commit it.
+
+```bash
+./users2_test.py
+```
+
+7. Check the exit status code. If it shows 0, it is successful.
+
+```bash
+echo $?
+```
+
+8. Save your changes. Stage and commit your changes to GitHub.
+
+On your **Ubuntu VM**, open a **terminal** and confirm you are in your **home** directory.
+
+9. Issue the following Linux command to change to the local clone of your GitHub repository.
+
+```bash
+cd lab-10-username
+```
+
+10. Pull your changes into your **Ubuntu VM**
+
+```bash
+git pull
+```
+
+11. Run your script and observe the output.
+
+```bash
+./users2.bash
+```
+
+12. Did it work? Is the output the same as it was from the Codespaces terminal?
+
+### Writing users3.bash
+
+1. In GitHub Codespaces, open the template for the Bash shell script called **users2.bash**
+2. Edit _users3.bash_ file to contain the following:
+
+```bash
+#!/bin/bash
+# Author:
+# Date:
+# Purpose: To populate the array users from a file specified by the user as a command line argument, and print a list of users, one user at a time.
+# Usage: ./users3.bash <filename>
+#
+# Error Codes:
+#   1 - Incorrect number of command line arguments
+#   2 - File does not exist
+
+# If the number of command line arguments is not equal to 1
+if [[ $# -ne 1 ]]; then
+
+    # Use echo to display a message indicating the correct usage of the script
+    echo "Usage: ./users3.bash <filename>"
+
+    # Exit the script with an exit status of 1
+    exit 1
+
+# End if
+fi
+
+# If the file specified does not exist
+if [[ ! -f $1 ]]; then
+
+    # Use echo to display a message indicating that the file does not exist
+    echo "The file $1 does not exist."
+
+    # Exit the script with an exit status of 2
+    exit 2
+
+# End if
+fi
+
+# Declare associative array userInfo
+declare -A userInfo
+
+# Read the file line by line and populate the associative array userInfo
+while IFS=, read -r user name email; do
+    userInfo["$user,name"]="$name"
+    userInfo["$user,email"]="$email"
+done < "$1"
+
+# Print a heading
+printf "%-9s\t%-20s%-10s\n" "Username" "Full Name" "Email"
+
+# For each user in the associative array, print the username, full name, and email
+for key in "${!userInfo[@]}"; do
+
+    # If the key contains ",name", then
+    if [[ $key == *",name" ]]; then
+        user=${key%,*}
+
+        # Use printf to display the username, full name, and email separated by a tab
+        printf "%-9s\t%-20s%-10s\n" "$user" "${userInfo[$user,name]}" "${userInfo[$user,email]}"
+
+    # End if
+    fi
+
+# End for
+done
+```
+
+3. Issue the **chmod** command to add **execute permission** for the **user** the **users1.bash** file.
+
+4. Save your editing changes, stage and commit your changes to GitHub.
+
+5. Using the **terminal in Codespaces** issue the following to run the users1.bash:
+
+```bash
+./users3.bash userinfo.csv
+```
+
+- What did you notice?
+
+```bash
+> ./users3.bash userinfo.csv
+Username      Full Name           Email
+tstark        Tony Stark          ironman@avengers.org
+bbanner       Bruce Banner        hulk@avengers.org
+thor          Thor Odinson        thor@avengers.org
+srogers       Steve Rogers        captainamerica@avengers.org
+nromanoff     Natasha Romanoff    blackwidow@avengers.org
+```
+
+6. Run the Python check script in GitHub Codespaces to check your work before you commit it.
+
+```bash
+./users3_test.py
+```
+
+7. Check the exit status code. If it shows 0, it is successful.
+
+```bash
+echo $?
+```
+
+8. Save your changes. Stage and commit your changes to GitHub.
+
+On your **Ubuntu VM**, open a **terminal** and confirm you are in your **home** directory.
+
+9. Issue the following Linux command to change to the local clone of your GitHub repository.
+
+```bash
+cd lab-10-username
+```
+
+10. Pull your changes into your **Ubuntu VM**
+
+```bash
+git pull
+```
+
+11. Run your script and observe the output.
+
+```bash
+./users3.bash userinfo.csv
+```
+
+12. Did it work? Is the output the same as it was from the Codespaces terminal?
+
+### Left off here
 
 16. Issue the following to run a checking script:
 
