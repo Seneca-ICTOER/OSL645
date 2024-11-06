@@ -190,11 +190,11 @@ User-specific config start-up files are in the user's home directory:
 
 There is a file that **resets or restores the shell environment** (including shut-down of programs running in the shell) when the user logs out of their shell. User-specific logout start-up files are in the user's home directory: **~/.bash_logout**
 
-## Investigation 1: Additional Logic Statements
+## Investigation 1: Additional Looping Statements
 
 **ATTENTION: This lab must be graded by the end of your classes in Week 13 to obtain a grade of 2% towards this course.**
 
-In this investigation, you will learn additional control-flow statements to allow your shell scripts to be even **more adaptable**.
+In this investigation, you will learn additional loop statements to allow your shell scripts to be **more efficient**.
 
 **Perform the Following Steps:**
 
@@ -322,7 +322,7 @@ git pull
 
 12. Did it work? Is the output the same as it was from the Codespaces terminal?
 
-## Not modified
+### Writing users2.bash
 
 16. Issue the following to run a checking script:
 
@@ -332,11 +332,17 @@ git pull
 
 17. If you encounter errors, make corrections and **re-run** the checking script until you receive a congratulations message, then you can proceed.
 
-In the next investigation, you will learn more about the **for** loop and learn how to use the **while** loop for **error-checking.**
+In the next investigation, you will learn more about the **for** loop and **error-checking.**
 
-## Investigation 2: Additional Looping Statements
+## Investigation 2: Logic Within Loops and exit statements
 
-In this investigation, you will learn more about the **for** loop and learn how to use the **while** loop for **error-checking**.
+### users3.bash
+
+In this investigation, you will learn more about the **for** loop and **error-checking**.
+
+The **exit** statement is used to terminate a shell script. This statement is very useful when combined with logic in a shell script to display an **error message** if the command was **improperly executed** and **terminate** the running of the shell script.
+
+The _exit_ command can contain return a _value_ to provide the **exit status** of your shell script (i.e. TRUE or FALSE value).
 
 **Perform the Following Steps:**
 
@@ -584,37 +590,8 @@ echo $product
 
 In the next investigation, you will learn to use the **exit** statement to **terminate the execution of a shell script** if not run with the properly number of arguments and use the **break** statement that will **terminate a loop** but NOT terminate the running of the shell script.
 
-## Investigation 3: exit and break Statements
+### Part 1: The exit Statement - Move this to users3.bash
 
-In this investigation, you will learn to use the **exit** and **break** statements in your shell scripts.
-
-### Part 1: The exit Statement
-
-The **exit** statement is used to terminate a shell script. This statement is very useful when combined with logic in a shell script to display an **error message** if the command was **improperly executed** and **terminate** the running of the shell script.
-
-The _exit_ command can contain return a _value_ to provide the **exit status** of your shell script (i.e. TRUE or FALSE value).
-
-**Perform the Following Steps:**
-
-1. Make certain that you are logged into matrix account.
-2. Confirm that you are currently located in the **advanced** directory.
-3. Use a text editor like vi or nano to create the text file called **exit.bash** (eg. `vi exit.bash`)
-4. Enter the following lines in the exit.bash shell script:
-
-```bash
-#!/bin/bash
-
-if [ $# -ne 1 ]
-then
-  echo "USAGE: $0 [arg]" >&2
-  exit 1
-fi
-
-echo "The argument is: $1"
-```
-
-5. Save your editing session and exit the text editor (eg. with vi: press **ESC**, then type **:x** followed by **ENTER**).
-6. **Add execute permissions** for this Bash shell script.
 7. Issue the following command (without arguments):
 
 ```bash
@@ -670,76 +647,6 @@ echo $?
 ```bash
 cat error.txt
 ```
-
-### Part 2: The break Statement
-
-The **break** statement is used to **terminate** a **loop** without terminating the running shell script.
-
-**Perform the Following Steps:**
-
-1. Make certain that you are logged into matrix account.
-2. Confirm that you are currently located in the **advanced** directory.
-3. Use a text editor like vi or nano to create the text file called **break-1.bash** (eg. `vi break-1.bash`)
-4. Enter the following lines in the **break-1.bash** shell script:
-
-```bash
-#!/bin/bash
-
-read -p "Enter an integer: " number
-
-while ! echo $number | egrep "^[0-9]{1,}$" > /dev/null 2> /dev/null || [ $number -ne 5 ] 2> /dev/null
-do
-  if [ $number -eq 5 ] 2> /dev/null
-  then
-     break
-  fi
-  read -p "Try again. Enter a valid integer: " number
-done
-
-echo "The number is: $number"
-```
-
-5. Save your editing session and exit the text editor (eg. with vi: press **ESC**, then type **:x** followed by **ENTER**).
-6. **Add execute permissions** for this Bash shell script.
-7. Issue the following command (without arguments):
-
-```bash
-./break-1.bash
-```
-
-- When prompted, enter several **invalid** and **valid** integers. Then enter **valid integers** NOT containing the value of **5**. Finally, enter the integer with the value of **5**.
-- What happens?
-- Let's use the **break** statement with the **for** loop.
-
-8. Use a text editor like vi or nano to create the text file called **break-2.bash** (eg. `vi break-2.bash`)
-9. Enter the following lines in the **break-2.bash** shell script:
-
-```bash
-#!/bin/bash
-
-for x
-do
-
-  if [ $x = "uli101" ]
-  then
-     break
-  fi
-  echo "Argument is: $x"
-done
-
-echo
-echo "Shell script has been completed"
-```
-
-10. Save your editing session and exit the text editor (eg. with vi: press **ESC**, then type **:x** followed by **ENTER**).
-11. **Add execute permissions** for this Bash shell script.
-12. Issue the following command (with arguments):
-
-```bash
-./break-2.bash hwd101 ipc144 uli101 apc100
-```
-
-- What do you notice? How come **uli101** and **apc100** are NOT displayed but a message appeared at the end of the script that the script completed?
 
 13. Issue the following to run a checking script:
 
