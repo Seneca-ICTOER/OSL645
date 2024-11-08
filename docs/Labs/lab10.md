@@ -176,6 +176,27 @@ for user in "${users[@]}"; do
 done
 ```
 
+### Associative arrays
+
+Associative arrays are a type of array that allows you to use arbitrary strings as keys instead of just indexed numbers. This feature is available in Bash version 4.0 and later. Associative arrays are declared using the `declare -A` syntax. You can add, retrieve, and delete elements using the keys. They are particularly useful for creating mappings or dictionaries where you need to associate specific keys with corresponding values, like a list of users and their information. To use an associative array you must first declare it.
+
+```bash
+# Declare the associative array userInfo
+declare -A userInfo
+```
+
+Next you can populate the associative array with keys and values. You can do this manually, as demonstrated below. Alternatively you can read the information in from a file. This is what you will do later in the lab.
+
+```bash
+# Populate the associative array usersInfo using the username as the key, user's full name and email address as the values
+declare -A usersInfo
+usersInfo["tstark"]="Tony Stark,ironman@avengers.org"
+usersInfo["bbanner"]="Bruce Banner,hulk@avengers.org"
+usersInfo["thor"]="Thor Odinson,thor@avengers.org"
+usersInfo["srogers"]="Steve Rogers,captainamerica@avengers.org"
+usersInfo["nromanoff"]="Natasha Romanoff,blackwidow@avengers.org"
+```
+
 ### Exit Statements
 
 **exit Statement**
@@ -907,8 +928,134 @@ done
 
 ### Checking if the provided file name exists
 
-16. Save, set permissions, and then run that shell script for the input text file **user-data.txt**. Did it work? Try running the script without an argument - What did it do?
-17. You have completed lab4. Proceed to Completing The Lab, and follow the instructions for "lab sign-off".
+Any time you accept input from a user you need to validate it. Even if that user is you. That is because users can make mistakes. Your script should provide an appropriate error message and exit accordingly. Add the following code to exit indicating an error if the file doesn't exist.
+
+```bash
+# If the file specified does not exist
+if [[ ! -f $filename ]]; then
+
+    # Use echo to display a message indicating that the file does not exist
+    echo "The file $filename does not exist."
+
+    # Exit the script with an exit status of 4
+    exit 4
+
+# End if
+fi
+```
+
+### Populating an associative array from a file
+
+The file **userinfo.csv** is a csv (comma separated value) file containing a list of usernames, their full name and email. You can use a **while loop** to read the data into your script and an **associative array** to store it for processing later in the script. By using an associative array, the code can efficiently store and retrieve user information based on unique user identifiers, making it easier to manage and access user data. Add the following code to declare the associative array userInfo and populate it with the data found in the userinfo.csv file, which was provided to your script as a command line argument.
+
+```bash
+# Declare associative array userInfo
+declare -A userInfo
+
+# Read the file line by line and populate the associative array userInfo
+while IFS=, read -r user name email; do
+    userInfo["$user,name"]="$name"
+    userInfo["$user,email"]="$email"
+done < "$filename"
+```
+
+### Adding users to the system using a for loop
+
+Now that the script has read in the data from the provided csv file and stored it in an associative array, you need to loop through the array. You will use a for loop to loop through the array and:
+
+- Generate a unique password for each user
+- Add the user to the system
+- Display the users information on the screen
+
+Once the users have been added, print a message on the screen indicating the operation has been completed. Add the following code to achieve this.
+
+```bash
+# For each user in the associative array, generate a random password, add the user and print the user's information on the screen
+for key in "${!userInfo[@]}"; do
+
+    # If the key contains ",name", then
+    if [[ $key == *",name" ]]; then
+        user=${key%,*}
+
+        # Generate a random password
+        password=$(openssl rand -base64 12)
+
+        # Create the user
+        useradd -c "${userInfo[$user,name]}" -m $user -p $password
+
+        # Print the username, full name, email, and password using a here document
+        cat << EOF
+        Account Information:
+            Username: $user
+            Full Name: ${userInfo[$user,name]}
+            Email: ${userInfo[$user,email]}
+            Password: $password
+
+EOF
+    # End if
+    fi
+
+# End for
+done
+
+# Display a completion message indicating the accounts have been created
+echo "Accounts have been created."
+```
+
+1. Issue the **chmod** command to add **execute permission** for the **user** the **createusers.bash** file.
+
+2. Save your editing changes, stage and commit your changes to GitHub.
+
+3. Using the **terminal in Codespaces** issue the following to run the createusers.bash script (without arguments):
+
+```bash
+./createusers.bash
+```
+
+- Did your error checking work?
+
+4. Re-issue the command with the proper arguments:
+
+```bash
+./createusers.bash -i userinfo.csv
+```
+
+- What happened?
+- Were the users added in Codespaces?
+
+5. Issue the following command: `ls -l /home`. What does the output indicate?
+
+6. Save your changes. Stage and commit your changes to GitHub.
+
+On your **Ubuntu VM**, open a **terminal** and confirm you are in your **home** directory.
+
+7. Issue the following Linux command to change to the local clone of your GitHub repository.
+
+```bash
+cd lab-10-username
+```
+
+8. Pull your changes into your **Ubuntu VM**
+
+```bash
+git pull
+```
+
+9. Run your script and observe the output.
+
+```bash
+./createusers.bash -i userinfo.csv
+```
+
+10. Did it work? Is the output the same as it was from the Codespaces terminal?
+
+11. Issue the following to run a checking script:
+
+```bash
+t9-check-3
+```
+
+12. If you encounter errors, make corrections and **re-run** the checking script until you receive a congratulations message, then you can proceed.
 
 **Answer INVESTIGATION 5 observations / questions in your lab log book.**
 
