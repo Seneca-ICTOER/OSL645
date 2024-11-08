@@ -11,14 +11,13 @@ description: Lab 10 for Students to Learn Shell Scripting
 
 ## Main Objectives
 
+- Explain how to configure and use a **.bashrc** start-up file.
 - Use **if-elif-else** control flow statements in a shell script.
 - Use a **for** loop control using a list with **command substitution** and **arrays**.
 - Use a **while** loop in a shell script.
 - Use **getopts** to parse command line options.
 - Use the **exit** statement in a shell script.
 - Use **arrays** and **associative arrays** in a shell script.
-- Create users using a shell script
-- Explain how to configure and use a **.bashrc** start-up file.
 - Create a bash shell script to **generate multiple user accounts** from a comma separated value (.csv) file.
 
 ## Lab Reference Material
