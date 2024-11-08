@@ -26,23 +26,39 @@ description: Lab 10 for Students to Learn Shell Scripting
 
 - Week 11 Lecture 1 Notes: [Web](https://docs.google.com/presentation/d/e/2PACX-1vSnPxo_nwm38hMAUTHkwS7cQhuJWPDmN7Zm4UFd87_PTRV3nr6jvqteO_rlO1-Umgy0P8PPrYL9o0gG/pub?start=false&loop=false&delayms=3000)
 
+**Startup Files:**
+
+- [Purpose](https://www.gnu.org/software/bash/manual/html_node/Bash-Startup-Files.html)
+- [Examples](http://www.linuxfromscratch.org/blfs/view/svn/postlfs/profile.html)
+
 **Control Flow Statements:**
 
 - [if-elif-else](https://www.tutorialspoint.com/unix/if-else-statement.htm)
 - [for Loop](https://www.cyberciti.biz/faq/bash-for-loop/#:~:text=A%20'for%20loop'%20is%20a,files%20using%20a%20for%20loop.)
 - [while Loop](https://bash.cyberciti.biz/guide/While_loop)
 - [Arrays](https://www.tutorialspoint.com/unix/unix-using-arrays.htm)
+- [Associative Arrays](https://phoenixnap.com/kb/bash-associative-array#ftoc-heading-3)
 
 **Additional Statements:**
 
 - [exit](https://www.geeksforgeeks.org/exit-command-in-linux-with-examples/#:~:text=exit%20command%20in%20linux%20is,last%20command%20that%20is%20executed.&text=After%20pressing%20enter%2C%20the%20terminal%20will%20simply%20close.)
 
-**Startup Files:**
-
-- [Purpose](https://www.gnu.org/software/bash/manual/html_node/Bash-Startup-Files.html)
-- [Examples](http://www.linuxfromscratch.org/blfs/view/svn/postlfs/profile.html)
-
 ## Key Concepts
+
+### Start-Up Files
+
+**Shell configuration (start-up) files** are **scripts** that are run when you log in, log out, or start a new shell. The start-up files can be used, for example, to **set the prompt and screen display**, **create local variables**, or create temporary Linux commands (**aliases**)
+
+The **/etc/profile** file belongs to the root user and is the first start-up file that executes when you log in, regardless of shell.
+
+User-specific config start-up files are in the user's home directory:
+
+- **~/.bash_profile** runs when you log in.
+- The **~/.bashrc** runs when you start an interactive Bash shell.
+
+**Logout Files**
+
+There is a file that **resets or restores the shell environment** (including shut-down of programs running in the shell) when the user logs out of their shell. User-specific logout start-up files are in the user's home directory: **~/.bash_logout**
 
 ### if-elif-else Statement
 
@@ -175,24 +191,87 @@ if [[ $# -ne 1 ]]; then
 fi
 ```
 
-### Start-Up Files
-
-**Shell configuration (start-up) files** are **scripts** that are run when you log in, log out, or start a new shell. The start-up files can be used, for example, to **set the prompt and screen display**, **create local variables**, or create temporary Linux commands (**aliases**)
-
-The **/etc/profile** file belongs to the root user and is the first start-up file that executes when you log in, regardless of shell.
-
-User-specific config start-up files are in the user's home directory:
-
-- **~/.bash_profile** runs when you log in.
-- The **~/.bashrc** runs when you start an interactive Bash shell.
-
-**Logout Files**
-
-There is a file that **resets or restores the shell environment** (including shut-down of programs running in the shell) when the user logs out of their shell. User-specific logout start-up files are in the user's home directory: **~/.bash_logout**
-
-## Investigation 1: Additional Looping Statements
+## Investigation 1: Using Start-Up Files
 
 **ATTENTION: This lab must be graded by the end of your classes in Week 13 to obtain a grade of 2% towards this course.**
+
+In this investigation, you will learn how to **customize** your **Bash Linux shell environment** by creating and testing a **start-up** file.
+
+**Perform the Following Steps:**
+
+1. Launch your Ubuntu **VM**.
+2. Open the terminaln application.
+3. Issue a Linux command to change to your **home** directory.
+4. Issue a Linux command to confirm you are located in the **home** directory.
+5. Use the **more** command to view the contents of the **default start-up** file called **/etc/profile**
+
+   - This file contains the **default settings** when you open your Bourne shell (eg. if issuing the command **sh**).
+
+6. Use the **more** command to view the contents of the start-up file called **/etc/bashrc**
+
+   - This file contains the **default settings** when you **open your Bash shell** (eg. if issuing the command **bash**).
+   - Since we are using the **Bash shell** by default, let's create a **customized Bash start-up file**.
+   - This startup file is located in your **home** directory using the name "**.bash_profile**"
+   - Let's move your **.bash_profile** file to prevent **accidental overwrite**.
+
+7. Issue the following linux command:
+
+```bash
+mv ~/.bash_profile ~/.bash_profile.bk
+```
+
+- If you experience an error message "_No such file or directory_", just ignore this command since there is no **~/.bash_profile** file in your home directory.
+
+8. Use a text editor like vi or nano to create the text file called **~/.bash_profile** (eg. `vi ~/.bash_profile`)
+
+   - If you are using the nano text editor, refer to notes on text editing in a previous week in the course schedule.
+
+9. Enter the following lines in your shell script (the symbol "\[" is the open square bracket symbol):
+
+```bash
+clear
+echo -e -n "\e[0;34m"
+echo "Last Time Logged in (for security):"
+echo
+lastlog -u $USER
+echo
+echo -e -n "\e[m"
+```
+
+- **NOTE:** You will notice there is **NO she-bang line** since this is a **start-up** file.
+
+10. Save your editing session and exit the text editor (eg. with vi: press **ESC**, then type **:x** followed by **ENTER**).
+
+- You can test run the startup file without exiting and re-entering your Bash shell environment. Issue the following:
+
+```bash
+. ~/.bash_profile
+```
+
+- What do you notice?
+
+11. **Exit** your current Bash shell session.
+12. **Login** again to your matrix account.
+
+- Did you start-up file customize your Bash shell environment with colours?
+- **NOTE:** This is where you can make your Linux shell environment values **persistent** (i.e. saved regardless of exit and login to your Bash Shell such as **aliases**, **umask**, etc.).
+
+13. Issue the following linux command to **restore** your previous settings for your bashrc startup file:
+
+```bash
+mv ~/.bash_profile.bk ~/.bash_profile
+```
+
+- If you experience an error message "_No such file or directory_", just ignore.
+
+14. **Exit** your current Bash shell session.
+15. **Login** again to your matrix account.
+
+    - What did you notice this time?
+
+**Answer INVESTIGATION 1 observations / questions in your lab log book.**
+
+## Investigation 2: Additional Looping Statements
 
 In this investigation, you will learn additional loop statements to allow your shell scripts to be **more efficient**.
 
@@ -418,14 +497,16 @@ git pull
 16. Issue the following to run a checking script:
 
 ```bash
-~ops145/t9-check-1
+t9-check-1
 ```
 
 17. If you encounter errors, make corrections and **re-run** the checking script until you receive a congratulations message, then you can proceed.
 
 In the next investigation, you will learn more about the **for** loop and **error-checking.**
 
-## Investigation 2: Logic Within Loops and exit statements
+**Answer INVESTIGATION 2 observations / questions in your lab log book.**
+
+## Investigation 3: Logic Within Loops and exit statements
 
 In this investigation, you will learn more about the **for** loop and **error-checking**.
 
@@ -602,19 +683,21 @@ git pull
 
 17. Did it work? Is the output the same as it was from the Codespaces terminal?
 
-In the next investigation, you will learn to use the **exit** statement to **terminate the execution of a shell script** if not run with the properly number of arguments and use the **break** statement that will **terminate a loop** but NOT terminate the running of the shell script.
+In the next investigation, you will learn to use the **exit** statement to **terminate the execution of a shell script** if not run with the properly number of arguments.
 
 ### Check script needs to be modified
 
 18. Issue the following to run a checking script:
 
 ```bash
-~ops145/t9-check-3
+t9-check-3
 ```
 
 19. If you encounter errors, make corrections and **re-run** the checking script until you receive a congratulations message, then you can proceed.
 
-## Investigation 3: Converting images from the command line with a script
+**Answer INVESTIGATION 3 observations / questions in your lab log book.**
+
+## Investigation 4: Converting images from the command line with a script
 
 The `convert` command is a powerful tool in the Linux command line that allows you to convert images from one format to another with ease. This command is part of the ImageMagick suite, which provides a robust set of tools for image manipulation. The basic syntax for converting an image is:
 
@@ -714,194 +797,115 @@ git pull
 
 In the next investigation, we will learn to create / modify **startup files** to customize your Linux shell environment.
 
-## Investigation 4: Using Start-Up Files
+In the next investigation, you will learn how to parse command line options using getopts and a case statement; and write a Bash script to automate adding users to the system.
 
-In this investigation, you will learn how to **customize** your **Bash Linux shell environment** by creating and testing a **start-up** file.
-
-**Perform the Following Steps:**
-
-1. Issue a Linux command to change to your **home** directory.
-2. Issue a Linux command to confirm you are located in the **home** directory.
-3. Use the **more** command to view the contents of the **default start-up** file called **/etc/profile**
-
-   - This file contains the **default settings** when you open your Bourne shell (eg. if issuing the command **sh**).
-
-4. Use the **more** command to view the contents of the start-up file called **/etc/bashrc**
-
-   - This file contains the **default settings** when you **open your Bash shell** (eg. if issuing the command **bash**).
-   - Since we are using the **Bash shell** by default, let's create a **customized Bash start-up file**.
-   - This startup file is located in your **home** directory using the name "**.bash_profile**"
-   - Let's move your **.bash_profile** file to prevent **accidental overwrite**.
-
-5. Issue the following linux command:
-
-```bash
-mv ~/.bash_profile ~/.bash_profile.bk
-```
-
-- If you experience an error message "_No such file or directory_", just ignore this command since there is no **~/.bash_profile** file in your home directory.
-
-6. Use a text editor like vi or nano to create the text file called **~/.bash_profile** (eg. `vi ~/.bash_profile`)
-
-   - If you are using the nano text editor, refer to notes on text editing in a previous week in the course schedule.
-
-7. Enter the following lines in your shell script (the symbol "\[" is the open square bracket symbol):
-
-```bash
-clear
-echo -e -n "\e[0;34m"
-echo "Last Time Logged in (for security):"
-echo
-lastlog -u $USER
-echo
-echo -e -n "\e[m"
-```
-
-- **NOTE:** You will notice there is **NO she-bang line** since this is a **start-up** file.
-
-8. Save your editing session and exit the text editor (eg. with vi: press **ESC**, then type **:x** followed by **ENTER**).
-
-   - You can test run the startup file without exiting and re-entering your Bash shell environment. Issue the following:
-
-```bash
-. ~/.bash_profile
-```
-
-- What do you notice?
-
-10. **Exit** your current Bash shell session.
-11. **Login** again to your matrix account.
-
-- Did you start-up file customize your Bash shell environment with colours?
-- **NOTE:** This is where you can make your Linux shell environment values **persistent** (i.e. saved regardless of exit and login to your Bash Shell such as **aliases**, **umask**, etc.).
-
-12. Issue the following linux command to **restore** your previous settings for your bashrc startup file:
-
-```bash
-mv ~/.bash_profile.bk ~/.bash_profile
-```
-
-- If you experience an error message "_No such file or directory_", just ignore.
-
-13. **Exit** your current Bash shell session.
-14. **Login** again to your matrix account.
-
-    - What did you notice this time?
+**Answer INVESTIGATION 5 observations / questions in your lab log book.**
 
 ## Investigation 5: User Management with bash scripting
 
-### Using getopts Function & case statement
+### Properly documenting your script
 
 We will now use shell scripting to help automate the task for a Linux administrator to create regular user accounts.
 
 **Perform the following steps:**
 
-1. You will be using your **debhost** machine for this section.
-2. Open a shell terminal, as your regular user.
-3. Change to the **~/bin** directory.
-4. Download, study, and run the following shell script. Issue the command:
-
-```bash
-wget https://raw.githubusercontent.com/osl645/debian-labs/main/user-create.bash
-```
-
-5. Try to understand what this bash script does, and then run the script using **sudo** to create just one user called **test**. After running the shell script, view the contents of the **/home** directory to confirm.
-
-Although the **zenity** command is a "user-friendly" way to run shell scripts, Linux administrators usually create shell scripts that resemble common Linux commands. In this lab, you will learn to create a shell script using the getopts function to make your shell script behave more like actual Linux commands (including the use of options). Refer to the notes section on the right-hand-side for reference about the **case** statement and the **getopts** function.
-
-6. Change to the **~/bin** directory.
-7. Use the wget command to download the input file called user-data.txt by issuing the command:
-
-```bash
-wget https://raw.githubusercontent.com/osl645/debian-labs/main/user-data.txt
-```
-
-9. View the contents on the user-data.txt file to confirm there are 3 fields (username, fullname, and e-mail address)which are separated by the colon **:** symbol.
-10. Use a text editor to create a bash script called: **createUsers.bash**` in the ~/bin directory.
-11. Enter the following text content into your text-editing session:
+1. In GitHub Codespaces, open the template for the Bash shell script called **createusers.bash**
+2. Edit the comment block in _createusers.bash_ to contain your name, email and today's date.
 
 ```bash
 #!/bin/bash
-
-# createUsers.bash
-# Purpose: Generates a batch of user accounts from a text file
+# Author:
+# Date:
+# Purpose: To populate the array users from a file specified by the user as a command line argument, and print a list of users, one user at a time.
+# Usage: ./createusers.bash <filename>
 #
-# USAGE: sudo ./createUsers.bash [-i {input-path}]
-#
-# Author: *** INSERT YOUR NAME ***
-# Date: *** CURRENT DATE ***
+# Error Codes:
+#   1 - Script must be run as root
+#   2 - Incorrect number of command line arguments
+#   3 - Invalid option provided
+#   4 - File does not exist
+```
 
-# Test for sudo
-user=$(whoami)
-if [ $user != "root" ]
-then
-    echo "You must run this script with root privileges. Please use sudo" >&2
+3. Review the list of error codes in the comment block. This is an example of how to document your script properly.
+
+### Checking to ensure the script can be successfully run
+
+You are going to use conditional logic (if statements) to test for each of the conditions listed in the comment block. Your script will exit with the indicated error code if the condition is not met.
+
+1. Enter the following code to test if the script has been run using root privileges (sudo). You will provide an error message to the user and exit with an exit status of 1 if the script has not been called with root privileges.
+
+```bash
+# If the user is not root, then
+if [[ $(whoami) != root ]]; then
+
+    # Print the error message "You must run this script with root privileges.."
+    echo "You must run this script with root privileges."
+
+    # Exit the script with the error code 1
     exit 1
-fi
 
-# Test for argument
-if [ "$#" -eq 0 ] # if no arguments after command
-then
- echo "You must enter an argument" >&2
- echo "USAGE: $0 [-i {input-path}]" >&2
- exit 2
+# End if
 fi
 ```
 
-12. Save your editing session, but remain in the text editor.
-13. The code displayed below uses the getopt function to set the input file pathname or check for invalid options or missing option text. Add the following code
+2. Since the sample usage declared in the above comment block indicates the script should be called as `./createusers.bash -i <filename>`, then the script requires a minimum of 2 arguments.
+
+Enter the following code to check if number of command line arguments is not equal to two.
 
 ```bash
-outputFlag="n"
-while getopts i: name
-do
- case $name in
-   i) inputFile=$OPTARG ;;
-   :) echo "Error: You need text after options requiring text"
-       exit 3 ;;
-   \?) echo "Error: Incorrect option"
-        exit 3 ;;
- esac
+# If the number of command line arguments is less than 2
+if [[ $# -ne 2 ]]; then
+
+    # Use echo to display a message indicating the correct usage of the script
+    echo "Usage: ./createusers.bash -i <filename>"
+
+    # Exit the script with an exit status of 2
+    exit 2
+
+# End if
+fi
+```
+
+### Using getopts Function & case statement
+
+Now that you have added logic to ensure the script can be successfully run, you need to parse command line options. You could do this using positional parameters and if statements, which you have previously learned about. However, there is a simpler way involving less code: **getopts**.
+
+Getopts is a built-in shell utility for parsing command line arguments. Getopts uses a while loop, with the arguments you want your script accept in double quotes. Any argument that accepts an additional argument (such as a file), you put a **:** behind. You can use the option **\?** as a catch all to provide an error for invalid options. Getopts uses a case statement which is like a block of if statements, except a little cleaner to read and faster to execute.
+
+Enter the following code to parse the command line options using getopts. Note the additional error checking while parsing our command line options. It is important to exit indicating an error if the user provides an option the script does not support.
+
+```bash
+# Use getopts to parse the options
+while getopts "i:" opt; do
+
+   # Use a case statement to check the value of opt
+   case $opt in
+
+       # If the value of opt is i, then
+       i)
+
+           # Set the variable filename to the value of OPTARG
+           filename=$OPTARG
+           ;;
+
+       # Else
+       \?)
+
+           # Print the error message "Invalid option: -$OPTARG"
+           echo "Invalid option: -$OPTARG"
+
+           # Exit the script with the error code 3
+           exit 3
+           ;;
+
+   # End case
+   esac
+
+# End while
 done
 ```
 
-14. Save your editing session, but remain in the text editor.
-15. The code displayed below uses logic to exit the script if the input file does not exist. Command substitution is used to store each line of the input file as a positional parameter. There is one subtle problem here: The full names of the users contain spaces which can create havoc when trying to set each line as a separate positional parameter. In this case the sed command is used to convert spaces to plus signs (+), which will be converted back later. Finally, a **for** loop is used to create each account (**useradd**) and display their account information. Add the following code:
-
-```bash
-# Test for inputFile
-if [ ! -f $inputFile ]
-then
-  echo "The file pathname \"$inputFile\" is empty or does not exist" >&2
-  exit 4
-fi
-
-# Temporarily convert spaces to + for storing lines as positional parameters
-set $(sed 's/ /+/g' $inputFile)
-
-for x
-do
-    userPassWd=$(date | md5sum | cut -d" " -f1)
-    useradd -m \
-        -c "$(echo $x | cut -d":" -f2 | sed 's/+/ /g')" \
-        -s "/bin/bash" \
-        -p $userPassWd \
-        $(echo $x | cut -d":" -f1)
-
-    cat <<+
-    Server Account Information
-    Here is your server account information:
-    servername: myserver.senecacollege.ca
-    username: $(echo $x | cut -d":" -f1)
-    password: $userPassWd
-    email: $(echo $x | cut -d":" -f3)
-
-+
-done
-
-echo -e "\n\nAccounts have been created\n\n"
-exit 0
-```
+### Checking if the provided file name exists
 
 16. Save, set permissions, and then run that shell script for the input text file **user-data.txt**. Did it work? Try running the script without an argument - What did it do?
 17. You have completed lab4. Proceed to Completing The Lab, and follow the instructions for "lab sign-off".
