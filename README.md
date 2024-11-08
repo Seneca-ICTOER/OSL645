@@ -2,9 +2,9 @@
 
 ## Introduction
 
-This course is an upgrade to **OSL640** that supersedes the content. The original content from OSL640 can be found here:
+This course is an upgrade to **OSL645** that supersedes the content. The original content from OSL645 can be found here:
 
-This is the new repo that stores the **OSL640 course content** from the CDOT Wiki (found here: https://wiki.cdot.senecacollege.ca/wiki/OSL640). This repo is also deployed to GitHub pages and can be found at this link: https://seneca-ictoer.github.io/OSL640/ .
+This is the new repo that stores the **OSL645 course content** from the CDOT Wiki (found here: https://wiki.cdot.senecacollege.ca/wiki/OSL645). This repo is also deployed to GitHub pages and can be found at this link: https://seneca-ictoer.github.io/OSL645/ .
 
 This content is live at: https://seneca-ictoer.github.io/OSL645/
 
@@ -50,11 +50,11 @@ Unedited version:
 
 **There are multiple options for these files to be edited. You can pick whichever option(s) you feel most comfortable with:**
 
-**NOTE: This is a template from the ULI101 course, BUT the way to edit the files and general structure are nearly identical. You shouldn't have any trouble navigating and modifying the OSL640 course content using the following methods.**
+**NOTE: This is a template from the ULI101 course, BUT the way to edit the files and general structure are nearly identical. You shouldn't have any trouble navigating and modifying the OSL645 course content using the following methods.**
 
 ### Option 1: Using the GitHub Repo Page
 
-Going to the GitHub repo page for this course: https://github.com/Seneca-ICTOER/OSL640 .
+Going to the GitHub repo page for this course: https://github.com/Seneca-ICTOER/OSL645 .
 
 **Follow the Steps below:**
 
@@ -78,7 +78,7 @@ Awesome!! You’ve successfully made your first edit, move on to the [Check Chan
 
 ### Option 2: Using the GitHub Codespace Web Editor
 
-Going to the GitHub repo page for this course: https://github.com/Seneca-ICTOER/OSL640 .
+Going to the GitHub repo page for this course: https://github.com/Seneca-ICTOER/OSL645 .
 
 **Follow the Steps below:**
 
@@ -132,7 +132,7 @@ Going to the GitHub repo page for this course: https://github.com/Seneca-ICTOER/
 
 - **IF YOU ARE INSIDE A FOLDER. CLOSE THE FOLDER AND REPEAT STEP 7**
 
-8. Click the “Clone Repository” button -> Click “Clone From GitHub” Popup -> Select the repo you want to clone (**Seneca-ICTOER/OSL640** in this case)
+8. Click the “Clone Repository” button -> Click “Clone From GitHub” Popup -> Select the repo you want to clone (**Seneca-ICTOER/OSL645** in this case)
 9. Select location on PC where you want to put the cloned repo.
 10. Click “Open” on the popup asking if you want to open the cloned repo.
 11. **EXTREMELY IMPORTANT**: Make sure to click the arrow circle to the right of “main” in the bottom left corner of the VS Code window to pull any new changes and have up to date files.
@@ -152,7 +152,7 @@ After you’ve made your changes, and committed and pushed them to the repo, you
 
 **Follow the Steps Below:**
 
-1. Go to the home page of the repository again: https://github.com/Seneca-ICTOER/OSL640
+1. Go to the home page of the repository again: https://github.com/Seneca-ICTOER/OSL645
 2. You should see the following screen
 
 ![GitHub Check Change](./static/img/github-check_change.png)
@@ -185,7 +185,7 @@ After you’ve made your changes, and committed and pushed them to the repo, you
 
 13. **If you did not fix the error**, repeat steps 7-12 until you do. **DO NOT** keep adding or changing any files, **except** for fixing the error. If you keep adding or changing the files, the run will keep failing and you might run into more errors which will eventually get lost and become too overwhelming to fix them all. **Make sure to fix all errors first before continuing with your modifications to the course content**.
 
-Now you should have completed your changes and passed all error checks! You can see your new updated course at the deployed page link: https://seneca-ictoer.github.io/OSL640/ .
+Now you should have completed your changes and passed all error checks! You can see your new updated course at the deployed page link: https://seneca-ictoer.github.io/OSL645/ .
 
 ## Resources
 
