@@ -616,17 +616,101 @@ In the next investigation, you will learn to use the **exit** statement to **ter
 
 ## Investigation 3: Converting images from the command line with a script
 
-### The following introduction needs editing
-
-I thought I’d share a couple commands and short scripts I’ve written which have shown me time and again the true power of the linux command line. Lets start with the first one, just a quick sample. As you may or may not be aware while reading this, there’s all kinds of built-in functionality — like the ability to convert images with a simple command. The syntax is as follows:
+The `convert` command is a powerful tool in the Linux command line that allows you to convert images from one format to another with ease. This command is part of the ImageMagick suite, which provides a robust set of tools for image manipulation. The basic syntax for converting an image is:
 
 ```bash
 convert sourcefilename.bmp destinationfilename.jpg
 ```
 
-We’ve all experienced the frustration of having a bunch of pictures in one format and wanting to convert them over to another. There’s a built-in Linux command that will allow you to do this from a command line, with the syntax convert example.png example.jpg. With just these few small lines of code you can really harness it’s power.
+For example, to convert an image from PNG to JPG format, you would use:
 
-By storing the contents of the directory in an array (using sed to remove the file extension), and calling convert inside for loop referencing the array we can with a simple execution convert the entire contents of the directory by calling the script in a few seconds (longer depending on the number of files in the directory). As far as I know convert supports all image file types, and I’ve personally used it with .png, .jpg, .bmp. Just change the file extensions in the loop as needed, and don’t forget to change the arguments for grep and sed.
+```bash
+convert example.png example.jpg
+```
+
+This command can handle a wide variety of image formats, including PNG, JPG, BMP, and many others. By leveraging the `convert` command, you can efficiently manage and transform your image files directly from the command line.
+
+```bash
+convert sourcefilename.bmp destinationfilename.jpg
+```
+
+### Writing convert.bash
+
+You are going write a bash script that:
+
+- Populates an array of image filenames using command substitution
+- Loops through the array using a for loop
+- Converts each image from a .jpg to a .png
+
+Using a bash script with an array and a for loop to convert images offers several benefits:
+
+- **Efficiency**: By storing directory contents in an array and using a for loop, you can convert all images in a directory with a single script execution.
+- **Flexibility**: The `convert` command supports various image file types (e.g., .png, .jpg, .bmp). You can easily modify the script to handle different file extensions.
+- **Simplicity**: The script simplifies the conversion process, making it easy to manage and execute, regardless of the number of files in the directory.
+
+1. In GitHub Codespaces, open the template for the Bash shell script called **convert.bash**
+2. Edit _convert.bash_ file to contain the following:
+
+```bash
+#!/bin/bash
+# Author:
+# Date:
+# Purpose: To convert all .jpg files in the current directory to .png.
+# Usage: ./convert.bash
+#
+
+# Populate the array images with all the filenames of all .jpg files in the current directory (without their extension).
+images=($(ls | grep "jpg$" | sed 's/\.jpg/ /'))
+
+# For each filename in the array images
+for file in "${images[@]}"; do
+
+    # Convert the .jpg file to a .png file
+	convert $file.jpg $file.png
+
+    # Remove the .jpg file
+	rm $i.jpg
+
+# End for
+done
+
+# Indicate that the conversion is complete
+echo "Image conversion completed."
+```
+
+3. Issue the **chmod** command to add **execute permission** for the **user** the **users3.bash** file.
+
+4. Save your editing changes, stage and commit your changes to GitHub.
+
+Since the convert command isn't available in Codespaces, we can neither test this script from the command line or run a check script in Codespaces to check the script. On your **Ubuntu VM**, open a **terminal** and confirm you are in your **home** directory.
+
+5. Issue the following Linux command to change to the local clone of your GitHub repository.
+
+```bash
+cd lab-10-username
+```
+
+6. Pull your changes into your **Ubuntu VM**
+
+```bash
+git pull
+```
+
+7. Issue the `ls` command and note the images are currently jpgs.
+
+8. Issue the file command on each of the jpgs in your directory. Note the output.
+
+9. Run your script and observe the output.
+
+```bash
+./convert.bash
+```
+
+10. Issue the `ls` command to confirm all the images in your directory were converted to pngs.
+
+11. Issue the `file` command on each of the pngs in your directory.
+
+12. Did the script work?
 
 In the next investigation, we will learn to create / modify **startup files** to customize your Linux shell environment.
 
