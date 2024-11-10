@@ -820,7 +820,7 @@ In the next investigation, we will learn to create / modify **startup files** to
 
 In the next investigation, you will learn how to parse command line options using getopts and a case statement; and write a Bash script to automate adding users to the system.
 
-**Answer INVESTIGATION 5 observations / questions in your lab log book.**
+**Answer INVESTIGATION 4 observations / questions in your lab log book.**
 
 ## Investigation 5: User Management with bash scripting
 
