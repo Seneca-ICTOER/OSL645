@@ -214,6 +214,8 @@ fi
 
 ## Investigation 1: Using Start-Up Files
 
+### Add port forwarding from host to VM
+
 **ATTENTION: This lab must be graded by the end of your classes in Week 13 to obtain a grade of 2% towards this course.**
 
 In this investigation, you will learn how to **customize** your **Bash Linux shell environment** by creating and testing a **start-up** file.
