@@ -258,6 +258,9 @@ clear
 echo -e -n "\e[m"
 
 alias clearfile="cat /dev/null >"
+
+echo "The following packages can be upgraded:"
+apt list --upgradable
 ```
 
 - **NOTE:** You will notice there is **NO she-bang line** since this is a **start-up** file.
