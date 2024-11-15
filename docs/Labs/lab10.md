@@ -253,7 +253,8 @@ mv ~/.bash_profile ~/.bash_profile.bk
 echo -e -n "\e[0;34m"
 echo "Login location info:"
 clear
-curl -s https://ipinfo.io | egrep -e "city" -e "region" -e "country" -e "timezone" -e "[[:digit:]]{1,3}\.[[:digit:]]{1,3}" | sed -e 's/"//g' -e 's/,$//g'
+echo "ip: $(curl -s https://ipinfo.io/ip)";
+curl -s https://ipinfo.io | egrep -e "city" -e "region" -e "country" -e "timezone" | sed -e 's/"//g' -e 's/,$//g'
 clear
 echo -e -n "\e[m"
 
