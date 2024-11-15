@@ -221,7 +221,7 @@ In this investigation, you will learn how to **customize** your **Bash Linux she
 **Perform the Following Steps:**
 
 1. Launch your Ubuntu **VM**.
-2. Open the terminaln application.
+2. Open the terminal application.
 3. Issue a Linux command to change to your **home** directory.
 4. Issue a Linux command to confirm you are located in the **home** directory.
 5. Use the **more** command to view the contents of the **default start-up** file called **/etc/profile**
@@ -303,9 +303,7 @@ In this investigation, you will learn additional loop statements to allow your s
 
 ### Creating your Github Repo for your Labs
 
-> **Important:** Update the link for the GitHub Classroom repository.
-
-Use the following [link](https://classroom.github.com/a/tHKAizE9) to set up your lab 10 repository, and open it in GitHub Codespaces. Refer to [Lab 4](/Labs/lab4.md) for instructions. You will be using this for the BASH scripting in lab 10.
+Use the following [link](https://classroom.github.com/a/PnXifqd8) to set up your lab 10 repository, and open it in GitHub Codespaces. Refer to [Lab 4](/Labs/lab4.md) for instructions. You will be using this for the BASH scripting in lab 10.
 
 ### Cloning your GitHub repository in your Ubuntu VM
 
@@ -325,7 +323,6 @@ Confirm the contents have been written to your **lab-10-username** directory. Yo
 - LICENSE
 - README.md
 - convert.bash
-- convert_test.py
 - createusers.bash
 - createusers_test.py
 - githublogo.jpg
