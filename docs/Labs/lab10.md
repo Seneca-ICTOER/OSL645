@@ -224,11 +224,17 @@ In this investigation, you will learn how to **customize** your **Bash Linux she
 2. Open the terminal application.
 3. Issue a Linux command to change to your **home** directory.
 4. Issue a Linux command to confirm you are located in the **home** directory.
+5. Install the curl utility:
+
+```bash
+sudo apt -y install curl
+```
+
 5. Use the **more** command to view the contents of the **default start-up** file called **/etc/profile**
 
    - This file contains the **default settings** when you open your Bourne shell (eg. if issuing the command **sh**).
 
-6. Use the **more** command to view the contents of the start-up file called **/etc/bashrc**
+6. Use the **more** command to view the contents of the start-up file called **/etc/bash.bashrc**
 
    - This file contains the **default settings** when you **open your Bash shell** (eg. if issuing the command **bash**).
    - Since we are using the **Bash shell** by default, let's create a **customized Bash start-up file**.
@@ -238,30 +244,29 @@ In this investigation, you will learn how to **customize** your **Bash Linux she
 7. Issue the following linux command:
 
 ```bash
-mv ~/.bash_profile ~/.bash_profile.bk
+mv ~/.profile ~/.profile.bk
 ```
 
 - If you experience an error message "_No such file or directory_", just ignore this command since there is no **~/.bash_profile** file in your home directory.
 
-8. Use a text editor like vi or nano to create the text file called **~/.bash_profile** (eg. `vi ~/.bash_profile`)
+8. Use a text editor like vi or nano to create the text file called **~/.profile** (eg. `vi ~/.profile`)
 
    - If you are using the nano text editor, refer to notes on text editing in a previous week in the course schedule.
 
-9. Enter the following lines in your shell script (the symbol "\[" is the open square bracket symbol):
+9. Add the following lines to the bottom of **~/.profile** (the symbol "\[" is the open square bracket symbol):
 
 ```bash
 echo -e -n "\e[0;34m"
 echo "Login location info:"
-clear
-echo "ip: $(curl -s https://ipinfo.io/ip)";
+echo
+echo "ip: $(curl -s https://ipinfo.io/ip)"
 curl -s https://ipinfo.io | egrep -e "city" -e "region" -e "country" -e "timezone" | sed -e 's/"//g' -e 's/,$//g'
-clear
+echo
 echo -e -n "\e[m"
-
-alias clearfile="cat /dev/null >"
 
 echo "The following packages can be upgraded:"
 apt list --upgradable
+alias clearfile="cat /dev/null >"
 ```
 
 - **NOTE:** You will notice there is **NO she-bang line** since this is a **start-up** file.
@@ -271,8 +276,10 @@ apt list --upgradable
 - You can test run the startup file without exiting and re-entering your Bash shell environment. Issue the following:
 
 ```bash
-. ~/.bash_profile
+. ~/profile
 ```
+
+> left off here
 
 - What do you notice?
 
