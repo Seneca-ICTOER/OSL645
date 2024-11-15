@@ -264,6 +264,7 @@ echo
 echo "ip: $(curl -s https://ipinfo.io/ip)"
 curl -s https://ipinfo.io | egrep -e "city" -e "region" -e "country" -e "timezone" | sed -e 's/"//g' -e 's/,$//g'
 echo
+lastlog -u $USER
 echo -e -n "\e[m"
 
 echo "The following packages can be upgraded:"
