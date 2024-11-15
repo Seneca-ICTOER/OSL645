@@ -257,7 +257,7 @@ mv ~/.profile ~/.profile.bk
 
 ```bash
 echo -e -n "\e[0;34m"
-echo "Login location info:"
+echo "Login information:"
 echo
 echo "ip: $(curl -s https://ipinfo.io/ip)"
 curl -s https://ipinfo.io | egrep -e "city" -e "region" -e "country" -e "timezone" | sed -e 's/"//g' -e 's/,$//g'
@@ -279,28 +279,23 @@ alias clearfile="cat /dev/null >"
 . ~/profile
 ```
 
-> left off here
-
 - What do you notice?
 
-11. **Exit** your current Bash shell session.
-12. **Login** again to your matrix account.
+11. Issue the **alias** command. Does your clearfile alias exist?
+12. **Exit** your current Bash shell session.
+13. Open a new terminal session and issue the **alias** command. Does your clearfile alias exist? Why or why not?
 
-- Did you start-up file customize your Bash shell environment with colours?
+- Did your start-up file customize your Bash shell environment with colours?
 - **NOTE:** This is where you can make your Linux shell environment values **persistent** (i.e. saved regardless of exit and login to your Bash Shell such as **aliases**, **umask**, etc.).
 
-13. Issue the following linux command to **restore** your previous settings for your bashrc startup file:
+> If you ever want to restore your profile to it's previous settings, you could do so by copying the backup you created file to ~/.profile by issuing the following command: **mv ~/.profile.bk ~/.profile**. You do not need to do this.
 
-```bash
-mv ~/.bash_profile.bk ~/.bash_profile
-```
-
-- If you experience an error message "_No such file or directory_", just ignore.
-
-14. **Exit** your current Bash shell session.
+14. **Logout** of your Ubuntu VM and **Login** again.
 15. **Login** again to your matrix account.
 
     - What did you notice this time?
+
+16. Issue the **alias** command. Does your clearfile alias exist?
 
 **Answer INVESTIGATION 1 observations / questions in your lab log book.**
 
