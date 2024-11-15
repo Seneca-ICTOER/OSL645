@@ -11,14 +11,15 @@ description: Lab 10 for Students to Learn Shell Scripting
 
 ## Main Objectives
 
-- Explain how to configure and use a **.bashrc** start-up file.
-- Use **if-elif-else** control flow statements in a shell script.
+- Explain how to configure and use Linux start-up files.
+- Use **arrays** and **associative arrays** in a shell script.
 - Use a **for** loop control using a list with **command substitution** and **arrays**.
 - Use a **while** loop in a shell script.
 - Use **getopts** to parse command line options.
+- Use **if statements** for error checking in a shell script.
 - Use the **exit** statement in a shell script.
-- Use **arrays** and **associative arrays** in a shell script.
 - Create a bash shell script to **generate multiple user accounts** from a comma separated value (.csv) file.
+- Add users to the system using a bash shell script.
 
 ## Lab Reference Material
 
@@ -33,7 +34,6 @@ description: Lab 10 for Students to Learn Shell Scripting
 
 **Control Flow Statements:**
 
-- [if-elif-else](https://www.tutorialspoint.com/unix/if-else-statement.htm)
 - [for Loop](https://www.cyberciti.biz/faq/bash-for-loop/#:~:text=A%20'for%20loop'%20is%20a,files%20using%20a%20for%20loop.)
 - [while Loop](https://bash.cyberciti.biz/guide/While_loop)
 - [Arrays](https://www.tutorialspoint.com/unix/unix-using-arrays.htm)
@@ -250,13 +250,14 @@ mv ~/.bash_profile ~/.bash_profile.bk
 9. Enter the following lines in your shell script (the symbol "\[" is the open square bracket symbol):
 
 ```bash
-clear
 echo -e -n "\e[0;34m"
-echo "Last Time Logged in (for security):"
-echo
-lastlog -u $USER
-echo
+echo "Login location info:"
+clear
+curl -s https://ipinfo.io | egrep -e "city" -e "region" -e "country" -e "timezone" -e "[[:digit:]]{1,3}\.[[:digit:]]{1,3}" | sed -e 's/"//g' -e 's/,$//g'
+clear
 echo -e -n "\e[m"
+
+alias clearfile="cat /dev/null >"
 ```
 
 - **NOTE:** You will notice there is **NO she-bang line** since this is a **start-up** file.
