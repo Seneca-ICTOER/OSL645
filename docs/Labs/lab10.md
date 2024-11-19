@@ -53,7 +53,8 @@ The **/etc/profile** file belongs to the root user and is the first start-up fil
 
 User-specific config start-up files are in the user's home directory:
 
-- **~/.bash_profile** runs when you log in.
+- **~/.profile** runs when you log in, regardless of your default shell (ie not Bash).
+- **~/.bash_profile** runs when you log in using a Bash shell.
 - The **~/.bashrc** runs when you start an interactive Bash shell.
 
 **Logout Files**
@@ -214,8 +215,6 @@ fi
 
 ## Investigation 1: Using Start-Up Files
 
-### Add port forwarding from host to VM
-
 **ATTENTION: This lab must be graded by the end of your classes in Week 13 to obtain a grade of 2% towards this course.**
 
 In this investigation, you will learn how to **customize** your **Bash Linux shell environment** by creating and testing a **start-up** file.
@@ -240,22 +239,20 @@ sudo apt -y install curl
 
    - This file contains the **default settings** when you **open your Bash shell** (eg. if issuing the command **bash**).
    - Since we are using the **Bash shell** by default, let's create a **customized Bash start-up file**.
-   - This startup file is located in your **home** directory using the name "**.bash_profile**"
-   - Let's move your **.bash_profile** file to prevent **accidental overwrite**.
+   - This startup file is located in your **home** directory using the name "**.bashrc**"
+   - Let's copy your **.bashrc** file to prevent **accidental overwrite**.
 
 7. Issue the following linux command:
 
 ```bash
-mv ~/.profile ~/.profile.bk
+cp ~/.bashrc ~/.bashrc.bk
 ```
 
-- If you experience an error message "_No such file or directory_", just ignore this command since there is no **~/.bash_profile** file in your home directory.
+8. Use a text editor like vi or nano to create the text file called **~/.bashrc** (eg. `nano ~/.bashrc`)
 
-8. Use a text editor like vi or nano to create the text file called **~/.profile** (eg. `vi ~/.profile`)
+   - If you are using the vi text editor, refer to notes on text editing in a previous week in the course schedule.
 
-   - If you are using the nano text editor, refer to notes on text editing in a previous week in the course schedule.
-
-9. Add the following lines to the bottom of **~/.profile** (the symbol "\[" is the open square bracket symbol):
+9. Add the following lines to the bottom of **~/.bashrc** (the symbol "\[" is the open square bracket symbol):
 
 ```bash
 echo -e -n "\e[0;34m"
@@ -264,7 +261,6 @@ echo
 echo "ip: $(curl -s https://ipinfo.io/ip)"
 curl -s https://ipinfo.io | egrep -e "city" -e "region" -e "country" -e "timezone" | sed -e 's/"//g' -e 's/,$//g'
 echo
-lastlog -u $USER
 echo -e -n "\e[m"
 
 echo "The following packages can be upgraded:"
@@ -279,22 +275,24 @@ alias clearfile="cat /dev/null >"
 - You can test run the startup file without exiting and re-entering your Bash shell environment. Issue the following:
 
 ```bash
-. ~/profile
+. ~/.bashrc
 ```
 
 - What do you notice?
 
 11. Issue the **alias** command. Does your clearfile alias exist?
-12. **Exit** your current Bash shell session.
+12. **Exit** your current termninal.
 13. Open a new terminal session and issue the **alias** command. Does your clearfile alias exist? Why or why not?
 
 - Did your start-up file customize your Bash shell environment with colours?
-- **NOTE:** This is where you can make your Linux shell environment values **persistent** (i.e. saved regardless of exit and login to your Bash Shell such as **aliases**, **umask**, etc.).
+- **NOTE:** This is where you can make your Linux shell environment values **persistent** (i.e. saved regardless of exit and login to your Bash Shell such as **aliases**, **umask**, **commands you want run on login**, etc.).
 
-> If you ever want to restore your profile to it's previous settings, you could do so by copying the backup you created file to ~/.profile by issuing the following command: **mv ~/.profile.bk ~/.profile**. You do not need to do this.
+14. How could you make default settings in **.bashrc** apply to all users on the system? (hint: Look back to lab 9 Investigation 1 Part 2).
+
+> If you ever want to restore your profile to it's previous settings, you could do so by copying the backup you created file to ~/.profile by issuing the following command: **mv ~/.bashrc.bk ~/.bashrc**. You do not need to do this.
 
 14. **Logout** of your Ubuntu VM and **Login** again.
-15. **Login** again to your matrix account.
+15. Open a terminal session.
 
     - What did you notice this time?
 
