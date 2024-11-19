@@ -518,21 +518,27 @@ git pull
 
 12. Did it work? Is the output the same as it was from the Codespaces terminal?
 
-### Check script needs to be modified
-
-16. Issue the following to run a checking script:
+13. On your **Ubuntu VM** change to the lab-10-username repo directory:
 
 ```bash
-t9-check-1
+cd lab-10-username
 ```
 
-17. If you encounter errors, make corrections and **re-run** the checking script until you receive a congratulations message, then you can proceed.
+14. Issue the following to run a checking script:
 
-In the next investigation, you will learn more about the **for** loop and **error-checking.**
+```bash
+lab10-check-1
+```
+
+15. If you encounter errors, make corrections and **re-run** the checking script until you receive a congratulations message, then you can proceed.
+
+In the next investigation, you will learn more about the **for** loop, **while** loop and **error-checking.**
 
 **Answer INVESTIGATION 2 observations / questions in your lab log book.**
 
 ## Investigation 3: Logic Within Loops and exit statements
+
+### Updated to here
 
 In this investigation, you will learn more about the **for** loop and **error-checking**.
 
