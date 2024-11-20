@@ -20,7 +20,7 @@ description: Create and manage users, groups and services
 
 **Course Slides:**
 
-- Week 12 Lecture 1 Notes: [Web](https://docs.google.com/presentation/d/e/2PACX-1vQ4ypYtNouQhbWpxslS8BOPnDbs9R6SsrbLoaE5heyp7JAPx_ZtCYmR0SMznvclZoeXa0NvhKe3mVd_/pub?start=false&loop=false&delayms=3000)
+- Week 11 Lecture 1 Notes: [Web](https://docs.google.com/presentation/d/e/2PACX-1vRvhsCN4xNnDZdYf5NLOr-sEvyWSpgYoNc1htHFIAxbh5aLNZJ7WaoX_ubjQREq2rU8_f2SOkR3qngA/pub?start=false&loop=false&delayms=3000)
 
 ## Commands:
 
