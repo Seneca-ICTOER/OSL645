@@ -538,8 +538,6 @@ In the next investigation, you will learn more about the **for** loop, **while**
 
 ## Investigation 3: Logic Within Loops and exit statements
 
-### Updated to here
-
 In this investigation, you will learn more about the **for** loop and **error-checking**.
 
 The **exit** statement is used to terminate a shell script. This statement is very useful when combined with logic in a shell script to display an **error message** if the command was **improperly executed** and **terminate** the running of the shell script.
@@ -715,17 +713,15 @@ git pull
 
 17. Did it work? Is the output the same as it was from the Codespaces terminal?
 
-In the next investigation, you will learn to use the **exit** statement to **terminate the execution of a shell script** if not run with the properly number of arguments.
-
-### Check script needs to be modified
-
 18. Issue the following to run a checking script:
 
 ```bash
-t9-check-3
+lab10-check-2
 ```
 
 19. If you encounter errors, make corrections and **re-run** the checking script until you receive a congratulations message, then you can proceed.
+
+In the next investigation, you will learn to use the **exit** statement to **terminate the execution of a shell script** if not run with the properly number of arguments.
 
 **Answer INVESTIGATION 3 observations / questions in your lab log book.**
 
