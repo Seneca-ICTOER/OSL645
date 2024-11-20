@@ -874,7 +874,7 @@ You are going to use conditional logic (if statements) to test for each of the c
 # If the user is not root, then
 if [[ $(whoami) != root ]]; then
 
-    # Print the error message "You must run this script with root privileges.."
+    # Print the error message "You must run this script with root privileges."
     echo "You must run this script with root privileges."
 
     # Exit the script with the error code 1
@@ -889,7 +889,7 @@ fi
 Enter the following code to check if number of command line arguments is not equal to two.
 
 ```bash
-# If the number of command line arguments is less than 2
+# If the number of command line arguments is not equal to 2
 if [[ $# -ne 2 ]]; then
 
     # Use echo to display a message indicating the correct usage of the script
@@ -1035,42 +1035,57 @@ echo "Accounts have been created."
 ./createusers.bash -i userinfo.csv
 ```
 
+- Did your error checking work?
+
+5. Re-issue the command with the proper arguments and privileges:
+
+```bash
+sudo ./createusers.bash -i userinfo.csv
+```
+
 - What happened?
 - Were the users added in Codespaces?
 
-5. Issue the following command: `ls -l /home`. What does the output indicate?
+6. Issue the following commands:
 
-6. Save your changes. Stage and commit your changes to GitHub.
+- `ls -l /home`
+- `tail -5 /etc/passwd`
+
+What does the output indicate?
+
+7. Save your changes. Stage and commit your changes to GitHub.
 
 On your **Ubuntu VM**, open a **terminal** and confirm you are in your **home** directory.
 
-7. Issue the following Linux command to change to the local clone of your GitHub repository.
+8. Issue the following Linux command to change to the local clone of your GitHub repository.
 
 ```bash
 cd lab-10-username
 ```
 
-8. Pull your changes into your **Ubuntu VM**
+9. Pull your changes into your **Ubuntu VM**
 
 ```bash
 git pull
 ```
 
-9. Run your script and observe the output.
+10. Run your script and observe the output.
 
 ```bash
 ./createusers.bash -i userinfo.csv
 ```
 
-10. Did it work? Is the output the same as it was from the Codespaces terminal?
+11. Did it work? Is the output the same as it was from the Codespaces terminal?
 
-11. Issue the following to run a checking script:
+12. Issue Linux commands to verify the users have been created (like you did in Codespaces).
+
+13. Issue the following to run a checking script:
 
 ```bash
-t9-check-3
+lab10-check-4
 ```
 
-12. If you encounter errors, make corrections and **re-run** the checking script until you receive a congratulations message, then you can proceed.
+14. If you encounter errors, make corrections and **re-run** the checking script until you receive a congratulations message, then you can proceed.
 
 **Answer INVESTIGATION 5 observations / questions in your lab log book.**
 
@@ -1082,8 +1097,7 @@ In order to get efficient in working in the Linux environment requires **practic
 
 Although you are **NOT** required to perform **Linux administration** for this course, there are useful **course notes** and **TUTORIALS** for advanced Linux server administration that have been created for the Networking / Computer Support Specialist stream:
 
-- [OPS245: Open System Server](https://seneca-ictoer.github.io/OPS245/)
-- [OPS345: Open System Application Server](http://wiki.littlesvr.ca/wiki/OPS345)
+- [OSL745: Administration of Open Source Systems](https://seneca-ictoer.github.io/OSL745/)
 
 Take care and good luck in your future endeavours **:)**
 
@@ -1097,30 +1111,13 @@ Your instructor may take-up these questions during class. It is up to the studen
 
 **Review Questions:**
 
-1. Write code for a Bash shell script that clears the screen, and then prompts the user for their age. If the age entered is less than 65, then display a message that the person is NOT eligible to retire. If the age is equal to 65, then display a message that the person just turned 65 and can retire. If the age is greater than 65, then display the message that the user is over 65 and why have they not have already retired already?
-2. Add code to the script created in the previous question to force the user to enter only an **integer** to provide error-checking for this shell script.
-3. Write code for a Bash shell script that will prompt the user for a **valid POSTAL CODE**.
-
-   - A valid postal code consists of the following format: **x\#x #x\#**
-   - where **x** represents an upper or lowercase letter
-   - and **#** represents a number from 0-9
-   - Also VALID postal codes can consist of no spaces or one or more spaces in the format shown above.
-   - If the user enters an **INVALID postal code**, indicate an error and allow the user to enter the VALID postal code. When the user enters a VALID postal code, then clear the screen and display the VALID postal code.
-
-4. Write code that works similar to the previous question, but have it read an input file called **unchecked-postalcodes.txt** and only save VALID postal codes to a file called:
-
-   - **valid-postalcodes.txt**
-   - Design your Bash Shell script to only run if the user enters TWO ARGUMENTS:
-   - **unchecked-postalcodes.txt** and **valid-postalcodes.txt**
-   - Otherwise, display an error message and immediately exit your Bash Shell script with a false exit value.
-
-5. What is the purpose of the **/etc/profile** startup file?
-6. What is the purpose of the **/etc/bashrc** startup file?
-7. What is the purpose of the **~/.bashrc** startup file?
-8. What is the purpose of the **~/.bash_profile** file?
-9. What is the purpose of the **~/.bash_logout** file?
-10. Write code for the **~/.bash_profile** file below to clear the screen, welcome the user by their username, and display a list of all users currently logged into your Matrix server. Insert blank lines between each of those elements.
-11. Write a command to run the recently created **~/.bash_profile** startup file from the previous question without exiting and re-logging into your Matrix account.
+1. What is the purpose of the **/etc/profile** startup file?
+2. What is the purpose of the **/etc/bashrc** startup file?
+3. What is the purpose of the **~/.bashrc** startup file?
+4. What is the purpose of the **~/.bash_profile** file?
+5. What is the purpose of the **~/.bash_logout** file?
+6. Write code for the **~/.bash_profile** file below to clear the screen, welcome the user by their username, and display a list of all users currently logged in. Insert blank lines between each of those elements.
+7. Write a command to run the recently created **~/.bash_profile** startup file from the previous question without exiting and re-logging in or relaunching your terminal.
 
 ---
 
