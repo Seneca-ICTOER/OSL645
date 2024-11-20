@@ -7,8 +7,6 @@ description: Lab 10 for Students to Learn Shell Scripting
 
 # Lab 10: Advanced Shell Scripting
 
-## Under Development
-
 ## Main Objectives
 
 - Explain how to configure and use Linux start-up files.
