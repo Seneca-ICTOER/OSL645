@@ -721,8 +721,6 @@ lab10-check-2
 
 19. If you encounter errors, make corrections and **re-run** the checking script until you receive a congratulations message, then you can proceed.
 
-In the next investigation, you will learn to use the **exit** statement to **terminate the execution of a shell script** if not run with the properly number of arguments.
-
 **Answer INVESTIGATION 3 observations / questions in your lab log book.**
 
 ## Investigation 4: Converting images from the command line with a script
@@ -795,37 +793,47 @@ echo "Image conversion completed."
 
 Since the convert command isn't available in Codespaces, we can neither test this script from the command line or run a check script in Codespaces to check the script. On your **Ubuntu VM**, open a **terminal** and confirm you are in your **home** directory.
 
-5. Issue the following Linux command to change to the local clone of your GitHub repository.
+5. Install the convert command from the imagemagick suite.
+
+```bash
+sudo apt -y install imagemagick
+```
+
+6. Issue the following Linux command to change to the local clone of your GitHub repository.
 
 ```bash
 cd lab-10-username
 ```
 
-6. Pull your changes into your **Ubuntu VM**
+7. Pull your changes into your **Ubuntu VM**
 
 ```bash
 git pull
 ```
 
-7. Issue the `ls` command and note the images are currently jpgs.
+8. Issue the `ls` command and note the images are currently jpgs.
 
-8. Issue the file command on each of the jpgs in your directory. Note the output.
+9. Issue the file command on each of the jpgs in your directory. Note the output.
 
-9. Run your script and observe the output.
+10. Run your script and observe the output.
 
 ```bash
 ./convert.bash
 ```
 
-10. Issue the `ls` command to confirm all the images in your directory were converted to pngs.
+11. Issue the `ls` command to confirm all the images in your directory were converted to pngs.
 
-11. Issue the `file` command on each of the pngs in your directory.
+12. Issue the `file` command on each of the pngs in your directory.
 
-12. Did the script work?
+13. Did the script work?
 
-In the next investigation, we will learn to create / modify **startup files** to customize your Linux shell environment.
+14. Issue the following to run a checking script:
 
-In the next investigation, you will learn how to parse command line options using getopts and a case statement; and write a Bash script to automate adding users to the system.
+```bash
+lab10-check-3
+```
+
+In the next investigation, you will learn to use the **exit** statement to **terminate the execution of a shell script** if not run with the properly number of arguments, parse command line options using getopts and a case statement; and write a Bash script to automate adding users to the system.
 
 **Answer INVESTIGATION 4 observations / questions in your lab log book.**
 
