@@ -472,7 +472,7 @@ done
 
 ```bash
 > ./users2.bash
-Username
+Usernames:
 tstark
 bbanner
 thor
