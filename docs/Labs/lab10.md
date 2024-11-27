@@ -23,7 +23,7 @@ description: Lab 10 for Students to Learn Shell Scripting
 
 **Course Slides:**
 
-- Week 11 Lecture 1 Notes: [Web](https://docs.google.com/presentation/d/e/2PACX-1vSnPxo_nwm38hMAUTHkwS7cQhuJWPDmN7Zm4UFd87_PTRV3nr6jvqteO_rlO1-Umgy0P8PPrYL9o0gG/pub?start=false&loop=false&delayms=3000)
+- Week 12 Lecture 1 Notes: [Web](https://docs.google.com/presentation/d/e/2PACX-1vTjE7tWGNBgcZi9QTOFYLPPnMp0kbyHYP7255OuZluTK-Bsz7yAtiBX8a9nA1Kr_DJ9m26OZ2gmeOjA/pub?start=false&loop=false&delayms=3000)
 
 **Startup Files:**
 
