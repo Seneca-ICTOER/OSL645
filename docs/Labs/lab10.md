@@ -1116,6 +1116,9 @@ Your instructor may take-up these questions during class. It is up to the studen
 5. What is the purpose of the **~/.bash_logout** file?
 6. Write code for the **~/.bash_profile** file below to clear the screen, welcome the user by their username, and display a list of all users currently logged in. Insert blank lines between each of those elements.
 7. Write a command to run the recently created **~/.bash_profile** startup file from the previous question without exiting and re-logging in or relaunching your terminal.
+8. What is the difference between an **array** and an **associative array**?
+9. How do you exit a bash script indicating an error?
+10. What is getopts used for?
 
 ---
 
