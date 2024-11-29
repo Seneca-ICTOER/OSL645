@@ -446,7 +446,7 @@ You are going write a bash script to populate an array of usernames from a csv f
 users=($(cut -d"," -f1 userinfo.csv))
 
 # Print a heading
-echo "Username"
+echo "Usernames:"
 
 # For each username in the array users
 for user in "${users[@]}"; do
