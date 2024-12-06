@@ -776,7 +776,7 @@ for file in "${images[@]}"; do
 	convert $file.jpg $file.png
 
     # Remove the .jpg file
-	rm $i.jpg
+	rm $file.jpg
 
 # End for
 done
@@ -1070,7 +1070,7 @@ git pull
 10. Run your script and observe the output.
 
 ```bash
-./createusers.bash -i userinfo.csv
+sudo ./createusers.bash -i userinfo.csv
 ```
 
 11. Did it work? Is the output the same as it was from the Codespaces terminal?
