@@ -46,7 +46,6 @@ description: Weekly Schedule for OSL645
 | Shell basics                      |                                                                                                                                                                 |                                                                                 |
 | Command execution in detail       |                                                                                                                                                                 |                                                                                 |
 | Quoting Special Characters        |                                                                                                                                                                 |                                                                                 |
-|                                   |                                                                                                                                                                 |                                                                                 |
 
 ### Week 4
 
