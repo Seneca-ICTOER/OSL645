@@ -817,7 +817,7 @@ alias | ~/bin/lab6-check-1
 
 ### Creating your Github Repo for your Labs
 
-Use the following [link](https://classroom.github.com/a/Ay3hxcXH) to set up your lab 6 repository, and open it in GitHub Codespaces. Refer to [Lab 4](/Labs/lab4.md) for instructions. You will be using this for the BASH scripting in lab 6.
+Use the following [link](https://classroom.github.com/a/3XMJvawT) to set up your lab 6 repository, and open it in GitHub Codespaces. Refer to [Lab 4](/Labs/lab4.md) for instructions. You will be using this for the BASH scripting in lab 6.
 
 ### Cloning your GitHub repository in your Ubuntu VM
 
