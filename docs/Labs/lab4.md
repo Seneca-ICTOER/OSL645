@@ -813,7 +813,7 @@ Hello codespace
 
 The current shell you are using is: /bin/bash
 
-The current directory location is: /workspaces/lab-3-username
+The current directory location is: /workspaces/lab-4-username
 The current user home directory is: /home/codespace
 ```
 
