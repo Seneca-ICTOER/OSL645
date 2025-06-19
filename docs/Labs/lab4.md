@@ -733,7 +733,7 @@ sh
 
 ```bash
 > sh
-sh-4.2$ ./hello
+sh-4.2$ ./hello.bash
 
 Hello codespace
 
