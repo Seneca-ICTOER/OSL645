@@ -5,24 +5,16 @@ sidebar_position: 1
 description: Course Policies
 ---
 
-# Course Policies for OPS145
+# Course Policies for OSL645
 
-### Weekly Tutorials
+### Labs
 
-  - Online Tutorials are divided into INVESTIGATIONS that instruct students how to use the Unix/Linux OS.
+  - Labs are divided into INVESTIGATIONS that instruct students how to use the Unix/Linux OS.
   - Checking programs (called scripts) are used to check if students correctly completed the tutorial:
      - If the student makes a mistake, feedback is provided for students to troubleshoot and correct their mistake and re-run the checking program.
      - Once the program is run and indicates success, marks are awarded to the student.
-  - Students MUST complete the weekly tutorial by Friday of the following week (by midnight) to get full marks (no exceptions).
-  - Students are responsible to know weekly tutorial due dates. Again, these are indicated in the OPS145 WIKI weekly schedule.
-
-### Review Tutorials
-
-  - There is 1 Review Tutorial that students perform to answer questions to test their Unix/Linux Knowledge.
-  - The review tutorial contains sections to complete. As students correctly answer questions, marks are awarded.
-  - If the student cannot answer a question, they cannot proceed to the next question.
-  - Appropriate time will be provided for students to complete these review tutorials.
-  - Students are responsible to know Review tutorial due dates. Again, these are indicated in the OPS145 WIKI weekly schedule.
+  - Students MUST complete the lab by due date to get full marks (no exceptions).
+  - Students are responsible to know lab due dates. Again, these are indicated in the weekly schedule.
 
 ### Quizzes, Mid-term Test, and Examination
 

@@ -10,7 +10,7 @@ description: Landing Home Page for OSL645
 
 ## Quick Links
 
-| [Weekly Schedule](./weekly-schedule.md) | [Course Outline](https://ict.senecacollege.ca/course/osl640/) | [Course Policies](/ExtraResources/course-policies.md) | [Lab Log Book](/files/OSL645-Logbook-Online.docx) | [Seneca MyApps](https://myapps.senecapolytechnic.ca/login) |
+| [Weekly Schedule](./weekly-schedule.md) | [Course Policies](/ExtraResources/course-policies.md) | [Lab Log Book](/files/OSL645-Logbook-Online.docx) | [Seneca MyApps](https://myapps.senecapolytechnic.ca/login) |
 | --------------------------------------- | ------------------------------------------------------------- | ----------------------------------------------------- | ------------------------------------------------- | ---------------------------------------------------------- |
 
 ## What This Course is About
