@@ -25,7 +25,7 @@ description: Setup and use a Linux environment
 **Software:**
 
 - [Virtual Box](https://www.virtualbox.org/wiki/Downloads)
-- [Ubuntu 24.04 Download](https://ubuntu.com/download/desktop/thank-you?version=24.04.1&architecture=amd64&lts=true)
+- [Ubuntu 24.04 Download](https://ubuntu.com/download/desktop/thank-you?version=24.04.3&architecture=amd64&lts=true)
 - [Seneca MyApps](https://myapps.senecapolytechnic.ca/login)
 
 **Ubuntu Resources:**
