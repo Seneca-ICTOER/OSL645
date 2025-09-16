@@ -12,7 +12,7 @@ description: Setup and use a Linux environment
 - Learn how to install Linux (Ubuntu) as a Virtual Machine using Oracle VirtualBox.
 - Understand the Linux command structure and how to get help with Linux command usage.
 - Become efficient with Linux command line editing by using short-cut keys.
-- Issue a checking program (i.e. Shell Script) to confirm that you accessed your Matrix account.
+- Issue a checking program (i.e. Shell Script) to confirm that you installed your virtual machine.
 - Perform LINUX PRACTICE QUESTIONS for additional practice.
 
 ## Lab Reference Material
