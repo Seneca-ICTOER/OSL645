@@ -675,13 +675,13 @@ In the next steps you will be accessing GitHub classroom. You will also be using
 
 ### Introduction to Git & GitHub
 
-Use the following [link](https://classroom.github.com/a/hD-qfESC) to set up your access to the Introduction to Git & GitHub materials (provided by GitHub Classroom). Read through everything before you continue. The purpose of this exercise is to familiarize yourself with Git & GitHub. To submit this, edit the instructions (README.md) by clicking on the pencil in the top right corner. You may wish to complete any of the additional items under **Optional next steps**. If you want to access the [Student Developer Pack](https://education.github.com/pack), you are **required** to add your **name** and a short **bio**. The Student Developer Pack comes with free access to a ton of useful industry tools and services. While you will not be using it in this course, you may want to take advantage of some of the offers.
+Use the following [link](https://classroom.github.com/a/lNAzBd3f) to set up your access to the Introduction to Git & GitHub materials (provided by GitHub Classroom). Read through everything before you continue. The purpose of this exercise is to familiarize yourself with Git & GitHub. To submit this, edit the instructions (README.md) by clicking on the pencil in the top right corner. You may wish to complete any of the additional items under **Optional next steps**. If you want to access the [Student Developer Pack](https://education.github.com/pack), you are **required** to add your **name** and a short **bio**. The Student Developer Pack comes with free access to a ton of useful industry tools and services. While you will not be using it in this course, you may want to take advantage of some of the offers.
 
 Additionally, you may want to install the GitHub mobile app. It allows you access to your GitHub profile and repos from the comfort of your smart phone. It also allows you to secure your GitHub.com account with two-factor authentication if you wish to. You can install it for [Android or iOS](https://github.com/mobile).
 
 ### Creating your Github Repo for your Labs
 
-Use the following [link](https://classroom.github.com/a/QWKas4Zv) to set up your lab 4 repository. You will be using this for the Bash scripting in lab 4.
+Use the following [link](https://classroom.github.com/a/xh1ZbZ8w) to set up your lab 4 repository. You will be using this for the Bash scripting in lab 4.
 
 Next, follow the sections for setup on a Shared Computer by Accessing GitHub Codespaces or on your Personal Computer. While you can install Visual Studio Code (VSCode) locally, I recommend using Codespaces for this course.
 

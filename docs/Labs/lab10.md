@@ -309,7 +309,7 @@ In this investigation, you will learn additional loop statements to allow your s
 
 ### Creating your Github Repo for your Labs
 
-Use the following [link](https://classroom.github.com/a/2ahNakos to set up your lab 10 repository, and open it in GitHub Codespaces. Refer to [Lab 4](/Labs/lab4.md) for instructions. You will be using this for the BASH scripting in lab 10.
+Use the following [link](https://classroom.github.com/a/OEvmIv2m) to set up your lab 10 repository, and open it in GitHub Codespaces. Refer to [Lab 4](/Labs/lab4.md) for instructions. You will be using this for the BASH scripting in lab 10.
 
 ### Cloning your GitHub repository in your Ubuntu VM
 
