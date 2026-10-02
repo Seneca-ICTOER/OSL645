@@ -329,9 +329,9 @@ git clone git@github.com:username/lab10
 ```
 
 - Issue a command to confirm the repository has been cloned on your Ubuntu VM.
-- Issue a command to change into your **lab-10-username** directory.
+- Issue a command to change into your **lab10** directory.
 
-Confirm the contents have been written to your **lab-10-username** directory. You should see the following files:
+Confirm the contents have been written to your **lab10** directory. You should see the following files:
 
 - LICENSE
 - README.md
@@ -523,10 +523,10 @@ git pull
 
 12. Did it work? Is the output the same as it was from the Codespaces terminal?
 
-13. On your **Ubuntu VM** change to the lab-10-username repo directory:
+13. On your **Ubuntu VM** change to the lab10 repo directory:
 
 ```bash
-cd lab-10-username
+cd lab10
 ```
 
 14. Issue the following to run a checking script:
@@ -807,7 +807,7 @@ sudo apt -y install imagemagick
 6. Issue the following Linux command to change to the local clone of your GitHub repository.
 
 ```bash
-cd lab-10-username
+cd lab10
 ```
 
 7. Pull your changes into your **Ubuntu VM**
@@ -1065,7 +1065,7 @@ On your **Ubuntu VM**, open a **terminal** and confirm you are in your **home** 
 8. Issue the following Linux command to change to the local clone of your GitHub repository.
 
 ```bash
-cd lab-10-username
+cd lab10
 ```
 
 9. Pull your changes into your **Ubuntu VM**

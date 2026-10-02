@@ -837,9 +837,9 @@ git clone git@github.com:username/lab6
 ```
 
 - Issue a command to confirm the repository has been cloned on your Ubuntu VM.
-- Issue a command to change into your **lab-6-username** directory.
+- Issue a command to change into your **lab6** directory.
 
-Confirm the contents have been written to your **lab-6-username** directory. You should see the following files:
+Confirm the contents have been written to your **lab6** directory. You should see the following files:
 
 - LICENSE
 - README.md
@@ -950,7 +950,7 @@ On your **Ubuntu VM**, open a **terminal** and confirm you are in your **home** 
 12. Issue the following Linux command to change to the local clone of your GitHub repository.
 
 ```bash
-cd lab-6-username
+cd lab6
 ```
 
 13. Pull your changes into your **Ubuntu VM**
@@ -1155,7 +1155,7 @@ MY ACCOUNT INFORMATION:
 
 Username: codespace
 
-Current Directory: /workspace/lab-6-username
+Current Directory: /workspace/lab6
 ```
 
 6. Run the Python check script in GitHub Codespaces to check your work before you commit it.
