@@ -815,9 +815,16 @@ alias | ~/bin/lab6-check-1
 
 ## Investigation 3: Variables and Positional Parameters
 
-### Creating your Github Repo for your Labs
+### Creating your Github Repo for Lab 6
 
-Use the following [link](https://classroom.github.com/a/EjNEeznw) to set up your lab 6 repository, and open it in GitHub Codespaces. Refer to [Lab 4](/Labs/lab4.md) for instructions. You will be using this for the BASH scripting in lab 6.
+- Browse to the [Lab 6 repository template](https://github.com/OSL645/lab6) on GitHub. You will be using this for Bash scripting in this lab.
+- Click **Use this template** in the right corner.
+- Select **Create a new repository** from the dropdown menu.
+- Select **Your GitHub username** from the **Owner** dropdown menu.
+- In the **Repository name** field enter **lab6**.
+- Set the visibility to **Private**.
+- Scroll to the bottom and click **Create repository**.
+- Follow the steps found in the README file to clone your repository locally.
 
 ### Cloning your GitHub repository in your Ubuntu VM
 
@@ -826,7 +833,7 @@ Issue the following command to clone your GitHub repository into your home direc
 > **Important:** Be sure to replace `username` in the following command with YOUR GitHub username.
 
 ```bash
-git clone git@github.com:OSL645/lab-6-username
+git clone git@github.com:username/lab6
 ```
 
 - Issue a command to confirm the repository has been cloned on your Ubuntu VM.

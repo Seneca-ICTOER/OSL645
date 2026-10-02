@@ -644,7 +644,7 @@ chmod u+x hello
 
 Proceed to the next investigation.
 
-## Investigation 4: Git, GitHub, GitHub Classroom and GitHub Codespaces
+## Investigation 4: Git, GitHub, and GitHub Codespaces
 
 In this investigation, you will learn how to use modern tools commonly used in industry to write, maintain and deploy a Bash shell script. You will be using the following tools:
 
@@ -661,8 +661,6 @@ In this investigation, you will learn how to use modern tools commonly used in i
 
   GitHub integrates with various tools and services, enhancing project management, code quality, and team collaboration.
 
-- **GitHub Classroom**: GitHub Classroom is a tool provided by GitHub that helps educators manage and streamline the process of assigning, collecting, and grading coding assignments. It integrates with GitHub repositories to create a seamless workflow for both teachers and students. This tool is particularly useful in programming courses where version control and collaborative coding are essential skills.
-
 - **GitHub Codespaces**: GitHub Codespaces is a cloud-based development environment that allows you to code directly in the cloud using Visual Studio Code or a web-based editor. It provides a fully configured development environment with all the necessary tools and dependencies pre-installed, which can be customized to suit your project's needs. This enables you to start coding immediately without worrying about setting up your local development environment. Codespaces can be particularly useful for collaborative projects, as it ensures that all team members are working in a consistent environment. Codespaces allows you to access your development environment via a web browser, from anywhere in the world. The only thing you need is an Internet connection.
 
 **Perform the Following Steps**
@@ -675,15 +673,29 @@ In the next steps you will be accessing GitHub classroom. You will also be using
 
 ### Introduction to Git & GitHub
 
-Use the following [link](https://classroom.github.com/a/t7x2oAPh) to set up your access to the Introduction to Git & GitHub materials (provided by GitHub Classroom). Read through everything before you continue. The purpose of this exercise is to familiarize yourself with Git & GitHub. To submit this, edit the instructions (README.md) by clicking on the pencil in the top right corner. You may wish to complete any of the additional items under **Optional next steps**. If you want to access the [Student Developer Pack](https://education.github.com/pack), you are **required** to add your **name** and a short **bio**. The Student Developer Pack comes with free access to a ton of useful industry tools and services. While you will not be using it in this course, you may want to take advantage of some of the offers.
+- Browse to the [Introduction to Git & GitHub materials](https://github.com/OSL645/github-starter-course) on GitHub. You will be using this for this investigation.
+- Click **Use this template** in the right corner.
+- Select **Create a new repository** from the dropdown menu.
+- Select **Your GitHub username** from the **Owner** dropdown menu.
+- In the **Repository name** field enter **git-intro**.
+- Set the visibility to **Private**.
+- Scroll to the bottom and click **Create repository**.
+- Follow the steps found in the README file to clone your repository locally.
+
+Read through everything before you continue. The purpose of this exercise is to familiarize yourself with Git & GitHub. To submit this, edit the instructions (README.md) by clicking on the pencil in the top right corner. You may wish to complete any of the additional items under **Optional next steps**. If you want to access the [Student Developer Pack](https://education.github.com/pack), you are **required** to add your **name** and a short **bio**. The Student Developer Pack comes with free access to a ton of useful industry tools and services. While you will not be using it in this course, you may want to take advantage of some of the offers.
 
 Additionally, you may want to install the GitHub mobile app. It allows you access to your GitHub profile and repos from the comfort of your smart phone. It also allows you to secure your GitHub.com account with two-factor authentication if you wish to. You can install it for [Android or iOS](https://github.com/mobile).
 
-### Creating your Github Repo for your Labs
+### Creating your Github Repo for Lab 4
 
-Use the following [link](https://classroom.github.com/a/xh1ZbZ8w) to set up your lab 4 repository. You will be using this for the Bash scripting in lab 4.
-
-Next, follow the sections for setup on a Shared Computer by Accessing GitHub Codespaces or on your Personal Computer. While you can install Visual Studio Code (VSCode) locally, I recommend using Codespaces for this course.
+- Browse to the [Lab 4 repository template](https://github.com/OSL645/lab4) on GitHub. You will be using this for Bash scripting in this lab.
+- Click **Use this template** in the right corner.
+- Select **Create a new repository** from the dropdown menu.
+- Select **Your GitHub username** from the **Owner** dropdown menu.
+- In the **Repository name** field enter **lab4**.
+- Set the visibility to **Private**.
+- Scroll to the bottom and click **Create repository**.
+- Follow the steps found in the README file to clone your repository locally.
 
 ### Shared Computer (ie College PC) or Personal Computer: Accessing GitHub Codespaces
 
@@ -900,13 +912,13 @@ Issue the following command to clone your GitHub repository into your home direc
 > **Important:** Be sure to replace `username` in the following command with YOUR GitHub username.
 
 ```bash
-git clone git@github.com:OSL645/lab-4-username
+git clone git@github.com:username/lab4
 ```
 
 - Issue a command to confirm the repository has been cloned on your Ubuntu VM.
-- Issue a command to change into your **lab-4-username** directory.
+- Issue a command to change into your **lab4** directory.
 
-Confirm the contents have been written to your **lab-4-username** directory. You should see the following files:
+Confirm the contents have been written to your **lab4** directory. You should see the following files:
 
 - LICENSE
 - README.md

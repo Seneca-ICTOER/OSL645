@@ -307,9 +307,16 @@ In this investigation, you will learn additional loop statements to allow your s
 1. **Login** to your Ubuntu VM and open a **terminal**, and issue a Linux command to **confirm** you are located in your **home** directory.
 2. Issue a command to **confirm** you are located in your home directory.
 
-### Creating your Github Repo for your Labs
+### Creating your Github Repo for Lab 10
 
-Use the following [link](https://classroom.github.com/a/OEvmIv2m) to set up your lab 10 repository, and open it in GitHub Codespaces. Refer to [Lab 4](/Labs/lab4.md) for instructions. You will be using this for the BASH scripting in lab 10.
+- Browse to the [Lab 10 repository template](https://github.com/OSL645/lab10) on GitHub. You will be using this for Bash scripting in this lab.
+- Click **Use this template** in the right corner.
+- Select **Create a new repository** from the dropdown menu.
+- Select **Your GitHub username** from the **Owner** dropdown menu.
+- In the **Repository name** field enter **lab10**.
+- Set the visibility to **Private**.
+- Scroll to the bottom and click **Create repository**.
+- Follow the steps found in the README file to clone your repository locally.
 
 ### Cloning your GitHub repository in your Ubuntu VM
 
@@ -318,7 +325,7 @@ Issue the following command to clone your GitHub repository into your home direc
 > **Important:** Be sure to replace `username` in the following command with YOUR GitHub username.
 
 ```bash
-git clone git@github.com:OSL645/lab-10-username
+git clone git@github.com:username/lab10
 ```
 
 - Issue a command to confirm the repository has been cloned on your Ubuntu VM.
@@ -410,7 +417,7 @@ On your **Ubuntu VM**, open a **terminal** and confirm you are in your **home** 
 9. Issue the following Linux command to change to the local clone of your GitHub repository.
 
 ```bash
-cd lab-10-username
+cd lab10
 ```
 
 10. Pull your changes into your **Ubuntu VM**
@@ -499,7 +506,7 @@ On your **Ubuntu VM**, open a **terminal** and confirm you are in your **home** 
 9. Issue the following Linux command to change to the local clone of your GitHub repository.
 
 ```bash
-cd lab-10-username
+cd lab10
 ```
 
 10. Pull your changes into your **Ubuntu VM**
@@ -694,7 +701,7 @@ On your **Ubuntu VM**, open a **terminal** and confirm you are in your **home** 
 14. Issue the following Linux command to change to the local clone of your GitHub repository.
 
 ```bash
-cd lab-10-username
+cd lab10
 ```
 
 15. Pull your changes into your **Ubuntu VM**
