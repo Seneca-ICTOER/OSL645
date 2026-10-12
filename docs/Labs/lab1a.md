@@ -25,13 +25,13 @@ description: Setup and use a Linux environment
 **Software:**
 
 - [Virtual Box](https://www.virtualbox.org/wiki/Downloads)
-- [Ubuntu 24.04 Download](https://ubuntu.com/download/desktop/thank-you?version=24.04.3&architecture=amd64&lts=true)
+- [Ubuntu 26.04 Download](https://ubuntu.com/download/desktop)
 - [Seneca MyApps](https://myapps.senecapolytechnic.ca/login)
 
 **Ubuntu Resources:**
 
 - [Ubuntu Website](https://ubuntu.com/)
-- [Ubuntu 24.04 Documentation](https://help.ubuntu.com/lts/ubuntu-help/index.html)
+- [Ubuntu Documentation](https://help.ubuntu.com/lts/ubuntu-help/index.html)
 
 **Account Access:**
 
@@ -117,7 +117,7 @@ In this section, you will learn how to access your Matrix Linux account by two d
 
 It is essential that you complete these labs fully and on time. These are your major learning tool in the course. There are no late marks.
 
-Download the [Ubuntu 24.04 iso](https://ubuntu.com/download/desktop/thank-you?version=24.04.1&architecture=amd64&lts=true) if you have not already. Make sure you download Ubuntu Desktop, not server.
+Download the [Ubuntu 26.04 iso](https://ubuntu.com/download/desktop) if you have not already. Make sure you download Ubuntu Desktop, not server.
 
 If you are working on your home PC, you will need to download and install Oracle VirtualBox before continuing.
 If you are working on a college PC, launch **MyApps** and search for **VirtualBox**. Launch the program.
@@ -251,6 +251,37 @@ Once that has completed, install the following packages with the command **sudo 
 ```bash
 sudo apt install ncal tldr
 ```
+
+Once that has completed, install the following packages with the command **sudo apt -y install** followed by the package names (separated by a space). The command is provided below:
+
+- cinnamon
+- cinnamon-desktop-environment
+- lightdm
+- chromium
+
+```bash
+sudo apt -y install tldr cinnamon-desktop-experience lightdm chromium
+```
+
+What was different compared to installing the software with the inclusion of the **-y** option?
+
+### Configuring the Cinnamon desktop
+To allow **Cinnamon** to function you must first configure the display manager to use **lightdm**. Issue the following command, and select lightdm from the menu.
+
+```bash
+sudo dpkg-reconfigure lightdm
+```
+
+Reboot your system. At the login screen:
+- Click on your user, but do not enter your password
+- Click the logo in the **top left**, to the **left** of **en_US.utf8**
+- Select **Cinnamon** from the list
+- Login as your user
+
+### Adding the Chromium shortcut to your panel (task bar)
+From the **Menu** (bottom left hand corner):
+- Browse to **Internet**
+- Right click on **Chromium** and select **Add to panel**
 
 **Answer INVESTIGATION 2 observations / questions in your lab log book.**
 
